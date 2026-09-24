@@ -264,7 +264,7 @@ src/
   core/        shared modules: notation parsing, entropy/leverage math, data loading, feature construction
   pipeline/    step1_validation, step2_entropy_pipeline, run_pipeline, and the rest of the main pipeline
   robustness/  the 10 pre-registered follow-up checks
-  figures/     the 4 export/plotting scripts
+  figures/     the 5 export/plotting scripts
 docs/
   atp/
     01_data_validation/   player-pool eligibility
@@ -361,7 +361,16 @@ entropy pass, so faster). `make_reliability_figure.py` plots those CSVs
 into `results/figures/split_half_reliability_figure.png`.
 `make_null_forest_figure.py` plots the primary entropy-clutch correlation
 (r, 95% CI) across ATP, WTA, and pooled, into
-`results/figures/null_forest_figure.png`.
+`results/figures/null_forest_figure.png`. No longer one of the abstract's
+two figures (superseded by the disattenuation figure below, which covers
+the more novel result and all five leverage variants rather than one),
+but still valid and kept for reference. `make_disattenuation_figure.py`
+plots the disattenuated TOST equivalence bounds — observed-scale vs.
+reliability-corrected, per tour/role — into
+`results/figures/disattenuation_figure.png`; it imports
+`robustness/disattenuated_equivalence_bounds.py` directly and reuses its
+bound search and reliability tables unchanged, asserting its recomputed
+ATP bounds match that script's documented values before saving.
 
 ## Pre-registration and bug disclosures
 
