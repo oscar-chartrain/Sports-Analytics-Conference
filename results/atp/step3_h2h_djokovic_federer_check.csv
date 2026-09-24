@@ -1,0 +1,3 @@
+player,h2h_serve_clutch,h2h_serve_sufficient,n_serve_high,n_serve_low,h2h_return_clutch,h2h_return_sufficient,n_return_high,n_return_low
+Novak Djokovic,0.004400318431406203,True,1153,1169,0.02177858439201452,True,1102,1102
+Roger Federer,-0.02177858439201452,True,1102,1102,-0.004400318431406314,True,1153,1169
