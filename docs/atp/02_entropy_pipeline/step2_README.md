@@ -123,6 +123,40 @@ under the same fix. This is a meaningfully sharper and more substantively
 interpretable signal than the pooled version, and it's the version that
 should feed Stage 3.
 
+### What conditional entropy actually looks like, cell by cell
+
+Not for the abstract (that figure budget is spent elsewhere -- see
+`paper/README.md`), but useful here, where there's no word or figure
+limit: the table above reduces each player's whole shot-transition
+structure to a single number, which can read as more abstract than it
+is. The figure below shows the actual 6x6 P(this shot | preceding shot)
+matrix each number is computed from.
+
+![Sinner and Alcaraz's shot-transition probability matrices, showing conditional entropy's non-uniform, non-random structure](../../../results/figures/entropy_transition_illustration.png)
+
+Axis labels are FH/BH (forehand/backhand) x direction 1/2/3, per the
+Match Charting Project's own shot notation: 1 = toward a right-hander's
+forehand side, 2 = down the middle, 3 = toward a right-hander's backhand
+side, mirrored for left-handed players so the same code always means the
+same court side regardless of who hit the shot (definition per Tennis
+Abstract's MCP Quick Start Guide; the figure itself repeats this in a
+footnote so it's readable standalone).
+
+Both players' rows are far from uniform -- neither shows "no pattern";
+that reading would misstate what a *reliable, non-extreme* entropy value
+(both sit at 0.79-0.80, nowhere near the 1.0 that true randomness would
+imply) actually means. The visible difference is one of degree: Sinner's
+rows are on average a little more sharply peaked (e.g. BH-1 -> FH-1 at
+0.52 for both players, but Sinner's FH-1 row concentrates more of its
+mass in the first three cells), consistent with the lower conditional
+entropy and larger context-dependent information gain in the table
+above. Built by
+`src/figures/make_entropy_transition_illustration.py`, which reuses
+`get_player_shot_transitions()` and `compute_transition_entropy()`
+unchanged and asserts its recomputed conditional entropy for both
+players against the 0.7921/0.8000 documented above before saving
+anything.
+
 ## What "context" means here
 For every shot a target player hits (that qualifies for the 6-cell grid: a
 forehand or backhand with a valid direction digit), context = the (wing,

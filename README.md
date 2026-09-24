@@ -264,7 +264,7 @@ src/
   core/        shared modules: notation parsing, entropy/leverage math, data loading, feature construction
   pipeline/    step1_validation, step2_entropy_pipeline, run_pipeline, and the rest of the main pipeline
   robustness/  the 10 pre-registered follow-up checks
-  figures/     the 5 export/plotting scripts
+  figures/     the 6 export/plotting scripts
 docs/
   atp/
     01_data_validation/   player-pool eligibility
@@ -371,6 +371,17 @@ reliability-corrected, per tour/role — into
 `robustness/disattenuated_equivalence_bounds.py` directly and reuses its
 bound search and reliability tables unchanged, asserting its recomputed
 ATP bounds match that script's documented values before saving.
+`make_entropy_transition_illustration.py` is a supplementary,
+docs-only figure (not one of the abstract's two): for Sinner and
+Alcaraz, it plots the actual 6x6 shot-transition probability matrix
+each player's conditional entropy number is computed from, into
+`results/figures/entropy_transition_illustration.png`, referenced from
+`docs/atp/02_entropy_pipeline/step2_README.md`. Reuses
+`step2_entropy_pipeline.get_player_shot_transitions()` and
+`compute_transition_entropy()` unchanged and asserts its recomputed
+entropy for both players against the documented 0.7921/0.8000 before
+saving. Needs the raw MCP 2020s points file locally; run from inside
+`results/atp/`.
 
 ## Pre-registration and bug disclosures
 

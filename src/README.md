@@ -12,7 +12,7 @@ pipeline/        -- step1_validation, step2_entropy_pipeline, run_pipeline,
                     rerun_primary_regression, step3_h2h_check, and the
                     disk-cached full-pool extraction/rebuild scripts
 robustness/       -- the 10 pre-registered follow-up checks
-figures/           -- the 5 export/plotting scripts
+figures/           -- the 6 export/plotting scripts
 ```
 
 This replaced an earlier flat layout (one script per pipeline stage, no
