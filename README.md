@@ -264,7 +264,7 @@ src/
   core/        shared modules: notation parsing, entropy/leverage math, data loading, feature construction
   pipeline/    step1_validation, step2_entropy_pipeline, run_pipeline, and the rest of the main pipeline
   robustness/  the 10 pre-registered follow-up checks
-  figures/     the 6 export/plotting scripts
+  figures/     the 7 export/plotting scripts
 docs/
   atp/
     01_data_validation/   player-pool eligibility
@@ -381,7 +381,17 @@ each player's conditional entropy number is computed from, into
 `compute_transition_entropy()` unchanged and asserts its recomputed
 entropy for both players against the documented 0.7921/0.8000 before
 saving. Needs the raw MCP 2020s points file locally; run from inside
-`results/atp/`.
+`results/atp/`. `make_wta_entropy_transition_illustration.py` is the
+WTA counterpart, for `docs/wta/wta_README.md`: Iga Swiatek vs. Bianca
+Andreescu (chosen for charted-match coverage and entropy contrast, not
+narrative — no WTA pair is named in this project's docs the way
+Sinner/Alcaraz are for ATP), into
+`results/figures/wta_entropy_transition_illustration.png`. No
+prose-documented per-player value exists on the WTA side to check
+against, so it instead asserts its recomputed entropy for both players
+against the already-committed `results/wta/wta_full_pool_features.csv`.
+Needs the raw MCP WTA points files locally; run from inside
+`results/wta/`.
 
 ## Pre-registration and bug disclosures
 

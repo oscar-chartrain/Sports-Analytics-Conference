@@ -48,6 +48,44 @@ observations, confirming the threshold is safe for WTA too.
 - **Merge integrity**: entropy-features and clutch-features tables merged
   cleanly on player name, 55/55, no mismatches.
 
+## What conditional entropy actually looks like, cell by cell
+
+Same illustration as the ATP side (`docs/atp/02_entropy_pipeline/step2_README.md`),
+not one of the abstract's two figures (that budget is spent elsewhere —
+see `paper/README.md`) but useful here where there's no word or figure
+limit. No single WTA pair is named anywhere in this project's docs or
+abstract the way Sinner/Alcaraz are for ATP, so the two players shown
+were chosen for what this specific figure needs: both well-charted
+(Iga Swiatek, 226 matches; Bianca Andreescu, 186 matches, both far above
+the 40-match qualifying floor) and the clearest entropy contrast among
+well-charted WTA players (0.778 vs 0.817) — a current-rivalry pair
+(Swiatek/Sabalenka) was considered and rejected since Sabalenka has only
+57 charted matches and an entropy value 0.002 from Swiatek's, correct
+but visually indistinguishable.
+
+![Swiatek and Andreescu's shot-transition probability matrices, showing conditional entropy's non-uniform, non-random structure](../../results/figures/wta_entropy_transition_illustration.png)
+
+Axis labels are FH/BH (forehand/backhand) × direction 1/2/3, per the
+Match Charting Project's own shot notation: 1 = toward a right-hander's
+forehand side, 2 = down the middle, 3 = toward a right-hander's backhand
+side, mirrored for left-handed players (definition per Tennis Abstract's
+MCP Quick Start Guide; the figure itself repeats this in a footnote so
+it's readable standalone).
+
+Both players' rows are far from uniform — neither shows "no pattern";
+that reading would misstate what a *reliable, non-extreme* entropy value
+(both sit well inside the 0.70-0.86 range observed across the WTA pool,
+nowhere near the 1.0 that true randomness would imply) actually means.
+Andreescu's rows spread visibly wider across multiple cells (e.g. her
+FH-1 row splits 0.35/0.41/0.25 across the first three cells, versus
+Swiatek's 0.48/0.26/0.26), consistent with her higher conditional
+entropy. Built by `src/figures/make_wta_entropy_transition_illustration.py`,
+which reuses `get_player_shot_transitions()` and
+`compute_transition_entropy()` unchanged and asserts its recomputed
+entropy for both players against the already-committed
+`results/wta/wta_full_pool_features.csv` (0.7777 Swiatek, 0.8172
+Andreescu) before saving anything.
+
 ## Bug found and fixed during this review (before anything was reported further)
 Comparing the packaged `build_clutch_features()` deliverable against the
 original inline computation surfaced a real, if narrow, precision bug: the
