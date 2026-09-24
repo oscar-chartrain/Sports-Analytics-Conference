@@ -25,7 +25,7 @@ Split-half reliability testing found conditional entropy highly reliable
 moderately reliable on serve (0.57 to 0.58, below the 0.70 threshold)
 and poor to unmeasurable on return (0.23 ATP, 0.055 WTA), despite bucket
 sizes in the hundreds to thousands. Return clutch also depends on the opponent's serve
-quality: a variance source serve clutch, driven by the player's own
+quality: a variance source that serve clutch, driven by the player's own
 execution, doesn't share. A continuous-slope construction did not help; empirical-Bayes
 shrinkage did, narrowing the gap (e.g. ATP return to 0.37) without
 closing it.
@@ -40,9 +40,10 @@ with clutch performance: not on either tour, not on serve or return,
 not across any of the five leverage variants, and not when both tours
 were pooled (n = 146) and tested for a tour-by-entropy interaction.
 Every comparison was Bonferroni-corrected. Equivalence testing bounds
-the true effect to under r = 0.21 on both tours. Correcting for both
-variables' reliability leaves ATP intact but pushes the WTA return
-bound past 1, making it uninformative given measurement error.
+the true ATP effect to under r = 0.21 on both roles; WTA's own bound is
+far looser (up to 0.46). Correcting for both variables' reliability
+leaves ATP intact but pushes the WTA return bound past 1, making it
+uninformative given measurement error.
 
 ![Equivalence bound on |r| by tour and role, observed versus reliability-corrected](../results/figures/disattenuation_figure.png)
 
