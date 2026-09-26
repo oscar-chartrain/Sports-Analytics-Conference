@@ -10,7 +10,7 @@ Tennis commentary regularly frames stylistic unpredictability as a pressure-perf
 
 A well-powered, independently replicated null on that hypothesis is a legitimate corrective for anyone allocating coaching or scouting attention on the premise that shot-selection predictability drives clutch performance. This isn't a claim that style doesn't matter. It's that this specific, intuitive channel from style to pressure performance doesn't show up in the data, across two tours, at the measurement precision this data currently supports — worth knowing before spending coaching hours on it.
 
-This null also survives the two most obvious confounds. Controlling for career era and surface mix (both cheap to test, since neither needs data beyond what's already fetched) leaves entropy non-significant on both tours and both roles, all four short of the pre-registered Bonferroni threshold. For WTA serve, the coefficient actually moves further from significance once era and surface are added — the opposite of what a masked confound would predict. Player ranking was considered too, but it doesn't exist anywhere in the Match Charting Project's match metadata, so it's disclosed as out of scope rather than proxied. (`docs/atp/04_regression_results/confound_check_era_surface.md`)
+This null also survives the two most obvious confounds. Controlling for career era and surface mix (both cheap to test, since neither needs data beyond what's already fetched) leaves entropy non-significant on both tours and both roles, all four short of the pre-registered Bonferroni threshold. For WTA serve, the p-value actually moves further from significance once era and surface are added — the opposite of what a masked confound would predict. Player ranking was considered too, but it doesn't exist anywhere in the Match Charting Project's match metadata, so it's disclosed as out of scope rather than proxied. (`docs/atp/04_regression_results/confound_check_era_surface.md`)
 
 ### 2. Reusable, validated measurement infrastructure
 
@@ -38,7 +38,7 @@ A bound above 1 isn't weak evidence — it's no evidence. This project's own dat
 
 ### The hook
 
-Sinner and Alcaraz are the "Robot vs. Magician" pair that motivated the whole question, and the same pair used as the sanity check that opened Step 2 and Step 3. It's a real, current storyline in men's tennis, not an invented framing device — worth leading with in the presentation rather than leaving implicit.
+Sinner and Alcaraz are the "Robot vs. Magician" pair that motivated the whole question, and are the same pair used as the sanity check that opened Step 2 and Step 3. It's a real, current storyline in men's tennis, not an invented framing device — worth leading with in the presentation rather than leaving implicit.
 
 ### Rigor as its own contribution
 
