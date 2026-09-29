@@ -55,7 +55,7 @@ including sample sizes, regardless of outcome. If either version shows a
 materially different result from the primary (unweighted, full-pool)
 regression, that becomes a reportable finding in its own right, not a
 reason to prefer the weighted/subsample version as "more correct" after
-the fact — the primary regression's specification was itself pre-registered
+the fact: the primary regression's specification was itself pre-registered
 and remains primary.
 
 ### 3. MIN_OBS threshold sensitivity
@@ -81,7 +81,7 @@ Two components:
 sufficient and what the correlation looks like on that subset, for both
 the clutch-side and entropy-side gating. Since 100% of both pools already
 clear MIN_OBS=30 on the primary variables, the informative direction is
-raising the bar (50, 100), not lowering it (20) — lowering it cannot
+raising the bar (50, 100), not lowering it (20): lowering it cannot
 change the primary regression's sample, since everyone already clears 30.
 That expectation is stated here, before running, precisely so it isn't
 retrofitted as an explanation afterward if the results look boring at
@@ -109,7 +109,7 @@ Written after running all three checks exactly as specified above (`src/robustne
 
 "Well-powered" needs a qualifier: all three samples are well-powered for
 medium-to-large effects (Cohen's r=0.3+) but underpowered for small ones
-(r=0.1) — nowhere close to 80% power at any sample size tested. WTA in
+(r=0.1): nowhere close to 80% power at any sample size tested. WTA in
 particular is underpowered even for a medium effect (61%).
 
 This sharpens, rather than undercuts, the TOST equivalence bounds already
@@ -118,7 +118,7 @@ reported: the ATP bound (\|r\| < 0.213) and the pooled serve bound
 required to call the study "adequately powered" for effects of that size.
 TOST uses the actual observed data to bound the effect, not just the
 sample size in the abstract, so it's doing more precise work here than a
-power statement alone would suggest — the honest combined claim is "this
+power statement alone would suggest: the honest combined claim is "this
 study could reliably have found a medium-or-larger effect, and separately,
 the effect it did find rules out anything larger than roughly a
 small-to-medium one," which is a more calibrated statement than either
@@ -140,7 +140,7 @@ Every weighted and subsample version remains non-significant. But the more
 informative pattern is the sign instability: three of the four unweighted
 results flip sign once weighted toward higher-data players, and two of
 the four flip sign again in the high-data-only subsample (small n there,
-23 and 14, so individually underpowered — see MDES above). If a real
+23 and 14, so individually underpowered; see MDES above). If a real
 relationship were being attenuated by noise in the thin-data players'
 entropy estimates, weighting toward the best-measured players should have
 pulled the correlations *consistently* toward one direction. Instead they
@@ -178,7 +178,7 @@ points data): also completely unchanged.
 Neither gating mechanism was ever close to binding, even at more than 3x
 the original floor (MIN_OBS=100). The ≥40-charted-match pool eligibility
 rule from Step 1 was evidently generous enough that every qualified player
-clears both sufficiency floors by a wide margin — whatever imprecision
+clears both sufficiency floors by a wide margin: whatever imprecision
 exists in this analysis isn't coming from thin per-player sample sizes at
 the leverage-bucket or transition-context level. (This is a different
 axis from check 2's `charted_matches`-weighted analysis: a player can
@@ -191,15 +191,15 @@ player. Check 2 is the one that actually tests that distinction.)
 None of these three checks change the paper's conclusion, and together
 they make the null more precisely characterized rather than just
 asserted:
-- The study is well-powered for medium-or-larger effects, not small ones
-  — a real, honest qualifier on "well-powered" that should go in the
+- The study is well-powered for medium-or-larger effects, not small ones:
+  a real, honest qualifier on "well-powered" that should go in the
   paper's methods section.
 - Weighting or subsetting toward the best-measured players doesn't
   surface a hidden relationship; results scatter in sign rather than
   converging, which argues against the attenuation-bias explanation for
   the null.
 - The MIN_OBS=30 sufficiency floor (on both the entropy and clutch sides)
-  was never actually binding for this pool, even tested up to 100 — so
+  was never actually binding for this pool, even tested up to 100, so
   none of the reported results can be attributed to an over- or
   under-strict data-sufficiency threshold.
 

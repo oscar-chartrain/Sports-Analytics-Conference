@@ -1,16 +1,16 @@
-# WTA Replication — README
+# WTA Replication
 
 ## Purpose
 Independent replication of the pre-registered ATP analysis
 (`conditional_normalized_entropy` predicting `serve_clutch_p65` /
 `return_clutch_p65`) on the WTA, using the identical pipeline logic, to test
 whether the ATP null generalizes to a second, independent population.
-Pre-registered before touching any WTA data — see
+Pre-registered before touching any WTA data: see
 `wta_replication_preregistration.md`.
 
 ## What is verified-identical vs. reconstructed
 `src/core/parsing.py`, `step2_entropy_pipeline.py`, and the leverage
-engine (`src/core/formulas.py`) are used completely unmodified — same
+engine (`src/core/formulas.py`) are used completely unmodified: same
 functions, only the input data changed. The clutch-score orchestration
 function (`build_clutch_features()`, in `src/core/features.py`) was **not
 recoverable** from the original ATP work; it has been reconstructed from
@@ -19,7 +19,7 @@ the original Step 3 design notes
 sections) with the actual `quartile_clutch()` function reused verbatim
 from `step3_h2h_check.py` (real, validated code, not a reconstruction).
 The one genuine provenance gap is the "tiered" pressure variant, whose
-exact mechanism those design notes don't fully specify — see
+exact mechanism those design notes don't fully specify: see
 `build_clutch_features()`'s docstring for the specific interpretation
 used and why. The primary p=0.65 result and the p=0.60/0.70 fixed-constant
 robustness checks carry full confidence; the tiered variant should be
@@ -28,7 +28,7 @@ cited as a secondary, reconstructed check.
 ## Data-volume-driven threshold decision (made before seeing any result)
 WTA has 4,080 total charted matches vs. ATP's 7,567 (~54%). At the
 identical ≥40-charted-match threshold, this yields 55 qualified players
-vs. ATP's 91 — proportional to the underlying data volume, not a
+vs. ATP's 91: proportional to the underlying data volume, not a
 methodological loosening. The boundary-eligibility player (Veronika
 Kudermetova, exactly 40 matches) was sparsity-checked the same way Step 1
 checked Nakashima for ATP: all 6 core entropy cells cleared 900+
@@ -36,14 +36,14 @@ observations, confirming the threshold is safe for WTA too.
 
 ## Data-quality checks (same standard as Step 1/2)
 - **Hitter-parity regression guard**: 96.3% match rate against `PtWinner`
-  ground truth (141,355 winner-marked points checked) — even higher than
+  ground truth (141,355 winner-marked points checked), even higher than
   ATP's 90.3%, confirming the notation-parsing and hitter-attribution logic
   generalizes correctly to the WTA data, not just coincidentally to ATP's.
 - **Sufficiency coverage**: 100% of the 55-player pool clears `MIN_OBS=30`
   on `pooled_entropy`, `transition_entropy` (the primary predictor),
   `dropshot_rate`, `serve_zone`, `net_play`, and `return_depth`.
   `dropshot_direction_entropy` clears for only 1/55 players (vs. ATP's
-  9/91) — same rare-subgroup pattern, excluded from pool-wide use for the
+  9/91), same rare-subgroup pattern, excluded from pool-wide use for the
   same pre-registered reason.
 - **Merge integrity**: entropy-features and clutch-features tables merged
   cleanly on player name, 55/55, no mismatches.
@@ -51,14 +51,14 @@ observations, confirming the threshold is safe for WTA too.
 ## What conditional entropy actually looks like, cell by cell
 
 Same illustration as the ATP side (`docs/atp/02_entropy_pipeline/step2_README.md`),
-not one of the abstract's two figures (that budget is spent elsewhere —
+not one of the abstract's two figures (that budget is spent elsewhere,
 see `paper/README.md`) but useful here where there's no word or figure
 limit. No single WTA pair is named anywhere in this project's docs or
 abstract the way Sinner/Alcaraz are for ATP, so the two players shown
 were chosen for what this specific figure needs: both well-charted
 (Iga Swiatek, 226 matches; Bianca Andreescu, 186 matches, both far above
 the 40-match qualifying floor) and the clearest entropy contrast among
-well-charted WTA players (0.778 vs 0.817) — a current-rivalry pair
+well-charted WTA players (0.778 vs 0.817): a current-rivalry pair
 (Swiatek/Sabalenka) was considered and rejected since Sabalenka has only
 57 charted matches and an entropy value 0.002 from Swiatek's, correct
 but visually indistinguishable.
@@ -72,7 +72,7 @@ side, mirrored for left-handed players (definition per Tennis Abstract's
 MCP Quick Start Guide; the figure itself repeats this in a footnote so
 it's readable standalone).
 
-Both players' rows are far from uniform — neither shows "no pattern";
+Both players' rows are far from uniform: neither shows "no pattern";
 that reading would misstate what a *reliable, non-extreme* entropy value
 (both sit well inside the 0.70-0.86 range observed across the WTA pool,
 nowhere near the 1.0 that true randomness would imply) actually means.
@@ -93,7 +93,7 @@ original inline computation surfaced a real, if narrow, precision bug: the
 `p_tiered = 0.6425` (the literal) in the other. These are equal in real-number
 terms but differ by ~1e-16 in IEEE 754 floating point. Because leverage
 values are heavily discretized (many points share the exact same discrete
-score state, and therefore the exact same leverage value — e.g. 1,478 points
+score state, and therefore the exact same leverage value, e.g. 1,478 points
 tied at a single value in a 50K-point sample), a quartile boundary can land
 exactly on a tie cluster. A 1e-16 floating-point wobble was enough to flip
 an entire tied cluster of points across that boundary, which is how a
@@ -105,7 +105,7 @@ silently diverge. Verified self-consistent by re-running the canonical
 script twice and confirming byte-identical output (max diff = 0.0).
 
 Impact on conclusions: negligible. The corrected serve-side tiered
-correlation moved from r=-0.2656 (p=0.0500) to r=-0.2635 (p=0.0519) — a
+correlation moved from r=-0.2656 (p=0.0500) to r=-0.2635 (p=0.0519): a
 shift in the fourth decimal place of the correlation, not a change in any
 substantive finding. This is recorded here rather than silently corrected,
 consistent with this project's standing bug-disclosure practice. The p60,
@@ -128,7 +128,7 @@ doesn't survive the same scrutiny the ATP null was put through:
 |---|---|---|
 | Spearman rank correlation | rho=-0.174, p=0.203 | rho=+0.131, p=0.341 |
 | After removing 3 most influential players | r=-0.181, p=0.199 | r=+0.242, p=0.084 |
-| Quadratic term added | linear term p jumps to 0.183 | — |
+| Quadratic term added | linear term p jumps to 0.183 | n/a |
 | Bonferroni-adjusted threshold (8 comparisons) | need p<0.0063 | need p<0.0063 |
 | Heteroskedasticity (Breusch-Pagan) | none (p=0.176) | none (p=0.970) |
 
@@ -137,12 +137,12 @@ players (Linette, Radwanska, Kerber carry the highest Cook's distance) and
 weakens substantially under a nonparametric rank test.
 
 **Fifth variant added later: tour-specific empirical p.** WTA's own
-observed server point-win rate is 0.5725 — meaningfully lower than any of
+observed server point-win rate is 0.5725: meaningfully lower than any of
 the fixed constants above (0.60/0.65/0.70), consistent with WTA's
 real, documented lower service dominance relative to ATP. Using it:
 serve r=-0.266 (p=0.050), return r=+0.260 (p=0.055). This is the smallest
 nominal p-value in the now-10-comparison family (5 variants x 2 roles), but
-it is **not** a new departure from the pattern above — it sits alongside
+it is **not** a new departure from the pattern above: it sits alongside
 the existing p70/tiered/p65 borderline values, and the family-wise
 Bonferroni-corrected threshold across all 10 comparisons is 0.0050, which
 nothing clears. Full write-up (including the ATP side and a provenance
@@ -180,19 +180,19 @@ measurement itself is the limiting factor.
 
 ## Convergent check
 Entropy vs. `blr_combined` (field-standard Balanced Leverage Ratio):
-r=+0.006, p=0.967 — null, consistent with the role-separated result once
+r=+0.006, p=0.967: null, consistent with the role-separated result once
 you account for the fact that BLR pools serve and return together (any
 opposite-signed, non-robust role effects would partially cancel in a
 combined metric anyway).
 
 ## Outputs
 (paths below are relative to the repo root, post-reorg)
-- `results/wta/wta_full_pool_features.csv` — 55 players, entropy/style
+- `results/wta/wta_full_pool_features.csv`: 55 players, entropy/style
   features (identical schema to `results/atp/step2_full_pool_features.csv`)
-- `results/wta/wta_clutch_features.csv` — 55 players, clutch scores
+- `results/wta/wta_clutch_features.csv`: 55 players, clutch scores
   (identical schema to `results/atp/step3_clutch_features.csv`)
-- `results/wta/wta_merged.csv` — merged, regression-ready
-- `build_clutch_features()`, in `src/core/features.py` — reconstructed
+- `results/wta/wta_merged.csv`: merged, regression-ready
+- `build_clutch_features()`, in `src/core/features.py`: reconstructed
   orchestration function, with provenance notes
-- `results/figures/step5_atp_wta_comparison_scatter.png` — side-by-side
+- `results/figures/step5_atp_wta_comparison_scatter.png`: side-by-side
   scatter, both tours, both roles

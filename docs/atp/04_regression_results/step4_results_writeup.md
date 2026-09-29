@@ -1,4 +1,4 @@
-# Step 4: ATP Primary Regression — Results
+# Step 4: ATP Primary Regression Results
 
 Written to close a documentation gap: the ATP result existed only as
 `run_pipeline.py` console output, with no write-up parallel to

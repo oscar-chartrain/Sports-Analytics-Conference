@@ -1,4 +1,4 @@
-# Step 3: Leverage-Weighted Clutch Score — README
+# Step 3: Leverage-Weighted Clutch Score
 
 ## Purpose in the pipeline
 Builds the outcome variable Step 2 was missing: a leverage-weighted clutch
@@ -98,9 +98,9 @@ A final full read-through of the leverage engine (prompted by "make sure to revi
 everything before validating Step 3") found a real bug in the tiebreak
 branch of `compute_leverage`: it hardcoded the server-alternation anchor as
 `True` for the win-path calculation and `False` for the lose-path
-calculation, regardless of the actual point index. The correct anchor —
+calculation, regardless of the actual point index. The correct anchor,
 derived from the known fact that `Svr` tells us who serves the *current*
-point — alternates in a `True, False, False, True, ...` pattern and must be
+point, alternates in a `True, False, False, True, ...` pattern and must be
 **the same value for both paths** (both start from the same total point
 count). The hardcoded version was only actually correct for the very first
 point of a tiebreak; it affected roughly half of all other tiebreak points
@@ -112,7 +112,7 @@ BLR convergent-validity correlation moved from 0.792 to 0.793). This is
 recorded here rather than silently corrected, consistent with this
 project's standing bug-disclosure practice from Step 2.
 
-## Sanity checks — reported honestly, including the one that didn't clearly pass
+## Sanity checks: reported honestly, including the one that didn't clearly pass
 
 **1. Building-block checks**: break points, set points, and deciding-set
 points at close scores all show high leverage (e.g. 0.388 for a break point
@@ -123,18 +123,18 @@ scores. Passed.
 **2. Sinner vs Alcaraz**: Alcaraz shows positive clutch on both serve
 (+0.002) and return (+0.008); Sinner shows small negative on both (-0.003,
 -0.009). BLR agrees (Alcaraz 1.030, Sinner 0.996). This is in the direction
-the paper's hypothesis would predict — the higher-entropy "Magician" showing
-more positive clutch than the lower-entropy "Robot" — though this is n=1
+the paper's hypothesis would predict (the higher-entropy "Magician" showing
+more positive clutch than the lower-entropy "Robot"), though this is n=1
 pair, not evidence for the pool-wide relationship.
 
-**3. Djokovic vs Federer — resolved, not a metric failure.** The general
+**3. Djokovic vs Federer: resolved, not a metric failure.** The general
 (career-wide, all-opponents) clutch scores don't show Djokovic clearly ahead
-of Federer (serve: -0.014 vs -0.007; return: -0.021 vs -0.026) — and two
+of Federer (serve: -0.014 vs -0.007; return: -0.021 vs -0.026), and two
 fully independent methods (the leverage-quartile engine and a simple raw
 break-point-rate calculation with no leverage math at all) agree on this,
 so it is not a calculation error.
 
-The documented reputation, however, is real — ATP's own official career
+The documented reputation, however, is real: ATP's own official career
 break-point-conversion rankings show Djokovic at #11 (44.11%) and Federer at
 #88 (41.19%), a genuine multi-point gap. The original validation test was
 simply scoped wrong: the specific, published version of this claim
@@ -151,13 +151,13 @@ points; see `step3_h2h_check.py`) reproduces the documented pattern cleanly:
 
 Federer's serve clutch is notably worse specifically against Djokovic than
 his general average, and Djokovic's return clutch flips from negative
-generally to notably positive specifically against Federer — matching the
+generally to notably positive specifically against Federer, matching the
 matchup-specific narrative in the literature. This is a **supplementary
 validation diagnostic only** (`step3_h2h_djokovic_federer_check.csv`), run
 outside the main pipeline. It does not change the primary, opponent-independent
 clutch score in `step3_clutch_features.csv`, and does not reopen the
 opponent-strength-adjustment decision, which remains explicitly deferred per
-the original pre-registration — a general clutch score and a matchup-specific
+the original pre-registration: a general clutch score and a matchup-specific
 one are legitimately different constructs, and the main analysis stays
 scoped to the former.
 
@@ -180,7 +180,7 @@ specific methodological choice.
 All **91/91 qualified players (100%)** clear `MIN_OBS=30` on both sides for
 both serve and return clutch scores. The min-40-charted-matches threshold
 from Step 2 turned out to be conservative enough to guarantee full coverage
-here too — no players need to be dropped or flagged as partial for Step 4.
+here too: no players need to be dropped or flagged as partial for Step 4.
 
 ## Outputs for Step 4
 - `step3_clutch_features.csv`: 91 players × serve/return clutch scores at
@@ -199,13 +199,13 @@ here too — no players need to be dropped or flagged as partial for Step 4.
   repo required by SSAC's submission rules, since a code-reproducible
   pipeline is a stronger reproducibility story than a large static file.
 
-## Handoff note for Step 4 — which columns to actually use
+## Handoff note for Step 4: which columns to actually use
 `step3_clutch_features.csv` has more columns than Step 4 needs. To avoid
 reconstructing this distinction from memory:
 
 - **Primary regression variables**: `serve_clutch_p65`, `return_clutch_p65`,
   gated by `serve_clutch_p65_sufficient` / `return_clutch_p65_sufficient`
-  (both True for all 91 players, per the coverage check above — so in
+  (both True for all 91 players, per the coverage check above, so in
   practice no rows need to be dropped, but the flags should still be checked
   programmatically rather than assumed).
 - **Robustness-only, not primary**: `serve_clutch_p60` / `serve_clutch_p70` /
@@ -214,24 +214,24 @@ reconstructing this distinction from memory:
   variant), and `blr_combined` (the convergent-validity check against Tennis
   Abstract's established metric). Step 4 should run its primary regression on
   the p65 columns only, and use the others afterward to confirm the
-  regression result is stable — not to cherry-pick whichever version fits
+  regression result is stable: not to cherry-pick whichever version fits
   best, per the same pre-registration discipline as Step 2/3.
 - **Diagnostic only, not for regression**: `n_serve_high_leverage`,
-  `n_serve_low_leverage`, `n_return_high_leverage`, `n_return_low_leverage` —
+  `n_serve_low_leverage`, `n_return_high_leverage`, `n_return_low_leverage`:
   sample sizes behind each player's clutch score, useful for weighting or
   flagging thin-data players in sensitivity analysis, not inputs themselves.
 
 ## Known limitations to carry into the paper
 - Fixed, uniform p=0.65 (Klaassen & Magnus's own documented simplification;
-  cited, not original) — rank-stable but not sign-stable for borderline
+  cited, not original): rank-stable but not sign-stable for borderline
   players.
 - Opponent-strength adjustment still explicitly deferred (unchanged from the
-  Step 2's original decision) — confirmed as the right call by
+  Step 2's original decision), confirmed as the right call by
   the Djokovic/Federer resolution above: general and matchup-specific clutch
   are genuinely different constructs, and the main pipeline stays scoped to
   the opponent-independent version throughout.
 - The Djokovic/Federer general-vs-head-to-head distinction (above) is itself
-  worth a sentence in the paper's discussion section — it's a real
+  worth a sentence in the paper's discussion section: it's a real
   illustration of why "clutch" claims in tennis commentary need to specify
   their scope (career-wide vs. matchup-specific) before being testable at
   all.

@@ -1,4 +1,4 @@
-# Step 2: Entropy Pipeline Build & Sinner/Alcaraz Sanity Check — README
+# Step 2: Entropy Pipeline Build & Sinner/Alcaraz Sanity Check
 
 ## Bug found and fixed: hitter attribution was inverted (Steps 1 & 2)
 
@@ -161,7 +161,7 @@ anything.
 For every shot a target player hits (that qualifies for the 6-cell grid: a
 forehand or backhand with a valid direction digit), context = the (wing,
 direction) of the immediately preceding shot in the same rally token
-sequence — i.e. the shot they are responding to. Because token order
+sequence, i.e. the shot they are responding to. Because token order
 alternates hitter, this is always "the ball the target player just received,"
 not their own previous shot. A catch-all `('other', 'x')` context bucket
 absorbs cases where the preceding shot is a serve, lob, halfvolley, or missing
@@ -170,7 +170,7 @@ a direction digit, so those points aren't silently dropped.
 ## Data sufficiency
 Both sanity-check players clear 30+ observations in every one of the 6
 current-shot cells (pooled calc). Per-context sample sizes are smaller by
-construction (each of the 6 context buckets splits the data further) — the
+construction (each of the 6 context buckets splits the data further); the
 pipeline flags any context bucket below 30 obs per player, though none were
 flagged for Sinner or Alcaraz specifically; this flag will matter more once
 the pipeline runs on thinner-coverage players near the 40-match floor.
@@ -298,7 +298,7 @@ until the full pool is loaded and can be pooled or bucketed further if
 needed.
 
 ## Data used for extensions
-Same 2020s-only load as the base pipeline — same caveat applies: fine for the
+Same 2020s-only load as the base pipeline; same caveat applies: fine for the
 sanity pair, needs the other two decade files before scaling to the full pool.
 
 
@@ -329,15 +329,15 @@ in rough order of how much signal the sanity check found:
 Before scaling to the full 91-player pool: load the two additional decade
 files, and set a floor on per-context sample size (parallel to Step 1's
 40-match / 30-obs floor) so thin-coverage players near the pool's tail don't
-get an unstable conditional entropy estimate — or an unstable dropshot/
-pressure-situation estimate — from a handful of observations in a rare bucket.
+get an unstable conditional entropy estimate, or an unstable dropshot/
+pressure-situation estimate, from a handful of observations in a rare bucket.
 
 A fifth extension was added later, closing an inconsistency: the three
 extensions above are all normal-vs-high-pressure escalation deltas, but
 `conditional_normalized_entropy` itself never was, until
 `entropy_pressure_escalation.md` in this same folder tested whether a
 player's shot-selection consistency changes under pressure. It doesn't,
-in any way that predicts clutch performance — a fourth null result on top
+in any way that predicts clutch performance: a fourth null result on top
 of the primary one, and on a pool that turned out deep enough to support
 the extra split without losing a single player.
 

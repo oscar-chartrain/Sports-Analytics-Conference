@@ -53,7 +53,7 @@ the reliability of the full-career measurement would be.
 2. Splitting the data in half will push some players below the MIN_OBS=30
    floor in one or both halves who clear it on the full data. The number
    of players excluded this way will be reported explicitly, not routed
-   around by loosening MIN_OBS specifically for this check — a high
+   around by loosening MIN_OBS specifically for this check: a high
    exclusion rate is itself informative about how much data a reliable
    per-player estimate actually needs.
 3. Interpretation will use conventional psychometric benchmarks fixed
@@ -220,7 +220,7 @@ leverage/hitter-attribution logic in a second script.
 
 **Commitment**: report split-half reliability for both constructions,
 both tours, both roles, regardless of outcome. This check is scoped to
-reliability only — it does not rerun the primary hypothesis test with a
+reliability only: it does not rerun the primary hypothesis test with a
 continuous-slope outcome. If reliability improves meaningfully, that's a
 candidate secondary measure for a future check, reported as such, not a
 retroactive replacement of the pre-registered quartile-based primary

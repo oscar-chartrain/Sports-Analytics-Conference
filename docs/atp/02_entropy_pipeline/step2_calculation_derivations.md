@@ -16,12 +16,12 @@ forehand/backhand × direction for this player's career."
 (backhand,2), (backhand,3)}` be the 6 cells. Lob, halfvolley, swinging
 volley, trick, and unknown shots are genuinely excluded (`wing=None` in
 `mcp_common.WING_MAP`, filtered out entirely per Step 1's sparsity finding).
-**Dropshots are not excluded** — they're included but folded into their
+**Dropshots are not excluded**: they're included but folded into their
 wing's forehand/backhand cell for this core grid (`WING_MAP['u'] =
 'forehand'`, `WING_MAP['y'] = 'backhand'`); they only get their own separate
 cells in the Section 4 extended grid below. "Lob/other excluded" in
 shorthand elsewhere in this project's docs means *these five* categories,
-not dropshots — worth stating precisely here since this document is the
+not dropshots: worth stating precisely here since this document is the
 one meant to be copied into the paper's Methods section. For a given
 player, let `n_c` be the number of charted shots landing in cell `c`, and
 let
@@ -32,17 +32,17 @@ N = Σ_{c ∈ C} n_c
 
 be the player's total usable shot count.
 
-**Step 1 — convert counts to probabilities.** For each cell:
+**Step 1: convert counts to probabilities.** For each cell:
 
 ```
 p_c = n_c / N
 ```
 
-This is just the empirical relative frequency — the maximum-likelihood
+This is just the empirical relative frequency: the maximum-likelihood
 estimate of "if I picked one of this player's shots at random, what's the
 chance it's cell `c`."
 
-**Step 2 — apply the Shannon entropy formula.**
+**Step 2: apply the Shannon entropy formula.**
 
 ```
 H = − Σ_{c ∈ C} p_c · log2(p_c)
@@ -53,7 +53,7 @@ observations contribute nothing, rather than causing `log2(0) = −∞`).
 
 **Why this formula and not something else:** Shannon entropy is the unique
 function (up to a constant) satisfying three properties that make "spread of
-a distribution" meaningful here — continuity in the `p_c`, maximized when all
+a distribution" meaningful here: continuity in the `p_c`, maximized when all
 outcomes are equally likely, and additivity across independent choices. In
 information-theoretic terms, `H` is the average number of bits needed to
 communicate which cell a shot fell into, given the observed distribution. A
@@ -61,7 +61,7 @@ player whose shots always land in the same cell needs 0 bits (`H=0`,
 perfectly predictable); a player who spreads shots evenly across all 6 cells
 needs `log2(6)` bits (maximum unpredictability).
 
-**Step 3 — normalize.** Raw `H` is in bits and its ceiling depends on how
+**Step 3: normalize.** Raw `H` is in bits and its ceiling depends on how
 many cells there are, which makes it hard to compare across players or
 category schemes. Divide by the maximum possible entropy for this cell count
 (achieved at a perfectly uniform distribution):
@@ -74,11 +74,11 @@ H_norm = H / H_max
 `H_norm ∈ [0,1]`: 0 = always the same cell (fully predictable), 1 = perfectly
 uniform across all 6 cells (maximally unpredictable).
 
-**Worked example — Jannik Sinner, pooled career (2020s data, post hitter-attribution-fix):**
+**Worked example, Jannik Sinner, pooled career (2020s data, post hitter-attribution-fix):**
 
 *Note: an earlier version of this document used pre-fix numbers (total
 N=80,377, H_norm=0.9766). A hitter-attribution bug was found and fixed after
-this document was first written (see `step2_README.md`'s bug-fix section) —
+this document was first written (see `step2_README.md`'s bug-fix section);
 every number below reflects the corrected pipeline.*
 
 | Cell | n_c | p_c = n_c/N |
@@ -105,10 +105,10 @@ This matches the pipeline's reported value (0.9712) exactly.
 
 ---
 
-## 2. Conditional (transition) entropy — the refined consistency measure
+## 2. Conditional (transition) entropy: the refined consistency measure
 
 **What it measures:** how predictable a player's shot is **given the shot
-they're reacting to** (the immediately preceding shot in the rally) — this is
+they're reacting to** (the immediately preceding shot in the rally); this is
 the measure that actually separated Sinner and Alcaraz, unlike the pooled
 version above.
 
@@ -127,7 +127,7 @@ N_k = Σ_{c ∈ C} n(k, c)      (total transitions with context k)
 N   = Σ_{k ∈ Ctx} N_k        (total transitions, all contexts)
 ```
 
-**Step 1 — the conditional distribution for a single context.** Fix a
+**Step 1: the conditional distribution for a single context.** Fix a
 context `k`. The distribution of the CURRENT shot, given we're in context
 `k`, is:
 
@@ -135,7 +135,7 @@ context `k`. The distribution of the CURRENT shot, given we're in context
 P(c | k) = n(k, c) / N_k
 ```
 
-**Step 2 — entropy of that conditional distribution.** Apply the same
+**Step 2: entropy of that conditional distribution.** Apply the same
 Shannon formula as Section 1, but restricted to transitions with context `k`:
 
 ```
@@ -145,7 +145,7 @@ H(X | K=k) = − Σ_{c ∈ C} P(c | k) · log2( P(c | k) )
 This is "how unpredictable is the current shot, once we already know what
 the preceding shot was."
 
-**Step 3 — average over all contexts, weighted by how often each occurs.**
+**Step 3: average over all contexts, weighted by how often each occurs.**
 The context itself has a distribution too:
 
 ```
@@ -171,7 +171,7 @@ know the situation, and then average that narrowing across situations."
 since the current-shot space `C` still has 6 categories regardless of
 context).
 
-**Step 4 — marginal entropy on the same transition dataset**, for a fair
+**Step 4: marginal entropy on the same transition dataset**, for a fair
 comparison. This is Section 1's formula, but computed on `n(k,c)` summed
 over `k` rather than the full career shot log, so the "before context" and
 "after context" numbers are on an apples-to-apples subset:
@@ -186,7 +186,7 @@ H(X) = − Σ_{c ∈ C} (n_c/N) · log2(n_c/N)
 ## 3. Information gain (mutual information)
 
 **What it measures:** how much of a player's shot-selection uncertainty is
-"explained away" by knowing the preceding shot — i.e., how context-dependent
+"explained away" by knowing the preceding shot, i.e., how context-dependent
 their shot choice is.
 
 **Derivation.** By definition:
@@ -203,7 +203,7 @@ equivalently be written as:
 I(X; K) = Σ_{k,c} P(k,c) · log2( P(k,c) / (P(k)·P(c)) )
 ```
 
-where `P(k,c) = n(k,c)/N`. The two formulas are mathematically identical —
+where `P(k,c) = n(k,c)/N`. The two formulas are mathematically identical:
 `H(X) − H(X|K) = I(X;K)` is a standard identity (it follows directly from
 expanding both sides using `H(X,K) = H(K) + H(X|K)` and `H(X,K) = H(X) +
 H(K|X)`). The pipeline uses the entropy-difference form because it's more
@@ -212,7 +212,7 @@ uncertainty"), but citing it as mutual information in the paper is accurate
 and standard.
 
 **Properties that justify using it:** `I(X;K) ≥ 0` always (conditioning
-can never *increase* average uncertainty — this is a theorem, not an
+can never *increase* average uncertainty; this is a theorem, not an
 assumption), and `I(X;K) = 0` exactly when the current shot is statistically
 independent of the context (knowing the preceding shot tells you nothing
 about the next one).
@@ -229,7 +229,7 @@ uncertainty that gets explained by context, which is what allows comparing
 "how context-dependent is Sinner" vs. "how context-dependent is Alcaraz" as
 percentages rather than raw bits.
 
-**Worked example — Sinner (post hitter-attribution-fix, from the pipeline run):**
+**Worked example, Sinner (post hitter-attribution-fix, from the pipeline run):**
 
 ```
 H(X)     = 2.5081 bits   (marginal, on the transitions dataset)
@@ -242,25 +242,25 @@ Relative info gain = 0.4605 / 2.5081 ≈ 0.1836  →  18.4%
 
 ---
 
-## 4. Extended (dropshot) entropy grid — same formula, different `C`
+## 4. Extended (dropshot) entropy grid: same formula, different `C`
 
 The dropshot-inclusive check uses the identical Section 1 formula, just with
 `C` redefined as 9 cells: `{forehand, backhand, dropshot} × {1, 2, 3}`. No new
-mathematics — only the category set changes, which also changes the ceiling:
+mathematics; only the category set changes, which also changes the ceiling:
 
 ```
 H_max = log2(9) ≈ 3.1699 bits
 ```
 
 (Not currently used as the primary entropy variable, pending the
-per-player minimum-observation floor noted in the README — but the formula
+per-player minimum-observation floor noted in the README, but the formula
 is ready to go once that floor is set.)
 
 ---
 
 ## 5. Rates and proportions (serve zone, net-play, return depth)
 
-These are **not entropy calculations** — they're simple conditional relative
+These are **not entropy calculations**: they're simple conditional relative
 frequencies, the same `p_c = n_c/N` step from Section 1's "Step 1," just
 without the entropy formula applied on top. For completeness, since the
 pipeline reports several of them:
@@ -308,7 +308,7 @@ return_depth_shift_delta = mean_depth(high-pressure) − mean_depth(normal)
 ```
 
 This is `mean_return_depth_normal` / `mean_return_depth_high_pressure` /
-`return_depth_shift_delta` in `step2_full_pool_features.csv` — the actual
+`return_depth_shift_delta` in `step2_full_pool_features.csv`: the actual
 columns available to Step 3/4's regression (`return_depth_shift_delta` is
 listed as a secondary/exploratory predictor in
 `step3_variable_preregistration.md`). It was missing from this document
@@ -322,10 +322,10 @@ exploratory control.
 
 ---
 
-## 6. Pressure/situation classification — logical derivation, not a formula
+## 6. Pressure/situation classification: logical derivation, not a formula
 
 The base situation, set point, and match point labels aren't statistical
-calculations — they're a deterministic classification derived from the raw
+calculations: they're a deterministic classification derived from the raw
 score. Included here for completeness since they gate every rate/proportion
 in Section 5.
 
@@ -351,7 +351,7 @@ won in the set. Server has a set point if `situation = game_point_server` AND
 (g_server + 1) ≥ 6   and   (g_server + 1) − g_returner ≥ 2
 ```
 
-(the standard tennis set-win condition — 6+ games with a 2-game margin — with
+(the standard tennis set-win condition, 6+ games with a 2-game margin, with
 no upper bound, so it also correctly covers advantage sets that run past
 6-6). Returner's set point is the mirror condition under `break_point`.
 

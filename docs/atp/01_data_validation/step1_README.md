@@ -1,4 +1,4 @@
-# Step 1: Data Validation — README
+# Step 1: Data Validation
 
 ## Update: hitter-attribution bug found and fixed (see step2_README.md / src/core/parsing.py)
 
@@ -72,9 +72,9 @@ Notes:
    **Confirmed at full-pool scale in Step 2:** running the actual entropy/pressure
    pipeline against all 91 players showed 100% of the pool clears the MIN_OBS=30 floor
    for pooled entropy, transition entropy, dropshot rate, serve zone, net-play, and
-   return depth — this threshold was well-calibrated.
+   return depth: this threshold was well-calibrated.
 2. **Entropy calc uses forehand/backhand × 3 court-directions only (6 cells).** Lob and
-   "other" (halfvolley/overhead) categories are excluded — tested at both a thin-coverage
+   "other" (halfvolley/overhead) categories are excluded, tested at both a thin-coverage
    player (Draper, 29 matches, below threshold) and the boundary case (Nakashima, 40
    matches) and stayed sparse (single digits to low 20s) regardless of match count. This
    confirms it's genuine shot rarity, not a coverage artifact, so more data wouldn't fix it.
@@ -82,7 +82,7 @@ Notes:
    tennis dataset; other "datasets" found online are derived from MCP itself. Selection
    bias (charted matches skew toward popular/high-leverage matches) is a real, documented
    limitation of the source and should be named explicitly in the paper's limitations
-   section — not something to work around.
+   section: not something to work around.
 
 ## Sanity checks run (CORRECTED post-bug-fix numbers)
 
@@ -108,7 +108,7 @@ other       188   101    207
 
 **Draper (29 matches, below threshold): 7,953 usable shot tokens.** Core
 fh/bh cells fine; lob/other sparse as expected (this is the stress test for
-"is exclusion of lob/other justified" — confirmed yes):
+"is exclusion of lob/other justified", confirmed yes):
 ```
 [warning] Cells below 30 obs: lob-dir1 (15), lob-dir3 (19), other-dir1 (12),
           other-dir2 (8), other-dir3 (5)
@@ -122,9 +122,9 @@ is safe for the full pool. Lob/other still sparse at exactly the threshold:
 [warning] Cells below 30 obs: lob-dir1 (27), other-dir1 (28), other-dir2 (12)
 ```
 
-The qualitative conclusions from the original (pre-fix) sanity check —
-core forehand/backhand cells are robust for all four players, lob/other is
-genuinely sparse regardless of match count — held up under the fix. Only the
+The qualitative conclusions from the original (pre-fix) sanity check
+(core forehand/backhand cells are robust for all four players, lob/other is
+genuinely sparse regardless of match count) held up under the fix. Only the
 exact per-cell counts changed.
 
 ## Feeds into Step 2

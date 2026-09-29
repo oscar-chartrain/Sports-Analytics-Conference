@@ -8,8 +8,8 @@ computing a single escalation value.
 ### Why this variable
 
 Every other style variable added as a Step 2 extension (serve zone,
-net play, return depth) is measured as a normal-vs-high-pressure delta —
-does a player's behavior change under pressure — not just a career-wide
+net play, return depth) is measured as a normal-vs-high-pressure delta:
+does a player's behavior change under pressure, not just a career-wide
 level. `conditional_normalized_entropy`, the primary predictor, is the one
 exception: it's a single number, never split by pressure situation. That's
 an inconsistency with this project's own established pattern, not a
@@ -81,7 +81,7 @@ reduce the sufficient sample below the 91/55 primary pool. It didn't:
 high-pressure buckets**, at the same MIN_OBS=30 per-context floor used
 everywhere else. This is consistent with the MIN_OBS sensitivity finding
 in `power_and_robustness.md` (the floor was never binding even at 3x the
-original threshold) — this pool's per-player data depth turns out to
+original threshold); this pool's per-player data depth turns out to
 comfortably support an even finer split than originally expected. Reported
 here because the pre-registration committed to reporting the actual
 number plainly, including when the original expectation was wrong.
@@ -98,7 +98,7 @@ not the change) is roughly 0.026 in standard deviation across the ATP
 pool. The within-player pressure-driven change is smaller than that by a
 factor of about 3, on both tours. In plain terms: most players' shot
 selection consistency is fairly stable whether or not the moment is
-high-pressure — for the typical player, entropy under pressure looks a
+high-pressure: for the typical player, entropy under pressure looks a
 lot like entropy in general. ATP splits close to a coin flip on which
 direction players move (45 vs. 46); WTA skews toward players tightening
 up under pressure (37/55 vs. 18/55), a real, if modest, majority pattern
@@ -126,8 +126,8 @@ Refining the hypothesis from "is a player's overall consistency level
 related to clutch performance" to "does a player's consistency *change*
 under pressure, and does that change relate to clutch performance" finds
 the same answer: no. This adds a genuinely new angle rather than
-re-testing the same one — it's a within-player, pressure-conditional
-version of the primary predictor, not a restatement of it — and it comes
+re-testing the same one: it's a within-player, pressure-conditional
+version of the primary predictor, not a restatement of it, and it comes
 back null too, on a pool that (surprisingly, and reported as such) turned
 out to be deep enough to support the additional split without losing a
 single player. That strengthens the overall null's credibility by one more
