@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Tennis commentary often frames stylistic unpredictability as a pressure-performance asset: the "flair wins the big points" narrative applied to a player like Carlos Alcaraz, set against a metronomic player like Jannik Sinner. That claim has never been tested against a leverage-weighted outcome using an information-theoretic measure. We test whether shot-selection consistency predicts pressure performance and, separately, whether leverage-weighted clutch metrics (now widely used) can be measured reliably enough to support such claims.
+Tennis commentary often frames stylistic unpredictability as a pressure-performance asset: the "flair wins the big points" narrative applied to a player like Carlos Alcaraz, set against a metronomic player like Jannik Sinner. That claim has never been tested against a leverage-weighted outcome using an information-theoretic measure. We test whether shot-selection consistency predicts pressure performance and, separately, whether leverage-weighted clutch metrics, already used by scouts and broadcasters, can be measured reliably enough to support such claims.
 
 ## Methods
 
