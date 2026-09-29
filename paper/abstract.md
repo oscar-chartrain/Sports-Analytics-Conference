@@ -55,7 +55,7 @@ WTA return's bound exceeds 1 (uninformative).
 Leverage-weighted clutch metrics in industry use can have
 reliability too low to support routine claims made about them
 (particularly on return points), and no published clutch metric in
-tennis reports its own reliability. Scouts and broadcasters
+tennis appears to report its own reliability. Scouts and broadcasters
 citing a player's return-clutch rating should first ask for its
 split-half reliability, not just its headline number: the same
 standard expected of a psychometric instrument. Separately, shot-selection predictability itself does not detect the
