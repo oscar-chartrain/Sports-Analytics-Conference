@@ -1,4 +1,4 @@
-# Shot-Selection Consistency and Clutch Performance in Professional Tennis
+# Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics
 
 Submission materials for the MIT Sloan Sports Analytics Conference (SSAC).
 
@@ -7,16 +7,42 @@ Submission materials for the MIT Sloan Sports Analytics Conference (SSAC).
 Does a player's **shot-selection consistency**, how predictable their choice
 of shot is given the situation and measured as conditional Shannon entropy,
 predict how well they perform under pressure ("clutch"), measured with a
-leverage-weighted score in the style of Morris (1977)?
+leverage-weighted score in the style of Morris (1977)? Separately: can the
+leverage-weighted clutch metrics already used by scouts and broadcasters, the
+same family as Tennis Abstract's Balanced Leverage Ratio and the metric Stats
+Perform presented at MIT Sloan SSAC 2022, actually be measured reliably
+enough to support the claims made about them?
 
-## The finding
+## The findings
 
-A well-powered null result, replicated independently on two tours. Across
-the qualified ATP pool (91 players, ≥40 charted matches each) and a
-separately pre-registered WTA replication (55 players), shot-selection
-entropy (`conditional_normalized_entropy`) shows no robust relationship with
-leverage-weighted clutch performance, on serve or return, across four
-leverage-weighting variants (p=0.60/0.65/0.70/tiered).
+**1. Leverage-weighted clutch metrics have reliability too low to trust,
+particularly on return points, and no published clutch metric in tennis
+appears to report its own reliability.** Split-half reliability testing
+(splitting each player's matches into independent halves and checking how
+well a repeated measurement agrees with itself) found
+`conditional_normalized_entropy` highly reliable on both tours (0.90-0.93,
+Spearman-Brown corrected). Leverage-weighted clutch scores are not: serve
+clutch is moderate (0.57-0.58, below the conventional 0.70 "acceptable"
+threshold) and return clutch is poor to effectively unmeasurable (ATP 0.23,
+WTA 0.055), despite bucket sizes in the hundreds to thousands of points per
+player, which rules out a thin-data explanation. Empirical-Bayes shrinkage
+helps (ATP return 0.23 to 0.37, WTA return 0.055 to 0.13) but doesn't close
+the gap, and correcting the project's own equivalence bound for both
+variables' measurement error leaves ATP's null claim intact but pushes WTA
+return's bound past 1, vacuous, no longer informative about the true
+relationship at all. Any published or broadcast "clutch rating," especially
+on return, should be treated as a noisy estimate until its own split-half
+reliability is reported, the same standard expected of a psychometric
+instrument. Details: follow-up check 4 below, and
+[`paper/application_and_impact.md`](paper/application_and_impact.md).
+
+**2. Separately, shot-selection consistency itself shows no relationship
+with clutch performance, a well-powered null replicated independently on
+two tours.** Across the qualified ATP pool (91 players, ≥40 charted matches
+each) and a separately pre-registered WTA replication (55 players),
+shot-selection entropy (`conditional_normalized_entropy`) shows no robust
+relationship with leverage-weighted clutch performance, on serve or return,
+across four leverage-weighting variants (p=0.60/0.65/0.70/tiered).
 
 | Tour | Serve r (p) | Return r (p) | n |
 |---|---|---|---|
@@ -192,15 +218,15 @@ convenient specification.
 
 ## Application and impact
 
-Two things this project has a claim on beyond the null result itself: a
-corrective for scouting/commentary narratives that treat stylistic
-unpredictability as a pressure-performance asset, and a broader,
-independent caution. Split-half reliability testing found that
-leverage-weighted clutch scores generally (the same family of metric
-already published as Tennis Abstract's BLR and presented at MIT Sloan
-SSAC 2022) can have poor measurement reliability, particularly on return
-points, regardless of what predictor is being tested against them. Full
-case, including a reusable-infrastructure argument:
+Two things this project has a claim on: a broader, independent caution, and
+a corrective for scouting/commentary narratives that treat stylistic
+unpredictability as a pressure-performance asset. Split-half reliability
+testing found that leverage-weighted clutch scores generally (the same
+family of metric already published as Tennis Abstract's BLR and presented
+at MIT Sloan SSAC 2022) can have poor measurement reliability, particularly
+on return points, regardless of what predictor is being tested against
+them, independent of this project's own null result. Full case, including a
+reusable-infrastructure argument:
 [`paper/application_and_impact.md`](paper/application_and_impact.md).
 SSAC submission abstract draft: [`paper/abstract.md`](paper/abstract.md).
 
