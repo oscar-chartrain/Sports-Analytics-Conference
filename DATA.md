@@ -23,7 +23,7 @@ That means:
 - Non-commercial use only.
 - Derivatives must be shared under the same license.
 
-This repository's own `LICENSE` file (MIT) covers the code only — the
+This repository's own `LICENSE` file (MIT) covers the code only: the
 pipeline scripts, the shared modules, the analysis logic. It doesn't
 relicense the MCP data itself, and nothing here should be read as claiming
 broader rights over MCP data than MCP's own license grants. The small
@@ -33,20 +33,20 @@ them, since they're built directly from MCP data.
 ## What is and isn't in this repo
 
 **Not included, by design:**
-- Raw MCP CSVs (`charting-*-matches.csv`, `charting-*-points-*.csv`) — these
+- Raw MCP CSVs (`charting-*-matches.csv`, `charting-*-points-*.csv`): these
   are fetched fresh by the pipeline, not committed. They're re-fetched because
   MCP updates periodically (~every 100 new charted matches), so a static copy
   would go stale; fetching fresh also avoids any ambiguity about
   redistributing MCP's licensed data ourselves.
 - Point-level intermediate files (e.g. a full per-point leverage table is
-  ~1.1M rows / ~200MB) — regeneratable from the raw data via the pipeline,
+  ~1.1M rows / ~200MB): regeneratable from the raw data via the pipeline,
   not sensible to ship as a repo artifact.
 - `cache_*.pkl` extraction caches used by the full-pool staged driver
-  (`src/entropy_extraction_stage1.py` → `src/stage2_assemble_features.py`) —
+  (`src/entropy_extraction_stage1.py` → `src/stage2_assemble_features.py`):
   local, disposable, regenerated on demand.
 
 **Included:**
-- Small, final per-player feature/output CSVs in `results/` (tens of KB) —
+- Small, final per-player feature/output CSVs in `results/` (tens of KB):
   one row per player, already aggregated. These are derived from MCP data and
   inherit its CC BY-NC-SA terms.
 - All pipeline code, in full.

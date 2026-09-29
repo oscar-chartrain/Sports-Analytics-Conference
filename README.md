@@ -4,8 +4,8 @@ Submission materials for the MIT Sloan Sports Analytics Conference (SSAC).
 
 ## The question
 
-Does a player's **shot-selection consistency** — how predictable their choice
-of shot is, given the situation, measured as conditional Shannon entropy —
+Does a player's **shot-selection consistency**, how predictable their choice
+of shot is given the situation and measured as conditional Shannon entropy,
 predict how well they perform under pressure ("clutch"), measured with a
 leverage-weighted score in the style of Morris (1977)?
 
@@ -86,7 +86,7 @@ is a highly reliable measurement on both tours (0.90-0.93, Spearman-Brown
 corrected). The clutch score is not: serve clutch reliability is moderate
 (0.57-0.58, below the conventional "acceptable" threshold), and return
 clutch is poor to essentially unmeasurable (ATP 0.23, WTA 0.055). The
-predictor was never the weak link — the outcome variable is, especially on
+predictor was never the weak link: the outcome variable is, especially on
 return, especially for WTA. That means the serve-side null carries real
 evidentiary weight, while the return-side null, and the WTA return result
 in particular, should be read as inconclusive rather than confirmatory: a
@@ -96,7 +96,7 @@ previously invisible limitation, reported here rather than smoothed over.
 
 A follow-up check tested whether a continuous-slope outcome construction
 (using 100% of a player's points instead of the top/bottom leverage
-quartile) would fix this — it doesn't; reliability is equal or worse in
+quartile) would fix this: it doesn't; reliability is equal or worse in
 three of four cases, which rules out "the quartile split is the problem"
 and points instead toward a genuinely small, noisy underlying effect.
 Write-up: [`docs/atp/04_regression_results/split_half_reliability.md`](docs/atp/04_regression_results/split_half_reliability.md).
@@ -105,7 +105,7 @@ A second follow-up tried a different candidate fix: empirical-Bayes
 shrinkage of each player's clutch score toward the pool mean, weighted by
 their own data volume. This one helps, improving reliability in all four
 tour/role combinations (e.g. ATP return 0.231 → 0.371, WTA return 0.055 →
-0.132). It's a partial fix — none of the four clear the 0.70 "acceptable"
+0.132). It's a partial fix: none of the four clear the 0.70 "acceptable"
 threshold even after shrinkage, so the underlying conclusion holds, but
 it's the first correction that moves the needle at all. Write-up:
 [`docs/atp/04_regression_results/shrinkage_reliability.md`](docs/atp/04_regression_results/shrinkage_reliability.md).
@@ -116,11 +116,11 @@ Whether a mix-of-opponents effect (a player's high- and low-leverage return
 points happening to fall against differently-strong servers) explains part
 of return clutch's unreliability had been an open, named question since the
 original leverage-clutch design decision. Adjusting each return point for
-the serving opponent's own leave-one-out serve strength doesn't help — it
+the serving opponent's own leave-one-out serve strength doesn't help: it
 actively hurts: reliability falls on both tours (ATP 0.231 → 0.182, WTA
 0.055 → -0.106). Of three fixes tried (continuous-slope, opponent
 adjustment, shrinkage), only shrinkage helps, and even it doesn't fully
-solve the problem — converging evidence that the reliability gap is a
+solve the problem: converging evidence that the reliability gap is a
 property of the data, not a fixable construction choice. Write-up:
 [`docs/atp/04_regression_results/opponent_adjusted_return_clutch.md`](docs/atp/04_regression_results/opponent_adjusted_return_clutch.md).
 
@@ -133,7 +133,7 @@ so it's disclosed as out of scope rather than proxied.) Adding career era
 and surface mix as covariates to the entropy-clutch regression leaves
 entropy non-significant on both tours, both roles, none surviving the
 pre-registered Bonferroni threshold, and for WTA serve the coefficient
-moves further from significance once these are included, not closer — the
+moves further from significance once these are included, not closer: the
 opposite of what a masked confound would predict. This check is cheap to
 run: unlike every other follow-up, it needs no raw MCP points data at all,
 only each tour's small match-metadata file. Write-up:
@@ -145,8 +145,8 @@ Net-play escalation, wide-serve escalation, return-depth shift, and
 dropshot rate were computed since Step 2, pre-registered as exploratory
 variables, and never tested against clutch performance until now. Testing
 all four against both clutch roles on both tours (16 comparisons,
-Bonferroni-corrected) finds nothing that survives correction — another
-null, not a second finding — but the check itself needed zero new data
+Bonferroni-corrected) finds nothing that survives correction (another
+null, not a second finding), but the check itself needed zero new data
 extraction, only a merge of already-committed files: evidence the project's
 infrastructure generalizes to new predictors rather than an untested claim
 that it should. Write-up:
@@ -180,7 +180,7 @@ rather than just what its overall level is, closes that inconsistency and
 finds the same answer as everything else: null, on both tours, both roles,
 Bonferroni-corrected across the 4-comparison family. One honest surprise
 along the way: splitting the data this much further was expected to shrink
-the usable sample well below 91/55, and didn't — both full pools remained
+the usable sample well below 91/55, and didn't: both full pools remained
 sufficient. Write-up:
 [`docs/atp/02_entropy_pipeline/entropy_pressure_escalation.md`](docs/atp/02_entropy_pipeline/entropy_pressure_escalation.md).
 
@@ -248,13 +248,13 @@ scratch and lands very close to, but not bit-for-bit identical to, the
 numbers quoted in `step4_results_writeup.md`. Those came from a frozen
 `results/atp/step3_clutch_features.csv` whose original generating script no
 longer exists (see `docs/atp/03_leverage_clutch/empirical_p_variant.md` for
-the size of the gap — it doesn't change any conclusion). WTA reruns
+the size of the gap; it doesn't change any conclusion). WTA reruns
 reproduce the committed file exactly.
 
 Both `src/pipeline/step1_validation.py` and `src/pipeline/step2_entropy_pipeline.py`
 run a standing regression guard (`parsing.verify_hitter_parity()`) at the top
 of their `__main__` block and fail loudly if hitter attribution doesn't match
-ground truth at ≥85% — treat any run that doesn't print a parity rate near
+ground truth at ≥85%: treat any run that doesn't print a parity rate near
 90%+ as untrustworthy before looking at anything else.
 
 ## Repo layout
@@ -299,7 +299,7 @@ run. The rest of `src/pipeline/` is either an earlier per-stage script it
 supersedes/wraps, or a variant reproduction path. `entropy_extraction_stage1.py`
 + `stage2_assemble_features.py` offer a disk-cached two-phase alternative
 for the full-pool entropy extraction that may still be useful for iterating
-without re-running the expensive extraction pass each time — both are kept
+without re-running the expensive extraction pass each time; both are kept
 because the docs in `docs/` reference them directly, and both carry a note
 pointing to `run_pipeline.py` as the canonical reproduction path.
 `rerun_primary_regression.py` is a minimal, no-fetch way to reproduce just
@@ -365,8 +365,8 @@ into `results/figures/split_half_reliability_figure.png`.
 two figures (superseded by the disattenuation figure below, which covers
 the more novel result and all five leverage variants rather than one),
 but still valid and kept for reference. `make_disattenuation_figure.py`
-plots the disattenuated TOST equivalence bounds — observed-scale vs.
-reliability-corrected, per tour/role — into
+plots the disattenuated TOST equivalence bounds (observed-scale vs.
+reliability-corrected, per tour/role) into
 `results/figures/disattenuation_figure.png`; it imports
 `robustness/disattenuated_equivalence_bounds.py` directly and reuses its
 bound search and reliability tables unchanged, asserting its recomputed
@@ -384,7 +384,7 @@ saving. Needs the raw MCP 2020s points file locally; run from inside
 `results/atp/`. `make_wta_entropy_transition_illustration.py` is the
 WTA counterpart, for `docs/wta/wta_README.md`: Iga Swiatek vs. Bianca
 Andreescu (chosen for charted-match coverage and entropy contrast, not
-narrative — no WTA pair is named in this project's docs the way
+narrative; no WTA pair is named in this project's docs the way
 Sinner/Alcaraz are for ATP), into
 `results/figures/wta_entropy_transition_illustration.png`. No
 prose-documented per-player value exists on the WTA side to check
@@ -428,7 +428,7 @@ quietly fixed:
 ## Data and licensing
 
 MCP data is fetched at run time, never committed, and licensed CC BY-NC-SA
-4.0 by its original authors — see [`DATA.md`](DATA.md) for full attribution
+4.0 by its original authors; see [`DATA.md`](DATA.md) for full attribution
 and license details. The code in this repository is MIT-licensed (see
 [`LICENSE`](LICENSE)); that license does not extend to MCP data.
 
