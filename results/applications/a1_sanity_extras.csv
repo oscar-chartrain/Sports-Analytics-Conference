@@ -1,0 +1,3 @@
+,ent_sb,r_blr_pooled,r_blr_quartile,r_pooled_quartile,excluded
+atp,0.9253115829760621,0.7158518713350371,0.9018168767314829,0.7925739635780753,"{'lr_serve': 0, 'lr_return': 0, 'blr': 0, 'pooled_lr': 0}"
+wta,0.896474940055816,0.9225753849069585,0.8662139216025029,0.8081547398437814,"{'lr_serve': 0, 'lr_return': 0, 'blr': 0, 'pooled_lr': 0}"

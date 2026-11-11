@@ -1,0 +1,136 @@
+ATP: loaded cached point table (1,132,053 points)
+
+======================================================================
+ANALYSIS 1 -- ATP: reliability of BLR
+======================================================================
+players excluded by the per-half 30-won/30-lost floor: {'lr_serve': 0, 'lr_return': 0, 'blr': 0, 'pooled_lr': 0}
+BLR (faithful, primary)    n= 91  r_half=+0.2988  SB=0.4601  95% CI [0.180, 0.645]
+Pooled LR                  n= 91  r_half=+0.5189  SB=0.6832  95% CI [0.519, 0.791]
+LR serve                   n= 91  r_half=+0.3337  SB=0.5004  95% CI [0.241, 0.671]
+LR return                  n= 91  r_half=+0.1904  SB=0.3199  95% CI [-0.033, 0.552]
+Serve quartile clutch      n= 91  r_half=+0.4006  SB=0.5720  95% CI [0.350, 0.718]
+Return quartile clutch     n= 91  r_half=+0.1308  SB=0.2313  95% CI [-0.167, 0.494]
+SANITY entropy  reproduced=0.9253 documented=0.925 -> PASS
+SANITY serve    reproduced=0.5720 documented=0.572 -> PASS
+SANITY return   reproduced=0.2313 documented=0.231 -> PASS
+SANITY full-sample pooled LR vs blr_combined: max abs diff=0.00e+00 -> PASS
+full-sample r: faithful BLR vs pooled LR = 0.716; faithful BLR vs combined quartile = 0.902; pooled LR vs combined quartile = 0.793
+
+======================================================================
+ANALYSIS 2 -- ATP: data requirements (derived projection)
+======================================================================
+median charted matches across the pool: 74.0
+Quartile clutch, serve     rho=+0.572  k(0.70)=  1.75 ->     129 matches;  k(0.80)=  2.99 ->     221 matches
+Quartile clutch, return    rho=+0.231  k(0.70)=  7.77 ->     575 matches;  k(0.80)= 13.32 ->     985 matches
+Shrunk clutch, serve       rho=+0.594  k(0.70)=  1.59 ->     118 matches;  k(0.80)=  2.73 ->     202 matches
+Shrunk clutch, return      rho=+0.371  k(0.70)=  3.96 ->     293 matches;  k(0.80)=  6.78 ->     502 matches
+BLR (faithful)             rho=+0.460  k(0.70)=  2.74 ->     203 matches;  k(0.80)=  4.69 ->     347 matches
+serve   tau2=0.000463  mean var_i=0.000327  mean rel_i=0.615  share rel_i>=0.70: 30.8%  median high-lev pts/match=20.9
+        n* = 2,518 high-leverage points -> 120 matches for rel = 0.70
+        consistency: primary 129 vs secondary 120 matches (ratio 1.07; within the pre-registered factor of 3)
+return  tau2=0.000149  mean var_i=0.000330  mean rel_i=0.362  share rel_i>=0.70: 3.3%  median high-lev pts/match=21.0
+        n* = 7,848 high-leverage points -> 374 matches for rel = 0.70
+        consistency: primary 575 vs secondary 374 matches (ratio 1.54; within the pre-registered factor of 3)
+
+======================================================================
+ANALYSIS 3 -- ATP: player-cluster bootstrap (B=2000, seed 20261103)
+======================================================================
+  ...10/91 players
+  ...20/91 players
+  ...30/91 players
+  ...40/91 players
+  ...50/91 players
+  ...60/91 players
+  ...70/91 players
+  ...80/91 players
+  ...90/91 players
+SANITY identity weights reproduce pipeline clutch scores for every player: PASS
+
+[serve] pool mean +0.0078; max |mean boot - point| = 0.01082 (OUTSIDE the +/-0.002 clutch-score tolerance)
+  median 95% rank-interval width: 52.0 ranks (of 91)
+  players whose 95% score interval excludes the pool mean: 23/91
+  of the top 10 by point estimate, rank interval entirely within top 20: 1/10
+
+[return] pool mean +0.0002; max |mean boot - point| = 0.00834 (OUTSIDE the +/-0.002 clutch-score tolerance)
+  median 95% rank-interval width: 63.0 ranks (of 91)
+  players whose 95% score interval excludes the pool mean: 9/91
+  of the top 10 by point estimate, rank interval entirely within top 20: 0/10
+
+[blr] pool mean +1.0063; max |mean boot - point| = 0.00196 (ratio scale; the +/-0.002 tolerance is for clutch scores only)
+  median 95% rank-interval width: 56.0 ranks (of 91)
+  players whose 95% score interval excludes the pool mean: 19/91
+  of the top 10 by point estimate, rank interval entirely within top 20: 1/10
+
+Named players (ATP):
+  Jannik Sinner    serve   score -0.0030 [-0.0234, +0.0138]  rank 56 [36, 77]
+  Jannik Sinner    return  score -0.0095 [-0.0274, +0.0088]  rank 57 [33, 79]
+  Jannik Sinner    blr     score +0.9882 [+0.9715, +1.0058]  rank 68 [41, 82]
+  Carlos Alcaraz   serve   score +0.0024 [-0.0190, +0.0242]  rank 50 [26, 74]
+  Carlos Alcaraz   return  score +0.0077 [-0.0164, +0.0271]  rank 32 [15, 67]
+  Carlos Alcaraz   blr     score +1.0000 [+0.9786, +1.0216]  rank 48 [26, 75]
+  Novak Djokovic   serve   score -0.0142 [-0.0272, -0.0014]  rank 72 [53, 80]
+  Novak Djokovic   return  score -0.0203 [-0.0338, -0.0065]  rank 78 [53, 84]
+  Novak Djokovic   blr     score +0.9758 [+0.9633, +0.9883]  rank 83 [64, 86]
+  Roger Federer    serve   score -0.0074 [-0.0175, +0.0034]  rank 64 [47, 73]
+  Roger Federer    return  score -0.0267 [-0.0387, -0.0141]  rank 86 [63, 86]
+  Roger Federer    blr     score +0.9763 [+0.9652, +0.9884]  rank 81 [63, 86]
+WTA: loaded cached point table (426,269 points)
+
+======================================================================
+ANALYSIS 1 -- WTA: reliability of BLR
+======================================================================
+players excluded by the per-half 30-won/30-lost floor: {'lr_serve': 0, 'lr_return': 0, 'blr': 0, 'pooled_lr': 0}
+BLR (faithful, primary)    n= 55  r_half=+0.1146  SB=0.2056  95% CI [-0.368, 0.539]
+Pooled LR                  n= 55  r_half=+0.2842  SB=0.4426  95% CI [0.040, 0.676]
+LR serve                   n= 55  r_half=+0.3861  SB=0.5571  95% CI [0.237, 0.743]
+LR return                  n= 55  r_half=-0.0442  SB=-0.0925  95% CI [-0.881, 0.366]
+Serve quartile clutch      n= 55  r_half=+0.4069  SB=0.5784  95% CI [0.274, 0.755]
+Return quartile clutch     n= 55  r_half=+0.0281  SB=0.0547  95% CI [-0.628, 0.451]
+SANITY entropy  reproduced=0.8965 documented=0.897 -> PASS
+SANITY serve    reproduced=0.5784 documented=0.578 -> PASS
+SANITY return   reproduced=0.0547 documented=0.055 -> PASS
+SANITY full-sample pooled LR vs blr_combined: max abs diff=6.66e-16 -> PASS
+full-sample r: faithful BLR vs pooled LR = 0.923; faithful BLR vs combined quartile = 0.866; pooled LR vs combined quartile = 0.808
+
+======================================================================
+ANALYSIS 2 -- WTA: data requirements (derived projection)
+======================================================================
+median charted matches across the pool: 64.0
+Quartile clutch, serve     rho=+0.578  k(0.70)=  1.70 ->     109 matches;  k(0.80)=  2.92 ->     187 matches
+Quartile clutch, return    rho=+0.055  k(0.70)= 40.09 ->    2566 matches;  k(0.80)= 68.73 ->    4399 matches
+Shrunk clutch, serve       rho=+0.624  k(0.70)=  1.41 ->      90 matches;  k(0.80)=  2.41 ->     154 matches
+Shrunk clutch, return      rho=+0.132  k(0.70)= 15.34 ->     982 matches;  k(0.80)= 26.30 ->    1683 matches
+BLR (faithful)             rho=+0.206  k(0.70)=  9.02 ->     577 matches;  k(0.80)= 15.46 ->     989 matches
+serve   tau2=0.000354  mean var_i=0.000447  mean rel_i=0.462  share rel_i>=0.70: 3.6%  median high-lev pts/match=17.9
+        n* = 3,294 high-leverage points -> 184 matches for rel = 0.70
+        consistency: primary 109 vs secondary 184 matches (ratio 1.69; within the pre-registered factor of 3)
+return  tau2=0.000173  mean var_i=0.000446  mean rel_i=0.303  share rel_i>=0.70: 0.0%  median high-lev pts/match=17.9
+        n* = 6,751 high-leverage points -> 377 matches for rel = 0.70
+        consistency: primary 2,566 vs secondary 377 matches (ratio 6.80; OUTSIDE the pre-registered factor of 3)
+
+======================================================================
+ANALYSIS 3 -- WTA: player-cluster bootstrap (B=2000, seed 20261103)
+======================================================================
+  ...10/55 players
+  ...20/55 players
+  ...30/55 players
+  ...40/55 players
+  ...50/55 players
+SANITY identity weights reproduce pipeline clutch scores for every player: PASS
+
+[serve] pool mean -0.0038; max |mean boot - point| = 0.00803 (OUTSIDE the +/-0.002 clutch-score tolerance)
+  median 95% rank-interval width: 37.0 ranks (of 55)
+  players whose 95% score interval excludes the pool mean: 8/55
+  of the top 10 by point estimate, rank interval entirely within top 20: 2/10
+
+[return] pool mean -0.0052; max |mean boot - point| = 0.00679 (OUTSIDE the +/-0.002 clutch-score tolerance)
+  median 95% rank-interval width: 39.0 ranks (of 55)
+  players whose 95% score interval excludes the pool mean: 6/55
+  of the top 10 by point estimate, rank interval entirely within top 20: 1/10
+
+[blr] pool mean +0.9936; max |mean boot - point| = 0.00277 (ratio scale; the +/-0.002 tolerance is for clutch scores only)
+  median 95% rank-interval width: 40.0 ranks (of 55)
+  players whose 95% score interval excludes the pool mean: 8/55
+  of the top 10 by point estimate, rank interval entirely within top 20: 0/10
+
+Wrote outputs to C:\Users\oscar\OneDrive\Desktop\Research-paper\results\applications
