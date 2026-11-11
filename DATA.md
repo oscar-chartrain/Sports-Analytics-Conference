@@ -6,10 +6,27 @@ All match and point-level data comes from the **Match Charting Project (MCP)**,
 compiled by Jeff Sackmann and volunteer contributors:
 https://github.com/JeffSackmann/tennis_MatchChartingProject
 
-Nothing from that project is redistributed in this repository. Every script
-that needs MCP data fetches it fresh, at run time, directly from
-`raw.githubusercontent.com`. See the root `README.md` "Reproduce" section for
-the exact files and commands.
+Raw MCP files are not redistributed in this repository. Every script that
+needs them fetches them at run time from `raw.githubusercontent.com`, pinned to
+one upstream commit (below). The data behind every reported number is therefore
+a public GitHub repository at an exact, checkable snapshot, plus the derived
+per-player CSVs committed here. See the root `README.md` "Reproduce" section
+for the exact files and commands.
+
+## Pinned snapshot used in the paper
+
+- Upstream repository: https://github.com/JeffSackmann/tennis_MatchChartingProject
+- Commit: `2c59eef194967e688b69e73df344184a06322cd8` ("thru 25 may 2026",
+  committed 2026-05-25). The eight raw files used (ATP and WTA matches plus
+  three points files each) were downloaded 2026-07-07 and verified to be
+  byte-identical to that commit: each local file's git blob hash equals the
+  hash in that commit's tree.
+- `DATA_MANIFEST.csv` records each file's size, SHA-256, git blob hash and the
+  commit-pinned source URL, so a fresh download can be checked with
+  `sha256sum` or `git hash-object`.
+- The Match Charting Project is updated continuously, so fetching from
+  `master` later will give different data (and slightly different numbers);
+  use the pinned URLs to reproduce the paper.
 
 ## License of the underlying MCP data
 
