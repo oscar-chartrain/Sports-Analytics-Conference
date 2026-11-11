@@ -84,7 +84,7 @@ def main():
 
     # A correlation can't exceed 1 in magnitude -- a bound landing past
     # that point isn't weak evidence, it's no evidence (vacuous).
-    ax.axvspan(1.0, 2.05, color='0.88', zorder=0)
+    ax.axvspan(1.0, 2.2, color='0.88', zorder=0)
     ax.axvline(1.0, color='0.55', linewidth=1, zorder=0)
     ax.text(1.03, n - 0.7, 'impossible for a\ncorrelation (vacuous)',
             fontsize=8, color='0.35', va='top')
@@ -95,7 +95,7 @@ def main():
 
     ax.set_yticks(ys)
     ax.set_yticklabels([f'{LABELS[t]} {r.capitalize()}' for t, r in ROWS])
-    ax.set_xlim(0, 2.05)
+    ax.set_xlim(0, 2.2)
     ax.set_ylim(-1.1, n - 1 + 1.1)
     ax.set_xlabel('Equivalence bound on |r| (TOST, 95%)')
 
