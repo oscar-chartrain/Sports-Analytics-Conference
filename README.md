@@ -15,8 +15,8 @@ enough to support the claims made about them?
 
 ## The findings
 
-**1. Leverage-weighted clutch metrics have reliability too low to trust,
-particularly on return points, and no published clutch metric in tennis
+**1. Role-specific leverage-weighted clutch metrics, and Tennis Abstract's BLR,
+have reliability too low to trust, particularly on return points, and no published clutch metric in tennis
 appears to report its own reliability.** Split-half reliability testing
 (splitting each player's matches into independent halves and checking how
 well a repeated measurement agrees with itself) found
@@ -216,6 +216,36 @@ reputation doesn't detect one, and that holds across two tours, a combined
 properly-powered test, and multiple robustness checks, not just one
 convenient specification.
 
+## Full paper and extension analyses
+
+The full SSAC paper is `paper/full_paper.md` (source) and `paper/submission.docx`
+(built on the conference template by `src/paper/build_paper_docx.py`).
+It adds five analyses, each pre-registered before its script was written:
+
+- `docs/combined/applications_preregistration.md` and
+  `src/robustness/applications_analyses.py`: split-half reliability of the
+  faithful Balanced Leverage Ratio, how many charted matches a reliable clutch
+  score needs, and player-cluster bootstrap intervals for named players.
+- `docs/combined/applications_extensions_preregistration.md` and
+  `src/robustness/applications_extensions.py`: reliability over 1,000 random
+  splits (not just the one interleaved split), reliability of break-point
+  conversion and save rates, and the true between-player spread of clutch.
+  This run showed that the single pooled leverage ratio is typically
+  acceptable on the ATP tour (median 0.76), so the paper's claim is about
+  role-specific scores and BLR, not every leverage-based number.
+
+Outputs are in `results/applications/`, with the run logs
+`results/applications/run_log_applications.txt` and `results/applications/run_log_extensions.txt`.
+Run `applications_analyses.py` first (it builds the cache the extensions
+reuse), from the repo root after fetching the raw data:
+
+```bash
+python src/robustness/applications_analyses.py
+python src/robustness/applications_extensions.py
+python src/figures/make_bootstrap_rank_figure.py
+python src/paper/build_paper_docx.py --paper-id "<ID>"   # needs python-docx
+```
+
 ## Application and impact
 
 Two things this project has a claim on: a broader, independent caution, and
@@ -236,8 +266,11 @@ SSAC submission abstract draft: [`paper/abstract.md`](paper/abstract.md).
 pip install -r requirements.txt
 ```
 
-The pipeline fetches MCP data fresh from `raw.githubusercontent.com` rather
-than shipping it (see [`DATA.md`](DATA.md) for why). Because every script
+The pipeline fetches MCP data from `raw.githubusercontent.com` rather than
+shipping it (see [`DATA.md`](DATA.md) for why). The commands below are pinned
+to upstream commit `2c59eef194967e688b69e73df344184a06322cd8` (2026-05-25), the
+exact snapshot behind every number in the paper; `DATA_MANIFEST.csv` lists each
+file's size, SHA-256 and git blob hash so a fresh download can be verified. Because every script
 reads/writes plain relative filenames, run it from inside the tour's
 `results/` folder so inputs and outputs land in the right place and nothing
 touches the repo root:
@@ -245,19 +278,19 @@ touches the repo root:
 ```bash
 # ATP
 mkdir -p results/atp && cd results/atp
-curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/master/charting-m-matches.csv
-curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/master/charting-m-points-2020s.csv
-curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/master/charting-m-points-2010s.csv
-curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/master/charting-m-points-to-2009.csv
+curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/2c59eef194967e688b69e73df344184a06322cd8/charting-m-matches.csv
+curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/2c59eef194967e688b69e73df344184a06322cd8/charting-m-points-2020s.csv
+curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/2c59eef194967e688b69e73df344184a06322cd8/charting-m-points-2010s.csv
+curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/2c59eef194967e688b69e73df344184a06322cd8/charting-m-points-to-2009.csv
 python ../../src/pipeline/run_pipeline.py --tour atp --min-matches 40
 cd ../..
 
 # WTA
 mkdir -p results/wta && cd results/wta
-curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/master/charting-w-matches.csv
-curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/master/charting-w-points-2020s.csv
-curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/master/charting-w-points-2010s.csv
-curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/master/charting-w-points-to-2009.csv
+curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/2c59eef194967e688b69e73df344184a06322cd8/charting-w-matches.csv
+curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/2c59eef194967e688b69e73df344184a06322cd8/charting-w-points-2020s.csv
+curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/2c59eef194967e688b69e73df344184a06322cd8/charting-w-points-2010s.csv
+curl -O https://raw.githubusercontent.com/JeffSackmann/tennis_MatchChartingProject/2c59eef194967e688b69e73df344184a06322cd8/charting-w-points-to-2009.csv
 python ../../src/pipeline/run_pipeline.py --tour wta --min-matches 40
 cd ../..
 ```
@@ -286,11 +319,13 @@ ground truth at ≥85%: treat any run that doesn't print a parity rate near
 ## Repo layout
 
 ```
+README.md, DATA.md, DATA_MANIFEST.csv, LICENSE, requirements.txt
 src/
   core/        shared modules: notation parsing, entropy/leverage math, data loading, feature construction
   pipeline/    step1_validation, step2_entropy_pipeline, run_pipeline, and the rest of the main pipeline
-  robustness/  the 10 pre-registered follow-up checks
-  figures/     the 7 export/plotting scripts
+  robustness/  the 12 pre-registered checks: 10 follow-ups, plus the Applications analyses and extensions
+  figures/     the 8 export/plotting scripts
+  paper/       build_paper_docx.py: builds the SSAC .docx from paper/full_paper.md
 docs/
   atp/
     01_data_validation/   player-pool eligibility
@@ -298,12 +333,13 @@ docs/
     03_leverage_clutch/   leverage/clutch engine, related work, pre-registration
     04_regression_results/  the primary regression write-up
   wta/                 WTA replication: pre-registration + results, in one place
-  combined/            cross-tour pooled regression: pre-registration + results
+  combined/            cross-tour work: pooled regression, Applications and extensions pre-registrations
 results/
-  atp/       final ATP per-player CSVs (small; no raw or point-level data)
-  wta/       final WTA per-player CSVs
-  figures/   cross-tour comparison figure(s)
-paper/       SSAC abstract and other paper-facing material
+  atp/           final ATP per-player CSVs (small; no raw or point-level data)
+  wta/           final WTA per-player CSVs
+  applications/  outputs and run logs of the Applications analyses and extensions
+  figures/       figures used in the paper and docs, plus the per-player data behind them
+paper/           SSAC abstract, full paper (full_paper.md), and supporting write-ups
 ```
 
 Docs are organized by tour first, build order second: `docs/atp/01...04`
