@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Tennis commentary treats stylistic unpredictability as a pressure-performance asset, and leverage-weighted "clutch" ratings are used by scouts and broadcasters to say who plays the big points well. We ask two questions. First, can these ratings be measured reliably enough to support claims about individual players? Second, does shot-selection consistency, measured as conditional Shannon entropy, predict clutch performance? Using point-by-point Match Charting Project data for 91 ATP and 55 WTA players (40 or more charted matches each) and hypotheses pre-registered before the data were touched, we find that role-specific clutch scores and Tennis Abstract's Balanced Leverage Ratio (BLR) are not reliably measured: across 1,000 random split-half tests, serve clutch has median reliability 0.53 (ATP) and 0.41 (WTA), return clutch 0.24 and 0.27, and BLR 0.54 and 0.29, against 0.90 to 0.93 for entropy. A single pooled leverage ratio is the exception on the ATP tour (median 0.76). Break-point conversion on return is also unreliable (ATP 0.62; its clutch-specific component 0.05). Players' true clutch differences are about 2 percentage points on serve and not detectably different from zero on return, and a reliable ATP return score needs roughly 550 charted matches against a median of 74. Carlos Alcaraz's ATP return-clutch rank is 32, with a 95% interval of 15 to 67 among 91 players. Entropy shows no relationship with clutch performance on either tour, on serve or return, across five leverage variants, and in a pooled test (n = 146). We recommend that any clutch rating be published with its own split-half reliability.
+Tennis commentary treats stylistic unpredictability as a pressure-performance asset, and leverage-weighted "clutch" ratings are used by scouts and broadcasters to say who plays the big points well. We ask two questions. First, can these ratings be measured reliably enough to support claims about individual players? Second, does shot-selection consistency, measured as conditional Shannon entropy, predict clutch performance? Using point-by-point Match Charting Project data for 91 ATP and 55 WTA players (40 or more charted matches each) and hypotheses pre-registered before the data were touched, we find that role-specific clutch scores and Tennis Abstract's Balanced Leverage Ratio (BLR) are not reliably measured: across 1,000 random split-half tests, serve clutch has median reliability 0.53 (ATP) and 0.41 (WTA), return clutch 0.24 and 0.27, and BLR 0.54 and 0.29, against 0.90 to 0.93 for entropy. A single pooled leverage ratio is the exception on the ATP tour (median 0.76). Break-point rates are acceptable skill measures on the ATP tour (median reliability about 0.72) but their clutch-specific component is not (0.23 to 0.34). Players' true clutch differences are about 2 percentage points on serve and not detectably different from zero on return, and a reliable ATP return score needs roughly 550 charted matches against a median of 74. Carlos Alcaraz's ATP return-clutch rank is 32, with a 95% interval of 15 to 67 among 91 players. Entropy shows no relationship with clutch performance on either tour, on serve or return, across five leverage variants, and in a pooled test (n = 146). We recommend that any clutch rating be published with its own split-half reliability.
 
 ## 1. Introduction
 
@@ -116,13 +116,13 @@ No correlation approaches significance after Bonferroni correction; WTA serve is
 
 All pools are well powered for medium or larger effects (r of 0.3 or more) but not for small ones; WTA alone has only 61% power for a medium effect (Table A4). TOST equivalence testing bounds the true ATP correlation to |r| < 0.213 on serve and |r| < 0.189 on return at 95% confidence; WTA's observed-scale bounds are far looser (0.457 and 0.403).
 
-Those bounds are on the observed scale, where both variables are measured with error. Dividing by the attenuation factor implied by each variable's reliability projects them onto the true-score scale (Figure 2; Table A2). ATP's claim survives, loosened but intact: whatever the true relationship is, it is not large (serve 0.29, return 0.41). For WTA return the corrected bound exceeds 1 (1.81, and 1.17 with shrinkage-corrected reliability), so our data cannot rule out any true-score relationship. This is the sharpest illustration in the paper of why reliability must be reported before a clutch correlation is interpreted: it is the difference between a modest null and a number that carries no information.
+Those bounds are on the observed scale, where both variables are measured with error. Dividing by the attenuation factor implied by each variable's reliability projects them onto the true-score scale (Figure 2 uses the original split; Table A2 adds the random-split median and range). On the original split ATP's claim survives, loosened but intact: whatever the true relationship is, it is not large (serve 0.29, return 0.41), and at the random-split median the picture is the same (0.30 and 0.40). For WTA return the original-split corrected bound exceeds 1 (1.81), so the data could not rule out any true-score relationship; at the random-split median it is 0.82, below 1 but still too loose to rule out even a large effect (r = 0.5). The conclusion is therefore sensitive to the reliability assumed: at the worst-case end of the random-split range (2.5th percentile) the clutch reliability of ATP return and WTA return is at or below zero and the bound is vacuous, as is WTA serve's (1.48). This remains the sharpest illustration in the paper of why reliability must be reported before a clutch correlation is interpreted: it is the difference between a modest null and a number that carries no information.
 
 ![Equivalence bound on |r| by tour and role, observed versus reliability-corrected](../results/figures/disattenuation_figure.png)
 
-**Figure 2.** Equivalence bound on |r|, observed versus reliability-corrected. WTA return's bound exceeds 1 and is uninformative.
+**Figure 2.** Equivalence bound on |r|, observed versus reliability-corrected (original-split reliabilities). WTA return's bound exceeds 1 and is uninformative.
 
-The corrected bounds use the original-split reliabilities and treat them as fixed. With the random-split median in Table 1 (WTA return 0.27, not 0.055), a back-of-envelope recalculation gives a true-score bound of about 0.82 (0.403 divided by the square root of 0.897 times 0.267): below 1, so no longer vacuous, but still too loose to rule out even a large effect (r = 0.5). We have not formally rerun this check. The honest reading is that for ATP a style-clutch relationship larger than about r = 0.3 is ruled out, and for WTA the data are informative only about large effects on serve and almost nothing on return.
+Reliabilities are treated as fixed, with their sampling uncertainty shown only through the percentile range in Table A2. The honest reading is that for ATP a style-clutch relationship larger than about r = 0.3 to 0.4 is ruled out unless true return-clutch reliability is at the low end of what we observed, and for WTA the data are informative only about large effects on serve and almost nothing on return.
 
 ## 6. Results C: what the unreliability means for practitioners
 
@@ -168,18 +168,18 @@ Across the pool, the typical player's 95% rank interval spans 52 (serve) to 63 (
 
 ### 6.3 Break-point conversion and save rates
 
-The clutch statistic broadcasters quote most is not a leverage ratio but break-point conversion or saving. Table 5 applies the same split-half test to those rates and to their clutch-specific component (the differential from a player's non-break-point rate). Each player-half has a median of 430 (ATP) or 310 (WTA) break points per role.
+The clutch statistic broadcasters quote most is not a leverage ratio but break-point conversion or saving. Table 5 applies the same split-half test, on the original split and over the 1,000 random splits, to those rates and to their clutch-specific component (the differential from a player's non-break-point rate). Each player-half has a median of 430 (ATP) or 310 (WTA) break points per role.
 
-**Table 5.** Split-half reliability (Spearman-Brown, original split, 95% CI) of break-point statistics.
+**Table 5.** Split-half reliability (Spearman-Brown) of break-point statistics: original split, and median [95% range] over 1,000 random splits.
 
-| Measure | ATP | WTA |
-|---|---|---|
-| BP save (serve), raw rate | 0.754 [0.627, 0.838] | 0.439 [0.034, 0.674] |
-| BP save, differential from baseline | 0.400 [0.088, 0.605] | 0.118 [-0.519, 0.488] |
-| BP conversion (return), raw rate | 0.617 [0.419, 0.748] | 0.063 [-0.613, 0.456] |
-| BP conversion, differential from baseline | 0.054 [-0.437, 0.377] | -0.290 [-1.221, 0.251] |
+| Measure | ATP original | ATP random splits | WTA original | WTA random splits |
+|---|---|---|---|---|
+| BP save (serve), raw rate | 0.754 | 0.715 [0.619, 0.790] | 0.439 | 0.332 [0.043, 0.571] |
+| BP save, differential from baseline | 0.400 | 0.344 [0.110, 0.533] | 0.118 | -0.159 [-0.677, 0.270] |
+| BP conversion (return), raw rate | 0.617 | 0.729 [0.631, 0.807] | 0.063 | 0.267 [-0.094, 0.511] |
+| BP conversion, differential from baseline | 0.054 | 0.227 [-0.060, 0.446] | -0.290 | -0.016 [-0.487, 0.323] |
 
-On ATP serve, the raw break-point save rate is acceptably reliable, but it mostly measures how well a player serves in general: across players it correlates 0.77 with their non-break-point serve win rate (0.80 on return). The clutch-specific component, how much better or worse a player does on break points than usual, has reliability 0.40 on serve and effectively zero on return. On WTA, even the raw rates fall below 0.70. So the pattern of the leverage-weighted metrics repeats in the statistic broadcasters actually cite: stable as a skill measure where data are plentiful, not stable as a clutch measure. Two cautions apply. A differential is a difference score and is mechanically less reliable than its components. And break-point situations are not randomly assigned, so the differential is a descriptive contrast, not a causal estimate of clutch.
+On the ATP tour the raw rates are borderline-to-acceptable skill measures: medians of 0.72 (save) and 0.73 (conversion), with 39% and 28% of random splits below 0.70. The original split gave 0.62 for conversion, an unusually low draw outside the random-split range. But the raw rates mostly measure general ability: across players they correlate 0.77 (serve) and 0.80 (return) with the player's non-break-point win rate. The clutch-specific component, how much better or worse a player does on break points than usual, is not reliable: median 0.34 on serve and 0.23 on return, below 0.70 in at least 99.9% of splits. On WTA even the raw rates are below 0.70 in every split (medians 0.33 and 0.27) and the differentials are near zero or negative. So the pattern of the leverage-weighted metrics repeats in the statistic broadcasters cite: usable as a skill measure where data are plentiful, not as a clutch measure. Two cautions apply. A differential is a difference score and is mechanically less reliable than its components. And break-point situations are not randomly assigned, so the differential is a descriptive contrast, not a causal estimate of clutch.
 
 ### 6.4 How large is the true spread of clutch?
 
@@ -212,7 +212,7 @@ On serve there are real differences between players: the standard deviation of t
 
 - **Observational charting data.** The Match Charting Project is crowd-sourced, and the pool is a selected set of well-charted, mostly elite players. Ranking was not available in the match metadata and is not controlled.
 - **Constant-p leverage.** Leverage uses a constant server point-win probability (Klaassen and Magnus's simplification) with five sensitivity variants. Rank correlations across variants are high, but 13 of 91 players (serve) and 19 of 91 (return) change the sign of their score within the p range tested.
-- **Reliability is estimated, not known.** A single split is one draw (WTA return is 0.055 on the original split and 0.27 at the random-split median). Entropy was not re-split, and the disattenuated bounds and the pre-registered BLR threshold were evaluated on the original split, treating reliabilities as fixed.
+- **Reliability is estimated, not known.** A single split is one draw (WTA return is 0.055 on the original split and 0.27 at the random-split median). Entropy was not re-split. The pre-registered BLR threshold was evaluated on the original split, and the disattenuated bounds, which treat reliabilities as fixed, are shown at both the original and random-split reliabilities (Table A2).
 - **ATP clutch-file provenance.** The script that generated the committed ATP clutch table was lost; the reconstruction differs by up to about 0.005 in clutch scores, changes no conclusion, and WTA reproduces exactly.
 - **Scope of individual tests.** BLR is tested at career level, while Tennis Abstract publishes it per match (per-match reliability can only be lower). Break-point differentials are difference scores in non-randomly assigned situations. The true-spread variance method assumes binomial sampling variance, and for WTA return its two estimators differ by more than our pre-registered factor of 2.
 - **Bootstrap bias.** Quartile clutch scores missed our pre-registered bias tolerance (mean absolute gap 0.0018 to 0.0027 against a target of 0.002; maximum 0.011), likely because quartile thresholds sit on tied leverage values. We did not correct it, and the rank intervals should be read as approximate.
@@ -255,14 +255,14 @@ The pipeline is open, every bug is disclosed, and the infrastructure now makes i
 | BLR (faithful) | WTA | 0.206 [-0.368, 0.539] | 0.294 [-0.021, 0.557] |
 | Pooled LR | WTA | 0.443 [0.040, 0.676] | 0.449 [0.209, 0.641] |
 
-**Table A2.** TOST equivalence bound on |r|, observed versus corrected for measurement error (quartile reliabilities).
+**Table A2.** TOST equivalence bound on |r|, observed versus corrected for measurement error, at the original-split clutch reliability, the random-split median, and the range from the 97.5th to the 2.5th percentile reliability. "Vacuous" means the bound exceeds 1 or the reliability is at or below zero. The original-split column uses the documented (rounded) reliabilities, as in Figure 2.
 
-| Tour | Role | Observed | Reliability-corrected |
-|---|---|---|---|
-| ATP | Serve | 0.213 | 0.293 |
-| ATP | Return | 0.189 | 0.410 |
-| WTA | Serve | 0.457 | 0.635 |
-| WTA | Return | 0.403 | **1.813 (vacuous)** |
+| Tour | Role | Observed | Original split | Random-split median | Random-split range |
+|---|---|---|---|---|---|
+| ATP | Serve | 0.213 | 0.293 | 0.304 | [0.270, 0.379] |
+| ATP | Return | 0.189 | 0.410 | 0.401 | [0.290, vacuous] |
+| WTA | Serve | 0.457 | 0.635 | 0.754 | [0.617, vacuous (1.48)] |
+| WTA | Return | 0.403 | **vacuous (1.81)** | 0.823 | [0.579, vacuous] |
 
 **Table A3.** Pool-level uncertainty from the rank bootstrap.
 

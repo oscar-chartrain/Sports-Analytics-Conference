@@ -220,7 +220,7 @@ convenient specification.
 
 The full SSAC paper is `paper/full_paper.md` (source) and `paper/submission.docx`
 (built on the conference template by `src/paper/build_paper_docx.py`).
-It adds five analyses, each pre-registered before its script was written:
+It adds analyses, each pre-registered before its script was written:
 
 - `docs/combined/applications_preregistration.md` and
   `src/robustness/applications_analyses.py`: split-half reliability of the
@@ -234,8 +234,16 @@ It adds five analyses, each pre-registered before its script was written:
   acceptable on the ATP tour (median 0.76), so the paper's claim is about
   role-specific scores and BLR, not every leverage-based number.
 
+- `docs/combined/consistency_fixes_preregistration.md` and
+  `src/robustness/consistency_fixes.py`: two consistency fixes. Break-point
+  reliability over the same 1,000 random splits (the ATP break-point
+  conversion rate is acceptable as a skill measure in most splits, while its
+  clutch-specific component is not), and equivalence bounds recomputed at the
+  random-split reliabilities (WTA return is vacuous on the original split,
+  0.82 at the median, vacuous again in the worst case).
+
 Outputs are in `results/applications/`, with the run logs
-`results/applications/run_log_applications.txt` and `results/applications/run_log_extensions.txt`.
+`results/applications/run_log_applications.txt`, `run_log_extensions.txt` and `run_log_consistency.txt`.
 Run `applications_analyses.py` first (it builds the cache the extensions
 reuse), from the repo root after fetching the raw data:
 
