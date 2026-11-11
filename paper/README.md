@@ -1,5 +1,9 @@
 # Paper-facing materials
 
+**Phase two (full paper).** The full paper is `full_paper.md`, the editable source; `submission.docx` is built from it on the conference's Word template by `../src/paper/build_paper_docx.py` (`python src/paper/build_paper_docx.py --paper-id "<ID>"`). SSAC does not accept LaTeX, so the Word file is the submission format. `Paper Template.docx` is SSAC's file and `submission.docx` is a build output; neither is committed (see `.gitignore`), so download the template from the competition and place it in this folder to rebuild. Figures 1 to 3 come from `../results/figures/`, and every number in the paper traces to `../results/` and the pre-registrations in `../docs/combined/`. The paper's Appendix C documents the pinned source-data commit.
+
+**Phase one (abstract).** The sections below describe the submitted abstract and the material used to write it.
+
 This folder holds everything meant to be read as part of the submission itself: the SSAC abstract draft and any later drafts, plus material used to write them.
 
 - `application_and_impact.md`: the case for SSAC's application and interest/impact criteria, grounded in what the analysis actually found. Ends with a distilled version adapted into the abstract's Conclusion section.
