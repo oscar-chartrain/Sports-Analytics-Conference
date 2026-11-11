@@ -1,0 +1,50 @@
+ATP: loaded cached point table (1,132,053 points)
+
+======================================================================
+FIX 1 -- ATP: break-point reliability over 1000 random splits
+======================================================================
+VALIDATION BP save (serve)          raw  new code +0.7543  reported +0.7543  (players excluded 0)
+VALIDATION BP save (serve)          diff new code +0.3998  reported +0.3998  (players excluded 0)
+VALIDATION BP conversion (return)   raw  new code +0.6174  reported +0.6174  (players excluded 0)
+VALIDATION BP conversion (return)   diff new code +0.0535  reported +0.0535  (players excluded 0)
+VALIDATION PASS: original assignment reproduces Table 5 within 0.001
+BP save (serve), raw rate                          original +0.754  median +0.715  95% range [+0.619, +0.790]  share<0.70: 38.8%  original typical: yes
+BP save (serve), differential                      original +0.400  median +0.344  95% range [+0.110, +0.533]  share<0.70: 99.9%  original typical: yes
+BP conversion (return), raw rate                   original +0.617  median +0.729  95% range [+0.631, +0.807]  share<0.70: 27.8%  original typical: NO
+BP conversion (return), differential               original +0.054  median +0.227  95% range [-0.060, +0.446]  share<0.70: 100.0%  original typical: yes
+WTA: loaded cached point table (426,269 points)
+
+======================================================================
+FIX 1 -- WTA: break-point reliability over 1000 random splits
+======================================================================
+VALIDATION BP save (serve)          raw  new code +0.4391  reported +0.4391  (players excluded 0)
+VALIDATION BP save (serve)          diff new code +0.1181  reported +0.1181  (players excluded 0)
+VALIDATION BP conversion (return)   raw  new code +0.0634  reported +0.0634  (players excluded 0)
+VALIDATION BP conversion (return)   diff new code -0.2895  reported -0.2895  (players excluded 0)
+VALIDATION PASS: original assignment reproduces Table 5 within 0.001
+BP save (serve), raw rate                          original +0.439  median +0.332  95% range [+0.043, +0.571]  share<0.70: 100.0%  original typical: yes
+BP save (serve), differential                      original +0.118  median -0.159  95% range [-0.677, +0.270]  share<0.70: 100.0%  original typical: yes
+BP conversion (return), raw rate                   original +0.063  median +0.267  95% range [-0.094, +0.511]  share<0.70: 100.0%  original typical: yes
+BP conversion (return), differential               original -0.290  median -0.016  95% range [-0.487, +0.323]  share<0.70: 100.0%  original typical: yes
+
+======================================================================
+FIX 2 -- reliability-corrected TOST bounds at random-split reliabilities
+======================================================================
+ATP serve   original split                         rel=+0.572  B_obs=0.2134 -> B_true=0.293  
+ATP serve   random-split median                    rel=+0.532  B_obs=0.2134 -> B_true=0.304  
+ATP serve   random-split 97.5th pct (best case)    rel=+0.674  B_obs=0.2134 -> B_true=0.270  
+ATP serve   random-split 2.5th pct (worst case)    rel=+0.343  B_obs=0.2134 -> B_true=0.379  
+ATP return  original split                         rel=+0.231  B_obs=0.1894 -> B_true=0.409  
+ATP return  random-split median                    rel=+0.241  B_obs=0.1894 -> B_true=0.401  
+ATP return  random-split 97.5th pct (best case)    rel=+0.462  B_obs=0.1894 -> B_true=0.290  
+ATP return  random-split 2.5th pct (worst case)    rel=-0.058  B_obs=0.1894 -> B_true=n/a  vacuous (reliability <= 0)
+WTA serve   original split                         rel=+0.578  B_obs=0.4569 -> B_true=0.634  
+WTA serve   random-split median                    rel=+0.410  B_obs=0.4569 -> B_true=0.754  
+WTA serve   random-split 97.5th pct (best case)    rel=+0.611  B_obs=0.4569 -> B_true=0.617  
+WTA serve   random-split 2.5th pct (worst case)    rel=+0.107  B_obs=0.4569 -> B_true=1.475  vacuous (bound > 1)
+WTA return  original split                         rel=+0.055  B_obs=0.4027 -> B_true=1.819  vacuous (bound > 1)
+WTA return  random-split median                    rel=+0.267  B_obs=0.4027 -> B_true=0.823  
+WTA return  random-split 97.5th pct (best case)    rel=+0.538  B_obs=0.4027 -> B_true=0.579  
+WTA return  random-split 2.5th pct (worst case)    rel=-0.089  B_obs=0.4027 -> B_true=n/a  vacuous (reliability <= 0)
+
+Wrote outputs to C:\Users\oscar\OneDrive\Desktop\Research-paper\results\applications
