@@ -1,0 +1,90 @@
+ATP: loaded cached point table (1,132,053 points)
+
+======================================================================
+ANALYSIS A -- ATP: reliability across 1000 random splits
+======================================================================
+VALIDATION Serve quartile clutch      new code +0.5720  reported +0.5720  diff 0.00000
+VALIDATION Return quartile clutch     new code +0.2313  reported +0.2313  diff 0.00000
+VALIDATION LR serve                   new code +0.5004  reported +0.5004  diff 0.00000
+VALIDATION LR return                  new code +0.3199  reported +0.3199  diff 0.00000
+VALIDATION BLR (faithful, primary)    new code +0.4601  reported +0.4601  diff 0.00000
+VALIDATION Pooled LR                  new code +0.6832  reported +0.6832  diff 0.00000
+VALIDATION PASS: original assignment reproduces every reported reliability within 0.001
+  ...200/1000 splits
+  ...400/1000 splits
+  ...600/1000 splits
+  ...800/1000 splits
+  ...1000/1000 splits
+Serve quartile clutch      original +0.572  median +0.532  95% range [+0.343, +0.674]  share<0.70: 99.2%  original typical: yes
+Return quartile clutch     original +0.231  median +0.241  95% range [-0.058, +0.462]  share<0.70: 100.0%  original typical: yes
+LR serve                   original +0.500  median +0.525  95% range [+0.347, +0.648]  share<0.70: 99.6%  original typical: yes
+LR return                  original +0.320  median +0.321  95% range [+0.070, +0.508]  share<0.70: 100.0%  original typical: yes
+BLR (faithful, primary)    original +0.460  median +0.537  95% range [+0.353, +0.664]  share<0.70: 99.7%  original typical: yes
+Pooled LR                  original +0.683  median +0.761  95% range [+0.679, +0.831]  share<0.70: 6.8%  original typical: yes
+
+======================================================================
+ANALYSIS B -- ATP: break-point conversion and save rates
+======================================================================
+BP save (serve): players excluded by the 30-break-point floor: 0; median break points per half 430
+  BP save (serve), raw rate                        n= 91  r_half=+0.6055  SB=0.7543  95% CI [0.627, 0.838]
+  BP save (serve), differential vs baseline        n= 91  r_half=+0.2498  SB=0.3998  95% CI [0.088, 0.605]
+  full-sample r between raw BP rate and non-BP baseline rate across players: +0.767
+BP conversion (return): players excluded by the 30-break-point floor: 0; median break points per half 434
+  BP conversion (return), raw rate                 n= 91  r_half=+0.4466  SB=0.6174  95% CI [0.419, 0.748]
+  BP conversion (return), differential vs baseline n= 91  r_half=+0.0275  SB=0.0535  95% CI [-0.437, 0.377]
+  full-sample r between raw BP rate and non-BP baseline rate across players: +0.797
+
+======================================================================
+ANALYSIS C -- ATP: true spread of clutch
+======================================================================
+serve   n=91  true SD (variance decomposition) = 2.15 pts [1.62, 2.57]   true SD (half-split covariance) = 2.10 pts [1.61, 2.50]
+        noise SD 1.81 pts; typical per-player SE 1.74 pts; signal-to-noise 1.42; estimators differ by factor 1.02 (within the pre-registered factor of 2)
+return  n=91  true SD (variance decomposition) = 1.22 pts [0.52, 1.68]   true SD (half-split covariance) = 1.04 pts [0.00, 1.63]
+        noise SD 1.82 pts; typical per-player SE 1.74 pts; signal-to-noise 0.45; estimators differ by factor 1.17 (within the pre-registered factor of 2)
+        a bootstrap interval reaches zero: 'no detectable stable difference' for this estimator
+WTA: loaded cached point table (426,269 points)
+
+======================================================================
+ANALYSIS A -- WTA: reliability across 1000 random splits
+======================================================================
+VALIDATION Serve quartile clutch      new code +0.5784  reported +0.5784  diff 0.00000
+VALIDATION Return quartile clutch     new code +0.0547  reported +0.0547  diff 0.00000
+VALIDATION LR serve                   new code +0.5571  reported +0.5571  diff 0.00000
+VALIDATION LR return                  new code -0.0925  reported -0.0925  diff 0.00000
+VALIDATION BLR (faithful, primary)    new code +0.2056  reported +0.2056  diff 0.00000
+VALIDATION Pooled LR                  new code +0.4426  reported +0.4426  diff 0.00000
+VALIDATION PASS: original assignment reproduces every reported reliability within 0.001
+  ...200/1000 splits
+  ...400/1000 splits
+  ...600/1000 splits
+  ...800/1000 splits
+  ...1000/1000 splits
+Serve quartile clutch      original +0.578  median +0.410  95% range [+0.107, +0.611]  share<0.70: 100.0%  original typical: yes
+Return quartile clutch     original +0.055  median +0.267  95% range [-0.089, +0.538]  share<0.70: 100.0%  original typical: yes
+LR serve                   original +0.557  median +0.375  95% range [+0.094, +0.597]  share<0.70: 100.0%  original typical: yes
+LR return                  original -0.092  median +0.090  95% range [-0.389, +0.398]  share<0.70: 100.0%  original typical: yes
+BLR (faithful, primary)    original +0.206  median +0.294  95% range [-0.021, +0.557]  share<0.70: 100.0%  original typical: yes
+Pooled LR                  original +0.443  median +0.449  95% range [+0.209, +0.641]  share<0.70: 99.6%  original typical: yes
+
+======================================================================
+ANALYSIS B -- WTA: break-point conversion and save rates
+======================================================================
+BP save (serve): players excluded by the 30-break-point floor: 0; median break points per half 307
+  BP save (serve), raw rate                        n= 55  r_half=+0.2813  SB=0.4391  95% CI [0.034, 0.674]
+  BP save (serve), differential vs baseline        n= 55  r_half=+0.0628  SB=0.1181  95% CI [-0.519, 0.488]
+  full-sample r between raw BP rate and non-BP baseline rate across players: +0.647
+BP conversion (return): players excluded by the 30-break-point floor: 0; median break points per half 321
+  BP conversion (return), raw rate                 n= 55  r_half=+0.0327  SB=0.0634  95% CI [-0.613, 0.456]
+  BP conversion (return), differential vs baseline n= 55  r_half=-0.1265  SB=-0.2895  95% CI [-1.221, 0.251]
+  full-sample r between raw BP rate and non-BP baseline rate across players: +0.579
+
+======================================================================
+ANALYSIS C -- WTA: true spread of clutch
+======================================================================
+serve   n=55  true SD (variance decomposition) = 1.88 pts [0.99, 2.48]   true SD (half-split covariance) = 2.14 pts [1.30, 2.71]
+        noise SD 2.12 pts; typical per-player SE 2.08 pts; signal-to-noise 0.79; estimators differ by factor 1.14 (within the pre-registered factor of 2)
+return  n=55  true SD (variance decomposition) = 1.31 pts [0.00, 1.99]   true SD (half-split covariance) = 0.59 pts [0.00, 1.82]
+        noise SD 2.11 pts; typical per-player SE 2.07 pts; signal-to-noise 0.39; estimators differ by factor 2.23 (OUTSIDE the pre-registered factor of 2)
+        a bootstrap interval reaches zero: 'no detectable stable difference' for this estimator
+
+Wrote outputs to C:\Users\oscar\OneDrive\Desktop\Research-paper\results\applications
