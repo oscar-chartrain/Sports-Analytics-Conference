@@ -216,6 +216,9 @@ def build(paper_id, out_path):
                     keep_next=line.startswith('**Table'))
             i += 1
 
+    # blind review: drop the template authors' names from the file properties
+    doc.core_properties.author = ''
+    doc.core_properties.last_modified_by = ''
     doc.save(out_path)
     print(f'Wrote {out_path}')
 

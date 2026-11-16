@@ -47,4 +47,4 @@ WTA return  random-split median                    rel=+0.267  B_obs=0.4027 -> B
 WTA return  random-split 97.5th pct (best case)    rel=+0.538  B_obs=0.4027 -> B_true=0.579  
 WTA return  random-split 2.5th pct (worst case)    rel=-0.089  B_obs=0.4027 -> B_true=n/a  vacuous (reliability <= 0)
 
-Wrote outputs to C:\Users\oscar\OneDrive\Desktop\Research-paper\results\applications
+Wrote outputs to <repo>\results\applications

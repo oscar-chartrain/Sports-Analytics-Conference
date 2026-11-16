@@ -133,4 +133,4 @@ SANITY identity weights reproduce pipeline clutch scores for every player: PASS
   players whose 95% score interval excludes the pool mean: 8/55
   of the top 10 by point estimate, rank interval entirely within top 20: 0/10
 
-Wrote outputs to C:\Users\oscar\OneDrive\Desktop\Research-paper\results\applications
+Wrote outputs to <repo>\results\applications

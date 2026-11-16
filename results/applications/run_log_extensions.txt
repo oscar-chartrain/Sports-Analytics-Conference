@@ -87,4 +87,4 @@ return  n=55  true SD (variance decomposition) = 1.31 pts [0.00, 1.99]   true SD
         noise SD 2.11 pts; typical per-player SE 2.07 pts; signal-to-noise 0.39; estimators differ by factor 2.23 (OUTSIDE the pre-registered factor of 2)
         a bootstrap interval reaches zero: 'no detectable stable difference' for this estimator
 
-Wrote outputs to C:\Users\oscar\OneDrive\Desktop\Research-paper\results\applications
+Wrote outputs to <repo>\results\applications
