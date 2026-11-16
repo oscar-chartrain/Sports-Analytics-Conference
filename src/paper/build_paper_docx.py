@@ -147,7 +147,8 @@ def add_table(doc, rows):
 def add_image(doc, path, alt):
     par = doc.add_paragraph()
     par.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    par.add_run().add_picture(path, width=Inches(5.2))
+    width = 5.4 if 'disattenuation' in str(path) else 6.3   # text width is 6.5 in
+    par.add_run().add_picture(path, width=Inches(width))
     fmt(par, after=4, keep_next=True, align=WD_ALIGN_PARAGRAPH.CENTER)
 
 
