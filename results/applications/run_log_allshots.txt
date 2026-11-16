@@ -1,0 +1,78 @@
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+  hitter parity on 266,591 winner points: 0.954 (floor 0.85)
+VALIDATION serve_clutch: new +0.5720 reported +0.5720 diff 0.00001
+VALIDATION return_clutch: new +0.2313 reported +0.2310 diff 0.00034
+VALIDATION PASS
+  ...100/1000 splits
+  ...200/1000 splits
+  ...300/1000 splits
+  ...400/1000 splits
+  ...500/1000 splits
+  ...600/1000 splits
+  ...700/1000 splits
+  ...800/1000 splits
+  ...900/1000 splits
+  ...1000/1000 splits
+Serve quartile clutch (paper)          orig +0.572  median +0.538  [+0.346, +0.676]  share>=0.70 0.9%
+Return quartile clutch (paper)         orig +0.231  median +0.239  [-0.035, +0.476]  share>=0.70 0.0%
+R1 Rally-phase point clutch            orig +0.391  median +0.436  [+0.218, +0.598]  share>=0.70 0.1%
+R2 Unforced-error clutch, all shots    orig +0.651  median +0.596  [+0.437, +0.715]  share>=0.70 4.2%
+R3 Winner clutch, all shots            orig +0.611  median +0.578  [+0.407, +0.711]  share>=0.70 3.5%
+R4 Error clutch, forehand              orig +0.546  median +0.490  [+0.276, +0.658]  share>=0.70 0.2%
+R5 Error clutch, backhand              orig +0.413  median +0.320  [+0.000, +0.539]  share>=0.70 0.0%
+R6 Error clutch, slice                 orig -0.102  median -0.015  [-0.505, +0.308]  share>=0.70 0.0%
+R7 Error clutch, net game              orig +0.202  median +0.175  [-0.278, +0.506]  share>=0.70 0.0%
+R8 Double-fault clutch (serve)         orig +0.111  median +0.157  [-0.197, +0.409]  share>=0.70 0.0%
+R9 Ace clutch (serve)                  orig +0.364  median +0.405  [+0.139, +0.593]  share>=0.70 0.1%
+ENTROPY vs R1_rally_point: r=+0.007 p=0.947 n=91  bound obs 0.180 corrected 0.284
+ENTROPY vs R2_error_all: r=+0.155 p=0.142 n=91  bound obs 0.320 corrected 0.431
+ENTROPY vs R3_winner_all: r=-0.064 p=0.544 n=91  bound obs 0.235 corrected 0.322
+phase       other  rally  return  serve
+lev_bucket                             
+bottom      0.014  0.623   0.239  0.125
+middle      0.012  0.652   0.222  0.114
+top         0.005  0.659   0.221  0.115
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+  hitter parity on 105,746 winner points: 0.966 (floor 0.85)
+VALIDATION serve_clutch: new +0.5784 reported +0.5780 diff 0.00043
+VALIDATION return_clutch: new +0.0547 reported +0.0550 diff 0.00035
+VALIDATION PASS
+  ...100/1000 splits
+  ...200/1000 splits
+  ...300/1000 splits
+  ...400/1000 splits
+  ...500/1000 splits
+  ...600/1000 splits
+  ...700/1000 splits
+  ...800/1000 splits
+  ...900/1000 splits
+  ...1000/1000 splits
+Serve quartile clutch (paper)          orig +0.578  median +0.414  [+0.142, +0.620]  share>=0.70 0.0%
+Return quartile clutch (paper)         orig +0.055  median +0.271  [-0.074, +0.534]  share>=0.70 0.1%
+R1 Rally-phase point clutch            orig +0.047  median +0.251  [-0.090, +0.514]  share>=0.70 0.0%
+R2 Unforced-error clutch, all shots    orig +0.437  median +0.505  [+0.222, +0.673]  share>=0.70 0.9%
+R3 Winner clutch, all shots            orig +0.595  median +0.466  [+0.207, +0.656]  share>=0.70 0.6%
+R4 Error clutch, forehand              orig +0.312  median +0.411  [+0.126, +0.638]  share>=0.70 0.1%
+R5 Error clutch, backhand              orig +0.241  median +0.225  [-0.239, +0.536]  share>=0.70 0.0%
+R6 Error clutch, slice                 orig -0.255  median +0.150  [-0.421, +0.519]  share>=0.70 0.0%
+R7 Error clutch, net game              orig +nan  median +nan  [+nan, +nan]  share>=0.70 nan%
+R8 Double-fault clutch (serve)         orig -0.012  median +0.116  [-0.398, +0.436]  share>=0.70 0.0%
+R9 Ace clutch (serve)                  orig +0.300  median +0.318  [-0.016, +0.567]  share>=0.70 0.1%
+ENTROPY vs R1_rally_point: r=+0.069 p=0.616 n=55  bound obs 0.289 corrected 0.609
+ENTROPY vs R2_error_all: r=-0.056 p=0.683 n=55  bound obs 0.277 corrected 0.412
+ENTROPY vs R3_winner_all: r=+0.024 p=0.859 n=55  bound obs 0.247 corrected 0.382
+phase       other  rally  return  serve
+lev_bucket                             
+bottom      0.004  0.668   0.227  0.101
+middle      0.005  0.691   0.212  0.092
+top         0.003  0.707   0.202  0.088
+
+Wrote outputs to <repo>\results\applications

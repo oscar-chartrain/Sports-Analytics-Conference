@@ -1,0 +1,7 @@
+tour,measure,median_rank_width_cluster,median_rank_width_player_level,relative_change,n_excluding_pool_mean,n_players,top10_within_top20
+atp,serve,52.0,52.0,0.0,21,91,1
+atp,return,64.0,63.0,0.015873015873015817,8,91,0
+atp,blr,57.0,56.0,0.017857142857142794,18,91,1
+wta,serve,35.024999999999864,37.0,-0.05337837837838211,7,55,2
+wta,return,40.0,39.02499999999986,0.024983984625243982,6,55,1
+wta,blr,40.024999999999864,40.0,0.000624999999996545,8,55,0

@@ -147,7 +147,9 @@ def add_table(doc, rows):
 def add_image(doc, path, alt):
     par = doc.add_paragraph()
     par.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    width = 5.4 if 'disattenuation' in str(path) else 6.3   # text width is 6.5 in
+    # text width is 6.5 in; widths chosen so the figures stay legible without dominating a page
+    name = str(path)
+    width = 4.8 if 'disattenuation' in name else 5.6 if 'allshots' in name else 5.6 if 'bootstrap_rank' in name else 6.0
     par.add_run().add_picture(path, width=Inches(width))
     fmt(par, after=4, keep_next=True, align=WD_ALIGN_PARAGRAPH.CENTER)
 

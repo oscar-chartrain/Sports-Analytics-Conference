@@ -1,0 +1,52 @@
+
+======================================================================
+ATP: match-level cluster bootstrap (B=2000, seed 20261116)
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+SANITY unit weights reproduce every pipeline score: PASS
+  ...200/2000 replicates
+  ...400/2000 replicates
+  ...600/2000 replicates
+  ...800/2000 replicates
+  ...1000/2000 replicates
+  ...1200/2000 replicates
+  ...1400/2000 replicates
+  ...1600/2000 replicates
+  ...1800/2000 replicates
+  ...2000/2000 replicates
+[serve] median 95% rank width 52.0 (player-level 52.0, change +0.0%); score intervals excluding pool mean 21/91
+[return] median 95% rank width 64.0 (player-level 63.0, change +1.6%); score intervals excluding pool mean 8/91
+[blr] median 95% rank width 57.0 (player-level 56.0, change +1.8%); score intervals excluding pool mean 18/91
+  Jannik Sinner    serve   score -0.0030 [-0.0242, +0.0145]  rank 56 [35, 77]
+  Jannik Sinner    return  score -0.0095 [-0.0287, +0.0082]  rank 57 [33, 80]
+  Jannik Sinner    blr     score +0.9882 [+0.9717, +1.0074]  rank 68 [39, 81]
+  Carlos Alcaraz   serve   score +0.0024 [-0.0191, +0.0222]  rank 50 [28, 74]
+  Carlos Alcaraz   return  score +0.0077 [-0.0147, +0.0278]  rank 32 [14, 64]
+  Carlos Alcaraz   blr     score +1.0000 [+0.9787, +1.0214]  rank 48 [25, 75]
+  Novak Djokovic   serve   score -0.0142 [-0.0261, -0.0015]  rank 72 [54, 79]
+  Novak Djokovic   return  score -0.0203 [-0.0340, -0.0067]  rank 78 [53, 84]
+  Novak Djokovic   blr     score +0.9758 [+0.9631, +0.9880]  rank 83 [63, 86]
+  Roger Federer    serve   score -0.0074 [-0.0181, +0.0026]  rank 64 [48, 73]
+  Roger Federer    return  score -0.0267 [-0.0378, -0.0146]  rank 86 [63, 86]
+  Roger Federer    blr     score +0.9763 [+0.9656, +0.9880]  rank 81 [62, 86]
+
+======================================================================
+WTA: match-level cluster bootstrap (B=2000, seed 20261116)
+======================================================================
+WTA: loaded cached point table (426,269 points)
+SANITY unit weights reproduce every pipeline score: PASS
+  ...200/2000 replicates
+  ...400/2000 replicates
+  ...600/2000 replicates
+  ...800/2000 replicates
+  ...1000/2000 replicates
+  ...1200/2000 replicates
+  ...1400/2000 replicates
+  ...1600/2000 replicates
+  ...1800/2000 replicates
+  ...2000/2000 replicates
+[serve] median 95% rank width 35.0 (player-level 37.0, change -5.3%); score intervals excluding pool mean 7/55
+[return] median 95% rank width 40.0 (player-level 39.0, change +2.5%); score intervals excluding pool mean 6/55
+[blr] median 95% rank width 40.0 (player-level 40.0, change +0.1%); score intervals excluding pool mean 8/55
+
+Wrote outputs to <repo>\results\applications

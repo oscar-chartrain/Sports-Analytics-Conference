@@ -39,7 +39,7 @@ import formulas as f
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 FIG_DIR = os.path.join(REPO_ROOT, 'results', 'figures')
 
-COLORS = {'atp': '#1f6f8b', 'wta': '#c2554d'}
+COLORS = {'atp': '#1b78a3', 'wta': '#c2554d'}
 LABELS = {'atp': 'ATP', 'wta': 'WTA'}
 
 

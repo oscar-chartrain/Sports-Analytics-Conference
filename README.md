@@ -242,15 +242,35 @@ It adds analyses, each pre-registered before its script was written:
   random-split reliabilities (WTA return is vacuous on the original split,
   0.82 at the median, vacuous again in the worst case).
 
+- `docs/combined/all_shots_preregistration.md` and
+  `src/robustness/all_shots_analyses.py` (figure: `src/figures/make_allshots_figure.py`):
+  clutch beyond serve and return. Classifies every point by where it ended
+  (serve, return, rally) and tests the split-half reliability of rally-decided
+  point clutch and of shot-level unforced-error, winner, ace and double-fault
+  clutch (by shot type), plus the entropy correlations against them. No
+  outcome reaches 0.70 on either tour.
+- `docs/combined/cluster_bootstrap_preregistration.md` and
+  `src/robustness/cluster_bootstrap_ranks.py`: the rank intervals recomputed by
+  resampling matches jointly (about 70% of ATP matches are between two pool
+  players); widths change by under 6%.
+- `src/robustness/matches_needed_ci.py`, `win_prob_translation.py` and
+  `atp_frozen_vs_regenerated_tests.py`: intervals for the matches-needed table,
+  the first-order match-win range, and the frozen-versus-regenerated ATP check.
+- `docs/combined/preregistration_timeline.md`: what can and cannot be verified
+  about when each plan was written (the plans are self-registered).
+
 Outputs are in `results/applications/`, with the run logs
-`results/applications/run_log_applications.txt`, `run_log_extensions.txt` and `run_log_consistency.txt`.
+`results/applications/run_log_applications.txt`, `run_log_extensions.txt`, `run_log_consistency.txt`, `run_log_allshots.txt` and `run_log_cluster_bootstrap.txt`.
 Run `applications_analyses.py` first (it builds the cache the extensions
 reuse), from the repo root after fetching the raw data:
 
 ```bash
 python src/robustness/applications_analyses.py
 python src/robustness/applications_extensions.py
+python src/robustness/all_shots_analyses.py
+python src/robustness/cluster_bootstrap_ranks.py
 python src/figures/make_bootstrap_rank_figure.py
+python src/figures/make_allshots_figure.py
 python src/paper/build_paper_docx.py --paper-id "<ID>"   # needs python-docx
 ```
 

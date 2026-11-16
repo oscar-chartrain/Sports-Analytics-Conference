@@ -3,8 +3,8 @@ make_bootstrap_rank_figure.py -- Figure 3 of the full paper: 95% bootstrap
 rank intervals for every player in the ATP pool, serve and return clutch,
 with Sinner, Alcaraz, Djokovic and Federer highlighted.
 
-Reads results/applications/a3_bootstrap_players.csv (written by
-src/robustness/applications_analyses.py); no new analysis. Writes
+Reads results/applications/a3c_cluster_bootstrap_players.csv (written by
+src/robustness/cluster_bootstrap_ranks.py); no new analysis. Writes
 results/figures/bootstrap_rank_figure.png.
 
 Usage: python3 make_bootstrap_rank_figure.py
@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-SRC = os.path.join(REPO_ROOT, 'results', 'applications', 'a3_bootstrap_players.csv')
+SRC = os.path.join(REPO_ROOT, 'results', 'applications', 'a3c_cluster_bootstrap_players.csv')
 OUT = os.path.join(REPO_ROOT, 'results', 'figures', 'bootstrap_rank_figure.png')
 
 HIGHLIGHT = {
