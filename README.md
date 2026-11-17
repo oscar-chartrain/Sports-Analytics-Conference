@@ -271,8 +271,8 @@ python src/robustness/applications_analyses.py
 python src/robustness/applications_extensions.py
 python src/robustness/all_shots_analyses.py
 python src/robustness/cluster_bootstrap_ranks.py
-python src/robustness/multilevel_clutch_variance.py   # multilevel and clustered true-spread estimates (Table A6)
-python src/robustness/rally_extension.py             # rally-outcome practice analyses (Table A9)
+python src/robustness/multilevel_clutch_variance.py   # multilevel and clustered true-spread estimates (Table S6)
+python src/robustness/rally_extension.py             # rally-outcome practice analyses (Table S9)
 python src/figures/make_bootstrap_rank_figure.py
 python src/figures/make_allshots_figure.py
 python src/paper/build_paper_docx.py --paper-id "<ID>"   # needs python-docx

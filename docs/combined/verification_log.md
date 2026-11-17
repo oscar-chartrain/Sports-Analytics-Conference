@@ -91,3 +91,8 @@ and what was corrected. Nothing in it is a new analysis.
 - Section 5.2 now defines the equivalence bound in plain language; Section 7 states the practical reading of the entropy null (bound 0.30 on ATP serve is a standardized effect, stated as at most 0.3 SD of true clutch per SD of entropy).
 - Table 2 drops the observed-bound column (all observed bounds are in Table A2, which gains the all-shot rows from `allshots_entropy_tests.csv`); Table 3 drops the true-SD intervals (in Tables A6 and A9) and marks intervals reaching zero.
 
+## Addendum 2026-11-16 (trim to 12 pages)
+- Appendix A tables moved to `paper/supplementary_tables.md` and renumbered S1 to S9 (old A1 to A9); earlier entries in this log use the old A labels. The paper keeps no appendix tables; Appendices B and C were merged into one short appendix.
+- Text tightened in the introduction, Sections 3, 4.2, 4.4, 5.1, 6.1 to 6.3, 7, 8 and 9; the closing paragraph and the "people who use these numbers" paragraph were removed, and Figure 3 was narrowed. No number was changed except one consistency fix: the ATP return matches-needed interval in the text was 180 to unbounded against 201 to unbounded in Table 3 (original-split versus random-split source); both now read about 200.
+- Page count from Word: 12 (11 through the references, the appendix on the last page).
+
