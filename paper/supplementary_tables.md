@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S9 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S11 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -119,3 +119,38 @@ Multilevel intervals come from 200 player-bootstrap refits, the others from 2,00
 
 Shrinkage comes closest to the line for ATP winners and WTA unforced errors, but in neither does at least 95% of splits reach 0.70. Break-point rates and the pooled ratio are not repeated for rally points: the first is defined by score state, not by how a point ends, and the second already uses every point.
 
+**Table S10.** A continuous leverage-slope clutch score against the quartile score, on the same 1,000 random balanced splits. The slope is the least-squares slope of point-win on leverage over all of a player's points in the role (rally-decided points for rally), scaled by the player's leverage standard deviation, so it reads as the change in win probability for a one-SD higher-leverage point. Reliability is Spearman-Brown corrected; "share" is the share of splits at or above 0.70. True SD and implied reliability use the match-clustered estimator of Section 6.1.
+
+| Tour, outcome | Slope: original split | Slope: random-split median [95% range] | Slope: share at or above 0.70 | Quartile: random-split median | True SD of slope score, pp [95% interval] | Noise SE, pp | Implied reliability | Correlation with quartile score |
+|---|---|---|---|---|---|---|---|---|
+| ATP serve | 0.46 | 0.50 [0.32, 0.64] | 0.1% | 0.54 | 0.67 [0.50, 0.81] | 0.66 | 0.51 | 0.87 |
+| ATP return | 0.30 | 0.31 [0.04, 0.51] | 0.0% | 0.24 | 0.47 [0.00, 0.67] | 0.68 | 0.32 | 0.87 |
+| ATP rally points | 0.30 | 0.48 [0.29, 0.63] | 0.1% | 0.44 | 0.58 [0.38, 0.74] | 0.59 | 0.49 | 0.88 |
+| WTA serve | 0.55 | 0.36 [0.09, 0.59] | 0.0% | 0.41 | 0.60 [0.24, 0.80] | 0.75 | 0.39 | 0.86 |
+| WTA return | -0.07 | 0.10 [-0.31, 0.41] | 0.0% | 0.27 | 0.31 [0.00, 0.68] | 0.78 | 0.13 | 0.81 |
+| WTA rally points | 0.10 | 0.17 [-0.18, 0.44] | 0.0% | 0.25 | 0.31 [0.00, 0.51] | 0.65 | 0.19 | 0.81 |
+
+The slope without the SD scaling gives random-split medians within 0.05 of these, except WTA return (0.15). This table extends the earlier single-split check of a continuous slope reported in `docs/atp/04_regression_results/split_half_reliability.md`.
+
+**Table S11.** Chronological split: each player's earlier half of charted matches against the later half (earlier half rounded up; quartile thresholds recomputed within each half). r is the early-late correlation; the next column steps it up to full length with Spearman-Brown; 95% player-bootstrap intervals in brackets. The last two columns repeat the interleaved original-split and random-split-median reliabilities for the same estimator.
+
+| Tour, estimator, outcome | n | Early-late r [95% interval] | Spearman-Brown [95% interval] | Interleaved: original | Interleaved: median |
+|---|---|---|---|---|---|
+| ATP, quartile, serve | 91 | 0.28 [0.07, 0.50] | 0.44 [0.14, 0.66] | 0.57 | 0.54 |
+| ATP, quartile, return | 91 | 0.11 [-0.09, 0.34] | 0.20 [-0.20, 0.50] | 0.23 | 0.24 |
+| ATP, quartile, rally points | 91 | 0.29 [0.10, 0.46] | 0.45 [0.18, 0.63] | 0.39 | 0.44 |
+| ATP, quartile, unforced errors | 91 | 0.49 [0.36, 0.61] | 0.66 [0.53, 0.76] | 0.65 | 0.60 |
+| ATP, quartile, winners | 91 | 0.40 [0.21, 0.57] | 0.57 [0.34, 0.73] | 0.61 | 0.58 |
+| ATP, slope, serve | 91 | 0.35 [0.17, 0.52] | 0.51 [0.29, 0.68] | 0.46 | 0.50 |
+| ATP, slope, return | 91 | 0.26 [0.03, 0.46] | 0.41 [0.05, 0.63] | 0.29 | 0.31 |
+| ATP, slope, rally points | 91 | 0.39 [0.19, 0.55] | 0.56 [0.32, 0.71] | 0.30 | 0.48 |
+| WTA, quartile, serve | 55 | 0.25 [-0.04, 0.51] | 0.40 [-0.08, 0.67] | 0.58 | 0.41 |
+| WTA, quartile, return | 55 | 0.06 [-0.22, 0.35] | 0.12 [-0.58, 0.52] | 0.05 | 0.27 |
+| WTA, quartile, rally points | 55 | 0.13 [-0.15, 0.38] | 0.23 [-0.34, 0.55] | 0.05 | 0.25 |
+| WTA, quartile, unforced errors | 55 | 0.16 [-0.19, 0.49] | 0.28 [-0.47, 0.65] | 0.44 | 0.50 |
+| WTA, quartile, winners | 55 | 0.43 [0.22, 0.64] | 0.60 [0.36, 0.78] | 0.59 | 0.47 |
+| WTA, slope, serve | 55 | 0.23 [-0.04, 0.48] | 0.37 [-0.09, 0.65] | 0.55 | 0.36 |
+| WTA, slope, return | 55 | -0.03 [-0.38, 0.27] | -0.05 [-1.21, 0.42] | -0.07 | 0.10 |
+| WTA, slope, rally points | 55 | 0.11 [-0.12, 0.32] | 0.20 [-0.28, 0.49] | 0.10 | 0.17 |
+
+No outcome has a chronological Spearman-Brown estimate at or above 0.70; the highest is ATP unforced-error clutch (0.66, interval 0.53 to 0.76), whose interval does reach 0.70. The intervals are wide because there is a single chronological split per tour.

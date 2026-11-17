@@ -96,3 +96,8 @@ and what was corrected. Nothing in it is a new analysis.
 - Text tightened in the introduction, Sections 3, 4.2, 4.4, 5.1, 6.1 to 6.3, 7, 8 and 9; the closing paragraph and the "people who use these numbers" paragraph were removed, and Figure 3 was narrowed. No number was changed except one consistency fix: the ATP return matches-needed interval in the text was 180 to unbounded against 201 to unbounded in Table 3 (original-split versus random-split source); both now read about 200.
 - Page count from Word: 12 (11 through the references, the appendix on the last page).
 
+## Addendum 2026-11-17 (slope estimator, chronological split)
+- `src/robustness/slope_chronological.py` (plan in `docs/combined/slope_chronological_preregistration.md`, written before the run; the code was only syntax-checked first). Validation passed: quartile original-split reliabilities of S, Rt, R1, R2, R3 match `allshots_reliability.csv` on both tours.
+- Results in `results/applications/slope_reliability.csv`, `slope_spread.csv`, `chronological_reliability.csv`; paper Section 4.3 and Tables S10 and S11. Neither the slope score nor the chronological split reaches 0.70 (slope random-split share at or above 0.70 at most 0.1%; highest chronological value ATP unforced-error clutch 0.66 [0.53, 0.76]).
+- Disclosure: an earlier single-split check of a continuous slope already existed (`docs/atp/04_regression_results/split_half_reliability.md`); the new analysis adds random splits, SD scaling, rally points, clustered true spread and agreement with the quartile score. The 4.3 sentence now cites the new random-split figures.
+- Page count from Word: 12.
