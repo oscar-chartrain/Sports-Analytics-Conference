@@ -1,0 +1,98 @@
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+  hitter parity on 266,591 winner points: 0.954 (floor 0.85)
+VALIDATION R1: new +0.3906 reference +0.3906
+VALIDATION R2: new +0.6514 reference +0.6514
+VALIDATION R3: new +0.6112 reference +0.6112
+VALIDATION S: new +0.5720 reference +0.5720
+VALIDATION Rt: new +0.2313 reference +0.2313
+VALIDATION PASS
+[R1] n=91 reliability 0.44; matches needed 223 [116, 618]; true SD 1.62 [1.07, 2.06] pp, noise SE 1.71, implied rel 0.47 [0.28, 0.59]
+      R1 leverage mass per match: top 3.44, bottom 0.32; one true SD = 0.52 to 5.57 pp match-win probability
+      rank intervals: median width 55.0 of 91; score intervals excluding pool mean 15/91
+      shrinkage: original split raw 0.391 -> shrunk 0.473; random-split median raw 0.439 -> shrunk 0.457, share >= 0.70 0.1%
+[R2] n=91 reliability 0.60; matches needed 117 [69, 222]; true SD 0.77 [0.57, 0.94] pp, noise SE 0.63, implied rel 0.60 [0.45, 0.69]
+      rank intervals: median width 49.0 of 91; score intervals excluding pool mean 21/91
+      shrinkage: original split raw 0.651 -> shrunk 0.653; random-split median raw 0.593 -> shrunk 0.619, share >= 0.70 6.6%
+[R3] n=91 reliability 0.58; matches needed 126 [70, 251]; true SD 0.71 [0.49, 0.87] pp, noise SE 0.62, implied rel 0.57 [0.38, 0.68]
+      rank intervals: median width 48.0 of 91; score intervals excluding pool mean 25/91
+      shrinkage: original split raw 0.611 -> shrunk 0.754; random-split median raw 0.579 -> shrunk 0.743, share >= 0.70 79.4%
+[S] n=91 reliability 0.54; matches needed 148 [83, 327]; true SD 2.11 [1.57, 2.55] pp, noise SE 1.86, implied rel 0.56 [0.41, 0.65]
+      rank intervals: median width 49.0 of 91; score intervals excluding pool mean 24/91
+      shrinkage: original split raw 0.572 -> shrunk 0.618; random-split median raw 0.537 -> shrunk 0.559, share >= 0.70 0.9%
+[Rt] n=91 reliability 0.24; matches needed 550 [190, unbounded]; true SD 1.09 [0.00, 1.58] pp, noise SE 1.89, implied rel 0.25 [0.00, 0.42]
+      rank intervals: median width 61.0 of 91; score intervals excluding pool mean 9/91
+      shrinkage: original split raw 0.231 -> shrunk 0.449; random-split median raw 0.242 -> shrunk 0.277, share >= 0.70 0.1%
+      leverage_p60        R1  orig +0.345 median +0.423 share>=0.70 0.0%
+      leverage_p60        R2  orig +0.644 median +0.642 share>=0.70 13.5%
+      leverage_p60        R3  orig +0.672 median +0.612 share>=0.70 9.5%
+      leverage_p60        S   orig +0.550 median +0.552 share>=0.70 1.0%
+      leverage_p60        Rt  orig +0.215 median +0.297 share>=0.70 0.0%
+      leverage_p70        R1  orig +0.352 median +0.396 share>=0.70 0.0%
+      leverage_p70        R2  orig +0.629 median +0.554 share>=0.70 1.5%
+      leverage_p70        R3  orig +0.635 median +0.561 share>=0.70 3.0%
+      leverage_p70        S   orig +0.510 median +0.533 share>=0.70 1.0%
+      leverage_p70        Rt  orig +0.140 median +0.197 share>=0.70 0.0%
+      leverage_tiered     R1  orig +0.405 median +0.430 share>=0.70 0.0%
+      leverage_tiered     R2  orig +0.680 median +0.597 share>=0.70 6.0%
+      leverage_tiered     R3  orig +0.627 median +0.579 share>=0.70 4.0%
+      leverage_tiered     S   orig +0.599 median +0.532 share>=0.70 0.0%
+      leverage_tiered     Rt  orig +0.215 median +0.235 share>=0.70 0.0%
+      leverage_empirical  R1  orig +0.411 median +0.437 share>=0.70 0.0%
+      leverage_empirical  R2  orig +0.666 median +0.590 share>=0.70 4.0%
+      leverage_empirical  R3  orig +0.624 median +0.583 share>=0.70 4.5%
+      leverage_empirical  S   orig +0.580 median +0.526 share>=0.70 0.5%
+      leverage_empirical  Rt  orig +0.251 median +0.260 share>=0.70 0.0%
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+  hitter parity on 105,746 winner points: 0.966 (floor 0.85)
+VALIDATION R1: new +0.0475 reference +0.0475
+VALIDATION R2: new +0.4367 reference +0.4367
+VALIDATION R3: new +0.5947 reference +0.5947
+VALIDATION S: new +0.5784 reference +0.5784
+VALIDATION Rt: new +0.0547 reference +0.0547
+VALIDATION PASS
+[R1] n=55 reliability 0.25; matches needed 445 [141, unbounded]; true SD 1.06 [0.00, 1.66] pp, noise SE 1.87, implied rel 0.24 [0.00, 0.44]
+      R1 leverage mass per match: top 3.18, bottom 0.29; one true SD = 0.31 to 3.38 pp match-win probability
+      rank intervals: median width 38.0 of 55; score intervals excluding pool mean 5/55
+      shrinkage: original split raw 0.047 -> shrunk 0.162; random-split median raw 0.243 -> shrunk 0.109, share >= 0.70 0.0%
+[R2] n=55 reliability 0.50; matches needed 146 [72, 524]; true SD 0.73 [0.26, 1.07] pp, noise SE 0.71, implied rel 0.52 [0.11, 0.71]
+      rank intervals: median width 37.0 of 55; score intervals excluding pool mean 10/55
+      shrinkage: original split raw 0.437 -> shrunk 0.733; random-split median raw 0.491 -> shrunk 0.709, share >= 0.70 54.5%
+[R3] n=55 reliability 0.47; matches needed 171 [78, 572]; true SD 0.64 [0.38, 0.82] pp, noise SE 0.65, implied rel 0.49 [0.25, 0.61]
+      rank intervals: median width 34.0 of 55; score intervals excluding pool mean 10/55
+      shrinkage: original split raw 0.595 -> shrunk 0.517; random-split median raw 0.472 -> shrunk 0.457, share >= 0.70 0.2%
+[S] n=55 reliability 0.41; matches needed 212 [92, 899]; true SD 1.84 [0.93, 2.45] pp, noise SE 2.15, implied rel 0.42 [0.15, 0.57]
+      rank intervals: median width 35.0 of 55; score intervals excluding pool mean 9/55
+      shrinkage: original split raw 0.578 -> shrunk 0.570; random-split median raw 0.412 -> shrunk 0.384, share >= 0.70 0.1%
+[Rt] n=55 reliability 0.27; matches needed 402 [130, unbounded]; true SD 1.29 [0.00, 1.96] pp, noise SE 2.13, implied rel 0.27 [0.00, 0.46]
+      rank intervals: median width 39.0 of 55; score intervals excluding pool mean 6/55
+      shrinkage: original split raw 0.055 -> shrunk 0.111; random-split median raw 0.270 -> shrunk 0.170, share >= 0.70 0.1%
+      leverage_p60        R1  orig +0.138 median +0.307 share>=0.70 0.0%
+      leverage_p60        R2  orig +0.533 median +0.552 share>=0.70 7.5%
+      leverage_p60        R3  orig +0.720 median +0.477 share>=0.70 0.5%
+      leverage_p60        S   orig +0.495 median +0.412 share>=0.70 0.0%
+      leverage_p60        Rt  orig -0.034 median +0.231 share>=0.70 0.0%
+      leverage_p70        R1  orig -0.130 median +0.217 share>=0.70 0.0%
+      leverage_p70        R2  orig +0.364 median +0.429 share>=0.70 0.0%
+      leverage_p70        R3  orig +0.598 median +0.360 share>=0.70 0.0%
+      leverage_p70        S   orig +0.522 median +0.352 share>=0.70 0.0%
+      leverage_p70        Rt  orig -0.133 median +0.248 share>=0.70 0.0%
+      leverage_tiered     R1  orig +0.049 median +0.247 share>=0.70 0.0%
+      leverage_tiered     R2  orig +0.448 median +0.503 share>=0.70 2.0%
+      leverage_tiered     R3  orig +0.555 median +0.461 share>=0.70 1.0%
+      leverage_tiered     S   orig +0.544 median +0.401 share>=0.70 0.0%
+      leverage_tiered     Rt  orig -0.008 median +0.287 share>=0.70 0.0%
+      leverage_empirical  R1  orig +0.058 median +0.290 share>=0.70 0.0%
+      leverage_empirical  R2  orig +0.540 median +0.590 share>=0.70 9.0%
+      leverage_empirical  R3  orig +0.709 median +0.548 share>=0.70 4.5%
+      leverage_empirical  S   orig +0.458 median +0.395 share>=0.70 0.0%
+      leverage_empirical  Rt  orig -0.008 median +0.191 share>=0.70 0.0%
+
+Wrote outputs to <repo>\results\applications

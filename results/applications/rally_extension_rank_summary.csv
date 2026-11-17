@@ -1,0 +1,11 @@
+tour,outcome,n_players,median_rank_width,n_excluding_pool_mean,top10_within_top20
+atp,R1,91,55.024999999999864,15,0
+atp,R2,91,49.0,21,2
+atp,R3,91,48.0,25,1
+atp,S,91,49.0,24,1
+atp,Rt,91,61.0,9,0
+wta,R1,55,38.025,5,1
+wta,R2,55,37.0,10,3
+wta,R3,55,34.0,10,2
+wta,S,55,35.0,9,1
+wta,Rt,55,39.0,6,1

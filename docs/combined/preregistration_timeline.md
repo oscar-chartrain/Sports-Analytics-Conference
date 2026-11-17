@@ -34,6 +34,8 @@ time-stamped registrations.
 | Consistency fixes | 2026-11-11 | 2026-11-11 |
 | All-shot clutch (`docs/combined/all_shots_preregistration.md`) | 2026-11-16 | after 2026-11-16 |
 | Match-level cluster bootstrap (`docs/combined/cluster_bootstrap_preregistration.md`) | 2026-11-16 | after 2026-11-16 |
+| Multilevel clutch variance (`docs/combined/multilevel_clutch_variance_preregistration.md`) | 2026-11-16 | after 2026-11-16 |
+| Rally extension (`docs/combined/rally_extension_preregistration.md`) | 2026-11-16 | after 2026-11-16 |
 
 The November plans were all written after the earlier results (the entropy
 null and the reliability findings) were known, so they are pre-specified but

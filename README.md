@@ -249,6 +249,8 @@ It adds analyses, each pre-registered before its script was written:
   point clutch and of shot-level unforced-error, winner, ace and double-fault
   clutch (by shot type), plus the entropy correlations against them. No
   outcome reaches 0.70 on either tour.
+- `docs/combined/multilevel_clutch_variance_preregistration.md` and `src/robustness/multilevel_clutch_variance.py`: a multilevel model and a match-clustered two-stage estimator of the true spread of clutch, with implied reliability and a likelihood-ratio test (outputs `multilevel_clutch_variance.csv`, `run_log_multilevel.txt`).
+- `docs/combined/rally_extension_preregistration.md` and `src/robustness/rally_extension.py`: data needed, true spread, match-win range, cluster-bootstrap rank intervals, shrinkage and leverage-variant sensitivity for rally-point, error and winner clutch (outputs `rally_extension_*.csv`, `run_log_rally_extension.txt`).
 - `docs/combined/cluster_bootstrap_preregistration.md` and
   `src/robustness/cluster_bootstrap_ranks.py`: the rank intervals recomputed by
   resampling matches jointly (about 70% of ATP matches are between two pool
@@ -269,6 +271,8 @@ python src/robustness/applications_analyses.py
 python src/robustness/applications_extensions.py
 python src/robustness/all_shots_analyses.py
 python src/robustness/cluster_bootstrap_ranks.py
+python src/robustness/multilevel_clutch_variance.py   # multilevel and clustered true-spread estimates (Table A6)
+python src/robustness/rally_extension.py             # rally-outcome practice analyses (Table A9)
 python src/figures/make_bootstrap_rank_figure.py
 python src/figures/make_allshots_figure.py
 python src/paper/build_paper_docx.py --paper-id "<ID>"   # needs python-docx
