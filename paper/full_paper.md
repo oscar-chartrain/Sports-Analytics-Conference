@@ -84,24 +84,26 @@ No outcome meets the pre-registered criterion on either tour. The most reliable 
 
 ### 5.1 Tests
 
-**Table 2.** Correlation of conditional entropy with each clutch outcome, with the outcome's reliability (random-split median) and the 95% TOST bound on the true |r|, as observed and corrected for both variables' reliability. n = 91 (ATP) and 55 (WTA). R1 to R3 are the all-shot outcomes of Section 3 (rally-decided points, unforced errors and winners over every shot hit). A corrected bound near or above 1 means the data cannot rule out any relationship.
+**Table 2.** Correlation of conditional entropy with each clutch outcome, the outcome's reliability (random-split median) and the 95% bound on the true |r| (Section 5.2) after correcting for both variables' reliability; observed bounds are in Table A2. n = 91 (ATP) and 55 (WTA). R1 to R3 are the all-shot outcomes of Section 3 (rally-decided points, unforced errors and winners over every shot hit). A corrected bound near or above 1 means the data cannot rule out any relationship.
 
-| Tour | Outcome | r (p) | Outcome reliability | Bound, observed | Bound, corrected |
-|---|---|---|---|---|---|
-| ATP | Serve | -0.041 (0.697) | 0.53 | 0.213 | 0.30 |
-| ATP | Return | +0.016 (0.877) | 0.24 | 0.189 | 0.40 |
-| ATP | R1 rally points | +0.007 (0.947) | 0.44 | 0.180 | 0.28 |
-| ATP | R2 errors | +0.155 (0.142) | 0.60 | 0.320 | 0.43 |
-| ATP | R3 winners | -0.064 (0.544) | 0.58 | 0.235 | 0.32 |
-| WTA | Serve | -0.259 (0.056) | 0.41 | 0.457 | 0.75 |
-| WTA | Return | +0.196 (0.151) | 0.27 | 0.403 | 0.82 |
-| WTA | R1 rally points | +0.069 (0.616) | 0.25 | 0.289 | 0.61 |
-| WTA | R2 errors | -0.056 (0.683) | 0.50 | 0.277 | 0.41 |
-| WTA | R3 winners | +0.024 (0.859) | 0.47 | 0.247 | 0.38 |
+| Tour | Outcome | r (p) | Outcome reliability | Corrected bound on true r |
+|---|---|---|---|---|
+| ATP | Serve | -0.041 (0.697) | 0.53 | 0.30 |
+| ATP | Return | +0.016 (0.877) | 0.24 | 0.40 |
+| ATP | R1 rally points | +0.007 (0.947) | 0.44 | 0.28 |
+| ATP | R2 errors | +0.155 (0.142) | 0.60 | 0.43 |
+| ATP | R3 winners | -0.064 (0.544) | 0.58 | 0.32 |
+| WTA | Serve | -0.259 (0.056) | 0.41 | 0.75 |
+| WTA | Return | +0.196 (0.151) | 0.27 | 0.82 |
+| WTA | R1 rally points | +0.069 (0.616) | 0.25 | 0.61 |
+| WTA | R2 errors | -0.056 (0.683) | 0.50 | 0.41 |
+| WTA | R3 winners | +0.024 (0.859) | 0.47 | 0.38 |
 
 No correlation survives Bonferroni correction (serve and return: 10 comparisons per tour, threshold 0.005; all-shot: 6, threshold 0.0083), and the smallest nominal p in Table 2 is 0.056 (WTA serve; 0.017 under the p = 0.70 leverage variant), which does not survive Spearman re-testing (rho = -0.17, p = 0.20) or removal of its three most influential players (p = 0.20). The null also holds across five leverage variants, era and surface confounds, four secondary style predictors (16 comparisons; lowest nominal p 0.013 against 0.003), entropy change under pressure and the regenerated ATP clutch table (Section 8). Pooling the tours (n = 146) is null, with no evidence the slope differs by tour (Table A3).
 
 ### 5.2 What the null can and cannot rule out
+
+The bound used throughout is the largest true correlation, in absolute value, that the data cannot rule out with 95% confidence (a two one-sided equivalence test). A bound of 0.30 means that entropy and clutch are at most 0.30 correlated in either direction, so entropy would explain at most 9% of the variation in true clutch; a bound near or above 1 means no relationship can be ruled out.
 
 All pools are well powered for medium effects (r of 0.3 or more) but not small ones; WTA alone has 61% power for a medium effect (Table A3). Observed bounds apply where both variables carry measurement error, so we divide by the attenuation implied by both reliabilities (Figure 3 uses the original-split reliabilities; Table A2 adds random-split values). For ATP the claim survives, loosened: the true relationship is not large for serve (0.30), return (0.40), rally points (0.28), winners (0.32) or errors (0.43). For WTA the corrected bounds are informative only for the shot-level outcomes (0.38 to 0.41) and loose for serve (0.75), rally points (0.61) and return (0.82; 1.81 at the original-split reliability, so no true relationship can be ruled out).
 
@@ -119,16 +121,16 @@ These are derived projections and descriptive uncertainty, not new hypothesis te
 
 If a measure has full-length reliability ρ, the Spearman-Brown prophecy gives the multiple of data needed to reach a target ρ\*: k = ρ\*(1 − ρ) / (ρ(1 − ρ\*)), which we multiply by each tour's median charted matches (ATP 74, WTA 64). Separately, a variance decomposition gives the standard deviation of players' true clutch scores, to compare with the typical standard error on one player's score. Table 3 puts both beside the reliability.
 
-**Table 3.** What the reliability means. Reliability is the random-split median; matches needed for reliability 0.70 comes from passing its 95% range through the Spearman-Brown formula ("unbounded": the lower limit is zero or negative); true SD is the variance-method estimate with a 95% bootstrap interval; the last column is one true SD times the summed leverage per match of the bottom quartile (low end) and the top quartile (high end), a first-order range (see "What 2 points is worth"). The rally rows (rally-decided points) use the match-clustered estimator of Section 6.1, whose noise term is slightly larger than the binomial one.
+**Table 3.** What the reliability means. Reliability is the random-split median; matches needed for reliability 0.70 passes its 95% range through the Spearman-Brown formula ("unbounded": the lower limit is zero or negative). True SD is the between-player standard deviation of true clutch (95% intervals in Tables A6 and A9; † marks an interval that reaches zero) and noise SE the typical standard error on one player's score. The last column is one true SD times the summed leverage per match of the bottom quartile (low end) and the top quartile (high end), a first-order range (see "What 2 points is worth"). The rally rows use the match-clustered estimator of Section 6.1.
 
-| Tour, role | Reliability | Matches needed [95% range] | True SD, pp [95% interval] | Noise SE per player, pp | One true SD in match-win probability, pp |
+| Tour, role | Reliability | Matches needed [95% range] | True SD, pp | Noise SE, pp | One true SD in match-win probability, pp |
 |---|---|---|---|---|---|
-| ATP serve | 0.53 | 152 [83, 331] | 2.15 [1.62, 2.57] | 1.74 | 0.5 to 5 |
-| ATP return | 0.24 | 544 [201, unbounded] | 1.22 [0.52, 1.68] | 1.74 | 0.3 to 3 |
-| WTA serve | 0.41 | 215 [95, 1,246] | 1.88 [0.99, 2.48] | 2.08 | 0.4 to 4 |
-| WTA return | 0.27 | 411 [128, unbounded] | 1.31 [0.00, 1.99] | 2.07 | not detectable |
-| ATP rally points | 0.44 | 223 [116, 618] | 1.62 [1.07, 2.06] | 1.71 | 0.5 to 6 |
-| WTA rally points | 0.25 | 445 [141, unbounded] | 1.06 [0.00, 1.66] | 1.87 | not detectable |
+| ATP serve | 0.53 | 152 [83, 331] | 2.15 | 1.74 | 0.5 to 5 |
+| ATP return | 0.24 | 544 [201, unbounded] | 1.22 | 1.74 | 0.3 to 3 |
+| ATP rally points | 0.44 | 223 [116, 618] | 1.62 | 1.71 | 0.5 to 6 |
+| WTA serve | 0.41 | 215 [95, 1,246] | 1.88 | 2.08 | 0.4 to 4 |
+| WTA return | 0.27 | 411 [128, unbounded] | 1.31† | 2.07 | not detectable |
+| WTA rally points | 0.25 | 445 [141, unbounded] | 1.06† | 1.87 | not detectable |
 
 **Data needed.** An acceptable ATP return-clutch score needs about 550 matches (interval 180 to unbounded), 7 to 8 times the median player's 74; the longest career in the pool is 723 (Federer). The intervals are wide because the reliability itself is imprecise with 91 players, so return-side figures are best read as "several hundred matches at least". Rally-decided points are no easier (about 220 matches on ATP, 445 on WTA), and the error and winner outcomes need 120 to 170 (Table A9). A model-based projection agrees (about 120 matches for ATP serve, 374 for ATP return), and only 31% of ATP players already reach player-level reliability 0.70 on serve and 3% on return (Table A5).
 
@@ -146,7 +148,7 @@ Reliability is a pool-level statistic, but practitioners talk about named player
 
 **Figure 4.** 95% match-level bootstrap rank intervals for every ATP player, serve and return clutch (rank 1 = most clutch among 91). The dotted diagonal marks the point-estimate rank.
 
-The data do not support the narrative that motivated this study, and not because these players are thinly charted: Alcaraz (221 charted matches) and Sinner (297) are among the nine most charted in the pool. Alcaraz's return-clutch rank is 32 (95% interval 14 to 64) and Sinner's is 57 (33 to 80); on serve they are 50 (28 to 74) and 56 (35 to 77). Both players' score intervals span zero on both roles. Only Djokovic (serve 72 [54, 79], return 78 [53, 84]) and Federer (64 [48, 73], 86 [63, 86]) have intervals clearly below the pool mean, and even theirs span 23 to 31 ranks. Across the pool the typical 95% rank interval spans 52 (serve) to 64 (return) of 91 ranks on ATP and 35 and 40 of 55 on WTA; only 21 ATP serve-clutch intervals exclude the pool mean (8 on return, close to the 4.5 that 5% chance alone would give), and for ATP return clutch none of the top ten can be confidently placed in the top 20. The rally outcomes are no sharper: the typical interval for ATP rally-point clutch spans 55 of 91 ranks (error and winner clutch 48 to 49) and 38 of 55 on WTA (34 to 37), with 15, 21 and 25 ATP score intervals excluding the pool mean (Table A9; thresholds held at their full-sample values, which on serve and return gives widths within 6% of the figures above). Per-player intervals are in `results/applications/a3c_cluster_bootstrap_players.csv`.
+The data do not support the narrative that motivated this study, and not because these players are thinly charted: Alcaraz (221 charted matches) and Sinner (297) are among the nine most charted in the pool. Alcaraz's return-clutch rank is 32 (95% interval 14 to 64) and Sinner's is 57 (33 to 80); on serve they are 50 (28 to 74) and 56 (35 to 77). Both players' score intervals span zero on both roles. Only Djokovic (serve 72 [54, 79], return 78 [53, 84]) and Federer (64 [48, 73], 86 [63, 86]) have intervals clearly below the pool mean, and even theirs span 23 to 31 ranks. Tennis Abstract's BLR shows the same thing from the other side. Federer and Djokovic both score 0.976 against a pool mean of 1.006, and their score intervals (0.966 to 0.988 and 0.963 to 0.988) exclude it, so the data can say they are below average on this ratio. Their ranks, though, are 81 and 83 with intervals of 62 to 86 and 63 to 86: the data cannot order the two, or say how far either sits below players near them. The ratio is also lower for stronger players (r with overall point-win rate of -0.22 on ATP, Section 4.2), so a low value for two of the greatest players is not evidence of weakness under pressure. In short, these ratings can separate an extreme from the middle of the pool, not neighbours from one another. Across the pool the typical 95% rank interval spans 52 (serve) to 64 (return) of 91 ranks on ATP and 35 and 40 of 55 on WTA; only 21 ATP serve-clutch intervals exclude the pool mean (8 on return, close to the 4.5 that 5% chance alone would give), and for ATP return clutch none of the top ten can be confidently placed in the top 20. The rally outcomes are no sharper: the typical interval for ATP rally-point clutch spans 55 of 91 ranks (error and winner clutch 48 to 49) and 38 of 55 on WTA (34 to 37), with 15, 21 and 25 ATP score intervals excluding the pool mean (Table A9; thresholds held at their full-sample values, which on serve and return gives widths within 6% of the figures above). Per-player intervals are in `results/applications/a3c_cluster_bootstrap_players.csv`.
 
 ### 6.3 Break-point conversion and save rates
 
@@ -156,7 +158,7 @@ The statistic broadcasters quote most is break-point conversion or saving. On AT
 
 **The reliability finding and the null interact.** A reliable predictor paired with an unreliable outcome produces a null whether or not a true relationship exists. ATP's null remains informative (Section 5.2) and the more reliable all-shot outcomes extend it; WTA return's does not.
 
-**What the null says about style.** Our predictor is how predictable a player's next groundstroke wing and direction are given the previous shot. It does not capture serve placement, net approaches, rally length or tactical variation, so this is a null for that measure of unpredictability, not for every notion of it, and it rules out large effects on ATP but not on WTA return. The flair narrative finds no support here; it is not refuted.
+**What the null says about style.** Our predictor is how predictable a player's next groundstroke wing and direction are given the previous shot. It does not capture serve placement, net approaches, rally length or tactical variation, so this is a null for that measure of unpredictability, not for every notion of it, and it rules out large effects on ATP but not on WTA return. The flair narrative finds no support here; it is not refuted. In practice, for ATP players the data say that how varied a player's groundstroke pattern is does not tell a scout how that player performs on big points: a player one standard deviation more varied than average would differ in true clutch by at most 0.3 standard deviations, and by the evidence of Section 4 that is a gap the clutch scores could not reliably show anyway. For WTA players the data cannot separate no effect from a moderate one. A null here is not a reason to stop looking, because reliability caps what any predictor can show; it is a reason to measure the outcome better before asking what predicts it.
 
 **The rally does not rescue the metric.** Because most points, including most high-leverage ones, end in the rally, a measure using every shot might have been expected to be reliable. It is more reliable than return clutch but still below 0.70, so the limit does not look specific to which shots are counted. Return is worse than serve because true return clutch varies less while its noise equals serve's (Table 3); opponent-serve adjustment did not help, and we do not claim to have identified the mechanism. The rally outcomes also match serve and return on every practice-side number: hundreds of matches needed, true spread about the size of the noise, rank intervals covering more than half the pool, and no rescue from shrinkage or from the leverage variant (Table A9).
 
@@ -218,7 +220,7 @@ The pipeline is open and every bug is disclosed, so testing another style predic
 | BLR (faithful) | WTA | 0.206 [-0.368, 0.539] | 0.294 [-0.021, 0.557] |
 | Pooled LR | WTA | 0.443 [0.040, 0.676] | 0.449 [0.209, 0.641] |
 
-**Table A2.** TOST equivalence bound on |r|, observed versus corrected for measurement error, at the original-split clutch reliability, the random-split median, and the range from the 97.5th to the 2.5th percentile reliability. "Vacuous" means the bound exceeds 1 or the reliability is at or below zero. The original-split column uses the documented (rounded) reliabilities, as in Figure 3.
+**Table A2.** TOST equivalence bound on |r|, observed versus corrected for measurement error, at the original-split clutch reliability, the random-split median, and the range from the 97.5th to the 2.5th percentile reliability. "Vacuous" means the bound exceeds 1 or the reliability is at or below zero. The original-split column uses the documented (rounded) reliabilities, as in Figure 3. The all-shot rows (R1 to R3) are computed at the random-split median only.
 
 | Tour | Role | Observed | Original split | Random-split median | Random-split range |
 |---|---|---|---|---|---|
@@ -226,6 +228,12 @@ The pipeline is open and every bug is disclosed, so testing another style predic
 | ATP | Return | 0.189 | 0.410 | 0.401 | [0.290, vacuous] |
 | WTA | Serve | 0.457 | 0.635 | 0.754 | [0.617, vacuous (1.48)] |
 | WTA | Return | 0.403 | **vacuous (1.81)** | 0.823 | [0.579, vacuous] |
+| ATP | R1 rally points | 0.180 | n/a | 0.284 | n/a |
+| ATP | R2 errors | 0.320 | n/a | 0.431 | n/a |
+| ATP | R3 winners | 0.235 | n/a | 0.322 | n/a |
+| WTA | R1 rally points | 0.289 | n/a | 0.609 | n/a |
+| WTA | R2 errors | 0.277 | n/a | 0.412 | n/a |
+| WTA | R3 winners | 0.247 | n/a | 0.382 | n/a |
 
 **Table A3.** Pooled ATP+WTA test (n = 146) and power for the entropy hypothesis.
 
