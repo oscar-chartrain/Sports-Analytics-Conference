@@ -1,0 +1,274 @@
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+  hitter parity on 266,591 winner points: 0.954 (floor 0.85)
+matches 6652; with an unrecognised surface 2; Best-of-5 2105; Grand Slam 1889; late round 3007
+V4 leave-pair-out opponent strength vs brute force (200 rows): max abs diff 0.00e+00
+V3 context rows align with the player arrays for every player
+V1 S: raw original-split +0.5720 reference +0.5720
+V1 Rt: raw original-split +0.2313 reference +0.2313
+V1 R1: raw original-split +0.3906 reference +0.3906
+V1 full-sample serve/return clutch vs committed table: max abs diff 9.89e-17
+V5 adjusted score with no covariates equals raw: max abs diff 0.00e+00
+coef  S clay        -2.33 pp (SE 0.16, t -14.4)
+coef  S grass       +1.85 pp (SE 0.19, t +9.6)
+coef  S bo5         -0.54 pp (SE 0.13, t -4.0)
+coef  S year        +1.30 pp (SE 0.19, t +6.8)
+coef  S opp200     -80.46 pp (SE 2.11, t -38.1)
+coef Rt clay        +2.03 pp (SE 0.16, t +12.6)
+coef Rt grass       -1.87 pp (SE 0.20, t -9.5)
+coef Rt bo5         +0.25 pp (SE 0.14, t +1.9)
+coef Rt year        -0.50 pp (SE 0.19, t -2.7)
+coef Rt opp200     -84.23 pp (SE 2.21, t -38.1)
+V2 lean routine vs rally_extension.sums (raw, adjusted, within-match): max abs diff 4.44e-16
+V6 ATP covariate effect x1 S raw: bias vs oracle +0.518 pp (SE 0.077)
+V6 ATP covariate effect x1 S A_core: bias vs oracle +0.062 pp (SE 0.056)
+V6 ATP covariate effect x1 S B: bias vs oracle +0.025 pp (SE 0.064)
+V6 ATP covariate effect x1 Rt raw: bias vs oracle -0.206 pp (SE 0.085)
+V6 ATP covariate effect x1 Rt A_core: bias vs oracle -0.174 pp (SE 0.059)
+V6 ATP covariate effect x1 Rt B: bias vs oracle -0.122 pp (SE 0.068)
+V6 ATP covariate effect x1 R1 raw: bias vs oracle +0.270 pp (SE 0.088)
+V6 ATP covariate effect x1 R1 A_core: bias vs oracle +0.001 pp (SE 0.055)
+V6 ATP covariate effect x1 R1 B: bias vs oracle +0.094 pp (SE 0.107)
+V6 ATP covariate effect x3 S raw: bias vs oracle +1.465 pp (SE 0.201)
+V6 ATP covariate effect x3 S A_core: bias vs oracle +0.081 pp (SE 0.102)
+V6 ATP covariate effect x3 S B: bias vs oracle +0.099 pp (SE 0.118)
+V6 ATP covariate effect x3 Rt raw: bias vs oracle -0.234 pp (SE 0.174)
+V6 ATP covariate effect x3 Rt A_core: bias vs oracle -0.119 pp (SE 0.091)
+V6 ATP covariate effect x3 Rt B: bias vs oracle -0.073 pp (SE 0.107)
+V6 ATP covariate effect x3 R1 raw: bias vs oracle +0.612 pp (SE 0.240)
+V6 ATP covariate effect x3 R1 A_core: bias vs oracle -0.179 pp (SE 0.098)
+V6 ATP covariate effect x3 R1 B: bias vs oracle +0.149 pp (SE 0.276)
+V6 ATP leverage tilted toward strong opponents (effect x3, tilt 2) S raw: bias vs oracle -17.219 pp (SE 0.324)
+V6 ATP leverage tilted toward strong opponents (effect x3, tilt 2) S A_core: bias vs oracle -0.161 pp (SE 0.114)
+V6 ATP leverage tilted toward strong opponents (effect x3, tilt 2) S B: bias vs oracle -0.395 pp (SE 0.470)
+V6 ATP leverage tilted toward strong opponents (effect x3, tilt 2) Rt raw: bias vs oracle -18.997 pp (SE 0.288)
+V6 ATP leverage tilted toward strong opponents (effect x3, tilt 2) Rt A_core: bias vs oracle -0.011 pp (SE 0.110)
+V6 ATP leverage tilted toward strong opponents (effect x3, tilt 2) Rt B: bias vs oracle +0.438 pp (SE 0.394)
+V6 ATP leverage tilted toward strong opponents (effect x3, tilt 2) R1 raw: bias vs oracle -9.353 pp (SE 0.217)
+V6 ATP leverage tilted toward strong opponents (effect x3, tilt 2) R1 A_core: bias vs oracle -0.141 pp (SE 0.103)
+V6 ATP leverage tilted toward strong opponents (effect x3, tilt 2) R1 B: bias vs oracle +0.527 pp (SE 0.695)
+V6 ATP planted clutch S raw: mean slope on truth 0.980
+V6 ATP planted clutch S A_core: mean slope on truth 0.990
+V6 ATP planted clutch S B: mean slope on truth 0.996
+V6 ATP planted clutch Rt raw: mean slope on truth 1.039
+V6 ATP planted clutch Rt A_core: mean slope on truth 1.030
+V6 ATP planted clutch Rt B: mean slope on truth 1.008
+V6 ATP planted clutch R1 raw: mean slope on truth 0.994
+V6 ATP planted clutch R1 A_core: mean slope on truth 1.007
+V6 ATP planted clutch R1 B: mean slope on truth 0.989
+
+1000 random splits ...
+  100 splits (229s)
+  200 splits (292s)
+  300 splits (347s)
+  400 splits (379s)
+  500 splits (412s)
+  600 splits (450s)
+  700 splits (487s)
+  800 splits (525s)
+  900 splits (563s)
+  1000 splits (602s)
+[ S raw     ] orig +0.572 median +0.535 [+0.35, +0.68] share>=0.70 0.9% n=91
+[ S A_core  ] orig +0.636 median +0.540 [+0.35, +0.68] share>=0.70 1.0% n=91 (half-specific coef +0.636)
+[ S A_ext   ] orig +0.638 median +0.540 [+0.36, +0.68] share>=0.70 1.0% n=91
+[ S A_K50   ] orig +0.632 median +0.540 [+0.35, +0.68] share>=0.70 1.1% n=91
+[ S A_K1000 ] orig +0.639 median +0.540 [+0.35, +0.68] share>=0.70 0.8% n=91
+[ S B       ] orig +0.549 median +0.435 [+0.21, +0.61] share>=0.70 0.2% n=91
+[Rt raw     ] orig +0.231 median +0.231 [-0.06, +0.46] share>=0.70 0.0% n=91
+[Rt A_core  ] orig +0.205 median +0.212 [-0.09, +0.46] share>=0.70 0.0% n=91 (half-specific coef +0.207)
+[Rt A_ext   ] orig +0.203 median +0.215 [-0.08, +0.46] share>=0.70 0.0% n=91
+[Rt A_K50   ] orig +0.199 median +0.198 [-0.10, +0.45] share>=0.70 0.0% n=91
+[Rt A_K1000 ] orig +0.212 median +0.231 [-0.06, +0.47] share>=0.70 0.0% n=91
+[Rt B       ] orig +0.052 median +0.052 [-0.32, +0.32] share>=0.70 0.0% n=91
+[R1 raw     ] orig +0.391 median +0.435 [+0.22, +0.60] share>=0.70 0.0% n=91
+[R1 A_core  ] orig +0.403 median +0.374 [+0.13, +0.56] share>=0.70 0.1% n=91 (half-specific coef +0.401)
+[R1 A_ext   ] orig +0.409 median +0.379 [+0.14, +0.57] share>=0.70 0.1% n=91
+[R1 A_K50   ] orig +0.395 median +0.369 [+0.12, +0.56] share>=0.70 0.1% n=91
+[R1 A_K1000 ] orig +0.413 median +0.378 [+0.14, +0.56] share>=0.70 0.1% n=91
+[R1 B       ] orig +0.407 median +0.284 [+0.01, +0.51] share>=0.70 0.0% n=91
+[chronological  S raw     ] n=91 r +0.284 [+0.08, +0.48]  SB +0.442 [+0.14, +0.65]
+[chronological  S A_core  ] n=91 r +0.281 [+0.06, +0.51]  SB +0.439 [+0.11, +0.67]
+[chronological  S A_ext   ] n=91 r +0.281 [+0.06, +0.51]  SB +0.439 [+0.11, +0.67]
+[chronological  S A_K50   ] n=91 r +0.285 [+0.06, +0.50]  SB +0.444 [+0.11, +0.67]
+[chronological  S A_K1000 ] n=91 r +0.278 [+0.05, +0.51]  SB +0.435 [+0.10, +0.68]
+[chronological  S B       ] n=91 r +0.093 [-0.12, +0.31]  SB +0.171 [-0.28, +0.48]
+[chronological Rt raw     ] n=91 r +0.113 [-0.10, +0.32]  SB +0.203 [-0.22, +0.49]
+[chronological Rt A_core  ] n=91 r +0.097 [-0.12, +0.33]  SB +0.176 [-0.28, +0.49]
+[chronological Rt A_ext   ] n=91 r +0.103 [-0.13, +0.33]  SB +0.187 [-0.29, +0.50]
+[chronological Rt A_K50   ] n=91 r +0.088 [-0.15, +0.32]  SB +0.161 [-0.34, +0.48]
+[chronological Rt A_K1000 ] n=91 r +0.111 [-0.11, +0.33]  SB +0.200 [-0.25, +0.50]
+[chronological Rt B       ] n=91 r +0.052 [-0.13, +0.23]  SB +0.098 [-0.30, +0.38]
+[chronological R1 raw     ] n=91 r +0.293 [+0.11, +0.46]  SB +0.453 [+0.19, +0.63]
+[chronological R1 A_core  ] n=91 r +0.246 [+0.04, +0.45]  SB +0.395 [+0.07, +0.62]
+[chronological R1 A_ext   ] n=91 r +0.249 [+0.03, +0.44]  SB +0.398 [+0.05, +0.61]
+[chronological R1 A_K50   ] n=91 r +0.244 [+0.03, +0.44]  SB +0.392 [+0.05, +0.61]
+[chronological R1 A_K1000 ] n=91 r +0.252 [+0.04, +0.44]  SB +0.403 [+0.07, +0.61]
+[chronological R1 B       ] n=91 r +0.101 [-0.12, +0.31]  SB +0.183 [-0.27, +0.47]
+[spread  S raw     ] n=91 SD 2.81 pp, true SD 2.11 [1.57, 2.52], noise SE 1.86, implied rel 0.56; corr with raw 1.00, mean shift +0.00 pp
+[spread  S A_core  ] n=91 SD 2.77 pp, true SD 2.09 [1.56, 2.51], noise SE 1.83, implied rel 0.57; corr with raw 0.98, mean shift -0.46 pp
+[spread  S A_ext   ] n=91 SD 2.78 pp, true SD 2.09 [1.54, 2.50], noise SE 1.83, implied rel 0.57; corr with raw 0.98, mean shift -0.46 pp
+[spread  S A_K50   ] n=91 SD 2.78 pp, true SD 2.09 [1.53, 2.53], noise SE 1.83, implied rel 0.57; corr with raw 0.98, mean shift -0.44 pp
+[spread  S A_K1000 ] n=91 SD 2.77 pp, true SD 2.08 [1.55, 2.51], noise SE 1.82, implied rel 0.57; corr with raw 0.98, mean shift -0.46 pp
+[spread  S B       ] n=91 SD 3.07 pp, true SD 2.15 [1.53, 2.65], noise SE 2.19, implied rel 0.49; corr with raw 0.80, mean shift -2.18 pp
+[spread Rt raw     ] n=91 SD 2.19 pp, true SD 1.09 [0.00, 1.59], noise SE 1.89, implied rel 0.25; corr with raw 1.00, mean shift +0.00 pp
+[spread Rt A_core  ] n=91 SD 2.13 pp, true SD 1.05 [0.00, 1.57], noise SE 1.85, implied rel 0.24; corr with raw 0.98, mean shift +0.04 pp
+[spread Rt A_ext   ] n=91 SD 2.13 pp, true SD 1.06 [0.00, 1.59], noise SE 1.85, implied rel 0.24; corr with raw 0.98, mean shift +0.06 pp
+[spread Rt A_K50   ] n=91 SD 2.12 pp, true SD 1.02 [0.00, 1.55], noise SE 1.86, implied rel 0.23; corr with raw 0.98, mean shift +0.06 pp
+[spread Rt A_K1000 ] n=91 SD 2.15 pp, true SD 1.09 [0.00, 1.62], noise SE 1.85, implied rel 0.26; corr with raw 0.98, mean shift +0.01 pp
+[spread Rt B       ] n=91 SD 2.28 pp, true SD 0.70 [0.00, 1.42], noise SE 2.17, implied rel 0.09; corr with raw 0.70, mean shift +1.57 pp
+[spread R1 raw     ] n=91 SD 2.36 pp, true SD 1.62 [1.08, 2.05], noise SE 1.71, implied rel 0.47; corr with raw 1.00, mean shift +0.00 pp
+[spread R1 A_core  ] n=91 SD 2.20 pp, true SD 1.42 [0.82, 1.84], noise SE 1.67, implied rel 0.42; corr with raw 0.96, mean shift -0.27 pp
+[spread R1 A_ext   ] n=91 SD 2.21 pp, true SD 1.44 [0.86, 1.86], noise SE 1.67, implied rel 0.42; corr with raw 0.95, mean shift -0.26 pp
+[spread R1 A_K50   ] n=91 SD 2.19 pp, true SD 1.41 [0.83, 1.84], noise SE 1.68, implied rel 0.41; corr with raw 0.96, mean shift -0.25 pp
+[spread R1 A_K1000 ] n=91 SD 2.20 pp, true SD 1.44 [0.83, 1.86], noise SE 1.67, implied rel 0.42; corr with raw 0.95, mean shift -0.28 pp
+[spread R1 B       ] n=91 SD 2.37 pp, true SD 1.34 [0.20, 1.92], noise SE 1.96, implied rel 0.32; corr with raw 0.84, mean shift -0.27 pp
+[entropy  S raw    ] n=91 r -0.0420 p 0.6925   (frozen table r -0.0413 p 0.6972)
+[entropy  S A_core ] n=91 r -0.0693 p 0.5137   (frozen table r -0.0413 p 0.6972)
+[entropy  S A_ext  ] n=91 r -0.0709 p 0.5040   (frozen table r -0.0413 p 0.6972)
+[entropy  S B      ] n=91 r -0.0796 p 0.4533   (frozen table r -0.0413 p 0.6972)
+[entropy Rt raw    ] n=91 r +0.0189 p 0.8588   (frozen table r +0.0164 p 0.8774)
+[entropy Rt A_core ] n=91 r -0.0026 p 0.9807   (frozen table r +0.0164 p 0.8774)
+[entropy Rt A_ext  ] n=91 r -0.0010 p 0.9922   (frozen table r +0.0164 p 0.8774)
+[entropy Rt B      ] n=91 r +0.1238 p 0.2425   (frozen table r +0.0164 p 0.8774)
+ATP done in 613s
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+  hitter parity on 105,746 winner points: 0.966 (floor 0.85)
+matches 3042; with an unrecognised surface 6; Best-of-5 2; Grand Slam 1043; late round 1022
+V4 leave-pair-out opponent strength vs brute force (200 rows): max abs diff 0.00e+00
+V3 context rows align with the player arrays for every player
+V1 S: raw original-split +0.5784 reference +0.5784
+V1 Rt: raw original-split +0.0547 reference +0.0547
+V1 R1: raw original-split +0.0475 reference +0.0475
+V1 full-sample serve/return clutch vs committed table: max abs diff 9.63e-17
+V5 adjusted score with no covariates equals raw: max abs diff 0.00e+00
+coef  S clay        -0.98 pp (SE 0.27, t -3.6)
+coef  S grass       +2.07 pp (SE 0.34, t +6.1)
+coef  S bo5         +4.13 pp (SE 4.80, t +0.9)
+coef  S year        +1.07 pp (SE 0.35, t +3.1)
+coef  S opp200     -61.14 pp (SE 4.48, t -13.6)
+coef Rt clay        +0.51 pp (SE 0.27, t +1.9)
+coef Rt grass       -2.08 pp (SE 0.35, t -5.9)
+coef Rt bo5         -3.22 pp (SE 2.68, t -1.2)
+coef Rt year        -0.56 pp (SE 0.36, t -1.6)
+coef Rt opp200     -85.40 pp (SE 3.60, t -23.8)
+V2 lean routine vs rally_extension.sums (raw, adjusted, within-match): max abs diff 3.33e-16
+V6 WTA covariate effect x1 S raw: bias vs oracle -0.055 pp (SE 0.069)
+V6 WTA covariate effect x1 S A_core: bias vs oracle -0.072 pp (SE 0.063)
+V6 WTA covariate effect x1 S B: bias vs oracle -0.131 pp (SE 0.073)
+V6 WTA covariate effect x1 Rt raw: bias vs oracle -0.128 pp (SE 0.091)
+V6 WTA covariate effect x1 Rt A_core: bias vs oracle +0.055 pp (SE 0.079)
+V6 WTA covariate effect x1 Rt B: bias vs oracle +0.118 pp (SE 0.090)
+V6 WTA covariate effect x1 R1 raw: bias vs oracle -0.141 pp (SE 0.064)
+V6 WTA covariate effect x1 R1 A_core: bias vs oracle -0.051 pp (SE 0.061)
+V6 WTA covariate effect x1 R1 B: bias vs oracle -0.072 pp (SE 0.058)
+V6 WTA covariate effect x3 S raw: bias vs oracle -0.034 pp (SE 0.168)
+V6 WTA covariate effect x3 S A_core: bias vs oracle -0.086 pp (SE 0.124)
+V6 WTA covariate effect x3 S B: bias vs oracle -0.196 pp (SE 0.131)
+V6 WTA covariate effect x3 Rt raw: bias vs oracle -0.562 pp (SE 0.236)
+V6 WTA covariate effect x3 Rt A_core: bias vs oracle -0.018 pp (SE 0.153)
+V6 WTA covariate effect x3 Rt B: bias vs oracle +0.068 pp (SE 0.160)
+V6 WTA covariate effect x3 R1 raw: bias vs oracle -0.219 pp (SE 0.124)
+V6 WTA covariate effect x3 R1 A_core: bias vs oracle +0.045 pp (SE 0.110)
+V6 WTA covariate effect x3 R1 B: bias vs oracle -0.019 pp (SE 0.121)
+V6 WTA leverage tilted toward strong opponents (effect x3, tilt 2) S raw: bias vs oracle -10.941 pp (SE 0.257)
+V6 WTA leverage tilted toward strong opponents (effect x3, tilt 2) S A_core: bias vs oracle -0.121 pp (SE 0.124)
+V6 WTA leverage tilted toward strong opponents (effect x3, tilt 2) S B: bias vs oracle -0.769 pp (SE 0.548)
+V6 WTA leverage tilted toward strong opponents (effect x3, tilt 2) Rt raw: bias vs oracle -17.699 pp (SE 0.304)
+V6 WTA leverage tilted toward strong opponents (effect x3, tilt 2) Rt A_core: bias vs oracle -0.141 pp (SE 0.141)
+V6 WTA leverage tilted toward strong opponents (effect x3, tilt 2) Rt B: bias vs oracle +1.184 pp (SE 0.989)
+V6 WTA leverage tilted toward strong opponents (effect x3, tilt 2) R1 raw: bias vs oracle -8.994 pp (SE 0.185)
+V6 WTA leverage tilted toward strong opponents (effect x3, tilt 2) R1 A_core: bias vs oracle +0.102 pp (SE 0.108)
+V6 WTA leverage tilted toward strong opponents (effect x3, tilt 2) R1 B: bias vs oracle +0.280 pp (SE 0.563)
+V6 WTA planted clutch S raw: mean slope on truth 1.006
+V6 WTA planted clutch S A_core: mean slope on truth 1.008
+V6 WTA planted clutch S B: mean slope on truth 1.038
+V6 WTA planted clutch Rt raw: mean slope on truth 0.944
+V6 WTA planted clutch Rt A_core: mean slope on truth 0.951
+V6 WTA planted clutch Rt B: mean slope on truth 0.951
+V6 WTA planted clutch R1 raw: mean slope on truth 1.010
+V6 WTA planted clutch R1 A_core: mean slope on truth 1.009
+V6 WTA planted clutch R1 B: mean slope on truth 1.008
+
+1000 random splits ...
+  100 splits (48s)
+  200 splits (60s)
+  300 splits (75s)
+  400 splits (91s)
+  500 splits (106s)
+  600 splits (123s)
+  700 splits (137s)
+  800 splits (153s)
+  900 splits (168s)
+  1000 splits (183s)
+[ S raw     ] orig +0.578 median +0.412 [+0.11, +0.62] share>=0.70 0.4% n=55
+[ S A_core  ] orig +0.579 median +0.406 [+0.11, +0.61] share>=0.70 0.1% n=55 (half-specific coef +0.579)
+[ S A_ext   ] orig +0.577 median +0.404 [+0.11, +0.61] share>=0.70 0.1% n=55
+[ S A_K50   ] orig +0.570 median +0.402 [+0.10, +0.61] share>=0.70 0.2% n=55
+[ S A_K1000 ] orig +0.589 median +0.408 [+0.11, +0.61] share>=0.70 0.2% n=55
+[ S B       ] orig +0.489 median +0.317 [-0.02, +0.56] share>=0.70 0.0% n=55
+[Rt raw     ] orig +0.055 median +0.273 [-0.06, +0.52] share>=0.70 0.0% n=55
+[Rt A_core  ] orig -0.016 median +0.280 [-0.06, +0.53] share>=0.70 0.0% n=55 (half-specific coef -0.017)
+[Rt A_ext   ] orig -0.021 median +0.274 [-0.07, +0.53] share>=0.70 0.0% n=55
+[Rt A_K50   ] orig -0.025 median +0.281 [-0.07, +0.53] share>=0.70 0.0% n=55
+[Rt A_K1000 ] orig -0.014 median +0.276 [-0.06, +0.53] share>=0.70 0.0% n=55
+[Rt B       ] orig +0.012 median +0.143 [-0.27, +0.45] share>=0.70 0.0% n=55
+[R1 raw     ] orig +0.047 median +0.235 [-0.15, +0.51] share>=0.70 0.0% n=55
+[R1 A_core  ] orig +0.015 median +0.225 [-0.18, +0.50] share>=0.70 0.0% n=55 (half-specific coef +0.013)
+[R1 A_ext   ] orig +0.003 median +0.217 [-0.18, +0.49] share>=0.70 0.0% n=55
+[R1 A_K50   ] orig +0.005 median +0.221 [-0.18, +0.49] share>=0.70 0.0% n=55
+[R1 A_K1000 ] orig +0.023 median +0.227 [-0.17, +0.50] share>=0.70 0.0% n=55
+[R1 B       ] orig +0.159 median +0.275 [-0.06, +0.53] share>=0.70 0.0% n=55
+[chronological  S raw     ] n=55 r +0.250 [-0.03, +0.51]  SB +0.400 [-0.05, +0.68]
+[chronological  S A_core  ] n=55 r +0.259 [-0.02, +0.50]  SB +0.412 [-0.04, +0.67]
+[chronological  S A_ext   ] n=55 r +0.256 [-0.02, +0.50]  SB +0.407 [-0.04, +0.67]
+[chronological  S A_K50   ] n=55 r +0.262 [-0.01, +0.51]  SB +0.415 [-0.03, +0.67]
+[chronological  S A_K1000 ] n=55 r +0.256 [-0.00, +0.50]  SB +0.407 [-0.00, +0.67]
+[chronological  S B       ] n=55 r +0.201 [-0.05, +0.42]  SB +0.335 [-0.10, +0.59]
+[chronological Rt raw     ] n=55 r +0.062 [-0.21, +0.34]  SB +0.116 [-0.53, +0.50]
+[chronological Rt A_core  ] n=55 r +0.063 [-0.21, +0.35]  SB +0.119 [-0.53, +0.52]
+[chronological Rt A_ext   ] n=55 r +0.059 [-0.22, +0.36]  SB +0.111 [-0.58, +0.53]
+[chronological Rt A_K50   ] n=55 r +0.063 [-0.23, +0.34]  SB +0.118 [-0.58, +0.51]
+[chronological Rt A_K1000 ] n=55 r +0.059 [-0.22, +0.34]  SB +0.112 [-0.57, +0.51]
+[chronological Rt B       ] n=55 r +0.054 [-0.24, +0.35]  SB +0.103 [-0.64, +0.52]
+[chronological R1 raw     ] n=55 r +0.130 [-0.13, +0.38]  SB +0.229 [-0.31, +0.55]
+[chronological R1 A_core  ] n=55 r +0.119 [-0.14, +0.37]  SB +0.213 [-0.34, +0.55]
+[chronological R1 A_ext   ] n=55 r +0.115 [-0.16, +0.36]  SB +0.206 [-0.37, +0.53]
+[chronological R1 A_K50   ] n=55 r +0.121 [-0.14, +0.38]  SB +0.216 [-0.34, +0.55]
+[chronological R1 A_K1000 ] n=55 r +0.118 [-0.15, +0.38]  SB +0.211 [-0.35, +0.55]
+[chronological R1 B       ] n=55 r +0.226 [-0.06, +0.46]  SB +0.369 [-0.13, +0.63]
+[spread  S raw     ] n=55 SD 2.83 pp, true SD 1.84 [0.90, 2.49], noise SE 2.15, implied rel 0.42; corr with raw 1.00, mean shift +0.00 pp
+[spread  S A_core  ] n=55 SD 2.79 pp, true SD 1.80 [0.83, 2.42], noise SE 2.13, implied rel 0.42; corr with raw 1.00, mean shift -0.02 pp
+[spread  S A_ext   ] n=55 SD 2.79 pp, true SD 1.80 [0.85, 2.41], noise SE 2.14, implied rel 0.41; corr with raw 1.00, mean shift -0.01 pp
+[spread  S A_K50   ] n=55 SD 2.79 pp, true SD 1.80 [0.82, 2.44], noise SE 2.14, implied rel 0.41; corr with raw 1.00, mean shift +0.00 pp
+[spread  S A_K1000 ] n=55 SD 2.80 pp, true SD 1.81 [0.86, 2.43], noise SE 2.13, implied rel 0.42; corr with raw 1.00, mean shift -0.04 pp
+[spread  S B       ] n=55 SD 3.05 pp, true SD 1.77 [0.00, 2.45], noise SE 2.49, implied rel 0.34; corr with raw 0.80, mean shift -0.83 pp
+[spread Rt raw     ] n=55 SD 2.49 pp, true SD 1.29 [0.00, 1.98], noise SE 2.13, implied rel 0.27; corr with raw 1.00, mean shift +0.00 pp
+[spread Rt A_core  ] n=55 SD 2.47 pp, true SD 1.29 [0.00, 1.95], noise SE 2.10, implied rel 0.27; corr with raw 0.99, mean shift +0.18 pp
+[spread Rt A_ext   ] n=55 SD 2.46 pp, true SD 1.27 [0.00, 1.95], noise SE 2.11, implied rel 0.27; corr with raw 0.99, mean shift +0.19 pp
+[spread Rt A_K50   ] n=55 SD 2.47 pp, true SD 1.29 [0.00, 1.98], noise SE 2.10, implied rel 0.27; corr with raw 0.99, mean shift +0.20 pp
+[spread Rt A_K1000 ] n=55 SD 2.46 pp, true SD 1.28 [0.00, 1.92], noise SE 2.11, implied rel 0.27; corr with raw 0.99, mean shift +0.14 pp
+[spread Rt B       ] n=55 SD 2.69 pp, true SD 1.03 [0.00, 1.81], noise SE 2.49, implied rel 0.15; corr with raw 0.75, mean shift +2.27 pp
+[spread R1 raw     ] n=55 SD 2.15 pp, true SD 1.06 [0.00, 1.65], noise SE 1.87, implied rel 0.24; corr with raw 1.00, mean shift +0.00 pp
+[spread R1 A_core  ] n=55 SD 2.13 pp, true SD 1.03 [0.00, 1.64], noise SE 1.87, implied rel 0.23; corr with raw 1.00, mean shift +0.09 pp
+[spread R1 A_ext   ] n=55 SD 2.12 pp, true SD 1.01 [0.00, 1.62], noise SE 1.87, implied rel 0.23; corr with raw 1.00, mean shift +0.09 pp
+[spread R1 A_K50   ] n=55 SD 2.13 pp, true SD 1.02 [0.00, 1.66], noise SE 1.87, implied rel 0.23; corr with raw 1.00, mean shift +0.10 pp
+[spread R1 A_K1000 ] n=55 SD 2.14 pp, true SD 1.04 [0.00, 1.63], noise SE 1.87, implied rel 0.24; corr with raw 1.00, mean shift +0.06 pp
+[spread R1 B       ] n=55 SD 2.47 pp, true SD 1.30 [0.00, 2.00], noise SE 2.10, implied rel 0.28; corr with raw 0.78, mean shift +0.84 pp
+[entropy  S raw    ] n=55 r -0.2593 p 0.0560   (frozen table r -0.2593 p 0.0560)
+[entropy  S A_core ] n=55 r -0.2461 p 0.0701   (frozen table r -0.2593 p 0.0560)
+[entropy  S A_ext  ] n=55 r -0.2484 p 0.0674   (frozen table r -0.2593 p 0.0560)
+[entropy  S B      ] n=55 r -0.1496 p 0.2758   (frozen table r -0.2593 p 0.0560)
+[entropy Rt raw    ] n=55 r +0.1962 p 0.1512   (frozen table r +0.1962 p 0.1512)
+[entropy Rt A_core ] n=55 r +0.1823 p 0.1828   (frozen table r +0.1962 p 0.1512)
+[entropy Rt A_ext  ] n=55 r +0.1831 p 0.1808   (frozen table r +0.1962 p 0.1512)
+[entropy Rt B      ] n=55 r +0.1538 p 0.2622   (frozen table r +0.1962 p 0.1512)
+WTA done in 190s
+
+Wrote outputs to <repo>\results\applications

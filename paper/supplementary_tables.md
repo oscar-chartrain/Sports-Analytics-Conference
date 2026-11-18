@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S12 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S13 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -27,7 +27,7 @@ Supplementary tables S1 to S12 for "Shot-Selection Consistency and Clutch Perfor
 | ATP | Serve | 0.213 | 0.293 | 0.304 | [0.270, 0.379] |
 | ATP | Return | 0.189 | 0.410 | 0.401 | [0.290, vacuous] |
 | WTA | Serve | 0.457 | 0.635 | 0.754 | [0.617, vacuous (1.48)] |
-| WTA | Return | 0.403 | **vacuous (1.81)** | 0.823 | [0.579, vacuous] |
+| WTA | Return | 0.403 | **vacuous (1.82)** | 0.823 | [0.579, vacuous] |
 | ATP | R1 rally points | 0.180 | n/a | 0.284 | n/a |
 | ATP | R2 errors | 0.320 | n/a | 0.431 | n/a |
 | ATP | R3 winners | 0.235 | n/a | 0.322 | n/a |
@@ -164,3 +164,27 @@ No outcome has a chronological Spearman-Brown estimate at or above 0.70; the hig
 | ATP rally points | 9,746 of 10,168 | 1.24 [0.54, 1.72] | 4.73 [3.98, 5.49] | 17.1 | 0.30 [0.08, 0.45] | 497 [259, 2,661] | 0.0003 | below 0.0001 |
 
 Sensitivity to the minimum points per bucket (stable SD, career reliability, matches needed): serve at 1 points: 1.95, 0.45, 321; serve at 5 points: 1.91, 0.43, 258; return at 1 points: 0.54, 0.06, 4,227; return at 5 points: 0.47, 0.04, 4,456; rally points at 1 points: 1.27, 0.31, 534; rally points at 5 points: 1.29, 0.31, 445. The simulation check recovered the ATP serve design (true stable SD 1.5 and match SD 3.0 gave means 1.48 and 2.92; true match SD 0 gave 0.74).
+
+**Table S13.** Confounder adjustment (plan: `docs/combined/confound_adjustment_preregistration.md`). Adjusted score A replaces each point's outcome by its residual after removing, within player and leverage bucket (top quartile, middle, bottom quartile), linear effects of surface (clay, grass), Best-of-5, match date and opponent strength (the opponent's win rate in the opposing role, excluding every point from matches between the two players, shrunk to the tour mean with weight 200 points), then applies the quartile rule. The within-match score B averages each match's top-minus-bottom difference, weighted by 1/(1/n_top + 1/n_bottom), over matches with at least 3 points in each bucket, which removes everything constant within a match without a model. Same points, players and quartile rule as Table 1; 1,000 random balanced splits with a new seed, so medians differ from Tables 1 and S10 in the second decimal. Shot-level outcomes (errors, winners) were not adjusted.
+
+| Tour, outcome | Raw: random-split median | Adjusted (A): original split | A: random-split median [95% range] | A: share at or above 0.70 | Within-match (B): random-split median | A: chronological Spearman-Brown | True SD, pp: raw to A | Correlation, A with raw | Mean shift, A minus raw, pp |
+|---|---|---|---|---|---|---|---|---|---|
+| ATP serve | 0.54 | 0.64 | 0.54 [0.35, 0.68] | 1.0% | 0.43 | 0.44 | 2.11 to 2.09 | 0.98 | -0.46 |
+| ATP return | 0.23 | 0.20 | 0.21 [-0.09, 0.46] | 0.0% | 0.05 | 0.18 | 1.09 to 1.05 | 0.98 | +0.04 |
+| ATP rally points | 0.44 | 0.40 | 0.37 [0.13, 0.56] | 0.1% | 0.28 | 0.39 | 1.62 to 1.42 | 0.96 | -0.27 |
+| WTA serve | 0.41 | 0.58 | 0.41 [0.11, 0.61] | 0.1% | 0.32 | 0.41 | 1.84 to 1.80 | 1.00 | -0.02 |
+| WTA return | 0.27 | -0.02 | 0.28 [-0.06, 0.53] | 0.0% | 0.14 | 0.12 | 1.29 to 1.29 | 0.99 | +0.18 |
+| WTA rally points | 0.24 | 0.01 | 0.22 [-0.18, 0.50] | 0.0% | 0.28 | 0.21 | 1.06 to 1.03 | 1.00 | +0.09 |
+
+The covariates matter for point outcomes (opponent's rate in the opposing role: a 1-point stronger opponent lowers the player's win rate by 0.6 to 0.85 points; clay lowers ATP serve-point wins by 2.3 points and raises return-point wins by 2.0; grass does the reverse), but they are only weakly related to which points are high-leverage, so adjusted scores correlate 0.96 to 1.00 with raw ones. Averages move most for ATP serve (raw clutch about 0.5 points too high). The extended covariate set (late round, Grand Slam) and opponent shrinkage of 50 or 1,000 move no random-split median by more than 0.02 and no share at or above 0.70 above 1.1%. Re-estimating the covariate coefficients inside each half at the original split changes no adjusted reliability by more than 0.003. B has lower reliability because it discards information (matches with too few points in a bucket, and all between-match comparison) and adds weighting noise; its random-split medians are at most 0.43 and its shares at or above 0.70 at most 0.2%.
+
+Headline entropy-clutch correlation (conditional normalized entropy against full-sample clutch; Pearson r with p in parentheses), raw and adjusted:
+
+| Tour, outcome | Raw r (p) | A: r (p) | B: r (p) |
+|---|---|---|---|
+| ATP serve | -0.042 (0.692) | -0.069 (0.514) | -0.080 (0.453) |
+| ATP return | +0.019 (0.859) | -0.003 (0.981) | +0.124 (0.243) |
+| WTA serve | -0.259 (0.056) | -0.246 (0.070) | -0.150 (0.276) |
+| WTA return | +0.196 (0.151) | +0.182 (0.183) | +0.154 (0.262) |
+
+Validation (every check passed before any result was used): the raw scores reproduce the committed clutch tables to 1e-16 and the original-split reliabilities exactly; the fast routine reproduces the earlier code to 4e-16; leave-pair-out opponent strength matches a brute-force recomputation. In simulations on the real design with no true clutch effect, outcomes drawn with and without covariate effects from the same random numbers show A and B within 3 standard errors of unbiased in all 36 settings, while the raw score is biased up to 0.5 points at the real covariate effects (ATP serve). When leverage is built to track opponent strength, the raw score is biased by 9 to 19 points and A by 0.2 or less (B within sampling error); a planted clutch effect is recovered with slope 0.95 to 1.04 by all three scores. The adjustment therefore removes confounding that is there; in these data there is little to remove.

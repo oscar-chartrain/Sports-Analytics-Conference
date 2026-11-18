@@ -38,6 +38,7 @@ time-stamped registrations.
 | Rally extension (`docs/combined/rally_extension_preregistration.md`) | 2026-11-16 | after 2026-11-16 |
 | Match-nested variance model (`docs/combined/match_nested_preregistration.md`) | 2026-11-17 | after 2026-11-17 |
 | Slope estimator and chronological split (`docs/combined/slope_chronological_preregistration.md`) | 2026-11-17 | after 2026-11-17 |
+| Confounder adjustment (`docs/combined/confound_adjustment_preregistration.md`) | 2026-11-18 | after 2026-11-18 |
 
 The November plans were all written after the earlier results (the entropy
 null and the reliability findings) were known, so they are pre-specified but
