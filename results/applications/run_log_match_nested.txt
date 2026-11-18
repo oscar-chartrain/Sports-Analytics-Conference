@@ -1,0 +1,31 @@
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+  hitter parity on 266,591 winner points: 0.954 (floor 0.85)
+
+VALIDATION by simulation (true tau_p = 1.5, tau_m = 3.0 pp; then tau_m = 0)
+  ATP serve: case a mean tau_p 1.48 (true 1.5), mean tau_m 2.92 (true 3.0); case b mean tau_p 1.47, mean tau_m 0.74 (true 0)
+VALIDATION PASS
+[S] P=91, matches kept 8755/10168 (86%): tau_p 1.99 [1.43, 2.48] pp, tau_m 3.58 [2.56, 4.42] pp, sampling SD/match 18.70; career reliability 0.46 [0.30, 0.57]; matches needed 248 [162, 488] (median charted 74); LR tau_p 28.2 p=0.0000; LR tau_m 12.6 p=0.0002
+      min 1 points per bucket: P=91, kept 95%, tau_p 1.95, tau_m 3.57, career reliability 0.45, matches needed 321
+      min 5 points per bucket: P=91, kept 76%, tau_p 1.91, tau_m 3.45, career reliability 0.43, matches needed 258
+[Rt] P=91, matches kept 8897/10168 (88%): tau_p 0.53 [0.00, 1.08] pp, tau_m 4.58 [3.80, 5.20] pp, sampling SD/match 18.81; career reliability 0.06 [0.00, 0.20]; matches needed 3,573 [851, 100,990,557] (median charted 74); LR tau_p 0.4 p=0.2685; LR tau_m 30.9 p=0.0000
+      min 1 points per bucket: P=91, kept 96%, tau_p 0.54, tau_m 4.60, career reliability 0.06, matches needed 4,227
+      min 5 points per bucket: P=91, kept 78%, tau_p 0.47, tau_m 4.43, career reliability 0.04, matches needed 4,456
+[R1] P=91, matches kept 9746/10168 (96%): tau_p 1.24 [0.54, 1.72] pp, tau_m 4.73 [3.98, 5.49] pp, sampling SD/match 17.13; career reliability 0.30 [0.08, 0.45]; matches needed 497 [259, 2,661] (median charted 74); LR tau_p 11.9 p=0.0003; LR tau_m 51.7 p=0.0000
+      min 1 points per bucket: P=91, kept 99%, tau_p 1.27, tau_m 4.72, career reliability 0.31, matches needed 534
+      min 5 points per bucket: P=91, kept 91%, tau_p 1.29, tau_m 4.68, career reliability 0.31, matches needed 445
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+  hitter parity on 105,746 winner points: 0.966 (floor 0.85)
+
+VALIDATION by simulation (true tau_p = 1.5, tau_m = 3.0 pp; then tau_m = 0)
+  WTA serve: case a mean tau_p 1.38 (true 1.5), mean tau_m 2.64 (true 3.0); case b mean tau_p 1.34, mean tau_m 1.05 (true 0)
+VALIDATION FAILED for WTA serve: no fits are reported for this tour
+
+Wrote outputs to <repo>\results\applications

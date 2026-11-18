@@ -36,6 +36,7 @@ time-stamped registrations.
 | Match-level cluster bootstrap (`docs/combined/cluster_bootstrap_preregistration.md`) | 2026-11-16 | after 2026-11-16 |
 | Multilevel clutch variance (`docs/combined/multilevel_clutch_variance_preregistration.md`) | 2026-11-16 | after 2026-11-16 |
 | Rally extension (`docs/combined/rally_extension_preregistration.md`) | 2026-11-16 | after 2026-11-16 |
+| Match-nested variance model (`docs/combined/match_nested_preregistration.md`) | 2026-11-17 | after 2026-11-17 |
 | Slope estimator and chronological split (`docs/combined/slope_chronological_preregistration.md`) | 2026-11-17 | after 2026-11-17 |
 
 The November plans were all written after the earlier results (the entropy

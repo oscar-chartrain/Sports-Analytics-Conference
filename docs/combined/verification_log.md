@@ -101,3 +101,10 @@ and what was corrected. Nothing in it is a new analysis.
 - Results in `results/applications/slope_reliability.csv`, `slope_spread.csv`, `chronological_reliability.csv`; paper Section 4.3 and Tables S10 and S11. Neither the slope score nor the chronological split reaches 0.70 (slope random-split share at or above 0.70 at most 0.1%; highest chronological value ATP unforced-error clutch 0.66 [0.53, 0.76]).
 - Disclosure: an earlier single-split check of a continuous slope already existed (`docs/atp/04_regression_results/split_half_reliability.md`); the new analysis adds random splits, SD scaling, rally points, clustered true spread and agreement with the quartile score. The 4.3 sentence now cites the new random-split figures.
 - Page count from Word: 12.
+
+## Addendum 2026-11-17 (match-nested variance model)
+- `src/robustness/match_nested_variance.py` (plan `docs/combined/match_nested_preregistration.md`, written before the run; code syntax-checked only). Two documented deviations: (1) maximum likelihood replaced by REML after the WTA validation simulation failed (ATP results had been seen); (2) the WTA design failed the unchanged rule again (mean estimated match SD 1.05 pp at truth 0, limit 1.0; the other two recovery checks were within 15%), so the script reports no WTA fits and the paper reports ATP only. The first aborted ML run's log was not kept in the repo.
+- Outputs `match_nested_variance.csv`, `match_nested_sensitivity.csv`, `match_nested_validation.csv`, `run_log_match_nested.txt`; paper Section 6.1, Discussion and Table S12.
+- Result ATP: stable SD 2.0 (serve), 0.5 (return, p = 0.27), 1.2 (rally points); career reliability 0.46, 0.06, 0.30; matches needed about 250, 3,600, 500 against a median of 74. Consistent with Table S6; the return stable difference is no longer detectable once match-level variance is in the model.
+- Trimmed back to 12 pages (Word) after the additions.
+

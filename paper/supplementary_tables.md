@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S11 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S12 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -154,3 +154,13 @@ The slope without the SD scaling gives random-split medians within 0.05 of these
 | WTA, slope, rally points | 55 | 0.11 [-0.12, 0.32] | 0.20 [-0.28, 0.49] | 0.10 | 0.17 |
 
 No outcome has a chronological Spearman-Brown estimate at or above 0.70; the highest is ATP unforced-error clutch (0.66, interval 0.53 to 0.76), whose interval does reach 0.70. The intervals are wide because there is a single chronological split per tour.
+
+**Table S12.** Three-level variance model, ATP only. Per-match clutch score (top-quartile minus bottom-quartile rate, percentage points) = overall mean + player effect (stable SD) + match effect within player (match-to-match SD) + known sampling error; fitted by restricted maximum likelihood on matches with at least 3 points in each bucket, with 95% player-bootstrap intervals (1,000 refits). Career reliability is the stable variance over the stable variance plus the error variance of a player's inverse-variance-weighted mean score over their retained matches. Matches needed (for reliability 0.70) are in charted matches and are scaled up for the matches dropped by the 3-point rule. p-values are likelihood-ratio tests with a 50:50 chi-square(0,1) mixture. The WTA fit failed the pre-registered simulation check (Section 6.1) and is not reported.
+
+| Outcome | Matches kept | Stable SD [95% interval] | Match-to-match SD [95% interval] | Sampling SD per match | Career reliability [95% interval] | Matches needed [95% interval] | p, stable SD = 0 | p, match SD = 0 |
+|---|---|---|---|---|---|---|---|---|
+| ATP serve | 8,755 of 10,168 | 1.99 [1.43, 2.48] | 3.58 [2.56, 4.42] | 18.7 | 0.46 [0.30, 0.57] | 248 [162, 488] | below 0.0001 | 0.0002 |
+| ATP return | 8,897 of 10,168 | 0.53 [0.00, 1.08] | 4.58 [3.80, 5.20] | 18.8 | 0.06 [0.00, 0.20] | 3,573 [851, unbounded] | 0.27 | below 0.0001 |
+| ATP rally points | 9,746 of 10,168 | 1.24 [0.54, 1.72] | 4.73 [3.98, 5.49] | 17.1 | 0.30 [0.08, 0.45] | 497 [259, 2,661] | 0.0003 | below 0.0001 |
+
+Sensitivity to the minimum points per bucket (stable SD, career reliability, matches needed): serve at 1 points: 1.95, 0.45, 321; serve at 5 points: 1.91, 0.43, 258; return at 1 points: 0.54, 0.06, 4,227; return at 5 points: 0.47, 0.04, 4,456; rally points at 1 points: 1.27, 0.31, 534; rally points at 5 points: 1.29, 0.31, 445. The simulation check recovered the ATP serve design (true stable SD 1.5 and match SD 3.0 gave means 1.48 and 2.92; true match SD 0 gave 0.74).
