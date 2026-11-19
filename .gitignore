@@ -31,3 +31,6 @@ Shot-Selection Consistency and Clutch Performance in Tennis - Full doc explanati
 # Conference-supplied template (not ours to redistribute) and the .docx built from it
 paper/Paper Template.docx
 paper/submission.docx
+
+# Tour-level match results (fetched by src/robustness/fetch_tour_results.py; not committed)
+results/tour_results/*.csv

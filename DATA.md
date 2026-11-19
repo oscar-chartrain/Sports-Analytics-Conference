@@ -2,7 +2,7 @@
 
 ## Source
 
-All match and point-level data comes from the **Match Charting Project (MCP)**,
+All point-level data and the clutch scores come from the **Match Charting Project (MCP)**,
 compiled by Jeff Sackmann and volunteer contributors:
 https://github.com/JeffSackmann/tennis_MatchChartingProject
 
@@ -73,3 +73,14 @@ them, since they're built directly from MCP data.
 See the root `README.md`'s "Reproduce" section for the exact `curl` commands
 and file names needed for both ATP (`m`) and WTA (`w`) data across all three
 decade files.
+
+## Tour-level match results (Section 4.6 and Table S18 only)
+
+The external-criterion check uses tour-level match results (winner, loser, set scores, best-of, tournament date) for ATP and WTA,
+1968 to 2026-05-25, from Jeff Sackmann's `tennis_atp` and `tennis_wta` (CC BY-NC-SA 4.0). The upstream repositories were no longer
+reachable at `github.com/JeffSackmann` when the check was run, so `src/robustness/fetch_tour_results.py` fetches the yearly files
+from an archival mirror, `github.com/Aneeshers/tennis-sackmann-archive`, at commit `83733587353df8a41f2fd4f516147d5aa83f5a8d`
+(made 2026-06-25 from upstream commits of June 2026), and checks each file against `DATA_MANIFEST.csv`. The files are written to
+`results/tour_results/` and are not committed. The mirror is a third-party copy; its integrity was tested against the charted data
+(the winner of the last charted point equals the file's winner in 99.75% of WTA and 99.86% of ATP charted matches whose chart reaches
+match point). Same license terms as the MCP data.

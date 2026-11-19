@@ -1,0 +1,11 @@
+tour,predictor,theta_pp,expected_slope_pp,mean_slope_pp,power_0125,reject_05
+atp,"S (simulated, reliability 0.44)",0.0,0.0,-0.0006690028392229,0.016,0.057
+atp,"S (simulated, reliability 0.44)",1.0,0.664857784536425,0.675034753725775,0.12,0.271
+atp,"S (simulated, reliability 0.44)",2.0,1.32971556907285,1.337136515135122,0.518,0.706
+atp,"S (simulated, reliability 0.44)",4.0,2.6594311381457,2.670994397750265,0.941,0.984
+atp,"S (simulated, reliability 0.44)",8.0,5.3188622762914,5.339020812710533,0.999,1.0
+wta,"S (simulated, reliability 0.40)",0.0,0.0,-0.0030031649649525,0.015,0.055
+wta,"S (simulated, reliability 0.40)",1.0,0.6326456816502448,0.5868097705789865,0.038,0.092
+wta,"S (simulated, reliability 0.40)",2.0,1.2652913633004896,1.2729116494876014,0.097,0.228
+wta,"S (simulated, reliability 0.40)",4.0,2.5305827266009797,2.5170271535970024,0.367,0.571
+wta,"S (simulated, reliability 0.40)",8.0,5.061165453201959,4.935516906870812,0.785,0.914

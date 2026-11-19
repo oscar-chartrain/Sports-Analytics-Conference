@@ -1,0 +1,102 @@
+
+======================================================================
+ATP
+======================================================================
+tour matches 199,389; complete 192,555 (96.6%); deciding-set matches 58,729; score anomalies dropped 928
+ATP: loaded cached point table (1,132,053 points)
+V1 atp: all 91 pool players found in the tour results
+charted matches 7,565; located uniquely in the tour results 6,680 (88.3%); tour matches excluded 7,084
+V2 atp: of 6,539 located complete matches, 5,832 (89.2%) have a chart that reaches match point (its last-point state equals the tour score's); in those the charted last-point winner is the tour-file winner in 99.86%
+V3 atp: 86 of 21,395 sampled complete matches have a winner without the required set majority (the match winner wins sets_to_win sets)
+V4: Elo reproduces the hand calculation (deciding sets and tiebreak sets do not update ratings; zero-sum)
+calibration atp: b(best-of-3 decider) 0.623 (n 51,070), b(best-of-5 decider) 0.539 (n 7,659), b(tiebreak) 0.333 (n 69,338)
+V5 atp C1: largest decile gap between expected and observed win rate 0.59 pp (league-wide, both orientations)
+V5 atp C2: largest decile gap between expected and observed win rate 0.24 pp (league-wide, both orientations)
+V6 atp: the two players' expected probabilities sum to 1 by construction (antisymmetric model); league-wide mean excess = 0
+benchmark: change in set-win probability per unit change in point-win probability (serve and return, 65% serve) k = 6.56
+V1 atp: pool players with at least 30 deciding-set matches 88 of 91; tiebreak sets 89; median deciding-set matches 154, median tiebreak sets 219
+criterion spread atp: SD of player excess 4.87 pp; binomial noise 4.38 pp; excess true SD (model error or real skill) 2.13 pp
+V7 atp theta 0 pp per true SD: expected slope 0.00 pp, mean -0.00 pp (SE 0.02); power at 0.0125: 1.6%; rejection at 0.05: 5.7%
+V7 atp theta 1 pp per true SD: expected slope 0.66 pp, mean 0.68 pp (SE 0.02); power at 0.0125: 12.0%; rejection at 0.05: 27.1%
+V7 atp theta 2 pp per true SD: expected slope 1.33 pp, mean 1.34 pp (SE 0.02); power at 0.0125: 51.8%; rejection at 0.05: 70.6%
+V7 atp theta 4 pp per true SD: expected slope 2.66 pp, mean 2.67 pp (SE 0.02); power at 0.0125: 94.1%; rejection at 0.05: 98.4%
+V7 atp theta 8 pp per true SD: expected slope 5.32 pp, mean 5.34 pp (SE 0.03); power at 0.0125: 99.9%; rejection at 0.05: 100.0%
+ATP: loaded cached point table (1,132,053 points)
+  hitter parity on 266,591 winner points: 0.954 (floor 0.85)
+criterion reliability atp: C1 median +0.199 [-0.130, +0.430]; C2 median +0.150 [-0.216, +0.405]
+TEST atp C1 serve_clutch      : slope +0.53 pp per SD [-0.69, +1.80] (SE 0.68, p 0.4344; Spearman +0.099) n 88  PRIMARY
+TEST atp C1 return_clutch     : slope +1.10 pp per SD [-0.25, +2.32] (SE 0.69, p 0.1140; Spearman +0.076) n 88
+TEST atp C1 R1_rally_point    : slope +0.97 pp per SD [-0.40, +2.30] (SE 0.76, p 0.2043; Spearman +0.126) n 88
+TEST atp C1 R2_error_all      : slope +0.41 pp per SD [-0.75, +1.56] (SE 0.60, p 0.4893; Spearman +0.038) n 88
+TEST atp C1 R3_winner_all     : slope +0.34 pp per SD [-0.69, +1.31] (SE 0.52, p 0.5168; Spearman +0.107) n 88
+TEST atp C1 R4_error_forehand : slope +0.06 pp per SD [-1.09, +1.48] (SE 0.65, p 0.9250; Spearman -0.009) n 88
+TEST atp C1 R5_error_backhand : slope +0.82 pp per SD [-0.29, +1.86] (SE 0.57, p 0.1562; Spearman +0.068) n 87
+TEST atp C1 composite         : slope +1.04 pp per SD [-0.18, +2.28] (SE 0.68, p 0.1286; Spearman +0.080) n 88  PRIMARY
+TEST atp C2 serve_clutch      : slope +1.20 pp per SD [+0.08, +2.18] (SE 0.58, p 0.0410; Spearman +0.147) n 89
+TEST atp C2 return_clutch     : slope +0.09 pp per SD [-0.82, +0.90] (SE 0.46, p 0.8381; Spearman -0.016) n 89
+TEST atp C2 R1_rally_point    : slope +0.49 pp per SD [-0.30, +1.34] (SE 0.46, p 0.2872; Spearman +0.051) n 89
+TEST atp C2 R2_error_all      : slope +1.46 pp per SD [+0.39, +2.36] (SE 0.60, p 0.0167; Spearman +0.164) n 89
+TEST atp C2 R3_winner_all     : slope +0.35 pp per SD [-0.56, +1.18] (SE 0.48, p 0.4779; Spearman +0.011) n 89
+TEST atp C2 R4_error_forehand : slope +0.52 pp per SD [-0.18, +1.69] (SE 0.50, p 0.3000; Spearman +0.001) n 89
+TEST atp C2 R5_error_backhand : slope +1.58 pp per SD [+0.61, +2.34] (SE 0.50, p 0.0024; Spearman +0.129) n 88
+TEST atp C2 composite         : slope +1.34 pp per SD [+0.40, +2.47] (SE 0.62, p 0.0324; Spearman +0.121) n 89
+SENS atp C1 without pool-vs-pool serve_clutch: slope -0.02 pp [-1.53, +1.48] p 0.9817 n 81
+SENS atp C1 without pool-vs-pool composite: slope +0.11 pp [-1.72, +1.85] p 0.9111 n 81
+SENS atp C1 K=10 serve_clutch: slope +0.50 pp [-0.75, +1.76] p 0.4614
+SENS atp C1 K=10 composite: slope +1.03 pp [-0.21, +2.39] p 0.1299
+SENS atp C1 K=30 serve_clutch: slope +0.55 pp [-0.76, +1.83] p 0.4214
+SENS atp C1 K=30 composite: slope +1.04 pp [-0.31, +2.34] p 0.1321
+benchmark atp: one true SD of serve clutch (2.11 pp) implies a change in deciding-set win probability of 6.9 to 13.8 pp per true SD, or 4.6 to 9.2 pp per SD of the observed score
+ATP done in 49s
+=== RUN END
+
+======================================================================
+WTA
+======================================================================
+tour matches 162,182; complete 157,338 (97.0%); deciding-set matches 46,095; score anomalies dropped 193
+WTA: loaded cached point table (426,269 points)
+V1 wta: all 55 pool players found in the tour results
+charted matches 4,073; located uniquely in the tour results 3,574 (87.7%); tour matches excluded 3,697
+V2 wta: of 3,536 located complete matches, 3,216 (91.0%) have a chart that reaches match point (its last-point state equals the tour score's); in those the charted last-point winner is the tour-file winner in 99.75%
+V3 wta: 8 of 22,477 sampled complete matches have a winner without the required set majority (the match winner wins sets_to_win sets)
+V4: Elo reproduces the hand calculation (deciding sets and tiebreak sets do not update ratings; zero-sum)
+calibration wta: b(best-of-3 decider) 0.587 (n 46,094), b(best-of-5 decider) 0.587 (n 1), b(tiebreak) 0.304 (n 28,733)
+V5 wta C1: largest decile gap between expected and observed win rate 0.79 pp (league-wide, both orientations)
+V5 wta C2: largest decile gap between expected and observed win rate 0.86 pp (league-wide, both orientations)
+V6 wta: the two players' expected probabilities sum to 1 by construction (antisymmetric model); league-wide mean excess = 0
+benchmark: change in set-win probability per unit change in point-win probability (serve and return, 65% serve) k = 6.56
+V1 wta: pool players with at least 30 deciding-set matches 52 of 55; tiebreak sets 51; median deciding-set matches 117, median tiebreak sets 90
+criterion spread wta: SD of player excess 6.89 pp; binomial noise 4.73 pp; excess true SD (model error or real skill) 5.00 pp
+V7 wta theta 0 pp per true SD: expected slope 0.00 pp, mean -0.00 pp (SE 0.03); power at 0.0125: 1.5%; rejection at 0.05: 5.5%
+V7 wta theta 1 pp per true SD: expected slope 0.63 pp, mean 0.59 pp (SE 0.03); power at 0.0125: 3.8%; rejection at 0.05: 9.2%
+V7 wta theta 2 pp per true SD: expected slope 1.27 pp, mean 1.27 pp (SE 0.03); power at 0.0125: 9.7%; rejection at 0.05: 22.8%
+V7 wta theta 4 pp per true SD: expected slope 2.53 pp, mean 2.52 pp (SE 0.03); power at 0.0125: 36.7%; rejection at 0.05: 57.1%
+V7 wta theta 8 pp per true SD: expected slope 5.06 pp, mean 4.94 pp (SE 0.05); power at 0.0125: 78.5%; rejection at 0.05: 91.4%
+WTA: loaded cached point table (426,269 points)
+  hitter parity on 105,746 winner points: 0.966 (floor 0.85)
+criterion reliability wta: C1 median +0.533 [+0.271, +0.713]; C2 median +0.203 [-0.204, +0.501]
+TEST wta C1 serve_clutch      : slope -0.09 pp per SD [-1.65, +1.51] (SE 0.90, p 0.9209; Spearman -0.081) n 52  PRIMARY
+TEST wta C1 return_clutch     : slope -0.14 pp per SD [-2.05, +1.62] (SE 1.01, p 0.8897; Spearman -0.115) n 52
+TEST wta C1 R1_rally_point    : slope -1.14 pp per SD [-3.01, +0.52] (SE 0.94, p 0.2304; Spearman -0.246) n 52
+TEST wta C1 R2_error_all      : slope +0.57 pp per SD [-0.83, +2.71] (SE 1.00, p 0.5666; Spearman +0.142) n 52
+TEST wta C1 R3_winner_all     : slope -1.23 pp per SD [-2.68, +0.27] (SE 0.77, p 0.1163; Spearman -0.243) n 52
+TEST wta C1 R4_error_forehand : slope +1.44 pp per SD [-0.03, +3.15] (SE 0.93, p 0.1304; Spearman +0.239) n 52
+TEST wta C1 R5_error_backhand : slope -0.84 pp per SD [-2.63, +0.65] (SE 0.77, p 0.2809; Spearman -0.127) n 52
+TEST wta C1 composite         : slope -0.33 pp per SD [-2.01, +1.32] (SE 0.87, p 0.7039; Spearman -0.102) n 52  PRIMARY
+TEST wta C2 serve_clutch      : slope +0.24 pp per SD [-1.30, +1.87] (SE 0.85, p 0.7832; Spearman +0.020) n 51
+TEST wta C2 return_clutch     : slope -0.08 pp per SD [-1.33, +1.40] (SE 0.73, p 0.9108; Spearman +0.005) n 51
+TEST wta C2 R1_rally_point    : slope -0.25 pp per SD [-1.49, +1.21] (SE 0.70, p 0.7225; Spearman +0.009) n 51
+TEST wta C2 R2_error_all      : slope +0.36 pp per SD [-1.11, +1.57] (SE 0.71, p 0.6092; Spearman +0.069) n 51
+TEST wta C2 R3_winner_all     : slope -0.89 pp per SD [-2.39, +0.36] (SE 0.73, p 0.2254; Spearman -0.207) n 51
+TEST wta C2 R4_error_forehand : slope +0.66 pp per SD [-0.93, +2.11] (SE 0.84, p 0.4358; Spearman +0.137) n 51
+TEST wta C2 R5_error_backhand : slope -0.09 pp per SD [-1.74, +1.06] (SE 0.79, p 0.9120; Spearman -0.078) n 51
+TEST wta C2 composite         : slope -0.00 pp per SD [-1.31, +1.26] (SE 0.71, p 0.9966; Spearman +0.043) n 51
+SENS wta C1 without pool-vs-pool serve_clutch: slope -0.63 pp [-2.51, +1.02] p 0.5040 n 49
+SENS wta C1 without pool-vs-pool composite: slope -0.72 pp [-2.49, +0.82] p 0.3991 n 49
+SENS wta C1 K=10 serve_clutch: slope -0.22 pp [-1.88, +1.50] p 0.8087
+SENS wta C1 K=10 composite: slope -0.42 pp [-2.20, +1.31] p 0.6411
+SENS wta C1 K=30 serve_clutch: slope -0.04 pp [-1.79, +1.65] p 0.9651
+SENS wta C1 K=30 composite: slope -0.31 pp [-1.99, +1.43] p 0.7193
+benchmark wta: one true SD of serve clutch (1.84 pp) implies a change in deciding-set win probability of 6.1 to 12.1 pp per true SD, or 3.8 to 7.7 pp per SD of the observed score
+WTA done in 31s
+=== RUN END

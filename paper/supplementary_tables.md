@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S17 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S18 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -20,7 +20,7 @@ Supplementary tables S1 to S17 for "Shot-Selection Consistency and Clutch Perfor
 | BLR (faithful) | WTA | 0.206 [-0.368, 0.539] | 0.294 [-0.021, 0.557] |
 | Pooled LR | WTA | 0.443 [0.040, 0.676] | 0.449 [0.209, 0.641] |
 
-**Table S2.** TOST equivalence bound on |r|, observed versus corrected for measurement error, at the original-split clutch reliability, the random-split median, and the range from the 97.5th to the 2.5th percentile reliability. "Vacuous" means the bound exceeds 1 or the reliability is at or below zero. The original-split column uses the documented (rounded) reliabilities, as in Figure 2. The all-shot rows (R1 to R3) are computed at the random-split median only.
+**Table S2.** TOST equivalence bound on |r|, observed versus corrected for measurement error, at the original-split clutch reliability, the random-split median, and the range from the 97.5th to the 2.5th percentile reliability. "Vacuous" means the bound exceeds 1 or the reliability is at or below zero. The original-split column uses the documented (rounded) reliabilities, as in Figure S3. The all-shot rows (R1 to R3) are computed at the random-split median only.
 
 | Tour | Role | Observed | Original split | Random-split median | Random-split range |
 |---|---|---|---|---|---|
@@ -267,6 +267,59 @@ Reading. A planted spread of 4 percentage points meets the criterion on all thre
 | WTA | R2 errors | -0.056 (0.683) | 0.50 | 0.41 |
 | WTA | R3 winners | +0.024 (0.859) | 0.47 | 0.38 |
 
+**Table S18.** External criterion: does clutch predict winning when it matters? (plan: `docs/combined/decider_validity_preregistration.md`.) Predictors: the full-sample clutch scores of Table S17 (higher means better under pressure) standardized over the pool, and the composite (mean of a player's available z-scores). Criteria: C1, the player's deciding-set matches (complete tour-level matches that go to the last set), and C2, tiebreak sets, in tour-level matches that are not charted (every charted match is excluded). Results come from Jeff Sackmann's ATP and WTA match files, 1968 to 2026-05-25 (CC BY-NC-SA 4.0), taken from an archival mirror pinned at one commit (`DATA_MANIFEST.csv`); the winner of the last charted point equals the file's winner in 99.75% (WTA) and 99.86% (ATP) of charted matches whose chart reaches match point. Strength control: pre-match Elo ratings built from sets that are neither deciding sets nor tiebreak sets (K = 20), calibrated league-wide; the criterion is each player's excess wins over that expectation (players with at least 30 events). Slopes are weighted least squares of excess on the score (weights = number of events, robust standard errors, adjusted for the player's mean strength advantage), in percentage points of win probability per standard deviation of the score, with a 2,000-resample player bootstrap interval; primary tests (4) are judged at 0.05/4 = 0.0125 and secondary tests (28) at 0.05/28 = 0.0018. The benchmark is the change in deciding-set win probability if one true standard deviation of serve clutch (Table 2) were a shift in the points of the set (a set model with a tiebreak at 6-6, 65% serve-point win probability: 6.6 points of set-win probability per point of point-win probability), from half to all of it, multiplied by the square root of the score's reliability.
+
+*A. Primary tests (deciding-set matches)*
+
+| Tour, predictor | Score reliability | Change in deciding-set win probability per SD of the score, pp [95% CI] | p | If clutch were real (benchmark), pp per SD |
+|---|---|---|---|---|
+| ATP serve | 0.44 | +0.53 [-0.69, +1.80] | 0.434 | 4.6 to 9.2 |
+| ATP composite of the seven | 0.49 | +1.04 [-0.18, +2.28] | 0.129 | n/a |
+| WTA serve | 0.40 | -0.09 [-1.65, +1.51] | 0.921 | 3.8 to 7.7 |
+| WTA composite of the seven | 0.00 | -0.33 [-2.01, +1.32] | 0.704 | n/a |
+
+*B. All tests: slope in pp per SD of the score (p); none passes its multiplicity threshold*
+
+| Predictor | ATP deciding sets | ATP tiebreaks | WTA deciding sets | WTA tiebreaks |
+|---|---|---|---|---|
+| Serve | +0.53 (0.434) | +1.20 (0.041) | -0.09 (0.921) | +0.24 (0.783) |
+| Return | +1.10 (0.114) | +0.09 (0.838) | -0.14 (0.890) | -0.08 (0.911) |
+| Rally points | +0.97 (0.204) | +0.49 (0.287) | -1.14 (0.230) | -0.25 (0.722) |
+| Errors, all shots | +0.41 (0.489) | +1.46 (0.017) | +0.57 (0.567) | +0.36 (0.609) |
+| Winners, all shots | +0.34 (0.517) | +0.35 (0.478) | -1.23 (0.116) | -0.89 (0.225) |
+| Errors, forehand | +0.06 (0.925) | +0.52 (0.300) | +1.44 (0.130) | +0.66 (0.436) |
+| Errors, backhand | +0.82 (0.156) | +1.58 (0.002) | -0.84 (0.281) | -0.09 (0.912) |
+| Composite of the seven | +1.04 (0.129) | +1.34 (0.032) | -0.33 (0.704) | -0.00 (0.997) |
+
+*C. The criterion itself*
+
+| Tour, criterion | Players | Median events per player | Split-half reliability of excess wins [95% range] |
+|---|---|---|---|
+| ATP deciding-set matches | 88 | 159 | +0.20 [-0.13, +0.43] |
+| ATP tiebreak sets | 89 | 224 | +0.15 [-0.22, +0.41] |
+| WTA deciding-set matches | 52 | 128 | +0.53 [+0.27, +0.71] |
+| WTA tiebreak sets | 51 | 91 | +0.20 [-0.20, +0.50] |
+
+*D. Power: simulated, with a score of serve-clutch reliability, the criterion's real events and its extra between-player spread (about 2.1 pp ATP, 5.0 pp WTA beyond binomial noise); share of 1,000 simulated datasets significant at 0.0125*
+
+| True effect, pp of win probability per true SD of clutch | ATP power (slope per SD of score) | WTA power (slope per SD of score) |
+|---|---|---|
+| 1 | 12% (0.7 pp) | 4% (0.6 pp) |
+| 2 | 52% (1.3 pp) | 10% (1.3 pp) |
+| 4 | 94% (2.7 pp) | 37% (2.5 pp) |
+| 8 | 100% (5.3 pp) | 78% (5.1 pp) |
+
+*E. Sensitivity of the primary deciding-set tests: slope in pp per SD (p)*
+
+| Variant | ATP serve | ATP composite | WTA serve | WTA composite |
+|---|---|---|---|---|
+| Main (Elo K = 20) | +0.53 (0.43) | +1.04 (0.13) | -0.09 (0.92) | -0.33 (0.70) |
+| Elo K = 10 | +0.50 (0.46) | +1.03 (0.13) | -0.22 (0.81) | -0.42 (0.64) |
+| Elo K = 30 | +0.55 (0.42) | +1.04 (0.13) | -0.04 (0.97) | -0.31 (0.72) |
+| Without matches between two pool players | -0.02 (0.98) | +0.11 (0.91) | -0.63 (0.50) | -0.72 (0.40) |
+
+Reading. No primary test is significant, and the intervals exclude the benchmark: on ATP the upper end for serve is +1.8 pp per SD against a benchmark of 4.6 to 9.2, on WTA +1.5 against 3.8 to 7.7. The ATP slopes are small and positive for every predictor in deciding sets (+0.1 to +1.1 pp per SD) and in tiebreaks (+0.1 to +1.6; the smallest p, 0.0024 for backhand errors, misses the 0.0018 threshold), but the ATP deciding-set slopes vanish when matches between two pool players are dropped (serve -0.02, composite +0.11), so they are fragile. WTA slopes have both signs. The WTA composite has no stable part (reliability 0.00), so that test says nothing. The criterion is partly stable (WTA deciding sets 0.53, ATP 0.20): some players win decisive sets more than their strength predicts, but the clutch scores do not identify them. Power is good on ATP (94% for a true effect of 4 points per SD of clutch, about half the lowest benchmark) and weaker on WTA (37% at 4; 78% at 8), so the WTA result rules out only the larger effects. The strength control is an Elo expectation: its errors add between-player spread to the criterion (SD of player excess 4.9 pp on ATP, 6.9 pp on WTA against 4.4 and 4.7 pp of binomial noise).
+
 ![Split-half reliability of the predictor versus the outcome, by tour](../results/figures/split_half_reliability_figure.png)
 
 **Figure S1.** Each point is one player's half-A versus half-B value on the original split. Entropy clusters tightly, serve clutch loosely, return clutch barely (the Spearman-Brown reliabilities are in Table 1).
@@ -334,3 +387,7 @@ Mean of the 21 cross-time correlations: ATP +0.11 [+0.02, +0.20] (mean same-outc
 | WTA winners, all shots | 0.47 (1.0%) | 0.46 (0%) | 0.64 [0.38, 0.81] vs 0.65 | 166 | 0.60 [+0.36, +0.79] |
 
 Reading. The stable part of the shot-level and rally-point scores on ATP is not just ability (partial correlations 0.29 to 0.50 for rally points, errors, winners and forehand errors; serve 0.27 with p 0.010 narrowly misses our 0.007 bar; return and backhand errors are not stable). On WTA only winners clear it. The indicators do not converge: 18 of 21 cross-time correlations on ATP are positive but only the nested pair passes the correction, the mean is about a third of the mean same-outcome stability, and on WTA the mean is about zero. Where stable differences exist they look specific to a role or a shot, not one general clutch trait; but with stabilities of 0.1 to 0.5 every cross-time correlation is heavily attenuated and the disattenuated values have no intervals, so this is weak evidence against a common trait, not proof of its absence. Of the single shots, the forehand is the most reliable (ATP 0.49, WTA 0.42; chronological 0.54 on ATP) and the backhand, slice and net game are weaker, but forehand errors need about 180 to 210 matches, true spread is about the size of the noise, and no shot-level measure meets the criterion: the closest are ATP winner clutch shrunk (median 0.74, 80% of splits at or above 0.70) and WTA all-shot error clutch shrunk (0.71, 57%). These checks speak to agreement and persistence, not to winning matches.
+
+![Equivalence bound on |r| by tour and role, observed versus reliability-corrected](../results/figures/disattenuation_figure.png)
+
+**Figure S3.** Equivalence bound on |r|, observed versus reliability-corrected (original-split reliabilities). WTA return's bound exceeds 1 and is uninformative.
