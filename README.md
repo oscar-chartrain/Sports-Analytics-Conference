@@ -285,6 +285,7 @@ python src/robustness/selection_checks.py              # selection checks (Table
 python src/robustness/positive_control.py             # positive control (Table S15; about 3 hours for ATP, 1.5 for WTA; run the tours in parallel with --tours)
 python src/figures/make_bootstrap_rank_figure.py
 python src/figures/make_allshots_figure.py
+python src/figures/make_positive_control_figure.py   # Figure 1 (positive control; needs results/applications/positive_control.csv)
 python src/paper/build_paper_docx.py --paper-id "<ID>"   # needs python-docx
 ```
 

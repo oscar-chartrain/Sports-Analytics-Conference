@@ -20,7 +20,7 @@ Supplementary tables S1 to S15 for "Shot-Selection Consistency and Clutch Perfor
 | BLR (faithful) | WTA | 0.206 [-0.368, 0.539] | 0.294 [-0.021, 0.557] |
 | Pooled LR | WTA | 0.443 [0.040, 0.676] | 0.449 [0.209, 0.641] |
 
-**Table S2.** TOST equivalence bound on |r|, observed versus corrected for measurement error, at the original-split clutch reliability, the random-split median, and the range from the 97.5th to the 2.5th percentile reliability. "Vacuous" means the bound exceeds 1 or the reliability is at or below zero. The original-split column uses the documented (rounded) reliabilities, as in Figure 3. The all-shot rows (R1 to R3) are computed at the random-split median only.
+**Table S2.** TOST equivalence bound on |r|, observed versus corrected for measurement error, at the original-split clutch reliability, the random-split median, and the range from the 97.5th to the 2.5th percentile reliability. "Vacuous" means the bound exceeds 1 or the reliability is at or below zero. The original-split column uses the documented (rounded) reliabilities, as in Figure 2. The all-shot rows (R1 to R3) are computed at the random-split median only.
 
 | Tour | Role | Observed | Original split | Random-split median | Random-split range |
 |---|---|---|---|---|---|
@@ -251,3 +251,11 @@ Reading. Reliability rises with the floor because players with more matches have
 | WTA rally points | 0.00 (0%) | 0.21 (0%) | 0.56 (7%) | 0.72 (61%) | 0.82 (95%) | 0.91 (100%) | 1.06: 0.25 vs 0.25 | 4 pp |
 
 Reading. A planted spread of 4 percentage points meets the criterion on all three ATP outcomes and on WTA rally points (95% of splits at or above 0.70), and 6 points on every cell; WTA serve and return need more than 4. At 3 points the median passes 0.70 on ATP but only 69% to 88% of splits do. The spreads estimated from the real data (1.1 to 2.2 points) give simulated reliabilities of 0.25 to 0.60, close to the observed ones, so the pipeline detects clutch differences about twice the size of the estimated serve spread and three times that of the return spread; the low reliabilities reflect small true differences, not a test that cannot reach 0.70.
+
+![Split-half reliability of the predictor versus the outcome, by tour](../results/figures/split_half_reliability_figure.png)
+
+**Figure S1.** Each point is one player's half-A versus half-B value on the original split. Entropy clusters tightly, serve clutch loosely, return clutch barely (the Spearman-Brown reliabilities are in Table 1).
+
+![Split-half reliability of clutch outcomes on every kind of shot, by tour](../results/figures/allshots_reliability_figure.png)
+
+**Figure S2.** Median split-half reliability (dot) and 95% range over 1,000 random splits (line) for clutch measured on serve and return points, on rally-decided points, and on shot-level outcomes (numbers in Table S7). The dotted line is the 0.70 threshold. WTA net-game errors are not estimable (too few shots).

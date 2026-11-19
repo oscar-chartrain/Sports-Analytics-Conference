@@ -6,11 +6,24 @@
 
 When a broadcaster says a player "raises their level on the big points," or a scouting report labels a returner "clutch," a number is usually behind the claim, and judgements about who is a big-match player follow from it. Leverage-weighted metrics, descended from Morris's (1977) definition of a point's importance, are the standard way to produce that number: weight each point by how much it moves the probability of winning the match, then ask whether a player wins more of the high-leverage points than the low-leverage ones. Tennis Abstract publishes such a metric, the Balanced Leverage Ratio (BLR), for individual matches (Sackmann, Tennis Abstract), and a 2022 finalist paper at this conference (Seidl and Lucey, 2022) used leverage, clutch and momentum metrics to detect key moments in women's tennis.
 
-**What we find.** In Match Charting Project data for 91 ATP and 55 WTA players, the clutch ratings we tested are not reliable enough to support claims about individual players. Split a player's charted matches into two halves, compute the rating on each, and ask whether players keep their relative positions: across 1,000 random splits, ATP serve clutch has a median reliability of 0.53 and return clutch 0.24 (WTA is similar), and Tennis Abstract's BLR is no better, against about 0.9 for shot-selection entropy. The problem extends to every shot: clutch on rally points and on the errors and winners of each shot also stays below the conventional 0.70 threshold; one pooled ratio on the ATP tour is the exploratory exception. The test is not the obstacle (planted differences of 4 points would pass it): true differences between players are real on serve but no larger than the noise on one player's score; a reliable return rating would need about 550 charted matches, and Carlos Alcaraz's return-clutch rank is 32 of 91 with a 95% interval of 14 to 64. Entropy shows no detectable relationship with clutch on either tour, with bounds that are informative for ATP but say little about WTA return. We recommend that any clutch rating be published with its own split-half reliability.
+**What we find.** In Match Charting Project data for 91 ATP and 55 WTA players, the clutch ratings we tested are not reliable enough to support claims about individual players. The table gives the median split-half reliability over 1,000 random splits of each player's charted matches against the conventional 0.70 threshold. Tennis Abstract's BLR is no better, against about 0.9 for shot-selection entropy. The test is not the obstacle: planted differences of 4 points between players would pass it. True differences between players are real on serve but no larger than the noise on one player's score; a reliable return rating would need about 550 charted matches, and Carlos Alcaraz's return-clutch rank is 32 of 91 with a 95% interval of 14 to 64. Entropy shows no detectable relationship with clutch on either tour, with bounds that are informative for ATP but say little about WTA return. We recommend that any clutch rating be published with its own split-half reliability.
+
+**At a glance: median split-half reliability (1,000 random splits; 0.70 is the criterion).**
+
+| Measure | ATP | WTA | Reliably measured? |
+|---|---|---|---|
+| Shot-selection entropy (predictor; original split) | 0.93 | 0.90 | Yes |
+| Serve clutch | 0.53 | 0.41 | No |
+| Return clutch | 0.24 | 0.27 | No |
+| BLR (Tennis Abstract) | 0.54 | 0.29 | No |
+| Rally-point clutch | 0.44 | 0.25 | No |
+| Unforced-error clutch (all shots) | 0.60 | 0.50 | No |
+| Winner clutch (all shots) | 0.58 | 0.47 | No |
+| Pooled leverage ratio (exploratory) | 0.76 | 0.45 | No (ATP: 93% of splits at 0.70 or above, short of 95%) |
 
 Two questions drive the paper. **Can these metrics be measured reliably?** A rating that fails the split-half test is mostly noise, not a trait; the correlation across players, corrected to full length, is its reliability. **Does shot-selection predictability predict clutch performance?** Commentary contrasts a flair player such as Carlos Alcaraz with a metronomic one such as Jannik Sinner and implies that unpredictability pays under pressure. We test it with an information-theoretic style measure against every clutch outcome we can build, replicated on the WTA tour. A null on the second is only as informative as the measurement behind it, so we lead with reliability.
 
-**Contributions.** (1) To our knowledge the first split-half reliability estimates for leverage-weighted tennis clutch metrics, including BLR, on serve, return, rally and shot-level outcomes. (2) Practitioner-scale translations: data needed, true spread, rank uncertainty and break-point statistics. (3) A power-analysed null for entropy with equivalence bounds corrected for measurement error, replicated on a second tour. (4) An open, reproducible pipeline.
+**Contributions.** (1) To our knowledge the first split-half reliability estimates for leverage-weighted tennis clutch metrics, including BLR, from serve to shot level, with a positive control. (2) Practitioner-scale translations: data needed, true spread, rank uncertainty. (3) A power-analysed entropy null with equivalence bounds corrected for measurement error, replicated on a second tour. (4) An open pipeline.
 
 ## 2. Related work
 
@@ -32,7 +45,7 @@ The reliability question has a long history outside tennis. Cramer (1977) asked 
 
 **Reliability.** A tour's matches are sorted by date and assigned alternately to halves A and B, so career drift is not mistaken for noise. Each measure is computed on each half, and the split-half correlation across players is Spearman-Brown corrected to full length, with Fisher z intervals. We use 0.70, the common minimum for group-level comparisons, as the threshold; decisions about individuals are usually held to 0.90 or more (Nunnally and Bernstein, 1994), so 0.70 is lenient for the claims at issue. We call an outcome reliably measured only if its random-split median is at least 0.70 and at least 95% of splits are. Because one split is one draw, we repeat the analysis over 1,000 random balanced splits per tour. Entropy is not re-split (extraction is slow and its reliability is not contested).
 
-**Hypothesis, plans and tests.** The plan fixed the predictor (conditional entropy), the outcomes and two-sided Pearson tests by tour and role with Bonferroni correction, plus Spearman and Cook's-distance checks, a pooled regression, TOST equivalence bounds and power; the narrative implies a positive sign. Every analysis has a dated plan in the repository, written before the corresponding script with decision rules stated in advance. These are self-registered, not deposited in a registry, and version control cannot independently verify their order: the earliest preserved commit is dated 2026-07-07, the public history was squashed on 2026-09-23, and the November plans were written after earlier results were known (`docs/combined/preregistration_timeline.md`).
+**Hypothesis, plans and tests.** The plan fixed the predictor (conditional entropy), the outcomes and two-sided Pearson tests by tour and role with Bonferroni correction, plus Spearman and Cook's-distance checks, a pooled regression, TOST equivalence bounds and power; the narrative implies a positive sign. Every analysis has a dated plan in the repository, written before its script with decision rules stated in advance. The plans are self-registered, not deposited in a registry, and their order cannot be independently verified: the earliest preserved commit is dated 2026-07-07, the public history was squashed on 2026-09-23, and the November plans were written after earlier results were known (`docs/combined/preregistration_timeline.md`).
 
 ## 4. Are clutch metrics reliable?
 
@@ -48,15 +61,15 @@ The reliability question has a long history outside tennis. Cramer (1977) asked 
 | BLR (faithful) | 0.460 | 0.537 [0.353, 0.664] | 0.206 | 0.294 [-0.021, 0.557] |
 | Pooled LR | 0.683 | **0.761 [0.679, 0.831]** | 0.443 | 0.449 [0.209, 0.641] |
 
-Entropy is reliably measured on both tours. The clutch scores are not, and the problem is worst on return. Serve, return and BLR fall below 0.70 in at least 99% of random splits on both tours (Figure 1 shows the original split). The original split was a typical draw for every measure, though not always the central one: WTA return clutch is 0.055 on it and 0.27 at the median, both poor.
-
-![Split-half reliability of the predictor versus the outcome, by tour](../results/figures/split_half_reliability_figure.png)
-
-**Figure 1.** Each point is one player's half-A versus half-B value (original split). Entropy clusters tightly, serve clutch loosely, return clutch barely.
+Entropy is reliably measured on both tours. The clutch scores are not, and the problem is worst on return. Serve, return and BLR fall below 0.70 in at least 99% of random splits on both tours (Figure S1 in the supplement shows the original split). The original split was a typical draw for every measure, though not always the central one: WTA return clutch is 0.055 on it and 0.27 at the median, both poor.
 
 This is not a thin-data artifact (each player's leverage buckets hold hundreds to thousands of points per half), and return clutch also depends on the opponent's serve quality, a variance source serve clutch does not share.
 
-**Could the pipeline detect real clutch?** Yes, for larger differences. Planting stable differences of known size in the real design (Table S15), the criterion is met at a true standard deviation of 4 points on ATP serve, return and rally points (WTA: 4 to 6), about twice the estimated serve spread and three times the return spread; at the estimated spreads the simulation reproduces the observed reliabilities within 0.09.
+**Could the pipeline detect real clutch?** Yes, for larger differences. Planting stable differences of known size in the real design (Figure 1, Table S15), the criterion is met at a true standard deviation of 4 points on ATP serve, return and rally points (WTA: 4 to 6), about twice the estimated serve spread and three times the return spread; at the estimated spreads the simulation reproduces the observed reliabilities within 0.09.
+
+![Split-half reliability against the size of a planted true difference between players](../results/figures/positive_control_figure.png)
+
+**Figure 1.** Positive control. Median reliability (line) and 95% range (band) of the same test when stable differences of known size are planted in the real design, by outcome. The hollow marker is the real data (estimated true spread, observed reliability). Noise is binomial only, so the curves are upper bounds (Table S15).
 
 ### 4.2 The faithful BLR, and what pooling does
 
@@ -76,13 +89,9 @@ Selection does not explain it either. Floors of 20 to 80 charted matches move AT
 
 ### 4.4 Beyond serve and return: every shot
 
-Is the problem specific to the serve and return roles? About two thirds of points are decided in the rally (ATP 62% to 66%, WTA 67% to 71%; Table S8), slightly more among high-leverage points. Figure 2 applies the same test to the all-shot outcomes defined in Section 3 (numbers in Table S7).
+Is the problem specific to the serve and return roles? About two thirds of points are decided in the rally (ATP 62% to 66%, WTA 67% to 71%; Table S8), slightly more among high-leverage points. Figure S2 in the supplement applies the same test to the all-shot outcomes defined in Section 3 (numbers in Table S7).
 
 No outcome meets the pre-registered criterion on either tour. The most reliable are the error and winner outcomes that use every shot hit: unforced-error clutch reaches 0.60 on ATP [0.44, 0.72] and 0.50 on WTA, winner clutch 0.58 and 0.47, and at most 4.2% of random splits reach 0.70. Both beat return clutch (0.24, 0.27) and rally-decided point clutch (0.44, 0.25) and modestly exceed serve clutch (0.54, 0.41; these random splits differ from Table 1's, where serve is 0.53), but none reaches 0.70. By shot type, forehand errors are the most reliable (0.49 ATP, 0.41 WTA), backhand errors less (0.32, 0.23), and slice, net-game, ace and double-fault outcomes are no better. Measures built on counts of every shot hit are the most reliable, a binary point outcome in the rally is not, and none reaches 0.70. The practice-side analyses of Section 6 and the checks of Section 4.3 repeat for these outcomes with the same picture (Table S9).
-
-![Split-half reliability of clutch outcomes on every kind of shot, by tour](../results/figures/allshots_reliability_figure.png)
-
-**Figure 2.** Median split-half reliability (dot) and 95% range over 1,000 random splits (line) for clutch measured on serve and return points, on rally-decided points, and on shot-level outcomes. The dotted line is the 0.70 threshold. WTA net-game errors are not estimable (too few shots).
 
 ## 5. Does shot-selection entropy predict clutch?
 
@@ -109,13 +118,13 @@ No correlation survives Bonferroni correction (thresholds 0.005 for serve and re
 
 The bound used throughout is the largest true correlation, in absolute value, that the data cannot rule out with 95% confidence (a two one-sided equivalence test). A bound of 0.30 means that entropy and clutch are at most 0.30 correlated in either direction, so entropy would explain at most 9% of the variation in true clutch; a bound near or above 1 means no relationship can be ruled out.
 
-All pools are well powered for medium effects (r of 0.3 or more) but not small ones; WTA alone has 61% power for a medium effect (Table S3). Observed bounds apply where both variables carry measurement error, so we divide by the attenuation implied by both reliabilities (Figure 3 uses the original-split reliabilities; Table S2 adds random-split values). For ATP the claim survives, loosened: the true relationship is not large for serve (0.30), return (0.40), rally points (0.28), winners (0.32) or errors (0.43). For WTA the corrected bounds are informative only for the shot-level outcomes (0.38 to 0.41) and loose for serve (0.75), rally points (0.61) and return (0.82; 1.82 at the original-split reliability, so no true relationship can be ruled out).
+All pools are well powered for medium effects (r of 0.3 or more) but not small ones; WTA alone has 61% power for a medium effect (Table S3). Observed bounds apply where both variables carry measurement error, so we divide by the attenuation implied by both reliabilities (Figure 2 uses the original-split reliabilities; Table S2 adds random-split values). For ATP the claim survives, loosened: the true relationship is not large for serve (0.30), return (0.40), rally points (0.28), winners (0.32) or errors (0.43). For WTA the corrected bounds are informative only for the shot-level outcomes (0.38 to 0.41) and loose for serve (0.75), rally points (0.61) and return (0.82; 1.82 at the original-split reliability, so no true relationship can be ruled out).
 
 ![Equivalence bound on |r| by tour and role, observed versus reliability-corrected](../results/figures/disattenuation_figure.png)
 
-**Figure 3.** Equivalence bound on |r|, observed versus reliability-corrected (original-split reliabilities). WTA return's bound exceeds 1 and is uninformative.
+**Figure 2.** Equivalence bound on |r|, observed versus reliability-corrected (original-split reliabilities). WTA return's bound exceeds 1 and is uninformative.
 
-This is the sharpest illustration of why reliability must be reported before a clutch correlation is interpreted: it separates a modest null from a number that carries no information.
+This is why reliability must be reported before a clutch correlation is interpreted: it separates a modest null from a number that carries no information.
 
 ## 6. What the unreliability means in practice
 
@@ -148,13 +157,13 @@ If a measure has full-length reliability ρ, the Spearman-Brown prophecy gives t
 
 ### 6.2 How uncertain is a named player's rank?
 
-Reliability is a pool-level statistic, but practitioners talk about named players. About 70% of ATP matches are between two pool players, so we resample the global list of matches with replacement (B = 2,000, fixed seed), give each match the same draw count in both players' scores, re-estimate quartile thresholds and rank all players in every replicate (widths are within 2% of a player-by-player bootstrap on ATP).
+Reliability is a pool-level statistic, but practitioners talk about named players. About 70% of ATP matches are between two pool players, so (Figure 3) we resample the global list of matches with replacement (B = 2,000, fixed seed), give each match the same draw count in both players' scores, re-estimate quartile thresholds and rank all players in every replicate (widths are within 2% of a player-by-player bootstrap on ATP).
 
 The data do not support the narrative that motivated this study, and not because these players are thinly charted: Alcaraz (221 charted matches) and Sinner (297) are among the nine most charted in the pool. Alcaraz's return-clutch rank is 32 (95% interval 14 to 64) and Sinner's is 57 (33 to 80); on serve they are 50 (28 to 74) and 56 (35 to 77). Only Djokovic (serve rank 72 [54, 79], return 78 [53, 84]) and Federer (64 [48, 73], 86 [63, 86]) have intervals clearly below the pool mean, and even theirs span 23 to 31 ranks. On Tennis Abstract's BLR, Federer and Djokovic both score 0.976 against a pool mean of 1.006, with score intervals that exclude it, so the data can say they are below average on this ratio but cannot order the two (ranks 81 and 83, intervals 62 to 86 and 63 to 86). The ratio is also lower for stronger players (r with overall point-win rate of -0.22 on ATP, Section 4.2), so a low value for two of the greatest players is not evidence of weakness under pressure.
 
 ![Bootstrap rank intervals, ATP](../results/figures/bootstrap_rank_figure.png)
 
-**Figure 4.** 95% match-level bootstrap rank intervals for every ATP player, serve and return clutch (rank 1 = most clutch among 91). The dotted diagonal marks the point-estimate rank.
+**Figure 3.** 95% match-level bootstrap rank intervals for every ATP player, serve and return clutch (rank 1 = most clutch among 91). The dotted diagonal marks the point-estimate rank.
 
 In short, these ratings can separate an extreme from the middle of the pool, not neighbours from one another. Across the pool the typical 95% rank interval spans 52 (serve) to 64 (return) of 91 ranks on ATP and 35 and 40 of 55 on WTA; only 21 ATP serve-clutch intervals exclude the pool mean (8 on return, close to the 4.5 that chance alone would give). Rally outcomes are no sharper: 55 of 91 ranks for ATP rally-point clutch (48 to 49 for errors and winners) and 38 of 55 on WTA (Table S9).
 
