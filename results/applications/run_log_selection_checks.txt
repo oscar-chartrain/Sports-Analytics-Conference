@@ -1,0 +1,249 @@
+Selection checks: seven parallel processes (atp1 to atp4, wta1 to wta3), seed 20261120; merged with --merge.
+
+##### log_atp1.txt
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+leverage computed for 77,048 new points in 2s
+V2 leverage recomputed on 300 paper rows: max abs diff 0.00e+00
+V1 extended table: 1,209,101 points, 7,091 matches; paper rows identical
+  hitter parity on 285,057 winner points: 0.954 (floor 0.85)
+V1 40-match pool equals the paper's 91 players
+V5 Grand Slam flag: 2006 of 7091 matches; blocks (tournament editions): 1665
+  C1 cutoff 20 250/1000 splits
+  C1 cutoff 20 500/1000 splits
+  C1 cutoff 20 750/1000 splits
+  C1 cutoff 20 1000/1000 splits
+C1 atp >=  20  S: players 158, median +0.292 [+0.088, +0.450] share>=0.70 0.0%  SD 2.91 pp
+C1 atp >=  20 Rt: players 158, median +0.135 [-0.109, +0.342] share>=0.70 0.0%  SD 2.62 pp
+C1 atp >=  20 R1: players 158, median +0.269 [+0.051, +0.440] share>=0.70 0.0%  SD 2.65 pp
+  C1 cutoff 80 250/1000 splits
+  C1 cutoff 80 500/1000 splits
+  C1 cutoff 80 750/1000 splits
+  C1 cutoff 80 1000/1000 splits
+C1 atp >=  80  S: players  42, median +0.682 [+0.507, +0.804] share>=0.70 41.7%  SD 2.35 pp
+C1 atp >=  80 Rt: players  42, median +0.202 [-0.302, +0.515] share>=0.70 0.1%  SD 1.52 pp
+C1 atp >=  80 R1: players  42, median +0.495 [+0.183, +0.693] share>=0.70 2.2%  SD 1.74 pp
+ATP done in 2308s
+part files written
+=== RUN END atp1 ===
+
+##### log_atp2.txt
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+leverage computed for 77,048 new points in 2s
+V2 leverage recomputed on 300 paper rows: max abs diff 0.00e+00
+V1 extended table: 1,209,101 points, 7,091 matches; paper rows identical
+  hitter parity on 285,057 winner points: 0.954 (floor 0.85)
+V1 40-match pool equals the paper's 91 players
+V5 Grand Slam flag: 2006 of 7091 matches; blocks (tournament editions): 1665
+  C1 cutoff 30 250/1000 splits
+  C1 cutoff 30 500/1000 splits
+  C1 cutoff 30 750/1000 splits
+  C1 cutoff 30 1000/1000 splits
+C1 atp >=  30  S: players 119, median +0.441 [+0.248, +0.595] share>=0.70 0.0%  SD 2.92 pp
+C1 atp >=  30 Rt: players 119, median +0.194 [-0.094, +0.401] share>=0.70 0.0%  SD 2.35 pp
+C1 atp >=  30 R1: players 119, median +0.356 [+0.143, +0.532] share>=0.70 0.0%  SD 2.48 pp
+  C1 cutoff 60 250/1000 splits
+  C1 cutoff 60 500/1000 splits
+  C1 cutoff 60 750/1000 splits
+  C1 cutoff 60 1000/1000 splits
+C1 atp >=  60  S: players  55, median +0.634 [+0.455, +0.769] share>=0.70 18.9%  SD 2.50 pp
+C1 atp >=  60 Rt: players  55, median +0.310 [-0.026, +0.571] share>=0.70 0.0%  SD 1.83 pp
+C1 atp >=  60 R1: players  55, median +0.541 [+0.299, +0.707] share>=0.70 3.1%  SD 2.08 pp
+C4 atp  S vs charted_matches : rho -0.193 p 0.067 n 91
+C4 atp  S vs slam_share      : rho -0.138 p 0.191 n 91
+C4 atp Rt vs charted_matches : rho -0.254 p 0.015 n 91
+C4 atp Rt vs slam_share      : rho -0.210 p 0.045 n 91
+C4 atp R1 vs charted_matches : rho -0.224 p 0.033 n 91
+C4 atp R1 vs slam_share      : rho -0.208 p 0.048 n 91
+ATP done in 2257s
+part files written
+=== RUN END atp2 ===
+
+##### log_atp3.txt
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+leverage computed for 77,048 new points in 3s
+V2 leverage recomputed on 300 paper rows: max abs diff 0.00e+00
+V1 extended table: 1,209,101 points, 7,091 matches; paper rows identical
+  hitter parity on 285,057 winner points: 0.954 (floor 0.85)
+V1 40-match pool equals the paper's 91 players
+V5 Grand Slam flag: 2006 of 7091 matches; blocks (tournament editions): 1665
+  C1 cutoff 40 250/1000 splits
+  C1 cutoff 40 500/1000 splits
+  C1 cutoff 40 750/1000 splits
+  C1 cutoff 40 1000/1000 splits
+C1 atp >=  40  S: players  91, median +0.532 [+0.354, +0.681] share>=0.70 1.0%  SD 2.81 pp
+C1 atp >=  40 Rt: players  91, median +0.239 [-0.043, +0.469] share>=0.70 0.0%  SD 2.19 pp
+C1 atp >=  40 R1: players  91, median +0.432 [+0.220, +0.606] share>=0.70 0.0%  SD 2.36 pp
+V3 cutoff 40 S: new median vs committed +0.5377, diff 0.0059
+V3 cutoff 40 Rt: new median vs committed +0.2391, diff 0.0000
+V3 cutoff 40 R1: new median vs committed +0.4362, diff 0.0042
+  C2 blocked 250/1000 splits
+  C2 blocked 500/1000 splits
+  C2 blocked 750/1000 splits
+  C2 blocked 1000/1000 splits
+C2 atp blocked  S: median +0.539 [+0.361, +0.672] share>=0.70 1.0%; players 91
+C2 atp blocked Rt: median +0.236 [-0.051, +0.468] share>=0.70 0.0%; players 91
+C2 atp blocked R1: median +0.446 [+0.235, +0.605] share>=0.70 0.0%; players 91
+ATP done in 2332s
+part files written
+=== RUN END atp3 ===
+
+##### log_atp4.txt
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+leverage computed for 77,048 new points in 3s
+V2 leverage recomputed on 300 paper rows: max abs diff 0.00e+00
+V1 extended table: 1,209,101 points, 7,091 matches; paper rows identical
+  hitter parity on 285,057 winner points: 0.954 (floor 0.85)
+V1 40-match pool equals the paper's 91 players
+V5 Grand Slam flag: 2006 of 7091 matches; blocks (tournament editions): 1665
+  C3 slam 250/1000 splits
+  C3 slam 500/1000 splits
+  C3 slam 750/1000 splits
+  C3 slam 1000/1000 splits
+C3 atp  slam  S: matches 1889, players ~88, median +0.370 [+0.106, +0.570] share>=0.70 0.0%
+C3 atp  slam Rt: matches 1889, players ~88, median +0.218 [-0.132, +0.468] share>=0.70 0.0%
+C3 atp  slam R1: matches 1889, players ~88, median +0.240 [-0.129, +0.468] share>=0.70 0.0%
+  C3 other 250/1000 splits
+  C3 other 500/1000 splits
+  C3 other 750/1000 splits
+  C3 other 1000/1000 splits
+C3 atp other  S: matches 4763, players ~91, median +0.219 [-0.076, +0.452] share>=0.70 0.0%
+C3 atp other Rt: matches 4763, players ~91, median +0.073 [-0.334, +0.361] share>=0.70 0.0%
+C3 atp other R1: matches 4763, players ~91, median +0.241 [-0.025, +0.483] share>=0.70 0.0%
+C3 atp  S: Slam - other -0.44 pp (SE 0.46, n 90); r(Slam, other) +0.373; disattenuated +1.31
+C3 atp Rt: Slam - other +0.10 pp (SE 0.44, n 90); r(Slam, other) +0.145; disattenuated +1.14
+C3 atp R1: Slam - other -0.10 pp (SE 0.37, n 90); r(Slam, other) +0.342; disattenuated +1.42
+ATP done in 1482s
+part files written
+=== RUN END atp4 ===
+
+##### log_wta1.txt
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+leverage computed for 71,903 new points in 2s
+V2 leverage recomputed on 300 paper rows: max abs diff 0.00e+00
+V1 extended table: 498,172 points, 3,554 matches; paper rows identical
+  hitter parity on 124,299 winner points: 0.965 (floor 0.85)
+V1 40-match pool equals the paper's 55 players
+V5 Grand Slam flag: 1211 of 3554 matches; blocks (tournament editions): 854
+  C1 cutoff 20 250/1000 splits
+  C1 cutoff 20 500/1000 splits
+  C1 cutoff 20 750/1000 splits
+  C1 cutoff 20 1000/1000 splits
+C1 wta >=  20  S: players 105, median +0.089 [-0.231, +0.343] share>=0.70 0.0%  SD 2.91 pp
+C1 wta >=  20 Rt: players 105, median +0.129 [-0.174, +0.376] share>=0.70 0.0%  SD 3.08 pp
+C1 wta >=  20 R1: players 105, median +0.125 [-0.177, +0.361] share>=0.70 0.0%  SD 2.59 pp
+  C1 cutoff 80 250/1000 splits
+  C1 cutoff 80 500/1000 splits
+  C1 cutoff 80 750/1000 splits
+  C1 cutoff 80 1000/1000 splits
+C1 wta >=  80  S: players  16, median +0.426 [-0.159, +0.747] share>=0.70 6.5%  SD 2.04 pp
+C1 wta >=  80 Rt: players  16, median +0.475 [-0.053, +0.780] share>=0.70 11.6%  SD 2.10 pp
+C1 wta >=  80 R1: players  16, median +0.565 [+0.126, +0.820] share>=0.70 17.3%  SD 2.11 pp
+C4 wta  S vs charted_matches : rho -0.104 p 0.448 n 55
+C4 wta  S vs slam_share      : rho -0.137 p 0.317 n 55
+C4 wta Rt vs charted_matches : rho -0.116 p 0.397 n 55
+C4 wta Rt vs slam_share      : rho -0.172 p 0.210 n 55
+C4 wta R1 vs charted_matches : rho -0.097 p 0.483 n 55
+C4 wta R1 vs slam_share      : rho -0.149 p 0.278 n 55
+WTA done in 922s
+part files written
+=== RUN END wta1 ===
+
+##### log_wta2.txt
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+leverage computed for 71,903 new points in 2s
+V2 leverage recomputed on 300 paper rows: max abs diff 0.00e+00
+V1 extended table: 498,172 points, 3,554 matches; paper rows identical
+  hitter parity on 124,299 winner points: 0.965 (floor 0.85)
+V1 40-match pool equals the paper's 55 players
+V5 Grand Slam flag: 1211 of 3554 matches; blocks (tournament editions): 854
+  C1 cutoff 40 250/1000 splits
+  C1 cutoff 40 500/1000 splits
+  C1 cutoff 40 750/1000 splits
+  C1 cutoff 40 1000/1000 splits
+C1 wta >=  40  S: players  55, median +0.415 [+0.134, +0.630] share>=0.70 0.3%  SD 2.83 pp
+C1 wta >=  40 Rt: players  55, median +0.276 [-0.111, +0.519] share>=0.70 0.0%  SD 2.49 pp
+C1 wta >=  40 R1: players  55, median +0.253 [-0.115, +0.500] share>=0.70 0.0%  SD 2.15 pp
+V3 cutoff 40 S: new median vs committed +0.4136, diff 0.0010
+V3 cutoff 40 Rt: new median vs committed +0.2710, diff 0.0054
+V3 cutoff 40 R1: new median vs committed +0.2514, diff 0.0012
+  C1 cutoff 30 250/1000 splits
+  C1 cutoff 30 500/1000 splits
+  C1 cutoff 30 750/1000 splits
+  C1 cutoff 30 1000/1000 splits
+C1 wta >=  30  S: players  76, median +0.294 [+0.003, +0.525] share>=0.70 0.0%  SD 2.85 pp
+C1 wta >=  30 Rt: players  76, median +0.229 [-0.100, +0.485] share>=0.70 0.0%  SD 2.78 pp
+C1 wta >=  30 R1: players  76, median +0.173 [-0.190, +0.420] share>=0.70 0.0%  SD 2.30 pp
+  C1 cutoff 60 250/1000 splits
+  C1 cutoff 60 500/1000 splits
+  C1 cutoff 60 750/1000 splits
+  C1 cutoff 60 1000/1000 splits
+C1 wta >=  60  S: players  31, median +0.511 [+0.208, +0.729] share>=0.70 5.0%  SD 2.59 pp
+C1 wta >=  60 Rt: players  31, median +0.254 [-0.238, +0.583] share>=0.70 0.0%  SD 2.08 pp
+C1 wta >=  60 R1: players  31, median +0.373 [-0.056, +0.641] share>=0.70 0.8%  SD 2.01 pp
+WTA done in 1373s
+part files written
+=== RUN END wta2 ===
+
+##### log_wta3.txt
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+leverage computed for 71,903 new points in 2s
+V2 leverage recomputed on 300 paper rows: max abs diff 0.00e+00
+V1 extended table: 498,172 points, 3,554 matches; paper rows identical
+  hitter parity on 124,299 winner points: 0.965 (floor 0.85)
+V1 40-match pool equals the paper's 55 players
+V5 Grand Slam flag: 1211 of 3554 matches; blocks (tournament editions): 854
+  C2 blocked 250/1000 splits
+  C2 blocked 500/1000 splits
+  C2 blocked 750/1000 splits
+  C2 blocked 1000/1000 splits
+C2 wta blocked  S: median +0.410 [+0.121, +0.622] share>=0.70 0.6%; players 55
+C2 wta blocked Rt: median +0.250 [-0.144, +0.534] share>=0.70 0.0%; players 55
+C2 wta blocked R1: median +0.257 [-0.083, +0.505] share>=0.70 0.0%; players 55
+  C3 slam 250/1000 splits
+  C3 slam 500/1000 splits
+  C3 slam 750/1000 splits
+  C3 slam 1000/1000 splits
+C3 wta  slam  S: matches 1043, players ~54, median +0.273 [-0.117, +0.539] share>=0.70 0.0%
+C3 wta  slam Rt: matches 1043, players ~54, median +0.100 [-0.595, +0.467] share>=0.70 0.0%
+C3 wta  slam R1: matches 1043, players ~55, median +0.071 [-0.508, +0.409] share>=0.70 0.0%
+  C3 other 250/1000 splits
+  C3 other 500/1000 splits
+  C3 other 750/1000 splits
+  C3 other 1000/1000 splits
+C3 wta other  S: matches 1999, players ~55, median +0.326 [+0.002, +0.548] share>=0.70 0.1%
+C3 wta other Rt: matches 1999, players ~55, median +0.337 [+0.005, +0.556] share>=0.70 0.1%
+C3 wta other R1: matches 1999, players ~55, median +0.269 [-0.084, +0.538] share>=0.70 0.0%
+C3 wta  S: Slam - other +0.17 pp (SE 0.73, n 55); r(Slam, other) +0.103; disattenuated +0.34
+C3 wta Rt: Slam - other +0.07 pp (SE 0.70, n 55); r(Slam, other) +0.121; disattenuated +0.66
+C3 wta R1: Slam - other +0.27 pp (SE 0.59, n 55); r(Slam, other) +0.059; disattenuated +0.43
+WTA done in 1108s
+part files written
+=== RUN END wta3 ===

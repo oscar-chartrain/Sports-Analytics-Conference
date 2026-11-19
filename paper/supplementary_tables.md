@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S13 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S14 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -188,3 +188,53 @@ Headline entropy-clutch correlation (conditional normalized entropy against full
 | WTA return | +0.196 (0.151) | +0.182 (0.183) | +0.154 (0.262) |
 
 Validation (every check passed before any result was used): the raw scores reproduce the committed clutch tables to 1e-16 and the original-split reliabilities exactly; the fast routine reproduces the earlier code to 4e-16; leave-pair-out opponent strength matches a brute-force recomputation. In simulations on the real design with no true clutch effect, outcomes drawn with and without covariate effects from the same random numbers show A and B within 3 standard errors of unbiased in all 36 settings, while the raw score is biased up to 0.5 points at the real covariate effects (ATP serve). When leverage is built to track opponent strength, the raw score is biased by 9 to 19 points and A by 0.2 or less (B within sampling error); a planted clutch effect is recovered with slope 0.95 to 1.04 by all three scores. The adjustment therefore removes confounding that is there; in these data there is little to remove.
+
+**Table S14.** Selection checks (plan: `docs/combined/selection_checks_preregistration.md`). Same outcomes, definitions and 1,000-split design as Table 1; seed 20261120, so the 40-match medians differ from Table 1 in the second decimal. Part A: the pool is every player with at least the stated number of charted matches (all matches involving a pool player are split at random); cells are the random-split median reliability with the share of splits at or above 0.70 in parentheses. Part B: whole tournament editions (tournament and year) are assigned to one half instead of single matches. Part C: reliability within Grand Slam matches only and within all other matches only (quartile thresholds from the points in the half), then the paired difference in full-sample scores (percentage points, player-level standard error), the correlation of the two scores across players, and that correlation divided by the square root of the product of the two strata's median reliabilities (a value above 1 means the strata are too noisy to disattenuate, not that the scores agree more than perfectly). Part D: Spearman correlation of a player's score with the number of charted matches and with the share of those matches played at Grand Slams (n = 91 ATP, 55 WTA; Bonferroni threshold over the 12 tests 0.0042).
+
+*A. Player-volume floor (players; median charted matches in the pool)*
+
+| Tour, outcome | 20 | 30 | 40 (paper) | 60 | 80 |
+|---|---|---|---|---|---|
+| ATP serve | 0.29 (0%) | 0.44 (0%) | 0.53 (1%) | 0.63 (19%) | 0.68 (42%) |
+| ATP return | 0.14 (0%) | 0.19 (0%) | 0.24 (0%) | 0.31 (0%) | 0.20 (0%) |
+| ATP rally points | 0.27 (0%) | 0.36 (0%) | 0.43 (0%) | 0.54 (3%) | 0.50 (2%) |
+| WTA serve | 0.09 (0%) | 0.29 (0%) | 0.41 (0%) | 0.51 (5%) | 0.43 (6%) |
+| WTA return | 0.13 (0%) | 0.23 (0%) | 0.28 (0%) | 0.25 (0%) | 0.48 (12%) |
+| WTA rally points | 0.12 (0%) | 0.17 (0%) | 0.25 (0%) | 0.37 (1%) | 0.56 (17%) |
+| ATP players; median matches | 158; 46 | 119; 56 | 91; 74 | 55; 116 | 42; 136 |
+| WTA players; median matches | 105; 41 | 76; 50 | 55; 64 | 31; 81 | 16; 112 |
+
+*B. Tournament-blocked splits*
+
+| Tour, outcome | Random match splits: median | Tournament-blocked: median [95% range] | Share at or above 0.70 | Difference |
+|---|---|---|---|---|
+| ATP serve | 0.53 | 0.54 [0.36, 0.67] | 1.0% | +0.01 |
+| ATP return | 0.24 | 0.24 [-0.05, 0.47] | 0.0% | 0.00 |
+| ATP rally points | 0.43 | 0.45 [0.23, 0.60] | 0.0% | +0.01 |
+| WTA serve | 0.41 | 0.41 [0.12, 0.62] | 0.6% | 0.00 |
+| WTA return | 0.28 | 0.25 [-0.14, 0.53] | 0.0% | -0.03 |
+| WTA rally points | 0.25 | 0.26 [-0.08, 0.50] | 0.0% | +0.00 |
+
+*C. Grand Slam matches against all others*
+
+| Tour, outcome | Slam only: median | Other only: median | Slam minus other, pp (SE) | r (Slam, other) | Disattenuated r |
+|---|---|---|---|---|---|
+| ATP serve | 0.37 | 0.22 | -0.44 (0.46) | +0.37 | 1.31 |
+| ATP return | 0.22 | 0.07 | +0.10 (0.44) | +0.14 | 1.14 |
+| ATP rally points | 0.24 | 0.24 | -0.10 (0.37) | +0.34 | 1.42 |
+| WTA serve | 0.27 | 0.33 | +0.17 (0.73) | +0.10 | 0.34 |
+| WTA return | 0.10 | 0.34 | +0.07 (0.70) | +0.12 | 0.66 |
+| WTA rally points | 0.07 | 0.27 | +0.27 (0.59) | +0.06 | 0.43 |
+
+*D. Charting volume and Slam share against the score (Spearman rho, p)*
+
+| Tour, outcome | Charted matches | Grand Slam share |
+|---|---|---|
+| ATP serve | -0.19 (0.067) | -0.14 (0.191) |
+| ATP return | -0.25 (0.015) | -0.21 (0.045) |
+| ATP rally points | -0.22 (0.033) | -0.21 (0.048) |
+| WTA serve | -0.10 (0.448) | -0.14 (0.317) |
+| WTA return | -0.12 (0.397) | -0.17 (0.210) |
+| WTA rally points | -0.10 (0.483) | -0.15 (0.278) |
+
+Reading. Reliability rises with the floor because players with more matches have longer scores, and falls when lightly charted players are added, but nothing reaches the criterion: the highest random-split median anywhere is 0.68 (ATP serve at 80 matches: 42 players, 42% of splits at or above 0.70), and the pool of 80 or more is the most heavily charted players, so it is the least representative. The largest difference between tournament-blocked and random-split medians is 0.03, so shared tournament conditions do not inflate the headline figures. Within Grand Slam matches reliability is at most 0.37, within other matches at most 0.34. The Slam-minus-other differences are within about one standard error of zero. The cross-stratum correlations are positive in all six cells (0.06 to 0.37) but the strata's own reliabilities are too low for the disattenuated values to be read: above 1 on ATP, 0.34 to 0.66 on WTA, with no interval. All twelve correlations with charting volume or Slam share are negative (-0.10 to -0.25); the smallest p is 0.015 (ATP return against charted matches), above the 0.0042 threshold, so we do not call it selection on the score, though it is the direction a selection effect would take. These checks speak to selection on observed features only.

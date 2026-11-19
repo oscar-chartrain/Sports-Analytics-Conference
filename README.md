@@ -253,6 +253,7 @@ It adds analyses, each pre-registered before its script was written:
 - `docs/combined/match_nested_preregistration.md` and `src/robustness/match_nested_variance.py`: three-level (player, match within player, sampling) variance model on per-match scores; REML; reported for ATP only because the WTA design failed the pre-registered simulation check (Table S12).
 - `docs/combined/slope_chronological_preregistration.md` and `src/robustness/slope_chronological.py`: continuous leverage-slope clutch score against the quartile score, and an early-versus-late chronological split (Tables S10 and S11).
 - `docs/combined/confound_adjustment_preregistration.md` and `src/robustness/confound_adjusted_clutch.py`: surface, Best-of-5, date and opponent-strength adjustment of serve, return and rally-point clutch (covariate adjustment A and a within-match estimator B), with reliability, true spread, entropy-clutch correlations and a simulation-based validation (Table S13). No adjusted score reaches 0.70.
+- `docs/combined/selection_checks_preregistration.md` and `src/robustness/selection_checks.py`: selection checks: pools with at least 20 to 80 charted matches, tournament-blocked splits, Grand Slam against other matches, and charting volume against the score (Table S14). No pool reaches 0.70.
 - `docs/combined/rally_extension_preregistration.md` and `src/robustness/rally_extension.py`: data needed, true spread, match-win range, cluster-bootstrap rank intervals, shrinkage and leverage-variant sensitivity for rally-point, error and winner clutch (outputs `rally_extension_*.csv`, `run_log_rally_extension.txt`).
 - `docs/combined/cluster_bootstrap_preregistration.md` and
   `src/robustness/cluster_bootstrap_ranks.py`: the rank intervals recomputed by
@@ -279,6 +280,7 @@ python src/robustness/rally_extension.py             # rally-outcome practice an
 python src/robustness/slope_chronological.py        # slope estimator and chronological split (Tables S10, S11)
 python src/robustness/match_nested_variance.py       # three-level variance model, ATP (Table S12)
 python src/robustness/confound_adjusted_clutch.py      # confounder adjustment (Table S13)
+python src/robustness/selection_checks.py              # selection checks (Table S14; tasks can run in parallel, then --merge)
 python src/figures/make_bootstrap_rank_figure.py
 python src/figures/make_allshots_figure.py
 python src/paper/build_paper_docx.py --paper-id "<ID>"   # needs python-docx
