@@ -1,0 +1,98 @@
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+  hitter parity on 266,591 winner points: 0.954 (floor 0.85)
+V1 atp S: chronological SB +0.4420 vs committed +0.4420
+V1 atp Rt: chronological SB +0.2027 vs committed +0.2027
+V1 atp R1: chronological SB +0.4531 vs committed +0.4531
+V1 atp R2: chronological SB +0.6618 vs committed +0.6618
+V1 atp R3: chronological SB +0.5719 vs committed +0.5719
+V2 atp: shot-type sums reproduce rx.sums (R2, R3) and asa.evaluate (R4, R5) for every player
+V3 atp: early plus late counts equal full-sample counts for every player
+VA atp  S: early-late r +0.284 [+0.08, +0.50]; partial on overall rate +0.272 (p 0.0096, n 91)
+VA atp Rt: early-late r +0.113 [-0.11, +0.33]; partial on overall rate +0.115 (p 0.2789, n 91)
+VA atp R1: early-late r +0.293 [+0.11, +0.46]; partial on overall rate +0.294 (p 0.0049, n 91)
+VA atp R2: early-late r +0.495 [+0.36, +0.61]; partial on overall rate +0.498 (p 0.0000, n 91)
+VA atp R3: early-late r +0.400 [+0.22, +0.57]; partial on overall rate +0.396 (p 0.0001, n 91)
+VA atp R4: early-late r +0.366 [+0.12, +0.58]; partial on overall rate +0.350 (p 0.0007, n 91)
+VA atp R5: early-late r +0.186 [-0.06, +0.44]; partial on overall rate +0.162 (p 0.1283, n 90)
+VB atp  S-Rt: cross-time r +0.013 (p 0.9021, n 91); stabilities +0.28, +0.11; disattenuated +0.07
+VB atp  S-R1: cross-time r +0.223 (p 0.0332, n 91); stabilities +0.28, +0.29; disattenuated +0.77
+VB atp  S-R2: cross-time r +0.099 (p 0.3500, n 91); stabilities +0.28, +0.49; disattenuated +0.27
+VB atp  S-R3: cross-time r +0.250 (p 0.0166, n 91); stabilities +0.28, +0.40; disattenuated +0.74
+VB atp  S-R4: cross-time r +0.070 (p 0.5119, n 91); stabilities +0.28, +0.37; disattenuated +0.22
+VB atp  S-R5: cross-time r +0.087 (p 0.4160, n 90); stabilities +0.28, +0.19; disattenuated +0.38
+VB atp Rt-R1: cross-time r +0.141 (p 0.1832, n 91); stabilities +0.11, +0.29; disattenuated +0.78
+VB atp Rt-R2: cross-time r +0.143 (p 0.1760, n 91); stabilities +0.11, +0.49; disattenuated +0.61
+VB atp Rt-R3: cross-time r +0.002 (p 0.9856, n 91); stabilities +0.11, +0.40; disattenuated +0.01
+VB atp Rt-R4: cross-time r +0.099 (p 0.3534, n 91); stabilities +0.11, +0.37; disattenuated +0.49
+VB atp Rt-R5: cross-time r +0.120 (p 0.2595, n 90); stabilities +0.11, +0.19; disattenuated +0.83
+VB atp R1-R2: cross-time r +0.089 (p 0.4021, n 91); stabilities +0.29, +0.49; disattenuated +0.23
+VB atp R1-R3: cross-time r +0.170 (p 0.1067, n 91); stabilities +0.29, +0.40; disattenuated +0.50
+VB atp R1-R4: cross-time r +0.077 (p 0.4664, n 91); stabilities +0.29, +0.37; disattenuated +0.24
+VB atp R1-R5: cross-time r +0.059 (p 0.5814, n 90); stabilities +0.29, +0.19; disattenuated +0.25
+VB atp R2-R3: cross-time r -0.093 (p 0.3792, n 91); stabilities +0.49, +0.40; disattenuated -0.21
+VB atp R2-R4: cross-time r +0.397 (p 0.0001, n 91); stabilities +0.49, +0.37; disattenuated +0.93
+VB atp R2-R5: cross-time r +0.278 (p 0.0077, n 90); stabilities +0.49, +0.19; disattenuated +0.92
+VB atp R3-R4: cross-time r -0.022 (p 0.8346, n 91); stabilities +0.40, +0.37; disattenuated -0.06
+VB atp R3-R5: cross-time r -0.006 (p 0.9531, n 90); stabilities +0.40, +0.19; disattenuated -0.02
+VB atp R4-R5: cross-time r +0.145 (p 0.1718, n 90); stabilities +0.37, +0.19; disattenuated +0.56
+V4: every one of the 21 pairs uses both directions
+VB atp: mean cross-time r +0.112 [+0.016, +0.204], mean same-outcome stability +0.305; pairs below 0.0024: 1 of 21
+VC atp R4_error_forehand: raw median +0.491 (share>=0.70 0.1%); shrunk +0.491 [+0.318, +0.617] share>=0.70 0.0%; true SD 0.99 [0.67, 1.24] pp per shot, noise SE 0.98; matches needed 179; chronological SB +0.536 [+0.22, +0.74]
+VC atp R5_error_backhand: raw median +0.323 (share>=0.70 0.0%); shrunk +0.343 [+0.000, +0.545] share>=0.70 0.0%; true SD 0.74 [0.17, 1.04] pp per shot, noise SE 1.06; matches needed 361; chronological SB +0.313 [-0.13, +0.61]
+VC atp R2_error_all: raw median +0.604 (share>=0.70 5.1%); shrunk +0.623 [+0.511, +0.713] share>=0.70 6.5%; true SD 0.77 [0.56, 0.92] pp per shot, noise SE 0.63; matches needed 113; chronological SB +0.662 [+0.53, +0.76]
+VC atp R3_winner_all: raw median +0.580 (share>=0.70 3.7%); shrunk +0.741 [+0.636, +0.823] share>=0.70 79.8%; true SD 0.71 [0.50, 0.87] pp per shot, noise SE 0.62; matches needed 125; chronological SB +0.572 [+0.36, +0.72]
+ATP done in 1228s
+=== RUN END
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+  hitter parity on 105,746 winner points: 0.966 (floor 0.85)
+V1 wta S: chronological SB +0.4002 vs committed +0.4002
+V1 wta Rt: chronological SB +0.1164 vs committed +0.1164
+V1 wta R1: chronological SB +0.2294 vs committed +0.2294
+V1 wta R2: chronological SB +0.2785 vs committed +0.2785
+V1 wta R3: chronological SB +0.5981 vs committed +0.5981
+V2 wta: shot-type sums reproduce rx.sums (R2, R3) and asa.evaluate (R4, R5) for every player
+V3 wta: early plus late counts equal full-sample counts for every player
+VA wta  S: early-late r +0.250 [-0.02, +0.50]; partial on overall rate +0.215 (p 0.1181, n 55)
+VA wta Rt: early-late r +0.062 [-0.23, +0.35]; partial on overall rate +0.011 (p 0.9379, n 55)
+VA wta R1: early-late r +0.130 [-0.14, +0.37]; partial on overall rate +0.142 (p 0.3053, n 55)
+VA wta R2: early-late r +0.162 [-0.19, +0.48]; partial on overall rate +0.159 (p 0.2498, n 55)
+VA wta R3: early-late r +0.427 [+0.22, +0.65]; partial on overall rate +0.414 (p 0.0019, n 55)
+VA wta R4: early-late r +0.247 [-0.10, +0.53]; partial on overall rate +0.247 (p 0.0716, n 55)
+VA wta R5: early-late r +0.050 [-0.27, +0.33]; partial on overall rate +0.044 (p 0.7497, n 55)
+VB wta  S-Rt: cross-time r +0.059 (p 0.6722, n 55); stabilities +0.25, +0.06; disattenuated +0.47
+VB wta  S-R1: cross-time r +0.140 (p 0.3089, n 55); stabilities +0.25, +0.13; disattenuated +0.78
+VB wta  S-R2: cross-time r +0.191 (p 0.1626, n 55); stabilities +0.25, +0.16; disattenuated +0.95
+VB wta  S-R3: cross-time r +0.032 (p 0.8178, n 55); stabilities +0.25, +0.43; disattenuated +0.10
+VB wta  S-R4: cross-time r +0.203 (p 0.1370, n 55); stabilities +0.25, +0.25; disattenuated +0.82
+VB wta  S-R5: cross-time r +0.215 (p 0.1159, n 55); stabilities +0.25, +0.05; disattenuated +1.92
+VB wta Rt-R1: cross-time r +0.086 (p 0.5345, n 55); stabilities +0.06, +0.13; disattenuated +0.96
+VB wta Rt-R2: cross-time r -0.202 (p 0.1403, n 55); stabilities +0.06, +0.16; disattenuated -2.02
+VB wta Rt-R3: cross-time r -0.140 (p 0.3098, n 55); stabilities +0.06, +0.43; disattenuated -0.86
+VB wta Rt-R4: cross-time r -0.167 (p 0.2235, n 55); stabilities +0.06, +0.25; disattenuated -1.35
+VB wta Rt-R5: cross-time r -0.190 (p 0.1655, n 55); stabilities +0.06, +0.05; disattenuated -3.42
+VB wta R1-R2: cross-time r -0.112 (p 0.4182, n 55); stabilities +0.13, +0.16; disattenuated -0.77
+VB wta R1-R3: cross-time r -0.058 (p 0.6755, n 55); stabilities +0.13, +0.43; disattenuated -0.25
+VB wta R1-R4: cross-time r -0.087 (p 0.5302, n 55); stabilities +0.13, +0.25; disattenuated -0.49
+VB wta R1-R5: cross-time r -0.084 (p 0.5432, n 55); stabilities +0.13, +0.05; disattenuated -1.04
+VB wta R2-R3: cross-time r -0.323 (p 0.0156, n 55); stabilities +0.16, +0.43; disattenuated -1.23
+VB wta R2-R4: cross-time r +0.153 (p 0.2671, n 55); stabilities +0.16, +0.25; disattenuated +0.76
+VB wta R2-R5: cross-time r +0.064 (p 0.6456, n 55); stabilities +0.16, +0.05; disattenuated +0.71
+VB wta R3-R4: cross-time r -0.258 (p 0.0571, n 55); stabilities +0.43, +0.25; disattenuated -0.79
+VB wta R3-R5: cross-time r -0.173 (p 0.2089, n 55); stabilities +0.43, +0.05; disattenuated -1.18
+VB wta R4-R5: cross-time r -0.006 (p 0.9628, n 55); stabilities +0.25, +0.05; disattenuated -0.06
+V4: every one of the 21 pairs uses both directions
+VB wta: mean cross-time r -0.031 [-0.140, +0.076], mean same-outcome stability +0.190; pairs below 0.0024: 0 of 21
+VC wta R4_error_forehand: raw median +0.420 (share>=0.70 0.5%); shrunk +0.583 [+0.000, +0.754] share>=0.70 10.2%; true SD 0.97 [0.35, 1.34] pp per shot, noise SE 1.09; matches needed 206; chronological SB +0.396 [-0.22, +0.69]
+VC wta R5_error_backhand: raw median +0.230 (share>=0.70 0.0%); shrunk +0.062 [+0.000, +0.671] share>=0.70 0.7%; true SD 0.61 [0.00, 1.13] pp per shot, noise SE 1.15; matches needed 499; chronological SB +0.095 [-0.76, +0.50]
+VC wta R2_error_all: raw median +0.503 (share>=0.70 1.1%); shrunk +0.714 [+0.543, +0.830] share>=0.70 57.0%; true SD 0.73 [0.27, 1.06] pp per shot, noise SE 0.71; matches needed 147; chronological SB +0.278 [-0.48, +0.65]
+VC wta R3_winner_all: raw median +0.473 (share>=0.70 1.0%); shrunk +0.459 [+0.000, +0.645] share>=0.70 0.5%; true SD 0.64 [0.38, 0.81] pp per shot, noise SE 0.65; matches needed 166; chronological SB +0.598 [+0.36, +0.79]
+WTA done in 579s
+=== RUN END

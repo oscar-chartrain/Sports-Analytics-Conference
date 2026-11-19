@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S15 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S17 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -239,7 +239,7 @@ Validation (every check passed before any result was used): the raw scores repro
 
 Reading. Reliability rises with the floor because players with more matches have longer scores, and falls when lightly charted players are added, but nothing reaches the criterion: the highest random-split median anywhere is 0.68 (ATP serve at 80 matches: 42 players, 42% of splits at or above 0.70), and the pool of 80 or more is the most heavily charted players, so it is the least representative. The largest difference between tournament-blocked and random-split medians is 0.03, so shared tournament conditions do not inflate the headline figures. Within Grand Slam matches reliability is at most 0.37, within other matches at most 0.34. The Slam-minus-other differences are within about one standard error of zero. The cross-stratum correlations are positive in all six cells (0.06 to 0.37) but the strata's own reliabilities are too low for the disattenuated values to be read: above 1 on ATP, 0.34 to 0.66 on WTA, with no interval. All twelve correlations with charting volume or Slam share are negative (-0.10 to -0.25); the smallest p is 0.015 (ATP return against charted matches), above the 0.0042 threshold, so we do not call it selection on the score, though it is the direction a selection effect would take. These checks speak to selection on observed features only.
 
-**Table S15.** Positive control (plan: `docs/combined/positive_control_preregistration.md`). Stable differences between players are planted in the real design: every point's outcome is redrawn as Bernoulli around the player's own role win rate, plus a shift drawn from a normal distribution with the stated standard deviation (percentage points) on the player's top-leverage-quartile points (rally-decided top-quartile points for rally points). Same players, points, leverage, matches, 30-point floor and Spearman-Brown routine as Table 1; 40 planted draws x 25 random balanced splits per cell (1,000 values; seed 20261121). Cells are the median reliability with the share of splits at or above 0.70 in parentheses. The "estimated spread" is the true standard deviation estimated from the real data (Table 3), planted and compared with the real random-split median. The simulated noise is binomial only, so these reliabilities are upper bounds for a given spread. Validation: the real-data original-split reliabilities were reproduced exactly; null medians at 0 pp were within 0.15 of zero in all six cells (largest 0.14); simulated medians at the estimated spread were within 0.15 of the real ones in all six cells (largest gap 0.09).
+**Table S15.** Positive control (plan: `docs/combined/positive_control_preregistration.md`). Stable differences between players are planted in the real design: every point's outcome is redrawn as Bernoulli around the player's own role win rate, plus a shift drawn from a normal distribution with the stated standard deviation (percentage points) on the player's top-leverage-quartile points (rally-decided top-quartile points for rally points). Same players, points, leverage, matches, 30-point floor and Spearman-Brown routine as Table 1; 40 planted draws x 25 random balanced splits per cell (1,000 values; seed 20261121). Cells are the median reliability with the share of splits at or above 0.70 in parentheses. The "estimated spread" is the true standard deviation estimated from the real data (Table 2), planted and compared with the real random-split median. The simulated noise is binomial only, so these reliabilities are upper bounds for a given spread. Validation: the real-data original-split reliabilities were reproduced exactly; null medians at 0 pp were within 0.15 of zero in all six cells (largest 0.14); simulated medians at the estimated spread were within 0.15 of the real ones in all six cells (largest gap 0.09).
 
 | Tour, outcome | 0 | 1 | 2 | 3 | 4 | 6 | Estimated spread (pp): simulated vs observed median | Smallest spread meeting the criterion |
 |---|---|---|---|---|---|---|---|---|
@@ -252,6 +252,21 @@ Reading. Reliability rises with the floor because players with more matches have
 
 Reading. A planted spread of 4 percentage points meets the criterion on all three ATP outcomes and on WTA rally points (95% of splits at or above 0.70), and 6 points on every cell; WTA serve and return need more than 4. At 3 points the median passes 0.70 on ATP but only 69% to 88% of splits do. The spreads estimated from the real data (1.1 to 2.2 points) give simulated reliabilities of 0.25 to 0.60, close to the observed ones, so the pipeline detects clutch differences about twice the size of the estimated serve spread and three times that of the return spread; the low reliabilities reflect small true differences, not a test that cannot reach 0.70.
 
+**Table S16.** Correlation of conditional entropy with each clutch outcome, the outcome's reliability (random-split median) and the 95% bound on the true |r| (Section 5.2 of the paper) after correcting for both variables' reliability; observed bounds are in Table S2. n = 91 (ATP) and 55 (WTA). R1 to R3 are the all-shot outcomes of Section 3 (rally-decided points, unforced errors and winners over every shot hit). A corrected bound near or above 1 means the data cannot rule out any relationship.
+
+| Tour | Outcome | r (p) | Outcome reliability | Corrected bound on true r |
+|---|---|---|---|---|
+| ATP | Serve | -0.041 (0.697) | 0.53 | 0.30 |
+| ATP | Return | +0.016 (0.877) | 0.24 | 0.40 |
+| ATP | R1 rally points | +0.007 (0.947) | 0.44 | 0.28 |
+| ATP | R2 errors | +0.155 (0.142) | 0.60 | 0.43 |
+| ATP | R3 winners | -0.064 (0.544) | 0.58 | 0.32 |
+| WTA | Serve | -0.259 (0.056) | 0.41 | 0.75 |
+| WTA | Return | +0.196 (0.151) | 0.27 | 0.82 |
+| WTA | R1 rally points | +0.069 (0.616) | 0.25 | 0.61 |
+| WTA | R2 errors | -0.056 (0.683) | 0.50 | 0.41 |
+| WTA | R3 winners | +0.024 (0.859) | 0.47 | 0.38 |
+
 ![Split-half reliability of the predictor versus the outcome, by tour](../results/figures/split_half_reliability_figure.png)
 
 **Figure S1.** Each point is one player's half-A versus half-B value on the original split. Entropy clusters tightly, serve clutch loosely, return clutch barely (the Spearman-Brown reliabilities are in Table 1).
@@ -259,3 +274,63 @@ Reading. A planted spread of 4 percentage points meets the criterion on all thre
 ![Split-half reliability of clutch outcomes on every kind of shot, by tour](../results/figures/allshots_reliability_figure.png)
 
 **Figure S2.** Median split-half reliability (dot) and 95% range over 1,000 random splits (line) for clutch measured on serve and return points, on rally-decided points, and on shot-level outcomes (numbers in Table S7). The dotted line is the 0.70 threshold. WTA net-game errors are not estimable (too few shots).
+
+**Table S17.** Validity checks (plan: `docs/combined/validity_checks_preregistration.md`). Chronological split: each player's earlier half of charted matches against the later half (no shared points). Outcomes are signed so that higher means better under pressure. Part A: early-late correlation for each outcome, and the partial correlation holding the early overall rate fixed (serve-point win rate for serve, return-point win rate for return, rally-point win rate for rally points, errors or winners per shot for the shot outcomes, errors per forehand or backhand shot for those); "Yes" means the partial correlation is at least half the raw one with p below 0.05/7 = 0.007. Part B: cross-time correlation matrices (early score of one outcome with the late score of another, averaged over both directions); the diagonal (bold) is each outcome's own early-late correlation; * marks a pair below the Bonferroni threshold 0.05/21 = 0.0024 (n = 91 ATP, 55 WTA). Part C: forehand and backhand errors with the two all-shot outcomes for comparison, over 1,000 random balanced splits (seed 20261122): raw and empirical-Bayes-shrunk median reliability, the match-clustered true standard deviation against the standard error of one player's score, and matches needed for reliability 0.70 (Spearman-Brown on the raw median), then the chronological Spearman-Brown reliability (random-split medians differ in the second decimal from Table S7 and Section 4.4: new splits).
+
+*A. Stability beyond ability*
+
+| Tour, outcome | Early-late r [95% CI] | Partial r given overall rate (p) | Stable beyond ability? |
+|---|---|---|---|
+| ATP serve | +0.28 [+0.08, +0.50] | +0.27 (0.010) | No |
+| ATP return | +0.11 [-0.11, +0.33] | +0.12 (0.279) | No |
+| ATP rally points | +0.29 [+0.11, +0.46] | +0.29 (0.005) | Yes |
+| ATP errors, all shots | +0.49 [+0.36, +0.61] | +0.50 (0.000) | Yes |
+| ATP winners, all shots | +0.40 [+0.22, +0.57] | +0.40 (0.000) | Yes |
+| ATP errors, forehand | +0.37 [+0.12, +0.58] | +0.35 (0.001) | Yes |
+| ATP errors, backhand | +0.19 [-0.06, +0.44] | +0.16 (0.128) | No |
+| WTA serve | +0.25 [-0.02, +0.50] | +0.22 (0.118) | No |
+| WTA return | +0.06 [-0.23, +0.35] | +0.01 (0.938) | No |
+| WTA rally points | +0.13 [-0.14, +0.37] | +0.14 (0.305) | No |
+| WTA errors, all shots | +0.16 [-0.19, +0.48] | +0.16 (0.250) | No |
+| WTA winners, all shots | +0.43 [+0.22, +0.65] | +0.41 (0.002) | Yes |
+| WTA errors, forehand | +0.25 [-0.10, +0.53] | +0.25 (0.072) | No |
+| WTA errors, backhand | +0.05 [-0.27, +0.33] | +0.04 (0.750) | No |
+
+*B. Cross-time correlations between indicators*
+
+| ATP | S | Rt | R1 | R2 | R3 | R4 | R5 |
+|---|---|---|---|---|---|---|---|
+| S serve | **+0.28** | +0.01 | +0.22 | +0.10 | +0.25 | +0.07 | +0.09 |
+| Rt return | +0.01 | **+0.11** | +0.14 | +0.14 | +0.00 | +0.10 | +0.12 |
+| R1 rally points | +0.22 | +0.14 | **+0.29** | +0.09 | +0.17 | +0.08 | +0.06 |
+| R2 errors, all shots | +0.10 | +0.14 | +0.09 | **+0.49** | -0.09 | +0.40* | +0.28 |
+| R3 winners, all shots | +0.25 | +0.00 | +0.17 | -0.09 | **+0.40** | -0.02 | -0.01 |
+| R4 errors, forehand | +0.07 | +0.10 | +0.08 | +0.40* | -0.02 | **+0.37** | +0.15 |
+| R5 errors, backhand | +0.09 | +0.12 | +0.06 | +0.28 | -0.01 | +0.15 | **+0.19** |
+
+| WTA | S | Rt | R1 | R2 | R3 | R4 | R5 |
+|---|---|---|---|---|---|---|---|
+| S serve | **+0.25** | +0.06 | +0.14 | +0.19 | +0.03 | +0.20 | +0.21 |
+| Rt return | +0.06 | **+0.06** | +0.09 | -0.20 | -0.14 | -0.17 | -0.19 |
+| R1 rally points | +0.14 | +0.09 | **+0.13** | -0.11 | -0.06 | -0.09 | -0.08 |
+| R2 errors, all shots | +0.19 | -0.20 | -0.11 | **+0.16** | -0.32 | +0.15 | +0.06 |
+| R3 winners, all shots | +0.03 | -0.14 | -0.06 | -0.32 | **+0.43** | -0.26 | -0.17 |
+| R4 errors, forehand | +0.20 | -0.17 | -0.09 | +0.15 | -0.26 | **+0.25** | -0.01 |
+| R5 errors, backhand | +0.21 | -0.19 | -0.08 | +0.06 | -0.17 | -0.01 | **+0.05** |
+
+Mean of the 21 cross-time correlations: ATP +0.11 [+0.02, +0.20] (mean same-outcome correlation +0.31); WTA -0.03 [-0.14, +0.08] (+0.19). Pairs below the threshold: ATP 1 of 21 (errors on all shots with forehand errors, which overlap by construction), WTA 0 of 21.
+
+*C. Forehand and backhand errors*
+
+| Tour, outcome | Raw median (share at or above 0.70) | Shrunk median (share) | True SD vs noise SE, pp per shot | Matches needed | Chronological reliability [95% CI] |
+|---|---|---|---|---|---|
+| ATP forehand errors | 0.49 (0.1%) | 0.49 (0%) | 0.99 [0.67, 1.24] vs 0.98 | 179 | 0.54 [+0.22, +0.74] |
+| ATP backhand errors | 0.32 (0.0%) | 0.34 (0%) | 0.74 [0.17, 1.04] vs 1.06 | 361 | 0.31 [-0.13, +0.61] |
+| ATP errors, all shots | 0.60 (5.1%) | 0.62 (6%) | 0.77 [0.56, 0.92] vs 0.63 | 113 | 0.66 [+0.53, +0.76] |
+| ATP winners, all shots | 0.58 (3.7%) | 0.74 (80%) | 0.71 [0.50, 0.87] vs 0.62 | 125 | 0.57 [+0.36, +0.72] |
+| WTA forehand errors | 0.42 (0.5%) | 0.58 (10%) | 0.97 [0.35, 1.34] vs 1.09 | 206 | 0.40 [-0.22, +0.69] |
+| WTA backhand errors | 0.23 (0.0%) | 0.06 (1%) | 0.61 [0.00, 1.13] vs 1.15 | 499 | 0.10 [-0.76, +0.50] |
+| WTA errors, all shots | 0.50 (1.1%) | 0.71 (57%) | 0.73 [0.27, 1.06] vs 0.71 | 147 | 0.28 [-0.48, +0.65] |
+| WTA winners, all shots | 0.47 (1.0%) | 0.46 (0%) | 0.64 [0.38, 0.81] vs 0.65 | 166 | 0.60 [+0.36, +0.79] |
+
+Reading. The stable part of the shot-level and rally-point scores on ATP is not just ability (partial correlations 0.29 to 0.50 for rally points, errors, winners and forehand errors; serve 0.27 with p 0.010 narrowly misses our 0.007 bar; return and backhand errors are not stable). On WTA only winners clear it. The indicators do not converge: 18 of 21 cross-time correlations on ATP are positive but only the nested pair passes the correction, the mean is about a third of the mean same-outcome stability, and on WTA the mean is about zero. Where stable differences exist they are specific to a role or a shot, not one general clutch trait. Of the single shots, the forehand is the most reliable (ATP 0.49, WTA 0.42; chronological 0.54 on ATP) and the backhand, slice and net game are weaker, but forehand errors need about 180 to 210 matches, true spread is about the size of the noise, and no shot-level measure meets the criterion: the closest are ATP winner clutch shrunk (median 0.74, 80% of splits at or above 0.70) and WTA all-shot error clutch shrunk (0.71, 57%). These checks speak to agreement and persistence, not to winning matches.

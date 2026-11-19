@@ -4,22 +4,23 @@
 
 ## 1. Introduction
 
-When a broadcaster says a player "raises their level on the big points," or a scouting report labels a returner "clutch," a number is usually behind the claim, and judgements about who is a big-match player follow from it. Leverage-weighted metrics, descended from Morris's (1977) definition of a point's importance, are the standard way to produce that number: weight each point by how much it moves the probability of winning the match, then ask whether a player wins more of the high-leverage points than the low-leverage ones. Tennis Abstract publishes such a metric, the Balanced Leverage Ratio (BLR), for individual matches (Sackmann, Tennis Abstract), and a 2022 finalist paper at this conference (Seidl and Lucey, 2022) used leverage, clutch and momentum metrics to detect key moments in women's tennis.
+When a broadcaster says a player "raises their level on the big points," a number is usually behind the claim. Leverage-weighted metrics, descended from Morris's (1977) definition of a point's importance, are the standard way to produce it: weight each point by how much it moves the probability of winning the match, then ask whether a player wins more of the high-leverage points than the low-leverage ones. Tennis Abstract publishes such a metric, the Balanced Leverage Ratio (BLR) (Sackmann, Tennis Abstract), and a 2022 finalist paper at this conference (Seidl and Lucey, 2022) used leverage and momentum metrics to find key moments in women's tennis.
 
-**What we find.** In Match Charting Project data for 91 ATP and 55 WTA players, the clutch ratings we tested are not reliable enough to support claims about individual players. The table gives the median split-half reliability over 1,000 random splits of each player's charted matches against the conventional 0.70 threshold. Tennis Abstract's BLR is no better, against about 0.9 for shot-selection entropy. The test is not the obstacle: planted differences of 4 points between players would pass it. True differences between players are real on serve but no larger than the noise on one player's score; a reliable return rating would need about 550 charted matches, and Carlos Alcaraz's return-clutch rank is 32 of 91 with a 95% interval of 14 to 64. Entropy shows no detectable relationship with clutch on either tour, with bounds that are informative for ATP but say little about WTA return. We recommend that any clutch rating be published with its own split-half reliability.
+**What we find.** In Match Charting Project data for 91 ATP and 55 WTA players, no clutch rating we tested is reliable enough to support claims about individual players, whether it is built on serve points, return points, rally points or the errors and winners of every shot hit. The shot-level ratings do best and the forehand stands out as the most reliable single shot (ATP 0.49), but none reaches 0.70; Tennis Abstract's BLR is no better, against about 0.9 for shot-selection entropy. The test is not the obstacle: planted differences of 4 points between players would pass it. True differences are real but about the size of the noise on one player's score, and they do not converge, since different indicators do not pick out the same players: there is little sign of a single clutch trait. A reliable return rating would need about 550 charted matches, and Carlos Alcaraz's return-clutch rank is 32 of 91 with a 95% interval of 14 to 64. Entropy shows no detectable relationship with clutch (informative bounds on ATP, not on WTA return). We recommend that any clutch rating be published with its own split-half reliability.
 
-**At a glance: median split-half reliability (1,000 random splits; 0.70 is the criterion).**
+**At a glance: median split-half reliability over 1,000 random splits of each player's charted matches (0.70 is the criterion).**
 
 | Measure | ATP | WTA | Reliably measured? |
 |---|---|---|---|
-| Shot-selection entropy (predictor; original split) | 0.93 | 0.90 | Yes |
+| Entropy (predictor) | 0.93 | 0.90 | Yes |
 | Serve clutch | 0.53 | 0.41 | No |
 | Return clutch | 0.24 | 0.27 | No |
 | BLR (Tennis Abstract) | 0.54 | 0.29 | No |
 | Rally-point clutch | 0.44 | 0.25 | No |
-| Unforced-error clutch (all shots) | 0.60 | 0.50 | No |
+| Error clutch (all shots) | 0.60 | 0.50 | No |
 | Winner clutch (all shots) | 0.58 | 0.47 | No |
-| Pooled leverage ratio (exploratory) | 0.76 | 0.45 | No (ATP: 93% of splits at 0.70 or above, short of 95%) |
+| Forehand / backhand error clutch | 0.49 / 0.32 | 0.41 / 0.23 | No |
+| Pooled ratio (exploratory) | 0.76 | 0.45 | No (ATP 93% of splits) |
 
 Two questions drive the paper. **Can these metrics be measured reliably?** A rating that fails the split-half test is mostly noise, not a trait; the correlation across players, corrected to full length, is its reliability. **Does shot-selection predictability predict clutch performance?** Commentary contrasts a flair player such as Carlos Alcaraz with a metronomic one such as Jannik Sinner and implies that unpredictability pays under pressure. We test it with an information-theoretic style measure against every clutch outcome we can build, replicated on the WTA tour. A null on the second is only as informative as the measurement behind it, so we lead with reliability.
 
@@ -33,7 +34,7 @@ The reliability question has a long history outside tennis. Cramer (1977) asked 
 
 ## 3. Data and methods
 
-**Data.** We use the Match Charting Project (Sackmann), crowd-sourced point-by-point data with shot-level notation (CC BY-NC-SA 4.0). The pools are every ATP player with at least 40 charted matches (n = 91; median 74 matches, 1.13 million points) and every WTA player with at least 40 (n = 55; median 64, 426,000 points). Derived per-player data and pinned fetch instructions are in the repository (Appendix), which also holds the supplementary tables S1 to S15 (`paper/supplementary_tables.md`) cited below.
+**Data.** We use the Match Charting Project (Sackmann), crowd-sourced point-by-point data with shot-level notation (CC BY-NC-SA 4.0). The pools are every ATP player with at least 40 charted matches (n = 91; median 74 matches, 1.13 million points) and every WTA player with at least 40 (n = 55; median 64, 426,000 points). The repository (Appendix) holds derived per-player data, pinned fetch instructions and the supplementary tables S1 to S17 cited below.
 
 **Shot-selection consistency.** Conditional normalized Shannon entropy measures how unpredictable a player's shot choice is given the preceding shot, from the 6-by-6 matrix (forehand and backhand by three directions) of shot-to-shot transition probabilities over every rally shot, scaled to [0, 1]; lower means more predictable. It is nearly uncorrelated with net-play rate, drop-shot rate, serve direction and return depth (|r| at most 0.17).
 
@@ -91,28 +92,17 @@ Selection does not explain it either. Floors of 20 to 80 charted matches move AT
 
 Is the problem specific to the serve and return roles? About two thirds of points are decided in the rally (ATP 62% to 66%, WTA 67% to 71%; Table S8), slightly more among high-leverage points. Figure S2 in the supplement applies the same test to the all-shot outcomes defined in Section 3 (numbers in Table S7).
 
-No outcome meets the pre-registered criterion on either tour. The most reliable are the error and winner outcomes that use every shot hit: unforced-error clutch reaches 0.60 on ATP [0.44, 0.72] and 0.50 on WTA, winner clutch 0.58 and 0.47, and at most 4.2% of random splits reach 0.70. Both beat return clutch (0.24, 0.27) and rally-decided point clutch (0.44, 0.25) and modestly exceed serve clutch (0.54, 0.41; these random splits differ from Table 1's, where serve is 0.53), but none reaches 0.70. By shot type, forehand errors are the most reliable (0.49 ATP, 0.41 WTA), backhand errors less (0.32, 0.23), and slice, net-game, ace and double-fault outcomes are no better. Measures built on counts of every shot hit are the most reliable, a binary point outcome in the rally is not, and none reaches 0.70. The practice-side analyses of Section 6 and the checks of Section 4.3 repeat for these outcomes with the same picture (Table S9).
+No outcome meets the pre-registered criterion on either tour. The most reliable are the error and winner outcomes that use every shot hit: unforced-error clutch reaches 0.60 on ATP [0.44, 0.72] and 0.50 on WTA, winner clutch 0.58 and 0.47, and at most 4.2% of random splits reach 0.70. Both beat return clutch (0.24, 0.27) and rally-decided point clutch (0.44, 0.25) and modestly exceed serve clutch (0.54, 0.41; these random splits differ from Table 1's, where serve is 0.53), but none reaches 0.70. By shot type, forehand errors are the most reliable (0.49 ATP, 0.41 WTA), backhand errors less (0.32, 0.23), and slice, net-game, ace and double-fault outcomes are no better. The practice-side analyses of Section 6 and the checks of Section 4.3 repeat for these outcomes with the same picture (Table S9).
+
+### 4.5 Does the stable part mean anything?
+
+A noisy score can still be partly stable, so we asked two questions of the earlier-versus-later split, where no points are shared (Table S17). First, is the stable part more than ability? Holding the early overall rate fixed leaves the early-to-late correlation almost unchanged on ATP for rally points, errors, winners and forehand errors (partial correlations 0.29 to 0.50, all p of 0.005 or less); serve (0.27, p = 0.010) narrowly misses our 0.007 bar and return is not stable. On WTA only winners clear it. Second, do different indicators pick out the same players? Largely not: of 21 cross-time correlations between indicators, one passes the multiplicity correction on ATP (all-shot errors with forehand errors, which overlap by construction) and none on WTA. The ATP mean is +0.11 [0.02, 0.20] against 0.31 for an indicator with itself, and the WTA mean is -0.03. Where stable differences exist they belong to a role or a shot, not to one general clutch trait.
 
 ## 5. Does shot-selection entropy predict clutch?
 
 ### 5.1 Tests
 
-**Table 2.** Correlation of conditional entropy with each clutch outcome, the outcome's reliability (random-split median) and the 95% bound on the true |r| (Section 5.2) after correcting for both variables' reliability; observed bounds are in Table S2. n = 91 (ATP) and 55 (WTA). R1 to R3 are the all-shot outcomes of Section 3 (rally-decided points, unforced errors and winners over every shot hit). A corrected bound near or above 1 means the data cannot rule out any relationship.
-
-| Tour | Outcome | r (p) | Outcome reliability | Corrected bound on true r |
-|---|---|---|---|---|
-| ATP | Serve | -0.041 (0.697) | 0.53 | 0.30 |
-| ATP | Return | +0.016 (0.877) | 0.24 | 0.40 |
-| ATP | R1 rally points | +0.007 (0.947) | 0.44 | 0.28 |
-| ATP | R2 errors | +0.155 (0.142) | 0.60 | 0.43 |
-| ATP | R3 winners | -0.064 (0.544) | 0.58 | 0.32 |
-| WTA | Serve | -0.259 (0.056) | 0.41 | 0.75 |
-| WTA | Return | +0.196 (0.151) | 0.27 | 0.82 |
-| WTA | R1 rally points | +0.069 (0.616) | 0.25 | 0.61 |
-| WTA | R2 errors | -0.056 (0.683) | 0.50 | 0.41 |
-| WTA | R3 winners | +0.024 (0.859) | 0.47 | 0.38 |
-
-No correlation survives Bonferroni correction (thresholds 0.005 for serve and return, 0.0083 for the all-shot outcomes), and the smallest nominal p in Table 2, 0.056 (WTA serve), does not survive Spearman re-testing (p = 0.20) or removal of its three most influential players (p = 0.20). The null also holds across five leverage variants, era and surface confounds, four secondary style predictors (16 comparisons; lowest nominal p 0.013 against 0.003), entropy change under pressure and the regenerated ATP clutch table (Section 8). Pooling the tours (n = 146) is null, with no evidence the slope differs by tour (Table S3).
+Table S16 gives the correlation of conditional entropy with each clutch outcome, with the outcome's reliability and the corrected bound on the true correlation (Section 5.2). The ten correlations run from -0.26 to +0.20 (ATP -0.06 to +0.16; n = 91 ATP, 55 WTA). No correlation survives Bonferroni correction (thresholds 0.005 for serve and return, 0.0083 for the all-shot outcomes), and the smallest nominal p, 0.056 (WTA serve),, does not survive Spearman re-testing (p = 0.20) or removal of its three most influential players (p = 0.20). The null also holds across five leverage variants, era and surface confounds, four secondary style predictors (16 comparisons; lowest nominal p 0.013 against 0.003), entropy change under pressure and the regenerated ATP clutch table (Section 8). Pooling the tours (n = 146) is null, with no evidence the slope differs by tour (Table S3).
 
 ### 5.2 What the null can and cannot rule out
 
@@ -132,9 +122,9 @@ These are derived projections and descriptive uncertainty, not new hypothesis te
 
 ### 6.1 Data needed, true spread, and what it is worth
 
-If a measure has full-length reliability ρ, the Spearman-Brown prophecy gives the multiple of data needed to reach a target ρ\*: k = ρ\*(1 − ρ) / (ρ(1 − ρ\*)), which we multiply by each tour's median charted matches (ATP 74, WTA 64). Separately, a variance decomposition gives the standard deviation of players' true clutch scores, to compare with the typical standard error on one player's score. Table 3 puts both beside the reliability.
+If a measure has full-length reliability ρ, the Spearman-Brown prophecy gives the multiple of data needed to reach a target ρ\*: k = ρ\*(1 − ρ) / (ρ(1 − ρ\*)), which we multiply by each tour's median charted matches (ATP 74, WTA 64). Separately, a variance decomposition gives the standard deviation of players' true clutch scores, to compare with the typical standard error on one player's score. Table 2 puts both beside the reliability.
 
-**Table 3.** What the reliability means. Reliability is the random-split median; matches needed for reliability 0.70 passes its 95% range through the Spearman-Brown formula ("unbounded": the lower limit is zero or negative). True SD is the between-player standard deviation of true clutch (95% intervals in Tables S6 and S9; † marks an interval that reaches zero) and noise SE the typical standard error on one player's score. The last column is one true SD times the summed leverage per match of the bottom quartile (low end) and the top quartile (high end), a first-order range (see "What 2 points is worth"). The rally rows use the match-clustered estimator of Section 6.1.
+**Table 2.** What the reliability means. Reliability is the random-split median; matches needed for reliability 0.70 passes its 95% range through the Spearman-Brown formula ("unbounded": the lower limit is zero or negative). True SD is the between-player standard deviation of true clutch (95% intervals in Tables S6 and S9; † marks an interval that reaches zero) and noise SE the typical standard error on one player's score. The last column is one true SD times the summed leverage per match of the bottom quartile (low end) and the top quartile (high end), a first-order range (see "What 2 points is worth"). The rally rows use the match-clustered estimator of Section 6.1.
 
 | Tour, role | Reliability | Matches needed [95% range] | True SD, pp | Noise SE, pp | One true SD in match-win probability, pp |
 |---|---|---|---|---|---|
@@ -145,7 +135,7 @@ If a measure has full-length reliability ρ, the Spearman-Brown prophecy gives t
 | WTA return | 0.27 | 411 [128, unbounded] | 1.31† | 2.07 | not detectable |
 | WTA rally points | 0.25 | 445 [141, unbounded] | 1.06† | 1.87 | not detectable |
 
-**Data needed.** An acceptable ATP return-clutch score needs about 550 matches (interval 200 to unbounded), 7 to 8 times the median player's 74; the longest career in the pool is 723 (Federer). The intervals are wide because the reliability itself is imprecise, so return-side figures are best read as "several hundred matches at least". Rally-decided points are no easier, and the error and winner outcomes need 120 to 170 (Table S9). A model-based projection agrees, and only 31% of ATP players already reach player-level reliability 0.70 on serve and 3% on return (Table S5).
+**Data needed.** An acceptable ATP return-clutch score needs about 550 matches (interval 200 to unbounded), 7 to 8 times the median player's 74; the longest career in the pool is 723 (Federer). The wide intervals mean return-side figures are best read as "several hundred matches at least". Rally-decided points are no easier, and the error and winner outcomes need 120 to 170 (Table S9). A model-based projection agrees, and only 31% of ATP players already reach player-level reliability 0.70 on serve and 3% on return (Table S5).
 
 **True spread.** On serve there are real differences between players: the true standard deviation is about 2 percentage points, about as large as the noise on one player's score. On return it is at most about 1.2 points against 1.7 to 2.1 of noise, and for WTA return the interval reaches zero, so we report no detectable stable difference there (Table S6). Rally-point clutch looks like serve on ATP (true SD 1.6 points against 1.7 of noise) and like return on WTA; for unforced-error and winner clutch the true SD is 0.6 to 0.8 points per shot, about the size of the noise (Table S9).
 
@@ -177,9 +167,11 @@ The statistic broadcasters quote most is break-point conversion or saving. On AT
 
 **What the null says about style.** Our predictor is how predictable a player's next groundstroke wing and direction are given the previous shot. It does not capture serve placement, net approaches, rally length or tactical variation, so this is a null for that measure, ruling out large effects on ATP but not WTA return. The flair narrative finds no support here; it is not refuted. For ATP players, a player one standard deviation more varied than average would differ in true clutch by at most 0.3 standard deviations, a gap the clutch scores could not reliably show. For WTA players the data cannot separate no effect from a moderate one.
 
-**The rally does not rescue the metric.** A measure using every shot might have been expected to be reliable. It is more reliable than return clutch but still below 0.70, and matches serve and return on every practice-side number: hundreds of matches needed, true spread about the size of the noise, rank intervals covering over half the pool, and no rescue from shrinkage or the leverage variant (Table S9). Return is worse than serve because true return clutch varies less while its noise equals serve's (Table 3); we do not claim to have identified the mechanism.
+**The rally does not rescue the metric.** A measure using every shot might have been expected to be reliable. It is more reliable than return clutch but still below 0.70, and matches serve and return on every practice-side number: hundreds of matches needed, true spread about the size of the noise, rank intervals covering over half the pool, and no rescue from shrinkage or the leverage variant (Table S9). Return is worse than serve because true return clutch varies less while its noise equals serve's (Table 2).
 
-**The threshold matters, and the verdict is about individuals.** At a lenient 0.50, ATP serve clutch and the all-shot error and winner outcomes would pass, and at 0.90 nothing does. We hold the 0.70 line because the claims at issue are about named players; the threshold-free reading is the ratio of true spread to noise in Table 3, about 1.2 points of signal against 1.7 of noise for ATP return.
+**What could be published instead.** If a rating must be published, the evidence favours shot-level outcomes over role-level ones: unforced-error and winner clutch per shot hit (ATP reliability 0.60 and 0.58, 0.62 and 0.74 once shrunk; WTA error clutch 0.71 shrunk), and among single shots the forehand, with a reliability of 0.49 (ATP) and 0.41 (WTA). Any such rating should be a shrunk estimate with its interval and its own reliability. None meets our criterion (the closest, ATP winner clutch, reaches 0.70 in 80% of splits and WTA error clutch in 57%), forehand errors need about 180 to 210 matches, and their true spread is about the size of the noise (Table S17).
+
+**The threshold matters, and the verdict is about individuals.** At a lenient 0.50, ATP serve clutch and the all-shot error and winner outcomes would pass, and at 0.90 nothing does. We hold the 0.70 line because the claims at issue are about named players; the threshold-free reading is the ratio of true spread to noise in Table 2, about 1.2 points of signal against 1.7 of noise for ATP return.
 
 **Reliability depends on the pool.** Our players are 40-plus-match, mostly elite and heavily charted, which narrows the spread of true clutch; reliability rises with the floor (Table S14) but no pool reaches 0.70, and another population needs its own estimate.
 
@@ -190,13 +182,13 @@ The statistic broadcasters quote most is break-point conversion or saving. On AT
 - **Reliability is estimated.** One split is one draw; entropy was not re-split; corrected bounds treat reliabilities as fixed (Table S2). About 70% of ATP matches are between two pool players; the rank bootstrap resamples matches jointly, but Fisher intervals and cross-player correlations treat players as independent.
 - **ATP clutch-file provenance.** The script that generated the committed ATP clutch table was lost. Sections 4 and 6 regenerate leverage from raw data; rerunning Section 5 on the regenerated table moves no correlation by more than 0.005 (smallest p 0.66).
 - **Individual tests.** Quartile contrasts compare different score states, so a clutch score is descriptive, not the causal effect of pressure and many reliability comparisons are reported without multiplicity correction, so the conclusion rests on the pattern, not on any single cell. The match-win translation is first-order and covers point-win outcomes only, and the player-level bootstrap missed its pre-registered bias tolerance (gap 0.0018 to 0.0027 against 0.002); the match-level version was not rechecked.
-- **Plans are self-registered** and their order cannot be independently verified (Section 3). One plan changed after a first run (the match-nested model moved from maximum likelihood to REML after its validation simulation failed, and its WTA fit was dropped; Section 6.1), and the confounder-adjustment validation was redesigned after a debugging run (Table S13). No other rule changed, but one (a faithful BLR below 0.50 strengthens the claim) proved split-dependent, so we report original and random-split values side by side.
+- **Plans are self-registered** and their order cannot be independently verified (Section 3). Two plans changed after a first run (the match-nested model moved to REML and lost its WTA fit, Section 6.1; the confounder-adjustment validation was redesigned, Table S13), and the selection, positive-control and validity checks printed some results in a validation run before their full runs (`docs/`). One rule (a faithful BLR below 0.50 strengthens the claim) proved split-dependent, so we report original and random-split values side by side.
 
 ## 9. Conclusion
 
 Role-specific leverage-weighted clutch scores and Tennis Abstract's BLR are too unreliable to support routine claims about individual players, particularly on return points, and the problem extends to every shot, to errors, winners, aces and double faults. True differences are real on serve (about 2 points, up to about 5 points of match-win probability) but no larger than the noise on one player's score, a named player's rank typically has a 95% interval covering more than half the pool, and a reliable ATP return score needs several hundred charted matches (about 550; interval 200 to unbounded) against a median of 74. The exception is one pooled ATP ratio, exploratory and not validated as a measure of clutch.
 
-Five rules follow. (1) Before citing a clutch rating, ask for its split-half reliability; treat a value below 0.70 as a noisy estimate. (2) Treat role-specific clutch, above all return clutch, as a noisy descriptor: cite a named player only with an interval, and only when it excludes the pool mean (21 of 91 ATP players on serve, 8 on return, about chance). (3) The ATP pooled ratio is the only reliable measure we found, but it is exploratory and its validity is untested, so treat it as a lead for further work, not a rating to publish. (4) If a ranking is needed, show the interval. (5) Budget several hundred charted matches per player for any return-side measure. Separately, we detect no pressure-performance channel for shot-selection predictability on either tour, on any outcome from serve to shot level, with bounds that are informative for ATP but not for WTA return.
+Five rules follow. (1) Before citing a clutch rating, ask for its split-half reliability; treat a value below 0.70 as a noisy estimate. (2) Treat role-specific clutch, above all return clutch, as a noisy descriptor: cite a named player only with an interval, and only when it excludes the pool mean (21 of 91 ATP players on serve, 8 on return, about chance). (3) The ATP pooled ratio, the only reliable measure we found, is exploratory and unvalidated: a lead, not a rating to publish. (4) If a ranking is needed, show the interval. (5) Budget several hundred charted matches per player for any return-side measure. Separately, we detect no pressure-performance channel for shot-selection predictability on either tour, on any outcome from serve to shot level, with bounds that are informative for ATP but not for WTA return.
 
 ## References
 
@@ -216,8 +208,8 @@ Five rules follow. (1) Before citing a clutch rating, ask for its split-half rel
 
 ## Appendix: Disclosures, data and reproduction
 
-**Bugs.** Five issues are written up in `docs/` with their effects, among them a shot-parsing bug that inverted hitter labels (now guarded by a parity check, floor 85%) and the ATP clutch-table provenance gap (Section 8).
+**Bugs.** Five issues are written up in `docs/` with their effects, including a shot-parsing bug that inverted hitter labels (now guarded by a parity check).
 
-**Data.** Match Charting Project (Sackmann et al.), upstream commit `2c59eef194967e688b69e73df344184a06322cd8` (2026-05-25), CC BY-NC-SA 4.0. Raw files are fetched at run time and checked against `DATA_MANIFEST.csv`.
+**Data.** Match Charting Project (Sackmann et al.), commit `2c59eef194967e688b69e73df344184a06322cd8` (2026-05-25), CC BY-NC-SA 4.0. Raw files are checked against `DATA_MANIFEST.csv`.
 
-**Reproduction.** The README lists the commands for each table and figure; dated plans and their verifiable dates are in `docs/`. Every script validates itself before writing output.
+**Reproduction.** The README lists the commands; dated plans are in `docs/`. Every script validates itself before writing output.

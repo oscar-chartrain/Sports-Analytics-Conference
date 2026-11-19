@@ -41,6 +41,7 @@ time-stamped registrations.
 | Confounder adjustment (`docs/combined/confound_adjustment_preregistration.md`) | 2026-11-18 | after 2026-11-18 |
 | Selection checks (`docs/combined/selection_checks_preregistration.md`) | 2026-11-18 | after 2026-11-18 |
 | Positive control (`docs/combined/positive_control_preregistration.md`) | 2026-11-18 | after 2026-11-18 |
+| Validity checks (`docs/combined/validity_checks_preregistration.md`) | 2026-11-19 | after 2026-11-19 |
 
 The November plans were all written after the earlier results (the entropy
 null and the reliability findings) were known, so they are pre-specified but
