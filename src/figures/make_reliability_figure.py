@@ -54,35 +54,34 @@ def plot_panel(ax, dfs, col, title):
         a, b = sub[f'{col}_a'], sub[f'{col}_b']
         r_half, _ = stats.pearsonr(a, b)
         r_full = f.spearman_brown(r_half)
-        ax.scatter(a, b, s=22, alpha=0.75, color=COLORS[tour],
+        ax.scatter(a, b, s=8, alpha=0.75, color=COLORS[tour],
                    label=f'{LABELS[tour]} (r={r_full:.2f})', edgecolors='none')
         all_vals.extend([a.min(), a.max(), b.min(), b.max()])
 
     lo, hi = min(all_vals), max(all_vals)
     pad = (hi - lo) * 0.08
     lo, hi = lo - pad, hi + pad
-    ax.plot([lo, hi], [lo, hi], color='gray', linestyle='--', linewidth=1, zorder=0)
+    ax.plot([lo, hi], [lo, hi], color='gray', linestyle='--', linewidth=0.7, zorder=0)
     ax.set_xlim(lo, hi)
     ax.set_ylim(lo, hi)
     ax.set_xlabel('Half A')
     ax.set_ylabel('Half B')
-    ax.set_title(title, fontsize=10.5)
-    ax.legend(loc='upper left', fontsize=8, frameon=False)
+    ax.set_title(title, fontsize=7.5)
+    ax.legend(loc='upper left', fontsize=6, frameon=False, handletextpad=0.2, borderpad=0.2)
     ax.set_aspect('equal', adjustable='box')
 
 
 def main():
     dfs = {'atp': load('atp'), 'wta': load('wta')}
 
-    fig, axes = plt.subplots(1, 3, figsize=(12, 4.3))
+    plt.rcParams.update({'font.size': 7, 'axes.labelsize': 7, 'axes.titlesize': 7.5, 'xtick.labelsize': 6.5, 'ytick.labelsize': 6.5, 'legend.fontsize': 6})
+    fig, axes = plt.subplots(1, 3, figsize=(6.6, 2.1))
     plot_panel(axes[0], dfs, 'entropy',
-               'Predictor: conditional entropy\n(reliable)')
+               'Entropy (reliable)')
     plot_panel(axes[1], dfs, 'serve_clutch',
-               'Outcome: serve clutch score\n(below acceptable)')
+               'Serve clutch (not reliable)')
     plot_panel(axes[2], dfs, 'return_clutch',
-               'Outcome: return clutch score\n(poor, esp. WTA)')
-    fig.suptitle('Split-half reliability (Spearman-Brown corrected r): same player, two independent halves of their career',
-                 fontsize=11, y=1.03)
+               'Return clutch (poor)')
     fig.tight_layout()
 
     out_path = os.path.join(FIG_DIR, 'split_half_reliability_figure.png')

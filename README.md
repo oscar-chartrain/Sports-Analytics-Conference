@@ -291,6 +291,7 @@ python src/robustness/decider_validity.py             # external criterion (Tabl
 python src/figures/make_bootstrap_rank_figure.py
 python src/figures/make_allshots_figure.py
 python src/figures/make_positive_control_figure.py   # Figure 1 (positive control; needs results/applications/positive_control.csv)
+python src/figures/make_leverage_explainer_figure.py   # Figure 1 (what a high-leverage point is)
 python src/paper/build_paper_docx.py --paper-id "<ID>"   # needs python-docx
 ```
 

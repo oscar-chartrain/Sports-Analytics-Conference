@@ -26,33 +26,34 @@ TITLES = {'atp': 'ATP (91 players)', 'wta': 'WTA (55 players)'}
 
 def main():
     df = pd.read_csv(SRC)
-    fig, axes = plt.subplots(1, 2, figsize=(8.6, 3.5), sharey=True)
+    plt.rcParams.update({'font.size': 7, 'axes.labelsize': 7, 'axes.titlesize': 7.5, 'xtick.labelsize': 6.5, 'ytick.labelsize': 6.5, 'legend.fontsize': 6})
+    fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.3), sharey=True)
     for ax, tour in zip(axes, ('atp', 'wta')):
         for k, (col, mk, name) in STYLE.items():
             g = df[(df['tour'] == tour) & (df['outcome'] == k)]
             gr = g[g['kind'] == 'grid'].sort_values('planted_sd_pp')
             ax.fill_between(gr['planted_sd_pp'], gr['p2_5'], gr['p97_5'], color=col, alpha=0.07, linewidth=0)
-            ax.plot(gr['planted_sd_pp'], gr['median'], color=col, linewidth=1.6, marker=mk, markersize=4.5,
+            ax.plot(gr['planted_sd_pp'], gr['median'], color=col, linewidth=1.2, marker=mk, markersize=3.2,
                     markeredgecolor='white', markeredgewidth=0.6, label=name, zorder=3)
             e = g[g['kind'] == 'estimated'].iloc[0]
-            ax.scatter([e['planted_sd_pp']], [OBS[(tour, k)]], s=38, facecolors='white', edgecolors=col,
+            ax.scatter([e['planted_sd_pp']], [OBS[(tour, k)]], s=20, facecolors='white', edgecolors=col,
                        linewidths=1.4, zorder=4)
         ax.axhline(0.70, color='0.35', linestyle=':', linewidth=1.2, zorder=1)
         ax.axhline(0, color='0.85', linewidth=0.8, zorder=0)
-        ax.set_title(TITLES[tour], fontsize=10, loc='left')
+        ax.set_title(TITLES[tour], fontsize=7.5, loc='left')
         ax.set_xlim(-0.1, 6.1)
         ax.set_ylim(-0.25, 1.0)
-        ax.set_xlabel('Planted true spread between players (SD, percentage points)', fontsize=8.5)
+        ax.set_xlabel('Planted true spread between players (SD, percentage points)', fontsize=6.5)
         for s in ('top', 'right'):
             ax.spines[s].set_visible(False)
         ax.tick_params(labelsize=8.5)
-    axes[0].set_ylabel('Split-half reliability (median, 95% range)', fontsize=8.5)
-    axes[0].text(0.05, 0.725, 'acceptable (0.70)', fontsize=7.5, color='0.3', va='bottom')
-    h = [plt.Line2D([0], [0], color=c, marker=m, linewidth=1.6, markersize=5, markeredgecolor='white', label=n)
+    axes[0].set_ylabel('Split-half reliability (median, 95% range)', fontsize=6.5)
+    axes[0].text(0.05, 0.725, 'acceptable (0.70)', fontsize=6.5, color='0.3', va='bottom')
+    h = [plt.Line2D([0], [0], color=c, marker=m, linewidth=1.2, markersize=5, markeredgecolor='white', label=n)
          for c, m, n in STYLE.values()]
     h.append(plt.Line2D([0], [0], color='0.3', marker='o', markerfacecolor='white', linewidth=0, markersize=6,
-                        label='Real data (estimated spread, observed reliability)'))
-    axes[1].legend(handles=h, loc='lower right', frameon=False, fontsize=7.5)
+                        label='Real data (estimated spread, observed)'))
+    axes[1].legend(handles=h, loc='lower right', frameon=False, fontsize=6.5)
     fig.tight_layout()
     fig.savefig(OUT, dpi=200, bbox_inches='tight')
     print(f'Wrote {OUT}')

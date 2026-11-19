@@ -34,26 +34,27 @@ def panel(ax, df, title):
     for i, row in df.iterrows():
         color = HIGHLIGHT.get(row['player'], '#b0b0b0')
         width = 2.2 if row['player'] in HIGHLIGHT else 0.9
-        ax.plot([i + 1, i + 1], [row['rank_lo'], row['rank_hi']], color=color, lw=width, zorder=2)
-        ax.plot(i + 1, row['rank'], 'o', color=color, ms=3.5 if row['player'] in HIGHLIGHT else 2.2, zorder=3)
+        ax.plot([i + 1, i + 1], [row['rank_lo'], row['rank_hi']], color=color, lw=width * 0.7, zorder=2)
+        ax.plot(i + 1, row['rank'], 'o', color=color, ms=2.6 if row['player'] in HIGHLIGHT else 1.4, zorder=3)
     ax.plot([1, n], [1, n], color='black', lw=0.6, ls=':', zorder=1)
     ax.set_xlim(0, n + 1)
     ax.set_ylim(n + 2, -1)
     ax.set_xlabel('Rank by point estimate (1 = most clutch)')
-    ax.set_title(title, fontsize=10)
+    ax.set_title(title, fontsize=7.5)
     ax.grid(alpha=0.2)
 
 
 def main():
     df = pd.read_csv(SRC)
     atp = df[df['tour'] == 'atp']
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4.6), sharey=True)
+    plt.rcParams.update({'font.size': 7, 'axes.labelsize': 7, 'axes.titlesize': 7.5, 'xtick.labelsize': 6.5, 'ytick.labelsize': 6.5, 'legend.fontsize': 6})
+    fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.4), sharey=True)
     panel(axes[0], atp[atp['measure'] == 'serve'], 'Serve clutch')
     panel(axes[1], atp[atp['measure'] == 'return'], 'Return clutch')
     axes[0].set_ylabel('Bootstrap rank (95% interval)')
     handles = [plt.Line2D([0], [0], color=c, lw=2.2, label=n) for n, c in HIGHLIGHT.items()]
-    axes[1].legend(handles=handles, loc='lower left', fontsize=8, frameon=True)
-    fig.suptitle('ATP pool (n = 91): 95% bootstrap rank intervals, B = 2,000', fontsize=11)
+    axes[1].legend(handles=handles, loc='lower left', fontsize=6, frameon=True)
+    fig.suptitle('ATP pool (n = 91): 95% bootstrap rank intervals, B = 2,000', fontsize=7.5)
     fig.tight_layout()
     fig.savefig(OUT, dpi=200)
     print(f"Wrote {OUT}")
