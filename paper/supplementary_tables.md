@@ -66,6 +66,8 @@ Minimum detectable effect at 80% power and two-sided alpha = 0.05: ATP 0.29, WTA
 | WTA return clutch | 0.055, 2,566 [182, unbounded] | 0.267, 411 [128, unbounded] |
 | WTA BLR | 0.206, 577 [128, unbounded] | 0.294, 358 [119, unbounded] |
 
+Notes on the fixes of Section 4.3 (original split; `results/applications/run_log_applications.txt` and `docs/atp/04_regression_results/opponent_adjusted_return_clutch.md`). Empirical-Bayes shrinkage raises the reliability of ATP serve clutch from 0.572 to 0.594 and of return clutch from 0.231 to 0.371, and of WTA serve from 0.578 to 0.624 and return from 0.055 to 0.132 (matches needed for 0.70 after shrinkage: ATP 118 and 293, WTA 90 and 982). Adjusting return points for each opponent's own serve strength lowers return reliability to 0.182 (ATP) and -0.106 (WTA). A per-player estimate of reliability (true variance over true plus sampling variance of each player's own score) reaches 0.70 for 31% of ATP players on serve and 3% on return.
+
 For WTA return, the original split's 0.055 implies 2,566 matches and the random-split median of 0.27 implies about 410; we take the lower as the better point estimate, though the intervals show the data cannot pin it down.
 
 **Table S6.** True between-player standard deviation of quartile clutch (percentage points) with 95% bootstrap intervals, by four estimators, beside the typical standard error on one player's score (binomial and match-clustered). The variance and half-split methods assume binomial sampling variance; the last two do not (Section 6.1).
@@ -267,6 +269,66 @@ Reading. A planted spread of 4 percentage points meets the criterion on all thre
 | WTA | R2 errors | -0.056 (0.683) | 0.50 | 0.41 |
 | WTA | R3 winners | +0.024 (0.859) | 0.47 | 0.38 |
 
+**Table S17.** Validity checks (plan: `docs/combined/validity_checks_preregistration.md`). Chronological split: each player's earlier half of charted matches against the later half (no shared points). Outcomes are signed so that higher means better under pressure. Part A: early-late correlation for each outcome, and the partial correlation holding the early overall rate fixed (serve-point win rate for serve, return-point win rate for return, rally-point win rate for rally points, errors or winners per shot for the shot outcomes, errors per forehand or backhand shot for those); "Yes" means the partial correlation is at least half the raw one with p below 0.05/7 = 0.007. Part B: cross-time correlation matrices (early score of one outcome with the late score of another, averaged over both directions); the diagonal (bold) is each outcome's own early-late correlation; * marks a pair below the Bonferroni threshold 0.05/21 = 0.0024 (n = 91 ATP, 55 WTA). Part C: forehand and backhand errors with the two all-shot outcomes for comparison, over 1,000 random balanced splits (seed 20261122): raw and empirical-Bayes-shrunk median reliability, the match-clustered true standard deviation against the standard error of one player's score, and matches needed for reliability 0.70 (Spearman-Brown on the raw median), then the chronological Spearman-Brown reliability (random-split medians differ in the second decimal from Table S7 and Section 4.4: new splits).
+
+*A. Stability beyond ability*
+
+| Tour, outcome | Early-late r [95% CI] | Partial r given overall rate (p) | Stable beyond ability? |
+|---|---|---|---|
+| ATP serve | +0.28 [+0.08, +0.50] | +0.27 (0.010) | No |
+| ATP return | +0.11 [-0.11, +0.33] | +0.12 (0.279) | No |
+| ATP rally points | +0.29 [+0.11, +0.46] | +0.29 (0.005) | Yes |
+| ATP errors, all shots | +0.49 [+0.36, +0.61] | +0.50 (0.000) | Yes |
+| ATP winners, all shots | +0.40 [+0.22, +0.57] | +0.40 (0.000) | Yes |
+| ATP errors, forehand | +0.37 [+0.12, +0.58] | +0.35 (0.001) | Yes |
+| ATP errors, backhand | +0.19 [-0.06, +0.44] | +0.16 (0.128) | No |
+| WTA serve | +0.25 [-0.02, +0.50] | +0.22 (0.118) | No |
+| WTA return | +0.06 [-0.23, +0.35] | +0.01 (0.938) | No |
+| WTA rally points | +0.13 [-0.14, +0.37] | +0.14 (0.305) | No |
+| WTA errors, all shots | +0.16 [-0.19, +0.48] | +0.16 (0.250) | No |
+| WTA winners, all shots | +0.43 [+0.22, +0.65] | +0.41 (0.002) | Yes |
+| WTA errors, forehand | +0.25 [-0.10, +0.53] | +0.25 (0.072) | No |
+| WTA errors, backhand | +0.05 [-0.27, +0.33] | +0.04 (0.750) | No |
+
+*B. Cross-time correlations between indicators*
+
+| ATP | S | Rt | R1 | R2 | R3 | R4 | R5 |
+|---|---|---|---|---|---|---|---|
+| S serve | **+0.28** | +0.01 | +0.22 | +0.10 | +0.25 | +0.07 | +0.09 |
+| Rt return | +0.01 | **+0.11** | +0.14 | +0.14 | +0.00 | +0.10 | +0.12 |
+| R1 rally points | +0.22 | +0.14 | **+0.29** | +0.09 | +0.17 | +0.08 | +0.06 |
+| R2 errors, all shots | +0.10 | +0.14 | +0.09 | **+0.49** | -0.09 | +0.40* | +0.28 |
+| R3 winners, all shots | +0.25 | +0.00 | +0.17 | -0.09 | **+0.40** | -0.02 | -0.01 |
+| R4 errors, forehand | +0.07 | +0.10 | +0.08 | +0.40* | -0.02 | **+0.37** | +0.15 |
+| R5 errors, backhand | +0.09 | +0.12 | +0.06 | +0.28 | -0.01 | +0.15 | **+0.19** |
+
+| WTA | S | Rt | R1 | R2 | R3 | R4 | R5 |
+|---|---|---|---|---|---|---|---|
+| S serve | **+0.25** | +0.06 | +0.14 | +0.19 | +0.03 | +0.20 | +0.21 |
+| Rt return | +0.06 | **+0.06** | +0.09 | -0.20 | -0.14 | -0.17 | -0.19 |
+| R1 rally points | +0.14 | +0.09 | **+0.13** | -0.11 | -0.06 | -0.09 | -0.08 |
+| R2 errors, all shots | +0.19 | -0.20 | -0.11 | **+0.16** | -0.32 | +0.15 | +0.06 |
+| R3 winners, all shots | +0.03 | -0.14 | -0.06 | -0.32 | **+0.43** | -0.26 | -0.17 |
+| R4 errors, forehand | +0.20 | -0.17 | -0.09 | +0.15 | -0.26 | **+0.25** | -0.01 |
+| R5 errors, backhand | +0.21 | -0.19 | -0.08 | +0.06 | -0.17 | -0.01 | **+0.05** |
+
+Mean of the 21 cross-time correlations: ATP +0.11 [+0.02, +0.20] (mean same-outcome correlation +0.31); WTA -0.03 [-0.14, +0.08] (+0.19). Pairs below the threshold: ATP 1 of 21 (errors on all shots with forehand errors, which overlap by construction), WTA 0 of 21.
+
+*C. Forehand and backhand errors*
+
+| Tour, outcome | Raw median (share at or above 0.70) | Shrunk median (share) | True SD vs noise SE, pp per shot | Matches needed | Chronological reliability [95% CI] |
+|---|---|---|---|---|---|
+| ATP forehand errors | 0.49 (0.1%) | 0.49 (0%) | 0.99 [0.67, 1.24] vs 0.98 | 179 | 0.54 [+0.22, +0.74] |
+| ATP backhand errors | 0.32 (0.0%) | 0.34 (0%) | 0.74 [0.17, 1.04] vs 1.06 | 361 | 0.31 [-0.13, +0.61] |
+| ATP errors, all shots | 0.60 (5.1%) | 0.62 (6%) | 0.77 [0.56, 0.92] vs 0.63 | 113 | 0.66 [+0.53, +0.76] |
+| ATP winners, all shots | 0.58 (3.7%) | 0.74 (80%) | 0.71 [0.50, 0.87] vs 0.62 | 125 | 0.57 [+0.36, +0.72] |
+| WTA forehand errors | 0.42 (0.5%) | 0.58 (10%) | 0.97 [0.35, 1.34] vs 1.09 | 206 | 0.40 [-0.22, +0.69] |
+| WTA backhand errors | 0.23 (0.0%) | 0.06 (1%) | 0.61 [0.00, 1.13] vs 1.15 | 499 | 0.10 [-0.76, +0.50] |
+| WTA errors, all shots | 0.50 (1.1%) | 0.71 (57%) | 0.73 [0.27, 1.06] vs 0.71 | 147 | 0.28 [-0.48, +0.65] |
+| WTA winners, all shots | 0.47 (1.0%) | 0.46 (0%) | 0.64 [0.38, 0.81] vs 0.65 | 166 | 0.60 [+0.36, +0.79] |
+
+Reading. The stable part of the shot-level and rally-point scores on ATP is not just ability (partial correlations 0.29 to 0.50 for rally points, errors, winners and forehand errors; serve 0.27 with p 0.010 narrowly misses our 0.007 bar; return and backhand errors are not stable). On WTA only winners clear it. The indicators do not converge: 18 of 21 cross-time correlations on ATP are positive but only the nested pair passes the correction, the mean is about a third of the mean same-outcome stability, and on WTA the mean is about zero. Where stable differences exist they look specific to a role or a shot, not one general clutch trait; but with stabilities of 0.1 to 0.5 every cross-time correlation is heavily attenuated and the disattenuated values have no intervals, so this is weak evidence against a common trait, not proof of its absence. Of the single shots, the forehand is the most reliable (ATP 0.49, WTA 0.42; chronological 0.54 on ATP) and the backhand, slice and net game are weaker, but forehand errors need about 180 to 210 matches, true spread is about the size of the noise, and no shot-level measure meets the criterion: the closest are ATP winner clutch shrunk (median 0.74, 80% of splits at or above 0.70) and WTA all-shot error clutch shrunk (0.71, 57%). These checks speak to agreement and persistence, not to winning matches.
+
 **Table S18.** External criterion: does clutch predict winning when it matters? (plan: `docs/combined/decider_validity_preregistration.md`.) Predictors: the full-sample clutch scores of Table S17 (higher means better under pressure) standardized over the pool, and the composite (mean of a player's available z-scores). Criteria: C1, the player's deciding-set matches (complete tour-level matches that go to the last set), and C2, tiebreak sets, in tour-level matches that are not charted (every charted match is excluded). Results come from Jeff Sackmann's ATP and WTA match files, 1968 to 2026-05-25 (CC BY-NC-SA 4.0), taken from an archival mirror pinned at one commit (`DATA_MANIFEST.csv`); the winner of the last charted point equals the file's winner in 99.75% (WTA) and 99.86% (ATP) of charted matches whose chart reaches match point. Strength control: pre-match Elo ratings built from sets that are neither deciding sets nor tiebreak sets (K = 20), calibrated league-wide; the criterion is each player's excess wins over that expectation (players with at least 30 events). Slopes are weighted least squares of excess on the score (weights = number of events, robust standard errors, adjusted for the player's mean strength advantage), in percentage points of win probability per standard deviation of the score, with a 2,000-resample player bootstrap interval; primary tests (4) are judged at 0.05/4 = 0.0125 and secondary tests (28) at 0.05/28 = 0.0018. The benchmark is the change in deciding-set win probability if one true standard deviation of serve clutch (Table 2) were a shift in the points of the set (a set model with a tiebreak at 6-6, 65% serve-point win probability: 6.6 points of set-win probability per point of point-win probability), from half to all of it, multiplied by the square root of the score's reliability.
 
 *A. Primary tests (deciding-set matches)*
@@ -339,66 +401,6 @@ Reading. Across outcomes, reliability rises with the number of events per player
 ![Split-half reliability of clutch outcomes on every kind of shot, by tour](../results/figures/allshots_reliability_figure.png)
 
 **Figure S1.** Median split-half reliability (dot) and 95% range over 1,000 random splits (line) for clutch measured on serve and return points, on rally-decided points, and on shot-level outcomes (numbers in Table S7). The dotted line is the 0.70 threshold. WTA net-game errors are not estimable (too few shots).
-
-**Table S17.** Validity checks (plan: `docs/combined/validity_checks_preregistration.md`). Chronological split: each player's earlier half of charted matches against the later half (no shared points). Outcomes are signed so that higher means better under pressure. Part A: early-late correlation for each outcome, and the partial correlation holding the early overall rate fixed (serve-point win rate for serve, return-point win rate for return, rally-point win rate for rally points, errors or winners per shot for the shot outcomes, errors per forehand or backhand shot for those); "Yes" means the partial correlation is at least half the raw one with p below 0.05/7 = 0.007. Part B: cross-time correlation matrices (early score of one outcome with the late score of another, averaged over both directions); the diagonal (bold) is each outcome's own early-late correlation; * marks a pair below the Bonferroni threshold 0.05/21 = 0.0024 (n = 91 ATP, 55 WTA). Part C: forehand and backhand errors with the two all-shot outcomes for comparison, over 1,000 random balanced splits (seed 20261122): raw and empirical-Bayes-shrunk median reliability, the match-clustered true standard deviation against the standard error of one player's score, and matches needed for reliability 0.70 (Spearman-Brown on the raw median), then the chronological Spearman-Brown reliability (random-split medians differ in the second decimal from Table S7 and Section 4.4: new splits).
-
-*A. Stability beyond ability*
-
-| Tour, outcome | Early-late r [95% CI] | Partial r given overall rate (p) | Stable beyond ability? |
-|---|---|---|---|
-| ATP serve | +0.28 [+0.08, +0.50] | +0.27 (0.010) | No |
-| ATP return | +0.11 [-0.11, +0.33] | +0.12 (0.279) | No |
-| ATP rally points | +0.29 [+0.11, +0.46] | +0.29 (0.005) | Yes |
-| ATP errors, all shots | +0.49 [+0.36, +0.61] | +0.50 (0.000) | Yes |
-| ATP winners, all shots | +0.40 [+0.22, +0.57] | +0.40 (0.000) | Yes |
-| ATP errors, forehand | +0.37 [+0.12, +0.58] | +0.35 (0.001) | Yes |
-| ATP errors, backhand | +0.19 [-0.06, +0.44] | +0.16 (0.128) | No |
-| WTA serve | +0.25 [-0.02, +0.50] | +0.22 (0.118) | No |
-| WTA return | +0.06 [-0.23, +0.35] | +0.01 (0.938) | No |
-| WTA rally points | +0.13 [-0.14, +0.37] | +0.14 (0.305) | No |
-| WTA errors, all shots | +0.16 [-0.19, +0.48] | +0.16 (0.250) | No |
-| WTA winners, all shots | +0.43 [+0.22, +0.65] | +0.41 (0.002) | Yes |
-| WTA errors, forehand | +0.25 [-0.10, +0.53] | +0.25 (0.072) | No |
-| WTA errors, backhand | +0.05 [-0.27, +0.33] | +0.04 (0.750) | No |
-
-*B. Cross-time correlations between indicators*
-
-| ATP | S | Rt | R1 | R2 | R3 | R4 | R5 |
-|---|---|---|---|---|---|---|---|
-| S serve | **+0.28** | +0.01 | +0.22 | +0.10 | +0.25 | +0.07 | +0.09 |
-| Rt return | +0.01 | **+0.11** | +0.14 | +0.14 | +0.00 | +0.10 | +0.12 |
-| R1 rally points | +0.22 | +0.14 | **+0.29** | +0.09 | +0.17 | +0.08 | +0.06 |
-| R2 errors, all shots | +0.10 | +0.14 | +0.09 | **+0.49** | -0.09 | +0.40* | +0.28 |
-| R3 winners, all shots | +0.25 | +0.00 | +0.17 | -0.09 | **+0.40** | -0.02 | -0.01 |
-| R4 errors, forehand | +0.07 | +0.10 | +0.08 | +0.40* | -0.02 | **+0.37** | +0.15 |
-| R5 errors, backhand | +0.09 | +0.12 | +0.06 | +0.28 | -0.01 | +0.15 | **+0.19** |
-
-| WTA | S | Rt | R1 | R2 | R3 | R4 | R5 |
-|---|---|---|---|---|---|---|---|
-| S serve | **+0.25** | +0.06 | +0.14 | +0.19 | +0.03 | +0.20 | +0.21 |
-| Rt return | +0.06 | **+0.06** | +0.09 | -0.20 | -0.14 | -0.17 | -0.19 |
-| R1 rally points | +0.14 | +0.09 | **+0.13** | -0.11 | -0.06 | -0.09 | -0.08 |
-| R2 errors, all shots | +0.19 | -0.20 | -0.11 | **+0.16** | -0.32 | +0.15 | +0.06 |
-| R3 winners, all shots | +0.03 | -0.14 | -0.06 | -0.32 | **+0.43** | -0.26 | -0.17 |
-| R4 errors, forehand | +0.20 | -0.17 | -0.09 | +0.15 | -0.26 | **+0.25** | -0.01 |
-| R5 errors, backhand | +0.21 | -0.19 | -0.08 | +0.06 | -0.17 | -0.01 | **+0.05** |
-
-Mean of the 21 cross-time correlations: ATP +0.11 [+0.02, +0.20] (mean same-outcome correlation +0.31); WTA -0.03 [-0.14, +0.08] (+0.19). Pairs below the threshold: ATP 1 of 21 (errors on all shots with forehand errors, which overlap by construction), WTA 0 of 21.
-
-*C. Forehand and backhand errors*
-
-| Tour, outcome | Raw median (share at or above 0.70) | Shrunk median (share) | True SD vs noise SE, pp per shot | Matches needed | Chronological reliability [95% CI] |
-|---|---|---|---|---|---|
-| ATP forehand errors | 0.49 (0.1%) | 0.49 (0%) | 0.99 [0.67, 1.24] vs 0.98 | 179 | 0.54 [+0.22, +0.74] |
-| ATP backhand errors | 0.32 (0.0%) | 0.34 (0%) | 0.74 [0.17, 1.04] vs 1.06 | 361 | 0.31 [-0.13, +0.61] |
-| ATP errors, all shots | 0.60 (5.1%) | 0.62 (6%) | 0.77 [0.56, 0.92] vs 0.63 | 113 | 0.66 [+0.53, +0.76] |
-| ATP winners, all shots | 0.58 (3.7%) | 0.74 (80%) | 0.71 [0.50, 0.87] vs 0.62 | 125 | 0.57 [+0.36, +0.72] |
-| WTA forehand errors | 0.42 (0.5%) | 0.58 (10%) | 0.97 [0.35, 1.34] vs 1.09 | 206 | 0.40 [-0.22, +0.69] |
-| WTA backhand errors | 0.23 (0.0%) | 0.06 (1%) | 0.61 [0.00, 1.13] vs 1.15 | 499 | 0.10 [-0.76, +0.50] |
-| WTA errors, all shots | 0.50 (1.1%) | 0.71 (57%) | 0.73 [0.27, 1.06] vs 0.71 | 147 | 0.28 [-0.48, +0.65] |
-| WTA winners, all shots | 0.47 (1.0%) | 0.46 (0%) | 0.64 [0.38, 0.81] vs 0.65 | 166 | 0.60 [+0.36, +0.79] |
-
-Reading. The stable part of the shot-level and rally-point scores on ATP is not just ability (partial correlations 0.29 to 0.50 for rally points, errors, winners and forehand errors; serve 0.27 with p 0.010 narrowly misses our 0.007 bar; return and backhand errors are not stable). On WTA only winners clear it. The indicators do not converge: 18 of 21 cross-time correlations on ATP are positive but only the nested pair passes the correction, the mean is about a third of the mean same-outcome stability, and on WTA the mean is about zero. Where stable differences exist they look specific to a role or a shot, not one general clutch trait; but with stabilities of 0.1 to 0.5 every cross-time correlation is heavily attenuated and the disattenuated values have no intervals, so this is weak evidence against a common trait, not proof of its absence. Of the single shots, the forehand is the most reliable (ATP 0.49, WTA 0.42; chronological 0.54 on ATP) and the backhand, slice and net game are weaker, but forehand errors need about 180 to 210 matches, true spread is about the size of the noise, and no shot-level measure meets the criterion: the closest are ATP winner clutch shrunk (median 0.74, 80% of splits at or above 0.70) and WTA all-shot error clutch shrunk (0.71, 57%). These checks speak to agreement and persistence, not to winning matches.
 
 ![Equivalence bound on |r| by tour and role, observed versus reliability-corrected](../results/figures/disattenuation_figure.png)
 
