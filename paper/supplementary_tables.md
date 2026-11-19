@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S18 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S19 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -319,6 +319,22 @@ Reading. A planted spread of 4 percentage points meets the criterion on all thre
 | Without matches between two pool players | -0.02 (0.98) | +0.11 (0.91) | -0.63 (0.50) | -0.72 (0.40) |
 
 Reading. No primary test is significant, and the intervals exclude the benchmark: on ATP the upper end for serve is +1.8 pp per SD against a benchmark of 4.6 to 9.2, on WTA +1.5 against 3.8 to 7.7. The ATP slopes are small and positive for every predictor in deciding sets (+0.1 to +1.1 pp per SD) and in tiebreaks (+0.1 to +1.6; the smallest p, 0.0024 for backhand errors, misses the 0.0018 threshold), but the ATP deciding-set slopes vanish when matches between two pool players are dropped (serve -0.02, composite +0.11), so they are fragile. WTA slopes have both signs. The WTA composite has no stable part (reliability 0.00), so that test says nothing. The criterion is partly stable (WTA deciding sets 0.53, ATP 0.20): some players win decisive sets more than their strength predicts, but the clutch scores do not identify them. Power is good on ATP (94% for a true effect of 4 points per SD of clutch, about half the lowest benchmark) and weaker on WTA (37% at 4; 78% at 8), so the WTA result rules out only the larger effects. The strength control is an Elo expectation: its errors add between-player spread to the criterion (SD of player excess 4.9 pp on ATP, 6.9 pp on WTA against 4.4 and 4.7 pp of binomial noise).
+
+**Table S19.** Events per player and reliability (descriptive, not a pre-registered test; `src/robustness/events_vs_reliability.py`). Events are the median over players of the number of points or shots in the top and bottom leverage quartiles that the outcome is built on; reliability is the median over 1,000 random splits (Table S7).
+
+| Outcome | ATP events | ATP reliability | WTA events | WTA reliability |
+|---|---|---|---|---|
+| Serve points | 3,166 | 0.54 | 2,248 | 0.41 |
+| Return points | 3,180 | 0.24 | 2,333 | 0.27 |
+| Rally-decided points | 4,013 | 0.44 | 3,076 | 0.25 |
+| Errors, all shots | 11,308 | 0.60 | 8,236 | 0.50 |
+| Errors, forehand | 5,138 | 0.49 | 3,744 | 0.41 |
+| Errors, backhand | 3,822 | 0.32 | 3,329 | 0.22 |
+| Errors, slice | 1,306 | -0.01 | 664 | 0.15 |
+| Errors, net game | 556 | 0.18 | 200 | not estimable |
+| Aces (serve points) | 3,166 | 0.40 | 2,248 | 0.32 |
+
+Reading. Across outcomes, reliability rises with the number of events per player (Spearman correlation +0.71 across 9 ATP outcomes, +0.43 across 8 WTA outcomes): shot-level outcomes rest on several times as many events as point outcomes, and the rare shots (slice, net game) are the least reliable. Serve and return clutch rest on the same number of points but differ in reliability (0.54 and 0.24 on ATP), so volume does not explain everything.
 
 ![Split-half reliability of clutch outcomes on every kind of shot, by tour](../results/figures/allshots_reliability_figure.png)
 

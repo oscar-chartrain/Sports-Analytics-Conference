@@ -1,0 +1,23 @@
+atp: Spearman correlation of events with reliability across 9 outcomes +0.71
+tour           outcome  median_events_top_bottom  median_reliability  spearman_events_reliability
+ atp      serve_clutch                    3166.0                0.54                         0.71
+ atp     return_clutch                    3180.0                0.24                         0.71
+ atp    R1_rally_point                    4013.0                0.44                         0.71
+ atp      R2_error_all                   11308.0                0.60                         0.71
+ atp R4_error_forehand                    5138.0                0.49                         0.71
+ atp R5_error_backhand                    3822.0                0.32                         0.71
+ atp    R6_error_slice                    1306.0               -0.01                         0.71
+ atp      R7_error_net                     556.0                0.18                         0.71
+ atp            R9_ace                    3166.0                0.40                         0.71
+wta: Spearman correlation of events with reliability across 8 outcomes +0.43
+tour           outcome  median_events_top_bottom  median_reliability  spearman_events_reliability
+ wta      serve_clutch                    2248.0                0.41                         0.43
+ wta     return_clutch                    2333.0                0.27                         0.43
+ wta    R1_rally_point                    3076.0                0.25                         0.43
+ wta      R2_error_all                    8236.0                0.50                         0.43
+ wta R4_error_forehand                    3744.0                0.41                         0.43
+ wta R5_error_backhand                    3329.0                0.22                         0.43
+ wta    R6_error_slice                     664.0                0.15                         0.43
+ wta      R7_error_net                     200.0                 NaN                         0.43
+ wta            R9_ace                    2248.0                0.32                         0.43
+=== RUN END
