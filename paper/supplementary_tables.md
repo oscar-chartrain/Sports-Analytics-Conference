@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S14 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S15 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -238,3 +238,16 @@ Validation (every check passed before any result was used): the raw scores repro
 | WTA rally points | -0.10 (0.483) | -0.15 (0.278) |
 
 Reading. Reliability rises with the floor because players with more matches have longer scores, and falls when lightly charted players are added, but nothing reaches the criterion: the highest random-split median anywhere is 0.68 (ATP serve at 80 matches: 42 players, 42% of splits at or above 0.70), and the pool of 80 or more is the most heavily charted players, so it is the least representative. The largest difference between tournament-blocked and random-split medians is 0.03, so shared tournament conditions do not inflate the headline figures. Within Grand Slam matches reliability is at most 0.37, within other matches at most 0.34. The Slam-minus-other differences are within about one standard error of zero. The cross-stratum correlations are positive in all six cells (0.06 to 0.37) but the strata's own reliabilities are too low for the disattenuated values to be read: above 1 on ATP, 0.34 to 0.66 on WTA, with no interval. All twelve correlations with charting volume or Slam share are negative (-0.10 to -0.25); the smallest p is 0.015 (ATP return against charted matches), above the 0.0042 threshold, so we do not call it selection on the score, though it is the direction a selection effect would take. These checks speak to selection on observed features only.
+
+**Table S15.** Positive control (plan: `docs/combined/positive_control_preregistration.md`). Stable differences between players are planted in the real design: every point's outcome is redrawn as Bernoulli around the player's own role win rate, plus a shift drawn from a normal distribution with the stated standard deviation (percentage points) on the player's top-leverage-quartile points (rally-decided top-quartile points for rally points). Same players, points, leverage, matches, 30-point floor and Spearman-Brown routine as Table 1; 40 planted draws x 25 random balanced splits per cell (1,000 values; seed 20261121). Cells are the median reliability with the share of splits at or above 0.70 in parentheses. The "estimated spread" is the true standard deviation estimated from the real data (Table 3), planted and compared with the real random-split median. The simulated noise is binomial only, so these reliabilities are upper bounds for a given spread. Validation: the real-data original-split reliabilities were reproduced exactly; null medians at 0 pp were within 0.15 of zero in all six cells (largest 0.14); simulated medians at the estimated spread were within 0.15 of the real ones in all six cells (largest gap 0.09).
+
+| Tour, outcome | 0 | 1 | 2 | 3 | 4 | 6 | Estimated spread (pp): simulated vs observed median | Smallest spread meeting the criterion |
+|---|---|---|---|---|---|---|---|---|
+| ATP serve | -0.02 (0%) | 0.28 (0%) | 0.56 (3%) | 0.73 (69%) | 0.83 (100%) | 0.91 (100%) | 2.15: 0.60 vs 0.53 | 4 pp |
+| ATP return | 0.02 (0%) | 0.27 (0%) | 0.56 (6%) | 0.74 (72%) | 0.82 (100%) | 0.92 (100%) | 1.22: 0.29 vs 0.24 | 4 pp |
+| ATP rally points | 0.14 (0%) | 0.31 (0%) | 0.61 (14%) | 0.78 (88%) | 0.86 (100%) | 0.93 (100%) | 1.62: 0.53 vs 0.44 | 4 pp |
+| WTA serve | 0.00 (0%) | 0.23 (0%) | 0.46 (2%) | 0.67 (34%) | 0.78 (85%) | 0.89 (100%) | 1.88: 0.46 vs 0.41 | 6 pp |
+| WTA return | 0.02 (0%) | 0.18 (0%) | 0.43 (2%) | 0.66 (34%) | 0.77 (84%) | 0.88 (100%) | 1.31: 0.25 vs 0.27 | 6 pp |
+| WTA rally points | 0.00 (0%) | 0.21 (0%) | 0.56 (7%) | 0.72 (61%) | 0.82 (95%) | 0.91 (100%) | 1.06: 0.25 vs 0.25 | 4 pp |
+
+Reading. A planted spread of 4 percentage points meets the criterion on all three ATP outcomes and on WTA rally points (95% of splits at or above 0.70), and 6 points on every cell; WTA serve and return need more than 4. At 3 points the median passes 0.70 on ATP but only 69% to 88% of splits do. The spreads estimated from the real data (1.1 to 2.2 points) give simulated reliabilities of 0.25 to 0.60, close to the observed ones, so the pipeline detects clutch differences about twice the size of the estimated serve spread and three times that of the return spread; the low reliabilities reflect small true differences, not a test that cannot reach 0.70.

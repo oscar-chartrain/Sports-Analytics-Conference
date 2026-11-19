@@ -1,0 +1,70 @@
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+  hitter parity on 266,591 winner points: 0.954 (floor 0.85)
+V3 atp S: original-split reliability +0.5720 equals committed +0.5720
+V3 atp Rt: original-split reliability +0.2313 equals committed +0.2313
+V3 atp R1: original-split reliability +0.3906 equals committed +0.3906
+PC atp  S      grid s=0.00 pp: median -0.020 [-0.724, +0.386] share>=0.70 0.0%
+PC atp  S      grid s=1.00 pp: median +0.276 [-0.142, +0.524] share>=0.70 0.0%
+PC atp  S      grid s=2.00 pp: median +0.558 [+0.343, +0.711] share>=0.70 3.3%
+PC atp  S      grid s=3.00 pp: median +0.732 [+0.596, +0.824] share>=0.70 68.8%
+PC atp  S      grid s=4.00 pp: median +0.833 [+0.750, +0.889] share>=0.70 99.9%
+PC atp  S      grid s=6.00 pp: median +0.915 [+0.875, +0.942] share>=0.70 100.0%
+PC atp  S estimated s=2.15 pp: median +0.599 [+0.343, +0.750] share>=0.70 11.1%
+V2 atp S: simulated +0.599 within 0.15 of observed 0.53
+PC atp Rt      grid s=0.00 pp: median +0.020 [-0.642, +0.366] share>=0.70 0.0%
+PC atp Rt      grid s=1.00 pp: median +0.266 [-0.162, +0.527] share>=0.70 0.0%
+PC atp Rt      grid s=2.00 pp: median +0.560 [+0.325, +0.729] share>=0.70 5.5%
+PC atp Rt      grid s=3.00 pp: median +0.736 [+0.581, +0.826] share>=0.70 72.4%
+PC atp Rt      grid s=4.00 pp: median +0.821 [+0.744, +0.886] share>=0.70 99.7%
+PC atp Rt      grid s=6.00 pp: median +0.921 [+0.874, +0.947] share>=0.70 100.0%
+PC atp Rt estimated s=1.22 pp: median +0.292 [-0.098, +0.543] share>=0.70 0.0%
+V2 atp Rt: simulated +0.292 within 0.15 of observed 0.24
+PC atp R1      grid s=0.00 pp: median +0.137 [-0.326, +0.470] share>=0.70 0.0%
+PC atp R1      grid s=1.00 pp: median +0.313 [-0.192, +0.582] share>=0.70 0.0%
+PC atp R1      grid s=2.00 pp: median +0.613 [+0.376, +0.764] share>=0.70 13.8%
+PC atp R1      grid s=3.00 pp: median +0.776 [+0.638, +0.865] share>=0.70 87.6%
+PC atp R1      grid s=4.00 pp: median +0.860 [+0.786, +0.911] share>=0.70 100.0%
+PC atp R1      grid s=6.00 pp: median +0.930 [+0.888, +0.955] share>=0.70 100.0%
+PC atp R1 estimated s=1.62 pp: median +0.526 [+0.259, +0.688] share>=0.70 1.7%
+V2 atp R1: simulated +0.526 within 0.15 of observed 0.44
+ATP done in 11129s
+=== RUN END
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+  hitter parity on 105,746 winner points: 0.966 (floor 0.85)
+V3 wta S: original-split reliability +0.5784 equals committed +0.5784
+V3 wta Rt: original-split reliability +0.0547 equals committed +0.0547
+V3 wta R1: original-split reliability +0.0475 equals committed +0.0475
+PC wta  S      grid s=0.00 pp: median +0.001 [-0.967, +0.446] share>=0.70 0.0%
+PC wta  S      grid s=1.00 pp: median +0.228 [-0.308, +0.537] share>=0.70 0.1%
+PC wta  S      grid s=2.00 pp: median +0.456 [+0.110, +0.686] share>=0.70 1.5%
+PC wta  S      grid s=3.00 pp: median +0.665 [+0.453, +0.798] share>=0.70 33.9%
+PC wta  S      grid s=4.00 pp: median +0.779 [+0.616, +0.870] share>=0.70 85.2%
+PC wta  S      grid s=6.00 pp: median +0.891 [+0.790, +0.936] share>=0.70 100.0%
+PC wta  S estimated s=1.88 pp: median +0.463 [+0.057, +0.676] share>=0.70 1.5%
+V2 wta S: simulated +0.463 within 0.15 of observed 0.41
+PC wta Rt      grid s=0.00 pp: median +0.017 [-0.798, +0.468] share>=0.70 0.0%
+PC wta Rt      grid s=1.00 pp: median +0.182 [-0.541, +0.549] share>=0.70 0.0%
+PC wta Rt      grid s=2.00 pp: median +0.426 [+0.074, +0.688] share>=0.70 1.8%
+PC wta Rt      grid s=3.00 pp: median +0.659 [+0.431, +0.794] share>=0.70 33.6%
+PC wta Rt      grid s=4.00 pp: median +0.774 [+0.603, +0.875] share>=0.70 83.9%
+PC wta Rt      grid s=6.00 pp: median +0.880 [+0.795, +0.935] share>=0.70 100.0%
+PC wta Rt estimated s=1.31 pp: median +0.253 [-0.369, +0.547] share>=0.70 0.1%
+V2 wta Rt: simulated +0.253 within 0.15 of observed 0.27
+PC wta R1      grid s=0.00 pp: median +0.002 [-0.767, +0.405] share>=0.70 0.0%
+PC wta R1      grid s=1.00 pp: median +0.208 [-0.447, +0.552] share>=0.70 0.1%
+PC wta R1      grid s=2.00 pp: median +0.556 [+0.165, +0.738] share>=0.70 6.6%
+PC wta R1      grid s=3.00 pp: median +0.721 [+0.543, +0.837] share>=0.70 61.0%
+PC wta R1      grid s=4.00 pp: median +0.819 [+0.669, +0.894] share>=0.70 95.1%
+PC wta R1      grid s=6.00 pp: median +0.914 [+0.845, +0.949] share>=0.70 100.0%
+PC wta R1 estimated s=1.06 pp: median +0.253 [-0.370, +0.573] share>=0.70 0.1%
+V2 wta R1: simulated +0.253 within 0.15 of observed 0.25
+WTA done in 5770s
+=== RUN END

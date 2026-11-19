@@ -40,6 +40,7 @@ time-stamped registrations.
 | Slope estimator and chronological split (`docs/combined/slope_chronological_preregistration.md`) | 2026-11-17 | after 2026-11-17 |
 | Confounder adjustment (`docs/combined/confound_adjustment_preregistration.md`) | 2026-11-18 | after 2026-11-18 |
 | Selection checks (`docs/combined/selection_checks_preregistration.md`) | 2026-11-18 | after 2026-11-18 |
+| Positive control (`docs/combined/positive_control_preregistration.md`) | 2026-11-18 | after 2026-11-18 |
 
 The November plans were all written after the earlier results (the entropy
 null and the reliability findings) were known, so they are pre-specified but
