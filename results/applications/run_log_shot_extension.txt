@@ -1,0 +1,55 @@
+
+======================================================================
+ATP
+======================================================================
+ATP: loaded cached point table (1,132,053 points)
+  hitter parity on 266,591 winner points: 0.954 (floor 0.85)
+VALIDATION family winners <= all winners: PASS
+VALIDATION serve_clutch: new +0.5720 reference +0.5720
+VALIDATION return_clutch: new +0.2313 reference +0.2310
+VALIDATION R4_error_forehand: new +0.5461 reference +0.5461
+VALIDATION PASS
+  ...100/1000 splits
+  ...200/1000 splits
+  ...300/1000 splits
+  ...400/1000 splits
+  ...500/1000 splits
+  ...600/1000 splits
+  ...700/1000 splits
+  ...800/1000 splits
+  ...900/1000 splits
+  ...1000/1000 splits
+R10 Winner clutch, forehand                      orig +0.492  median +0.393  [+0.138, +0.575]  share>=0.70 0.0%  events 5,138
+R11 Winner clutch, backhand                      orig +0.020  median +0.189  [-0.191, +0.454]  share>=0.70 0.0%  events 3,822
+R12 Winner clutch, slice                         orig +0.078  median -0.065  [-0.539, +0.307]  share>=0.70 0.0%  events 1,306
+R13 Point clutch, short rallies (2 to 4 shots)   orig +0.217  median +0.310  [+0.044, +0.509]  share>=0.70 0.0%  events 2,283
+R14 Point clutch, long rallies (5 or more shots) orig +0.112  median +0.151  [-0.194, +0.409]  share>=0.70 0.0%  events 1,712
+
+======================================================================
+WTA
+======================================================================
+WTA: loaded cached point table (426,269 points)
+  hitter parity on 105,746 winner points: 0.966 (floor 0.85)
+VALIDATION family winners <= all winners: PASS
+VALIDATION serve_clutch: new +0.5784 reference +0.5780
+VALIDATION return_clutch: new +0.0547 reference +0.0550
+VALIDATION R4_error_forehand: new +0.3116 reference +0.3116
+VALIDATION PASS
+  ...100/1000 splits
+  ...200/1000 splits
+  ...300/1000 splits
+  ...400/1000 splits
+  ...500/1000 splits
+  ...600/1000 splits
+  ...700/1000 splits
+  ...800/1000 splits
+  ...900/1000 splits
+  ...1000/1000 splits
+R10 Winner clutch, forehand                      orig +0.537  median +0.444  [+0.142, +0.656]  share>=0.70 1.1%  events 3,744
+R11 Winner clutch, backhand                      orig +0.147  median +0.170  [-0.394, +0.475]  share>=0.70 0.0%  events 3,329
+R12 Winner clutch, slice                         orig -0.266  median -0.300  [-1.105, +0.296]  share>=0.70 0.0%  events 664
+R13 Point clutch, short rallies (2 to 4 shots)   orig -0.330  median +0.097  [-0.312, +0.429]  share>=0.70 0.0%  events 1,762
+R14 Point clutch, long rallies (5 or more shots) orig +0.369  median -0.048  [-0.594, +0.331]  share>=0.70 0.0%  events 1,317
+
+Wrote <repo>\results\applications\shot_extension_reliability.csv
+=== RUN END

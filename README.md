@@ -287,6 +287,8 @@ python src/robustness/selection_checks.py              # selection checks (Table
 python src/robustness/positive_control.py             # positive control (Table S15; about 3 hours for ATP, 1.5 for WTA; run the tours in parallel with --tours)
 python src/robustness/validity_checks.py             # validity checks (Table S17; about 20 minutes ATP, 10 WTA; run the tours in parallel with --tours)
 python src/robustness/events_vs_reliability.py      # events per player against reliability (Table S19)
+python src/robustness/shot_extension.py              # winners by shot type, rally length (Table S20)
+python src/robustness/label_accuracy.py             # how often a clutch label is right (Table S21)
 python src/robustness/fetch_tour_results.py           # tour-level match results (pinned mirror, checked against DATA_MANIFEST.csv)
 python src/robustness/decider_validity.py             # external criterion (Table S18; about a minute per tour after the fetch)
 python src/figures/make_bootstrap_rank_figure.py

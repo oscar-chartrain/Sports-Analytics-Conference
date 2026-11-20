@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S19 and Figures S1 to S3 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S21 and Figures S1 to S3 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -397,6 +397,43 @@ Reading. No primary test is significant, and the intervals exclude the benchmark
 | Aces (serve points) | 3,166 | 0.40 | 2,248 | 0.32 |
 
 Reading. Across outcomes, reliability rises with the number of events per player (Spearman correlation +0.71 across 9 ATP outcomes, +0.43 across 8 WTA outcomes): shot-level outcomes rest on several times as many events as point outcomes, and the rare shots (slice, net game) are the least reliable. Serve and return clutch rest on the same number of points but differ in reliability (0.54 and 0.24 on ATP), so volume does not explain everything.
+
+**Table S20.** Winners by shot type and point clutch by rally length (plan: `docs/combined/shot_extension_preregistration.md`; `src/robustness/shot_extension.py`). Same design as Table S7: original split, and median [95% range] over 1,000 random balanced splits (seed 20261123), with the share of splits at or above 0.70 and the median number of events per player in the top and bottom leverage quartiles (forehand, backhand or slice shots hit; rally-decided points of the stated length). Winners are per shot of that type; the rally-length outcomes are the point-win clutch score on rally-decided points of 2 to 4 shots (short) or 5 or more (long). These are five more outcomes beyond Table S7, all reported; none meets the criterion, so no single value is a finding. Validation: the serve and return reliabilities and the committed forehand-error outcome were reproduced within 0.001 before anything was written.
+
+| Outcome | ATP original | ATP random splits | ATP share >= 0.70 | ATP events | WTA original | WTA random splits | WTA share >= 0.70 | WTA events |
+|---|---|---|---|---|---|---|---|---|
+| R10 Winner clutch, forehand | 0.492 | 0.393 [0.138, 0.575] | 0.0% | 5,138 | 0.537 | 0.444 [0.142, 0.656] | 1.1% | 3,744 |
+| R11 Winner clutch, backhand | 0.020 | 0.189 [-0.191, 0.454] | 0.0% | 3,822 | 0.147 | 0.170 [-0.394, 0.475] | 0.0% | 3,329 |
+| R12 Winner clutch, slice | 0.078 | -0.065 [-0.539, 0.307] | 0.0% | 1,306 | -0.266 | -0.300 [-1.105, 0.296] | 0.0% | 664 |
+| R13 Point clutch, short rallies (2 to 4 shots) | 0.217 | 0.310 [0.044, 0.509] | 0.0% | 2,283 | -0.330 | 0.097 [-0.312, 0.429] | 0.0% | 1,762 |
+| R14 Point clutch, long rallies (5 or more shots) | 0.112 | 0.151 [-0.194, 0.409] | 0.0% | 1,712 | 0.369 | -0.048 [-0.594, 0.331] | 0.0% | 1,317 |
+
+Reading. Forehand winners are the most reliable of the new outcomes (ATP 0.39, WTA 0.44), the backhand and slice less so, as for errors (Table S7). Short rallies are more reliable than long ones on both tours (ATP 0.31 against 0.15, WTA 0.10 against -0.05), but neither approaches the criterion. The net-game family is not split (volleys, overheads and drop shots stay together as in Table S7).
+
+**Table S21.** How often is a clutch label right? (plan: `docs/combined/shot_extension_preregistration.md`, part B; `src/robustness/label_accuracy.py`.) Model: observed score = true score + independent noise, both normal, with the outcome's full-length reliability (random-split median) fixing how much of the spread is real. "Label right" is the share of players the data place in the top quartile who truly are in the top quartile (25% by chance; the bracket carries the 2.5th to 97.5th percentile of the reliability estimate); "repeats on fresh data" is the share of those players placed in the top quartile again by an independent record of the same length (25% by chance). Exact bivariate-normal probabilities, checked against a simulation of a million players. A derived projection that depends on the normal and independent-noise assumptions, not a test. Negative reliabilities are set to zero.
+
+| Outcome | ATP reliability | ATP label right [95% range] | ATP repeats on fresh data | WTA reliability | WTA label right [95% range] | WTA repeats on fresh data |
+|---|---|---|---|---|---|---|
+| Serve quartile clutch | 0.53 | 62% [53%, 69%] | 50% | 0.41 | 56% [39%, 66%] | 43% |
+| Return quartile clutch | 0.24 | 48% [25%, 59%] | 35% | 0.27 | 49% [25%, 63%] | 36% |
+| BLR (faithful) | 0.54 | 62% [53%, 69%] | 50% | 0.29 | 50% [25%, 63%] | 38% |
+| Pooled LR (exploratory) | 0.76 | 74% [70%, 79%] | 65% | 0.45 | 58% [46%, 68%] | 45% |
+| R1 Rally-phase point clutch | 0.44 | 58% [46%, 66%] | 45% | 0.25 | 48% [25%, 61%] | 36% |
+| R2 Unforced-error clutch, all shots | 0.60 | 65% [58%, 72%] | 54% | 0.50 | 61% [47%, 69%] | 48% |
+| R3 Winner clutch, all shots | 0.58 | 65% [56%, 71%] | 53% | 0.47 | 59% [46%, 68%] | 46% |
+| R4 Error clutch, forehand | 0.49 | 60% [49%, 69%] | 48% | 0.41 | 56% [41%, 68%] | 43% |
+| R5 Error clutch, backhand | 0.32 | 52% [25%, 63%] | 39% | 0.22 | 47% [25%, 62%] | 35% |
+| R6 Error clutch, slice | -0.01 | 25% [25%, 51%] | 25% | 0.15 | 42% [25%, 62%] | 31% |
+| R7 Error clutch, net game | 0.18 | 44% [25%, 61%] | 32% | not estimable | - | - |
+| R8 Double-fault clutch (serve) | 0.16 | 43% [25%, 56%] | 32% | 0.12 | 40% [25%, 58%] | 30% |
+| R9 Ace clutch (serve) | 0.40 | 56% [42%, 65%] | 43% | 0.32 | 52% [25%, 64%] | 39% |
+| R10 Winner clutch, forehand | 0.39 | 55% [41%, 64%] | 43% | 0.44 | 58% [42%, 68%] | 45% |
+| R11 Winner clutch, backhand | 0.19 | 45% [25%, 58%] | 33% | 0.17 | 44% [25%, 59%] | 32% |
+| R12 Winner clutch, slice | -0.06 | 25% [25%, 51%] | 25% | -0.30 | 25% [25%, 51%] | 25% |
+| R13 Point clutch, short rallies (2 to 4 shots) | 0.31 | 51% [34%, 61%] | 39% | 0.10 | 39% [25%, 57%] | 29% |
+| R14 Point clutch, long rallies (5 or more shots) | 0.15 | 42% [25%, 56%] | 31% | -0.05 | 25% [25%, 52%] | 25% |
+
+Reading. At the paper's criterion of 0.70 a top-quartile label would be right 71% of the time and repeat 60% of the time; at 0.90, 84% and 77%. The most reliable outcomes of the paper (ATP all-shot errors, 0.60) give 65% and 54%, serve clutch 62% and 50%, return clutch 48% and 35%. The scores are informative about broad groups (a top-quartile ATP serve label is truly above the median about 9 times in 10) but a label for one named player is often wrong.
 
 ![Split-half reliability of clutch outcomes on every kind of shot, by tour](../results/figures/allshots_reliability_figure.png)
 
