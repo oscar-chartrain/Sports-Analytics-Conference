@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S21 and Figures S1 to S4 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S22 and Figures S1 to S4 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -434,6 +434,27 @@ Reading. Forehand winners are the most reliable of the new outcomes (ATP 0.39, W
 | R14 Point clutch, long rallies (5 or more shots) | 0.15 | 42% [25%, 56%] | 31% | -0.05 | 25% [25%, 52%] | 25% |
 
 Reading. At the paper's criterion of 0.70 a top-quartile label would be right 71% of the time and repeat 60% of the time; at 0.90, 84% and 77%. The most reliable outcomes of the paper (ATP all-shot errors, 0.60) give 65% and 54%, serve clutch 62% and 50%, return clutch 48% and 35%. The scores are informative about broad groups (a top-quartile ATP serve label is truly above the median about 9 times in 10) but a label for one named player is often wrong.
+
+**Table S22.** Tennis-scale companions to Sections 4.1 and 6 (plan: `docs/combined/interpretation_additions_plan.md`; `src/robustness/interpretation_additions.py`; descriptive, not tests). Part 1, an empirical repeat check: over 1,000 random balanced half-splits (seed 20261124), the share of players in the top quartile of the outcome on half A who are in the top quartile on half B (25% by chance), as the median [2.5th to 97.5th percentile] over splits, beside the normal-model projection for records of the same (half) length, computed from each split's own half-versus-half correlation. Shares are multiples of 1 over the number of top-quartile players (about 23 on ATP and 14 on WTA), so they are coarse.
+
+| Outcome | ATP empirical [95% range] | ATP projection [95% range] | WTA empirical [95% range] | WTA projection [95% range] |
+|---|---|---|---|---|
+| Serve quartile clutch | 48% [35%, 61%] | 41% [34%, 49%] | 43% [29%, 64%] | 36% [28%, 45%] |
+| Return quartile clutch | 35% [22%, 48%] | 31% [25%, 38%] | 29% [14%, 50%] | 32% [25%, 41%] |
+| Unforced-error clutch, all shots | 52% [39%, 65%] | 44% [37%, 52%] | 36% [21%, 57%] | 40% [31%, 49%] |
+| Winner clutch, all shots | 43% [30%, 57%] | 43% [37%, 51%] | 43% [29%, 57%] | 39% [30%, 48%] |
+| Error clutch, forehand | 48% [35%, 61%] | 39% [31%, 47%] | 43% [29%, 57%] | 36% [27%, 45%] |
+
+Two ATP outcomes (all-shot errors, forehand errors) have empirical medians just above the projection's range; every other cell is inside it. The projection is therefore, if anything, conservative on ATP and consistent on WTA.
+
+Part 2, points and spreads in tennis terms. Top-quartile points are the serve (or return) points in the top leverage quartile of the player's own serve (or return) points; the last-but-one column is the standard deviation across players of the overall serve-point or return-point win rate corrected for binomial sampling noise; the points per match per true SD is the true clutch SD times the top-quartile points per match.
+
+| Tour, role | Top-quartile points per match (median) | Top-quartile points per player (median) | True clutch SD, pp | Points per match per true SD | Ordinary-ability SD, pp (noise-corrected) | Binomial SE of one quartile win rate, pp |
+|---|---|---|---|---|---|---|
+| ATP serve | 21.0 | 1,560 | 2.15 | 0.45 | 3.0 | 1.2 |
+| ATP return | 21.0 | 1,568 | 1.22 | 0.26 | 2.9 | 1.2 |
+| WTA serve | 17.9 | 1,156 | 1.88 | 0.34 | 1.9 | 1.4 |
+| WTA return | 17.9 | 1,143 | 1.31 | 0.24 | 1.9 | 1.5 |
 
 ![Split-half reliability of clutch outcomes on every kind of shot, by tour](../results/figures/allshots_reliability_figure.png)
 

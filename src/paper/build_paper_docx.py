@@ -160,7 +160,7 @@ def add_image(doc, path, alt):
     par.alignment = WD_ALIGN_PARAGRAPH.CENTER
     # text width is 6.5 in; widths chosen so the figures stay legible without dominating a page
     name = str(path)
-    width = 4.6 if any(k in name for k in ('leverage_explainer','split_half','positive_control','bootstrap_rank')) else 5.6 if 'allshots' in name else 3.8 if 'disattenuation' in name else 6.0
+    width = 5.6 if 'interpretation' in name else 4.6 if any(k in name for k in ('leverage_explainer','split_half','positive_control','bootstrap_rank')) else 5.6 if 'allshots' in name else 3.8 if 'disattenuation' in name else 6.0
     par.add_run().add_picture(path, width=Inches(width))
     fmt(par, after=4, keep_next=True, align=WD_ALIGN_PARAGRAPH.CENTER)
 
@@ -225,8 +225,10 @@ def build(paper_id, out_path):
         else:
             # caption lines ("**Table n.**", "**Figure n.**") stay with their table or figure
             is_caption = line.startswith('**Table') or line.startswith('**Figure')
-            add_par(doc, line, size=10 if is_caption else 11, after=6 if is_caption else 11,
-                    keep_next=line.startswith('**Table') or line.startswith('**At a glance'))
+            par = add_par(doc, line, size=10 if is_caption else 11, after=6 if is_caption else 11,
+                          keep_next=line.startswith('**Table') or line.startswith('**At a glance'))
+            if is_caption:
+                par.paragraph_format.keep_together = True
             i += 1
 
     # blind review: drop the template authors' names from the file properties
