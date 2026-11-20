@@ -135,6 +135,17 @@ def add_table(doc, rows):
             add_runs(cell.paragraphs[0], row[ci] if ci < len(row) else '', 9)
             fmt(cell.paragraphs[0], after=2)
             set_cell_borders(cell)
+    if header[0] == 'Fix':
+        table.autofit = False
+        widths = [3.1] + [0.85] * (ncols - 1)
+        for r in table.rows:
+            for ci, w in enumerate(widths):
+                r.cells[ci].width = Inches(w)
+    if len(body) <= 12:
+        for r in table.rows[:-1]:
+            for c in r.cells:
+                for pp in c.paragraphs:
+                    pp.paragraph_format.keep_with_next = True
     # keep header row from splitting, repeat on page break
     trpr = table.rows[0]._tr.get_or_add_trPr()
     hdr = OxmlElement('w:tblHeader')
@@ -149,7 +160,7 @@ def add_image(doc, path, alt):
     par.alignment = WD_ALIGN_PARAGRAPH.CENTER
     # text width is 6.5 in; widths chosen so the figures stay legible without dominating a page
     name = str(path)
-    width = 5.7 if any(k in name for k in ('leverage_explainer','split_half','positive_control','bootstrap_rank')) else 5.6 if 'allshots' in name else 3.8 if 'disattenuation' in name else 6.0
+    width = 4.6 if any(k in name for k in ('leverage_explainer','split_half','positive_control','bootstrap_rank')) else 5.6 if 'allshots' in name else 3.8 if 'disattenuation' in name else 6.0
     par.add_run().add_picture(path, width=Inches(width))
     fmt(par, after=4, keep_next=True, align=WD_ALIGN_PARAGRAPH.CENTER)
 

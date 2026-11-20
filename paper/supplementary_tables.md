@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S21 and Figures S1 to S3 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S21 and Figures S1 to S4 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -446,3 +446,7 @@ Reading. At the paper's criterion of 0.70 a top-quartile label would be right 71
 ![What split-half reliability looks like: the same player's score in half A against half B of their charted matches](../results/figures/split_half_reliability_figure.png)
 
 **Figure S3.** What reliability looks like. Each dot is one player: the score from half A of their charted matches against half B (original split; r is the Spearman-Brown reliability). Entropy is nearly the same in both halves, clutch scores are not.
+
+![Bootstrap rank intervals, ATP](../results/figures/bootstrap_rank_figure.png)
+
+**Figure S4.** 95% match-level bootstrap rank intervals for every ATP player, serve and return clutch (rank 1 = most clutch among 91; Section 6.2). The dotted diagonal marks the point-estimate rank.
