@@ -181,3 +181,8 @@ Not re-derived this pass (verified earlier and logged above): Table 2 correlatio
 - Corrected: Alcaraz and Sinner charted matches 221 and 297 to 222 and 298 (pool file and analysis set); WTA backhand error clutch 0.23 to 0.22 (median 0.2250 rounds down); deciding-set matches per player 154 and 117 (all pool players) to 159 and 128 (the 88 and 52 players in Table S18C); Discussion "80% and 57% of splits" to 79% and 55% (Table S9 values, same run as the rest of Section 4.3).
 - Table S5 note added: the shrunk reliabilities, the opponent-adjusted return reliabilities and the 31% and 3% per-player shares that Sections 4.3 and 6.1 quote were not in any supplementary table (they came from run logs and `docs/`); Table S17 moved ahead of S18 so tables appear in order.
 - No result changed. Word reports 12 pages.
+
+## Addendum 2026-11-19 (length and readability pass: body to 10 pages)
+- Body (title to conclusion) cut from about 10.7 to 10.0 pages in Word; the whole file is 11 pages (references and appendix on page 11). Cuts: shorter introduction summary, Section 3 definitions, Section 6.1 (model details now only in Tables S6 and S12), Sections 4.3, 4.5 and 6.2, Discussion (the repeated rally paragraph and the pool paragraph, the latter folded into Limitations) and Conclusion; Limitations reduced from six bullets to five.
+- The half-A versus half-B scatter moved from the main text to the supplement (Figure S3); the positive-control and bootstrap-rank figures are now Figures 2 and 3 and sit after their first text paragraph to avoid page gaps; figures drawn at 5.7 in wide.
+- No result changed; every removed number remains in the supplementary table the text cites.

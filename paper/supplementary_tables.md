@@ -1,6 +1,6 @@
 # Supplementary tables
 
-Supplementary tables S1 to S19 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
+Supplementary tables S1 to S19 and Figures S1 to S3 for "Shot-Selection Consistency and Clutch Performance in Tennis: A Reliability Warning for Clutch Metrics" (SSAC 2027, Paper ID 353). Section and figure numbers refer to the paper.
 
 
 **Table S1.** Split-half reliability on the original split with 95% CI (Spearman-Brown), and the median and 95% range over 1,000 random splits, for the quartile clutch scores and the leverage ratios.
@@ -157,7 +157,7 @@ The slope without the SD scaling gives random-split medians within 0.05 of these
 
 No outcome has a chronological Spearman-Brown estimate at or above 0.70; the highest is ATP unforced-error clutch (0.66, interval 0.53 to 0.76), whose interval does reach 0.70. The intervals are wide because there is a single chronological split per tour.
 
-**Table S12.** Three-level variance model, ATP only. Per-match clutch score (top-quartile minus bottom-quartile rate, percentage points) = overall mean + player effect (stable SD) + match effect within player (match-to-match SD) + known sampling error; fitted by restricted maximum likelihood on matches with at least 3 points in each bucket, with 95% player-bootstrap intervals (1,000 refits). Career reliability is the stable variance over the stable variance plus the error variance of a player's inverse-variance-weighted mean score over their retained matches. Matches needed (for reliability 0.70) are in charted matches and are scaled up for the matches dropped by the 3-point rule. p-values are likelihood-ratio tests with a 50:50 chi-square(0,1) mixture. The WTA fit failed the pre-registered simulation check (Section 6.1) and is not reported.
+**Table S12.** Three-level variance model, ATP only. Per-match clutch score (top-quartile minus bottom-quartile rate, percentage points) = overall mean + player effect (stable SD) + match effect within player (match-to-match SD) + known sampling error; fitted by restricted maximum likelihood on matches with at least 3 points in each bucket, with 95% player-bootstrap intervals (1,000 refits). Career reliability is the stable variance over the stable variance plus the error variance of a player's inverse-variance-weighted mean score over their retained matches. Matches needed (for reliability 0.70) are in charted matches and are scaled up for the matches dropped by the 3-point rule. p-values are likelihood-ratio tests with a 50:50 chi-square(0,1) mixture. The WTA fit failed the pre-registered simulation check (Section 8) and is not reported.
 
 | Outcome | Matches kept | Stable SD [95% interval] | Match-to-match SD [95% interval] | Sampling SD per match | Career reliability [95% interval] | Matches needed [95% interval] | p, stable SD = 0 | p, match SD = 0 |
 |---|---|---|---|---|---|---|---|---|
@@ -405,3 +405,7 @@ Reading. Across outcomes, reliability rises with the number of events per player
 ![Equivalence bound on |r| by tour and role, observed versus reliability-corrected](../results/figures/disattenuation_figure.png)
 
 **Figure S2.** Equivalence bound on |r|, observed versus reliability-corrected (original-split reliabilities). WTA return's bound exceeds 1 and is uninformative.
+
+![What split-half reliability looks like: the same player's score in half A against half B of their charted matches](../results/figures/split_half_reliability_figure.png)
+
+**Figure S3.** What reliability looks like. Each dot is one player: the score from half A of their charted matches against half B (original split; r is the Spearman-Brown reliability). Entropy is nearly the same in both halves, clutch scores are not.
